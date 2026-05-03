@@ -124,6 +124,101 @@ input[type=range]{flex:1;accent-color:var(--text-secondary)}
 .poly-wrap{margin-top:10px;background:var(--bg-primary);border:0.5px solid var(--border-light);border-radius:var(--radius-md);padding:10px;overflow:hidden}
 .poly-label{font-size: 12.5px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--text-tertiary);margin-bottom:6px}
 .footnote{margin-top:8px;font-size: 11.9px;color:var(--text-tertiary);line-height:1.6}
+
+/* ── MOBILE RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  body { font-size: 14px; }
+
+  /* Layout principal en colonne unique */
+  .panels { grid-template-columns: 1fr; gap: 14px; }
+  .panel  { height: auto; padding: 12px 14px; }
+  .params-grid { grid-template-columns: 1fr; gap: 8px; }
+
+  /* Slider — wrap propre avec pills au-dessus */
+  .slider-row {
+    flex-wrap: wrap;
+    gap: 8px !important;
+    justify-content: center;
+  }
+  .slider-row input[type=range] {
+    flex: 1 1 100% !important;
+    min-width: 0;
+    order: 3;
+  }
+  #slider-arrow-hint { display: none; }
+
+  /* Titres de panel + pills */
+  .pt { font-size: 12px; margin-bottom: 14px; }
+  .mode-pill { font-size: 13px !important; padding: 3px 10px; }
+
+  /* Sequence strip — wrap si nécessaire */
+  .seq-strip { flex-wrap: wrap; justify-content: center; gap: 4px; }
+  .aa-b { min-width: 38px; padding: 4px 2px; }
+  .aa-b .l { font-size: 15px; }
+  .aa-b .n { font-size: 10.5px; }
+  .seq-offset { font-size: 10.5px; margin-bottom: 14px; }
+
+  /* Conservation block */
+  .cons-block { padding: 6px 10px; }
+  .cons-label { font-size: 12.5px; margin-bottom: 14px; }
+  .cons-rows-wrap { overflow-y: visible; }
+  .cons-isoform, .cons-val { font-size: 11.5px; }
+  .cons-badge { font-size: 12px; margin-top: 14px; }
+  .score-name { font-size: 11.5px; }
+  .score-val { font-size: 12.5px; }
+  .score-hint { font-size: 10.5px; }
+
+  /* Chemistry panel — empile la SVG et le texte */
+  .chem-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .chem-top > div:first-child {
+    margin-left: 0 !important;
+    width: 100%;
+    max-width: 300px;
+  }
+  .chem-top > div:first-child svg {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .chem-right { padding-top: 0; width: 100%; }
+  .chem-note { font-size: 12px; }
+
+  /* Ramachandran — empile en colonne */
+  .rama-row {
+    flex-direction: column !important;
+    gap: 12px;
+    margin-left: 0 !important;
+  }
+  .rama-wrap {
+    width: 100% !important;
+    max-width: 320px;
+    height: auto !important;
+    margin: 0 auto;
+  }
+  .rama-wrap svg { width: 100% !important; height: auto !important; }
+  .rama-text { font-size: 11.5px !important; }
+
+  /* Accordéons */
+  .acc-q     { font-size: 12.5px; }
+  .acc-body  { font-size: 12.5px; padding: 10px 12px 12px; line-height: 1.6; }
+  .acc-hd    { padding: 9px 11px; }
+
+  /* Paramètres */
+  .p-name    { font-size: 11.5px; }
+  .p-val     { font-size: 14.5px; }
+  .p-exp     { font-size: 11.5px; }
+  .p-src     { font-size: 10.5px; }
+
+  /* SVG du filament dans le 3e accordion */
+  .poly-wrap svg { width: 100%; height: auto; }
+
+  /* Légère réduction du padding global */
+  .fig { padding: 0.8rem 0 .5rem; }
+  .footnote { font-size: 11px; }
+}
 </style>
 </head>
 <body>
@@ -465,6 +560,34 @@ onSl(0);
   if(pmut){pmut.style.borderColor='var(--text-tertiary)';pmut.style.color='var(--text-tertiary)';pmut.style.background='transparent';}
 })();
 setTimeout(()=>{typeof NGL!=='undefined'?initNGL():null;},500);
+</script>
+
+<script>
+/* Communique la hauteur réelle au parent (cipo.md écoute déjà q247pHeight) */
+(function() {
+  function postHeight() {
+    try {
+      var h = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      );
+      window.parent.postMessage({ q247pHeight: h }, '*');
+    } catch(e) {}
+  }
+  function init() {
+    postHeight();
+    [200, 600, 1200, 2000].forEach(function(d) { setTimeout(postHeight, d); });
+    if (typeof ResizeObserver !== 'undefined') {
+      try {
+        var ro = new ResizeObserver(postHeight);
+        ro.observe(document.body);
+      } catch(e) {}
+    }
+    window.addEventListener('resize', postHeight);
+  }
+  if (document.readyState === 'complete') init();
+  else window.addEventListener('load', init);
+})();
 </script>
 </body>
 </html>

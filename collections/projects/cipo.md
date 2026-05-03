@@ -309,6 +309,12 @@ h1 { text-align: center; }
   border: none;
   background: transparent;
 }
+@media (max-width: 768px) {
+  .q247p-frame iframe {
+    zoom: 1;          /* annule le zoom desktop */
+    height: 1850px;   /* hauteur conservatrice pour layout empilé */
+  }
+}
 </style>
 
 <div class="q247p-section">

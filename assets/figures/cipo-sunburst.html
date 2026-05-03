@@ -690,5 +690,28 @@ if (window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window)
 :root.dark { --arrow-col: #E8845A; }
 .ga [fill="#C2510A"] { fill: var(--arrow-col); }
 </style>
+
+<script>
+/* Mobile viewBox fix —
+   Le chart est dessiné off-center (cx=145, cy=145, outerR=185), donc son
+   contenu réel s'étend de (-40,-40) à (330,330). Sur desktop, overflow:visible
+   + margin-left:60px compensent. Sur mobile (SVG scalé à 100%), il faut élargir
+   le viewBox pour englober le contenu visible.                                */
+(function() {
+  function adjustViewBox() {
+    var svg = document.getElementById('sbsvg');
+    if (!svg) return;
+    var isMobile = window.matchMedia('(max-width: 768px)').matches;
+    svg.setAttribute('viewBox', isMobile ? '-50 -50 390 390' : '0 0 380 380');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', adjustViewBox);
+  } else {
+    adjustViewBox();
+  }
+  window.addEventListener('load', adjustViewBox);
+  window.addEventListener('resize', adjustViewBox);
+})();
+</script>
 </body>
 </html>
