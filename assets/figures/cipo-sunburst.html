@@ -123,7 +123,7 @@ path.arc:hover{filter:brightness(1.18);}
 
   <div class="sb-top">
     <div class="sb-chart">
-      <svg id="sbsvg" width="380" height="380" viewBox="-30 -30 440 440" preserveAspectRatio="xMidYMid meet" style="overflow:visible;display:block;max-width:100%;height:auto;"></svg>
+      <svg id="sbsvg" width="380" height="380" viewBox="-50 -50 390 390" preserveAspectRatio="xMidYMid meet" style="overflow:visible;display:block;max-width:100%;height:auto;"></svg>
     </div>
     <div class="sb-panel">
       <p class="idle-hint">Click a segment to explore · Click again to reset.</p>
@@ -525,8 +525,7 @@ const cLbl = centerG.append('text')
 function toggleCat(name) {
   // hide arrow on first interaction
   const arrow = document.getElementById('crayonArrow');
-  if (arrow) { arrow.style.transition = 'opacity 0.3s'; arrow.style.opacity = '0'; setTimeout(() => arrow.remove(), 350); }
-  if (selected === name) {
+  if (arrow) { arrow.style.transition = 'opacity 0.3s'; arrow.style.opacity = '0'; setTimeout(() => arrow.remove(), 350); }  if (selected === name) {
     selected = null;
     allArcs.forEach(p => p.attr('opacity', 1));
     cNum.text('65');
@@ -628,6 +627,12 @@ Object.entries(PALETTE).forEach(([name, c]) => {
   item.addEventListener('click', () => toggleCat(name));
   legendEl.appendChild(item);
 });
+
+// Remove arrow immediately on mobile (touch devices or narrow screens)
+if (window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window) {
+  const arrowEl = document.getElementById('crayonArrow');
+  if (arrowEl) arrowEl.remove();
+}
 </script>
 
 
