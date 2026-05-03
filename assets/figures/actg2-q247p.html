@@ -563,14 +563,21 @@ setTimeout(()=>{typeof NGL!=='undefined'?initNGL():null;},500);
 </script>
 
 <script>
-/* Communique la hauteur réelle au parent (cipo.md écoute déjà q247pHeight) */
+/* Communique la hauteur réelle au parent (cipo.md écoute déjà q247pHeight).
+   IMPORTANT : utiliser uniquement document.body.scrollHeight.
+   document.documentElement.scrollHeight reporte max(contenu, viewport) — quand
+   le parent agrandit l'iframe, le viewport intérieur grandit, ce qui ferait
+   re-poster une valeur plus grande → boucle de feedback runaway (jusqu'à
+   ~90 000 px observé en debug). body.scrollHeight, lui, ne reflète que le
+   contenu réel et reste stable. */
 (function() {
+  var lastPosted = 0;
   function postHeight() {
     try {
-      var h = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight
-      );
+      var h = document.body.scrollHeight;
+      // Évite les re-posts identiques (réduit bruit + chance de feedback)
+      if (h === lastPosted) return;
+      lastPosted = h;
       window.parent.postMessage({ q247pHeight: h }, '*');
     } catch(e) {}
   }
