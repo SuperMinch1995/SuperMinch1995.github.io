@@ -66,6 +66,20 @@ path.arc:hover{filter:brightness(1.18);}
 .crayon-arrow-wrap{margin:2px 0 10px 0;height:48px;display:flex;align-items:center;}
 .crayon-arrow{width:90px;height:48px;display:block;}
 
+/* Mobile responsive */
+@media (max-width: 768px) {
+  body{padding:1rem 1rem 1.5rem;}
+  .sb-top{flex-direction:column;gap:1rem;align-items:stretch;}
+  .sb-chart{position:static;margin:0 auto;width:100%;max-width:340px;}
+  .sb-chart svg{width:100%;height:auto;max-width:100%;}
+  .sb-panel{width:100%;min-width:0;flex:none;}
+  .crayon-arrow-wrap{display:none !important;}
+  .sb-stats-row{gap:1.5rem;margin-bottom:2rem;}
+  .sb-stat-num{font-size:1.6em;}
+  .sb-headline{font-size:1em;margin-bottom:1.5rem;}
+  .sb-crayon-arrow-gap{display:none;}
+}
+
 .sb-top{position:relative;}
 .sb-crayon-arrow-gap{
   position:absolute;
@@ -109,7 +123,7 @@ path.arc:hover{filter:brightness(1.18);}
 
   <div class="sb-top">
     <div class="sb-chart">
-      <svg id="sbsvg" width="380" height="380" style="overflow:visible;display:block;"></svg>
+      <svg id="sbsvg" width="380" height="380" viewBox="-30 -30 440 440" preserveAspectRatio="xMidYMid meet" style="overflow:visible;display:block;max-width:100%;height:auto;"></svg>
     </div>
     <div class="sb-panel">
       <p class="idle-hint">Click a segment to explore · Click again to reset.</p>
