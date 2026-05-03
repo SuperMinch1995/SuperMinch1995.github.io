@@ -63,6 +63,8 @@ body{font-family:'DM Sans',sans-serif;background:transparent;padding:1.5rem 15% 
 path.arc{cursor:pointer;transition:opacity .15s;}
 path.arc:hover{filter:brightness(1.18);}
 .sb-panel{position:relative;}
+.crayon-arrow-wrap{margin:2px 0 10px 0;height:48px;display:flex;align-items:center;}
+.crayon-arrow{width:90px;height:48px;display:block;}
 
 .sb-top{position:relative;}
 .sb-crayon-arrow-gap{
@@ -111,7 +113,21 @@ path.arc:hover{filter:brightness(1.18);}
     </div>
     <div class="sb-panel">
       <p class="idle-hint">Click a segment to explore · Click again to reset.</p>
-      
+      <div class="crayon-arrow-wrap" id="crayonArrow">
+        <svg class="crayon-arrow" viewBox="0 0 90 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- curved path pointing left toward the sunburst -->
+          <path d="M82 8 C60 6, 18 10, 8 28" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" fill="none"
+                stroke-dasharray="90" stroke-dashoffset="90">
+            <animate attributeName="stroke-dashoffset" from="90" to="0" dur="0.7s" begin="0.3s" fill="freeze"/>
+          </path>
+          <!-- arrowhead -->
+          <g opacity="0">
+            <animate attributeName="opacity" from="0" to="1" dur="0.15s" begin="0.95s" fill="freeze"/>
+            <path d="M8 28 L14 20 M8 28 L16 32" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+
       <div class="detail-area">
         <div class="detail-content" id="detail-content">
           <span class="cat-badge" id="det-badge"></span>
@@ -493,6 +509,9 @@ const cLbl = centerG.append('text')
   .text('');
 
 function toggleCat(name) {
+  // hide arrow on first interaction
+  const arrow = document.getElementById('crayonArrow');
+  if (arrow) { arrow.style.transition = 'opacity 0.3s'; arrow.style.opacity = '0'; setTimeout(() => arrow.remove(), 350); }
   if (selected === name) {
     selected = null;
     allArcs.forEach(p => p.attr('opacity', 1));
