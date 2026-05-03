@@ -115,15 +115,15 @@ path.arc:hover{filter:brightness(1.18);}
       <p class="idle-hint">Click a segment to explore · Click again to reset.</p>
       <div class="crayon-arrow-wrap" id="crayonArrow">
         <svg class="crayon-arrow" viewBox="0 0 90 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- curved path pointing left toward the sunburst -->
-          <path d="M82 8 C60 6, 18 10, 8 28" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" fill="none"
-                stroke-dasharray="90" stroke-dashoffset="90">
-            <animate attributeName="stroke-dashoffset" from="90" to="0" dur="0.7s" begin="0.3s" fill="freeze"/>
+          <!-- curve bulging downward (concave from above), pointing left toward the sunburst -->
+          <path d="M82 12 Q45 44, 12 18" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" fill="none"
+                stroke-dasharray="110" stroke-dashoffset="110">
+            <animate attributeName="stroke-dashoffset" from="110" to="0" dur="0.7s" begin="0.3s" fill="freeze"/>
           </path>
-          <!-- arrowhead -->
+          <!-- arrowhead at left end, oriented along curve tangent (curve arrives going up-left) -->
           <g opacity="0">
             <animate attributeName="opacity" from="0" to="1" dur="0.15s" begin="0.95s" fill="freeze"/>
-            <path d="M8 28 L14 20 M8 28 L16 32" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 18 L22 16 M12 18 L18 26" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </g>
         </svg>
       </div>
