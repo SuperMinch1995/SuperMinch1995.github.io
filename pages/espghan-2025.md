@@ -111,7 +111,7 @@ permalink: /conferences/espghan-2025/
     </p>
 
     <p>
-      And somewhere between scientific sessions and conversations, one word captured the spirit of the experience: <strong>Sisu</strong> — the Finnish concept of resilience, determination, and quiet strength.
+      And somewhere between scientific sessions and conversations, one word captured my attention: <strong>Sisu</strong> — the Finnish concept of resilience, determination, and quiet strength.
     </p>
   </div>
 
@@ -132,12 +132,12 @@ permalink: /conferences/espghan-2025/
   </li>
   <li>
     <a href="/conferences/ciirta-2025/" style="font-size:0.8rem;">
-       CIIRTA 2025 — Gothenburg
+       CIIRTA 2025
     </a>
   </li>
   <li>
     <a href="/conferences/espen-2025/" style="font-size:0.8rem;">
-       ESPEN 2025 — Prague
+       ESPEN 2025
     </a>
   </li>
 </ul>
