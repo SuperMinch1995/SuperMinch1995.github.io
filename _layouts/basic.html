@@ -3,6 +3,7 @@ layout: default
 body_classes: page-basic
 ---
 
+{% unless page.hide_heading %}
 <div class="section">
   <div class="container">
     <div class="row justify-content-center">
@@ -16,13 +17,14 @@ body_classes: page-basic
     </div>
   </div>
 </div>
+{% endunless %}
 
 {% assign content = content | strip_newlines %}
 {% if content != "" %}
   <div class="section pt-0">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
+        <div class="{% if page.wide_content %}col-12 col-lg-10{% else %}col-12 col-lg-8{% endif %}">
           <div class="content">{{ content }}</div>
         </div>
       </div>

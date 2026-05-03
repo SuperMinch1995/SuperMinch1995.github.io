@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIPO — Genetic diagnosis sunburst</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+:root{--sb-bg:#FAF7F2;--sb-bg2:#F0EBE4;--sb-bg3:#E8E2DA;--sb-text:#1a1612;--sb-text2:#4a4540;--sb-border:#E0D8CE;--sb-orange:#C2510A;}
+:root.dark{--sb-bg:#1C1917;--sb-bg2:#2A271F;--sb-bg3:#332F26;--sb-text:#F0EBE3;--sb-text2:#9E9890;--sb-border:#3a3530;--sb-orange:#E8845A;background:#1C1917;}
+
+body{font-family:'DM Sans',sans-serif;background:transparent;padding:1.5rem 15% 2rem;margin:0;}body.dark,html.dark body{background:#1C1917 !important;}
+.sb-root{font-family:'DM Sans',sans-serif;background:transparent;border:none;padding:0;max-width:100%;width:100%;}
+
+/* Titre — même style que cipo-subline */
+.sb-headline{font-size:1.15em;font-weight:400;color:var(--sb-text);line-height:1.6;text-align:center;margin:0 auto 2.5rem;max-width:836px;}
+
+/* Stats row identique à cipo-stats-row */
+.sb-stats-row{display:flex;justify-content:center;gap:3rem;margin:0 0 4.375rem;flex-wrap:wrap;max-width:836px;margin-left:auto;margin-right:auto;}
+.sb-stat{display:flex;flex-direction:column;gap:0.15rem;align-items:center;}
+:root.dark .sb-stat-num{color:#E8845A;}
+.sb-stat-num{font-size:2em;font-weight:700;color:#C2510A;line-height:1;}
+.sb-stat-lbl{font-size:0.88em;color:var(--sb-text2);letter-spacing:0.04em;text-align:center;}
+
+/* Layout */
+.sb-top{display:flex;gap:25px;align-items:flex-start;flex-wrap:wrap;max-width:836px;margin:0 auto;}
+.sb-chart{flex-shrink:0;position:sticky;top:1.5rem;align-self:flex-start;margin-top:2rem;margin-left:60px;}
+.sb-panel{flex:1;min-width:200px;}
+
+.idle-hint{font-size:0.88em;font-style:italic;color:var(--sb-text2);margin-bottom:8px;opacity:0.85;}
+.detail-area{border-top:none;padding-top:14px;min-height:400px;}
+.detail-content{display:none;}
+.detail-content.visible{display:block;}
+.cat-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:12px;border:none;letter-spacing:0.02em;}.cat-badge::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.5);flex-shrink:0;}
+.detail-desc{font-size:13px;color:var(--sb-text);line-height:1.65;margin-bottom:12px;}
+.gene-grid{display:flex;flex-direction:column;gap:4px;}
+.gene-row{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:7px;background:var(--sb-bg2);cursor:pointer;transition:background .12s;}
+.gene-row:hover{background:var(--sb-bg3);}
+.gene-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.gene-name{font-size:12px;font-weight:400;color:var(--sb-text);font-style:italic;flex:1;}
+.gene-n{font-size:11px;color:var(--sb-text2);}
+.gene-pct{font-size:11px;color:var(--sb-text2);}
+.gene-detail{display:none;padding:8px 10px 10px;margin-bottom:4px;background:var(--sb-bg);border-radius:0 0 7px 7px;border:0.5px solid var(--sb-border);border-top:none;}
+.gene-detail.open{display:block;}
+.gd-row{display:flex;gap:6px;margin-bottom:7px;align-items:baseline;}
+.gd-label{font-size:10px;font-weight:500;color:var(--sb-text2);text-transform:uppercase;letter-spacing:.05em;min-width:72px;flex-shrink:0;}
+.gd-val{font-size:11px;color:var(--sb-text);line-height:1.5;}
+.gd-table{width:100%;border-collapse:collapse;font-size:10.5px;margin-top:2px;}
+.gd-table th{font-size:10px;font-weight:500;color:var(--sb-text2);padding:3px 6px 4px;border-bottom:1px solid var(--sb-border);text-align:left;}
+.gd-table td{padding:3px 6px;vertical-align:top;color:var(--sb-text);line-height:1.45;border-bottom:0.5px solid var(--sb-border);}
+.gd-table tr:last-child td{border-bottom:none;}
+.gd-table td:first-child{border-right:0.5px solid var(--sb-border);width:50%;}
+.gd-refs{display:flex;flex-direction:column;gap:2px;}
+.gd-refs a{font-size:11px;color:var(--sb-text);text-decoration:none;}
+.gd-refs a:hover{color:var(--sb-text2);}
+.sb-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;padding-top:14px;border-top:1px solid var(--sb-border);}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--sb-text2);cursor:pointer;padding:3px 7px 3px 4px;border-radius:5px;transition:all .12s;}
+.leg-item:hover{background:var(--sb-bg2);}
+.leg-item.dim{opacity:0.28;}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+path.arc{cursor:pointer;transition:opacity .15s;}
+path.arc:hover{filter:brightness(1.18);}
+.sb-panel{position:relative;}
+
+.sb-top{position:relative;}
+.sb-crayon-arrow-gap{
+  position:absolute;
+  left:-48px;
+  top:0px;
+  width:44px;
+  height:100%;
+  display:flex;
+  align-items:flex-start;
+  padding-top:4px;
+  pointer-events:none;
+}
+</style>
+<script>
+(function(){
+  function apply(dark){
+  document.documentElement.classList.toggle('dark',dark);
+  document.body.classList.toggle('dark',dark);
+  var c = dark ? '#E8845A' : '#C2510A';
+  document.querySelectorAll('#sbsvg text').forEach(function(t){
+    if(t.textContent.match(/^[\d]+$/)) t.setAttribute('fill', c);
+  });
+}
+  window.addEventListener('message',function(e){if(e.data&&typeof e.data.dark!=='undefined')apply(e.data.dark);});
+  window.parent.postMessage({requestTheme:true},'*');
+  apply(window.matchMedia('(prefers-color-scheme: dark)').matches);
+})();
+</script>
+</head>
+<body>
+<div class="sb-root">
+
+  <p class="sb-headline">We genotyped idiopathic cases.</p>
+
+  <div class="sb-stats-row">
+    <div class="sb-stat"><span class="sb-stat-num">112</span><span class="sb-stat-lbl">Patients genotyped</span></div>
+    <div class="sb-stat"><span class="sb-stat-num">58%</span><span class="sb-stat-lbl">Diagnostic yield</span></div>
+
+    <div class="sb-stat"><span class="sb-stat-num">13</span><span class="sb-stat-lbl">Genes involved</span></div>
+  </div>
+
+  <div class="sb-top">
+    <div class="sb-chart">
+      <svg id="sbsvg" width="380" height="380" style="overflow:visible;display:block;"></svg>
+    </div>
+    <div class="sb-panel">
+      <p class="idle-hint">Click a segment to explore · Click again to reset.</p>
+      
+      <div class="detail-area">
+        <div class="detail-content" id="detail-content">
+          <span class="cat-badge" id="det-badge"></span>
+          <p class="detail-desc" id="det-desc"></p>
+          <div class="gene-grid" id="det-genes"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sb-legend" id="sb-legend"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const PALETTE = {
+  'Smooth muscle contractility': { short:'Smooth muscle contractility', fill:'#AF3A3A', fillOuter:'#c45f5f', badge:'#fdf0f0', badgeText:'#7a2828' },
+  'Mitochondrial dysfunction':   { short:'Mitochondrial dysfunction', fill:'#3DAEA3', fillOuter:'#5ec4ba', badge:'#e8f7f6', badgeText:'#1f6f6a' },
+  'Rare genes':                  { short:'Rare', fill:'#D449AA', fillOuter:'#e070be', badge:'#fce8f6', badgeText:'#922e74' },
+};
+
+const TOTAL = 65;
+
+const categories = [
+  {
+    name: 'Smooth muscle contractility',
+    desc: 'Variants in cytoskeletal and contractile proteins disrupt peristalsis throughout the GI tract, causing functional obstruction without mechanical blockage.',
+    genes: [
+      {
+        gene:'ACTG2', n:29,
+        fullName: 'Actin Gamma 2, Smooth Muscle',
+        protein: 'γ2-smooth muscle actin',
+        function: 'Cytoskeletal actin filament assembly in visceral smooth muscle',
+        syndromesPresent: ['Visceral myopathy'],
+        syndromesAbsent:  ['Megacystis-microcolon-intestinal hypoperistalsis syndrome (MMIHS)'],
+        notes: '',
+        refs: [
+          { label:'Wangler et al., PLoS Genet 2014', url:'https://pubmed.ncbi.nlm.nih.gov/24676022/' },
+          { label:'Halim et al., Hum Mol Genet 2016', url:'https://pubmed.ncbi.nlm.nih.gov/26604141/' },
+          { label:'Milunsky et al., J Pediatr GN 2017', url:'https://pubmed.ncbi.nlm.nih.gov/28737610/' },
+          { label:'Assia Batzir et al., Genet Med 2020', url:'https://pubmed.ncbi.nlm.nih.gov/31959891/' },
+          { label:'GeneReviews ACTG2 visceral myopathy', url:'https://www.ncbi.nlm.nih.gov/books/NBK299311/' },
+        ]
+      },
+      {
+        gene:'MYH11', n:9,
+        fullName: 'Myosin Heavy Chain 11',
+        protein: 'Smooth muscle myosin heavy chain (SM-MHC)',
+        function: 'Motor protein driving smooth muscle contraction',
+        syndromesPresent: ['Visceral myopathy'],
+        syndromesAbsent:  ['Aortic aneurysm, familial thoracic (TAAD)', 'Megacystis-microcolon-intestinal hypoperistalsis syndrome (MMIHS)'],
+        notes: '',
+        refs: [
+          { label:'Dong et al., Clin Genet 2019', url:'https://pubmed.ncbi.nlm.nih.gov/31389005/' },
+          { label:'Gilbert et al., Gastroenterology 2020', url:'https://pubmed.ncbi.nlm.nih.gov/31945378/' },
+          { label:'Gauthier et al., Eur J Hum Genet 2015', url:'https://pubmed.ncbi.nlm.nih.gov/25782664/' },
+          { label:'Matera et al., Eur J Hum Genet 2014', url:'https://pubmed.ncbi.nlm.nih.gov/25407014/' },
+          { label:'Basilisco et al., NGM 2024 (review)', url:'https://pubmed.ncbi.nlm.nih.gov/37975538/' },
+        ]
+      },
+      {
+        gene:'SGO1', n:2,
+        fullName: 'Shugoshin 1',
+        protein: 'Shugoshin-1 (SGO1 / SGOL1)',
+        function: 'Protects centromeric cohesion; regulates ICC pacemaker function',
+        syndromesPresent: ['Chronic atrial and intestinal dysrhythmia (CAID)'],
+        syndromesAbsent:  [],
+        notes: '',
+        refs: [
+          { label:'Chetaille et al., Nat Genet 2014', url:'https://pubmed.ncbi.nlm.nih.gov/24952746/' },
+          { label:'Chetaille et al., Cell Mol Gastro 2018', url:'https://pubmed.ncbi.nlm.nih.gov/30224646/' },
+          { label:'Faure et al., JPGN 2021', url:'https://pubmed.ncbi.nlm.nih.gov/33060462/' },
+          { label:'Basilisco et al., NGM 2024 (review)', url:'https://pubmed.ncbi.nlm.nih.gov/37975538/' },
+          { label:'Vanderwinden et al., Biomolecules 2022', url:'https://pubmed.ncbi.nlm.nih.gov/36551321/' },
+        ]
+      },
+      {
+        gene:'FLNA', n:2,
+        fullName: 'Filamin A',
+        protein: 'Filamin A (FLNA)',
+        function: 'Actin crosslinking; scaffolding for smooth muscle cell mechanotransduction',
+        syndromesPresent: ['Periventricular nodular heterotopia (PVNH)'],
+        syndromesAbsent:  ['Intestinal pseudoobstruction, X-linked (CIIPX)', 'Otopalatodigital syndrome type I (OPD1)', 'Otopalatodigital syndrome type II (OPD2)', 'Frontometaphyseal dysplasia 1 (FMD1)', 'Melnick-Needles syndrome (MNS)'],
+        notes: '',
+        refs: [
+          { label:'Gargiulo et al., Am J Med Genet 2007', url:'https://pubmed.ncbi.nlm.nih.gov/17163538/' },
+          { label:'GeneReviews FLNA deficiency', url:'https://www.ncbi.nlm.nih.gov/books/NBK1213/' },
+          { label:'Matera et al., PMC 2022', url:'https://pubmed.ncbi.nlm.nih.gov/35388523/' },
+          { label:'Lerone et al., Eur J Hum Genet 2015', url:'https://pubmed.ncbi.nlm.nih.gov/25293720/' },
+          { label:'Evangeliou et al., review 2022', url:'https://pubmed.ncbi.nlm.nih.gov/36204393/' },
+        ]
+      },
+    ]
+  },
+  {
+    name: 'Mitochondrial dysfunction',
+    desc: 'Defects in mtDNA maintenance or oxidative phosphorylation cause multisystem disease with prominent enteric neuromuscular involvement.',
+    genes: [
+      {
+        gene:'TYMP', n:9,
+        fullName: 'Thymidine Phosphorylase',
+        protein: 'Thymidine phosphorylase (TP / PD-ECGF)',
+        function: 'Nucleoside catabolism; mtDNA precursor pool homeostasis',
+        syndromesPresent: ['Mitochondrial neurogastrointestinal encephalopathy (MNGIE)'],
+        syndromesAbsent:  [],
+        notes: '',
+        refs: [
+          { label:'Nishino et al., Science 1999', url:'https://pubmed.ncbi.nlm.nih.gov/10398603/' },
+          { label:'Hirano et al., Neurology 2004', url:'https://pubmed.ncbi.nlm.nih.gov/15007125/' },
+          { label:'Garone et al., Brain 2011', url:'https://pubmed.ncbi.nlm.nih.gov/21613313/' },
+          { label:'Halter et al., Orphanet J Rare Dis 2011', url:'https://pubmed.ncbi.nlm.nih.gov/21682895/' },
+          { label:'Pérez-Pérez et al., Nutrients 2021', url:'https://pubmed.ncbi.nlm.nih.gov/34578896/' },
+        ]
+      },
+      {
+        gene:'POLG', n:3,
+        fullName: 'DNA Polymerase Gamma',
+        protein: 'Mitochondrial DNA polymerase γ (catalytic subunit)',
+        function: 'Replication and repair of mitochondrial DNA',
+        syndromesPresent: ['Mitochondrial DNA depletion syndrome, MNGIE type'],
+        syndromesAbsent:  ['Alpers-Huttenlocher syndrome (AHS)', 'Progressive external ophthalmoplegia (PEO)', 'Sensory ataxic neuropathy, dysarthria and ophthalmoparesis (SANDO)', 'Spinocerebellar ataxia epilepsy (SCAE)'],
+        notes: '',
+        refs: [
+          { label:'Van Goethem et al., Nat Genet 2001', url:'https://pubmed.ncbi.nlm.nih.gov/11431686/' },
+          { label:'Horvath et al., Brain 2006', url:'https://pubmed.ncbi.nlm.nih.gov/16644727/' },
+          { label:'GeneReviews POLG disorders', url:'https://www.ncbi.nlm.nih.gov/books/NBK26471/' },
+          { label:'Hikmat et al., J Inherit Metab Dis 2020', url:'https://pubmed.ncbi.nlm.nih.gov/32346893/' },
+          { label:'Rahman & Copeland, Nat Rev Genet 2019', url:'https://pubmed.ncbi.nlm.nih.gov/30683889/' },
+        ]
+      },
+      {
+        gene:'MT-TL1', n:3,
+        fullName: 'Mitochondrially Encoded tRNA Leucine 1',
+        protein: 'Mitochondrial tRNA-Leu(UUR)',
+        function: 'Mitochondrial protein synthesis (leucine incorporation)',
+        syndromesPresent: ['Maternally inherited diabetes and deafness (MIDD)', 'MELAS syndrome'],
+        syndromesAbsent:  ['Cardiomyopathy, hypertrophic, mitochondrial (CMTMA)', 'Spinal muscular atrophy / SPCM overlap'],
+        notes: '',
+        refs: [
+          { label:'Goto et al., Nature 1990', url:'https://pubmed.ncbi.nlm.nih.gov/2165808/' },
+          { label:'Kaufmann et al., Neurology 2011', url:'https://pubmed.ncbi.nlm.nih.gov/21263134/' },
+          { label:'Mancuso et al., JIMD 2013', url:'https://pubmed.ncbi.nlm.nih.gov/23086243/' },
+          { label:'El-Hattab et al., Mol Genet Metab 2015', url:'https://pubmed.ncbi.nlm.nih.gov/26095524/' },
+          { label:'Gorman et al., Nat Rev Dis Primers 2016', url:'https://pubmed.ncbi.nlm.nih.gov/27775730/' },
+        ]
+      },
+      {
+        gene:'mt-DNADEL', n:2,
+        fullName: 'mt-DNA deletions',
+        protein: 'Variable',
+        function: 'Maintenance of multiple OXPHOS subunits',
+        syndromesPresent: [],
+        syndromesAbsent:  ['Pearson syndrome', 'Kearns-Sayre syndrome (KSS)', 'Progressive external ophthalmoplegia with mtDNA deletions'],
+        notes: '',
+        refs: [
+          { label:'Moraes et al., NEJM 1989', url:'https://pubmed.ncbi.nlm.nih.gov/2571975/' },
+          { label:'Chinnery et al., Brain 1997', url:'https://pubmed.ncbi.nlm.nih.gov/9055810/' },
+          { label:'Gorman et al., Nat Rev Dis Primers 2016', url:'https://pubmed.ncbi.nlm.nih.gov/27775730/' },
+          { label:'Pitceathly et al., JIMD 2012', url:'https://pubmed.ncbi.nlm.nih.gov/22350794/' },
+          { label:'Jeppesen et al., J Pediatr GN 2013', url:'https://pubmed.ncbi.nlm.nih.gov/23041721/' },
+        ]
+      },
+      {
+        gene:'MT-ATP6', n:1,
+        fullName: 'Mitochondrially Encoded ATP Synthase Membrane Subunit 6',
+        protein: 'ATP synthase subunit a (Complex V)',
+        function: 'Proton translocation driving ATP synthesis',
+        syndromesPresent: ['Neuropathy, ataxia, retinitis pigmentosa (NARP)'],
+        syndromesAbsent:  ['Bilateral striatal necrosis (BSN)', 'Leber hereditary optic neuropathy (LHON)', 'Leigh syndrome (LS)'],
+        notes: '',
+        refs: [
+          { label:'Holt et al., Am J Hum Genet 1990', url:'https://pubmed.ncbi.nlm.nih.gov/2316527/' },
+          { label:'Gorman et al., Nat Rev Dis Primers 2016', url:'https://pubmed.ncbi.nlm.nih.gov/27775730/' },
+          { label:'Breningstall et al., Pediatr Neurol 2000', url:'https://pubmed.ncbi.nlm.nih.gov/10996256/' },
+          { label:'Sadun et al., Am J Med Genet 2022', url:'https://pubmed.ncbi.nlm.nih.gov/35238148/' },
+          { label:'Aure et al., Neurology 2007', url:'https://pubmed.ncbi.nlm.nih.gov/17724299/' },
+        ]
+      },
+      {
+        gene:'MT-TV', n:1,
+        fullName: 'Mitochondrially Encoded tRNA Valine',
+        protein: 'Mitochondrial tRNA-Val',
+        function: 'Mitochondrial protein synthesis (valine incorporation)',
+        syndromesPresent: [],
+        syndromesAbsent:  ['Cardiomyopathy, hypertrophic, mitochondrial (CMTVA)', 'Spinal muscular atrophy / SPCM overlap'],
+        notes: '',
+        refs: [
+          { label:'Tiranti et al., Hum Mol Genet 1995', url:'https://pubmed.ncbi.nlm.nih.gov/8528218/' },
+          { label:'Gorman et al., Nat Rev Dis Primers 2016', url:'https://pubmed.ncbi.nlm.nih.gov/27775730/' },
+          { label:'Lévêque et al., Hum Mol Genet 2019', url:'https://pubmed.ncbi.nlm.nih.gov/30624689/' },
+          { label:'Yarham et al., Hum Mutat 2011', url:'https://pubmed.ncbi.nlm.nih.gov/21598360/' },
+          { label:'Swalwell et al., Brain 2011', url:'https://pubmed.ncbi.nlm.nih.gov/21653539/' },
+        ]
+      },
+    ]
+  },
+  {
+    name: 'Rare genes',
+    desc: 'Single-patient genes spanning immune dysregulation, enteric syndromes, and neurodevelopmental disorders.',
+    genes: [
+      {
+        gene:'STAT1', n:1,
+        fullName: 'Signal Transducer and Activator of Transcription 1',
+        protein: 'STAT1 transcription factor',
+        function: 'JAK-STAT signalling; IFN-γ/α-mediated immune responses',
+        syndromesPresent: [],
+        syndromesAbsent:  ['Immunodeficiency 31C – chronic mucocutaneous candidiasis, GOF (IMD31C)'],
+        notes: '',
+        refs: [
+          { label:'Liu et al., Science 2011', url:'https://pubmed.ncbi.nlm.nih.gov/21727190/' },
+          { label:'Uzel et al., JCI 2013', url:'https://pubmed.ncbi.nlm.nih.gov/23478409/' },
+          { label:'Sampaio et al., Blood 2013', url:'https://pubmed.ncbi.nlm.nih.gov/23929297/' },
+          { label:'Forbes et al., JCI 2018', url:'https://pubmed.ncbi.nlm.nih.gov/29400241/' },
+          { label:'Toubiana et al., JCI 2016', url:'https://pubmed.ncbi.nlm.nih.gov/27399346/' },
+        ]
+      },
+      {
+        gene:'SOCS1', n:1,
+        fullName: 'Suppressor of Cytokine Signaling 1',
+        protein: 'SOCS1 protein (JAK-STAT inhibitor)',
+        function: 'Negative regulator of JAK-STAT; limits IFN-γ signalling',
+        syndromesPresent: [],
+        syndromesAbsent:  ['Autoinflammatory syndrome with or without immunodeficiency (AISIMD)'],
+        notes: '',
+        refs: [
+          { label:'Thaventhiran et al., Nature 2020', url:'https://pubmed.ncbi.nlm.nih.gov/31959983/' },
+          { label:'Hadjadj et al., NEJM 2020', url:'https://pubmed.ncbi.nlm.nih.gov/32375920/' },
+          { label:'Lee et al., JCI 2020', url:'https://pubmed.ncbi.nlm.nih.gov/31961832/' },
+          { label:'Lévy et al., J Allergy Clin Immunol 2021', url:'https://pubmed.ncbi.nlm.nih.gov/33549619/' },
+          { label:'Seif et al., Front Immunol 2023', url:'https://pubmed.ncbi.nlm.nih.gov/37051248/' },
+        ]
+      },
+      {
+        gene:'TTC37', n:1,
+        fullName: 'Tetratricopeptide Repeat Domain 37',
+        protein: 'TTC37 / SKIC3 (SKI complex subunit)',
+        function: 'RNA exosome cofactor; mRNA surveillance and degradation',
+        syndromesPresent: ['Trichohepatoenteric syndrome (THES)'],
+        syndromesAbsent:  [],
+        notes: '',
+        refs: [
+          { label:'Fabre et al., Nat Genet 2007', url:'https://pubmed.ncbi.nlm.nih.gov/17468756/' },
+          { label:'Hartley et al., Gastroenterology 2010', url:'https://pubmed.ncbi.nlm.nih.gov/19951743/' },
+          { label:'Bourgeois et al., Gastroenterology 2018', url:'https://pubmed.ncbi.nlm.nih.gov/29024637/' },
+          { label:'Vely et al., Gastroenterology 2018', url:'https://pubmed.ncbi.nlm.nih.gov/29051041/' },
+          { label:'Monies et al., Genet Med 2019', url:'https://pubmed.ncbi.nlm.nih.gov/30337698/' },
+        ]
+      },
+      {
+        gene:'POGZ', n:1,
+        fullName: 'Pogo Transposable Element Derived with ZNF Domain',
+        protein: 'POGZ chromatin regulator',
+        function: 'Chromatin remodelling; transcriptional regulation in neurons',
+        syndromesPresent: ['White-Sutton syndrome (WHSUS)'],
+        syndromesAbsent:  [],
+        notes: '',
+        refs: [
+          { label:'White et al., Genome Med 2016', url:'https://pubmed.ncbi.nlm.nih.gov/26739155/' },
+          { label:'Stessman et al., Am J Hum Genet 2016', url:'https://pubmed.ncbi.nlm.nih.gov/26942287/' },
+          { label:'Tan et al., J Hum Genet 2016', url:'https://pubmed.ncbi.nlm.nih.gov/26763881/' },
+          { label:'Dentici et al., Am J Med Genet 2017', url:'https://pubmed.ncbi.nlm.nih.gov/28543742/' },
+          { label:'GeneReviews White-Sutton syndrome', url:'https://www.ncbi.nlm.nih.gov/books/NBK573972/' },
+        ]
+      },
+    ]
+  },
+];
+
+const W = 290, H = 290, cx = 145, cy = 145;
+const outerR     = 185;
+const geneWidth  = 68;
+const gap        = 3;
+const catWidth   = 32;
+const geneInnerR = outerR - geneWidth;
+const geneOuterR = outerR;
+const catOuterR  = geneInnerR - gap;
+const catInnerR  = catOuterR - catWidth;
+const holeR      = catInnerR - 3;
+
+const svg = d3.select('#sbsvg');
+const defs = svg.append('defs');
+const g = svg.append('g').attr('transform', `translate(${cx},${cy})`);
+
+const catTotals = categories.map(c => ({ ...c, total: d3.sum(c.genes, gg => gg.n) }));
+const catPie = d3.pie().value(d => d.total).sort(null).padAngle(0.028)(catTotals);
+const catArcFn = d3.arc().innerRadius(catInnerR).outerRadius(catOuterR).padAngle(0.028).cornerRadius(2);
+
+let selected = null;
+const allArcs = [];
+
+function makeArcPath(r, sa, ea, ccw) {
+  const x1 = Math.sin(sa)*r, y1 = -Math.cos(sa)*r;
+  const x2 = Math.sin(ea)*r, y2 = -Math.cos(ea)*r;
+  const diff = ccw ? (sa - ea + 2*Math.PI) % (2*Math.PI) : (ea - sa + 2*Math.PI) % (2*Math.PI);
+  const large = diff > Math.PI ? 1 : 0;
+  const sweep = ccw ? 0 : 1;
+  return `M ${x1} ${y1} A ${r} ${r} 0 ${large} ${sweep} ${x2} ${y2}`;
+}
+
+catPie.forEach((catSlice, ci) => {
+  const cat = catSlice.data;
+  const col = PALETTE[cat.name];
+  const sa = catSlice.startAngle, ea = catSlice.endAngle;
+  const span = ea - sa, midA = (sa + ea) / 2;
+
+  const catPath = g.append('path').datum({ cat, type:'inner' })
+    .attr('class','arc').attr('d', catArcFn(catSlice))
+    .attr('fill', col.fill).attr('opacity', 1)
+    .on('click', () => toggleCat(cat.name));
+  allArcs.push(catPath);
+
+  if (span > 0.18) {
+    const labelR = (catInnerR + catOuterR) / 2 + 0.5;
+    const pathId = `cp-${ci}`;
+    const isBottom = midA > Math.PI * 0.6 && midA < Math.PI * 1.4;
+    let pathD;
+    if (isBottom) {
+      pathD = makeArcPath(labelR, ea, sa, true);
+    } else {
+      pathD = makeArcPath(labelR, sa, ea, false);
+    }
+    defs.append('path').attr('id', pathId).attr('d', pathD);
+    g.append('text')
+      .attr('font-family', "'DM Sans',sans-serif")
+      .attr('font-size', span > 1.1 ? 11 : span > 0.6 ? 10 : 9)
+      .attr('font-weight', 500).attr('fill','#fff').attr('pointer-events','none')
+      .append('textPath')
+        .attr('href', `#${pathId}`).attr('startOffset','50%')
+        .attr('text-anchor','middle').attr('dominant-baseline','central')
+        .text(col.short);
+  }
+
+  const genePie = d3.pie().value(d => d.n).sort(null).padAngle(0.014)(cat.genes);
+  genePie.forEach(gs => {
+    const gsa = sa + (gs.startAngle / (2*Math.PI)) * span;
+    const gea = sa + (gs.endAngle   / (2*Math.PI)) * span;
+    const fakeSlice = { startAngle: gsa, endAngle: gea };
+    const geneArcFn = d3.arc().innerRadius(geneInnerR).outerRadius(geneOuterR).padAngle(0.014).cornerRadius(2);
+
+    const genePath = g.append('path').datum({ cat, gene: gs.data, type:'outer' })
+      .attr('class','arc').attr('d', geneArcFn(fakeSlice))
+      .attr('fill', col.fillOuter).attr('opacity', 1)
+      .on('click', () => toggleCat(cat.name));
+    allArcs.push(genePath);
+
+    if (gs.data.n >= 3) {
+      const gSpan = gea - gsa, gMid = (gsa + gea) / 2;
+      const rg = (geneInnerR + geneOuterR) / 2;
+      const lx = Math.sin(gMid) * rg;
+      const ly = -Math.cos(gMid) * rg;
+      g.append('text')
+        .attr('transform', `translate(${lx},${ly})`)
+        .attr('text-anchor','middle').attr('dominant-baseline','central')
+        .attr('font-family', "'DM Sans',sans-serif")
+        .attr('font-size', gSpan > 0.28 ? 11 : gSpan > 0.14 ? 10 : 8.5)
+        .attr('font-weight', 400).attr('font-style','italic')
+        .attr('fill','#fff').attr('pointer-events','none')
+        .text(gs.data.gene === 'mt-DNADEL' ? 'mt-DNA del.' : gs.data.gene);
+    }
+  });
+});
+
+const centerG = g.append('g');
+centerG.append('circle').attr('r', holeR).attr('fill','transparent');
+
+const cNum = centerG.append('text')
+  .attr('text-anchor','middle').attr('dy','-8')
+  .attr('font-family',"'DM Sans',sans-serif").attr('font-size', 36).attr('font-weight', 700)
+  .attr('fill','#C2510A').text('65');
+
+const cSub = centerG.append('text')
+  .attr('text-anchor','middle').attr('dy','6')
+  .attr('font-family',"'DM Sans',sans-serif").attr('font-size', 12).attr('font-weight', 400)
+  .attr('fill','#9b8f84').text('patients');
+
+const cLbl = centerG.append('text')
+  .attr('text-anchor','middle').attr('dy','22')
+  .attr('font-family',"'DM Sans',sans-serif").attr('font-size', 9).attr('fill','#9b8f84')
+  .text('');
+
+function toggleCat(name) {
+  if (selected === name) {
+    selected = null;
+    allArcs.forEach(p => p.attr('opacity', 1));
+    cNum.text('65');
+    cSub.text('patients');
+    cLbl.attr('font-size', 9).text('');
+    document.getElementById('detail-content').classList.remove('visible');
+    document.querySelectorAll('.leg-item').forEach(el => el.classList.remove('dim'));
+  } else {
+    selected = name;
+    const cat = categories.find(c => c.name === name);
+    const col = PALETTE[name];
+    allArcs.forEach(p => {
+      const d = p.datum();
+      p.attr('opacity', d && d.cat && d.cat.name === name ? 1 : 0.1);
+    });
+    const tot = d3.sum(cat.genes, gg => gg.n);
+    cNum.text(tot);
+    cSub.text('patients');
+    const geneCount = cat.genes.filter(g => g.gene !== 'mt-DNADEL').length;
+    cLbl.attr('font-size', 9).text(geneCount === 1 ? '1 gene' : geneCount + ' genes');
+
+    document.getElementById('detail-content').classList.add('visible');
+
+    const badge = document.getElementById('det-badge');
+    badge.textContent = name;
+    badge.style.background = col.fill;
+    badge.style.color = '#ffffff';
+    
+
+    document.getElementById('det-desc').textContent = cat.desc;
+
+    const gGrid = document.getElementById('det-genes');
+    gGrid.innerHTML = '';
+    cat.genes.forEach(gene => {
+      const pct = Math.round(gene.n / TOTAL * 100);
+      const row = document.createElement('div');
+      row.className = 'gene-row';
+      row.style.borderRadius = '7px 7px 7px 7px';
+      row.innerHTML = `<span class="gene-dot" style="background:${col.fill}"></span><span class="gene-name">${gene.gene === 'mt-DNADEL' ? 'mt-DNA deletions' : gene.gene}</span><span class="gene-n">n=${gene.n}</span><span class="gene-pct"> ${pct}%</span>`;
+
+      const detailEl = document.createElement('div');
+      detailEl.className = 'gene-detail';
+
+      const presentRows = gene.syndromesPresent.length
+        ? gene.syndromesPresent.map(s => `<tr><td>${s}</td><td></td></tr>`).join('')
+        : '';
+      const absentRows = gene.syndromesAbsent.length
+        ? gene.syndromesAbsent.map(s => `<tr><td></td><td>${s}</td></tr>`).join('')
+        : '';
+      const maxRows = Math.max(gene.syndromesPresent.length, gene.syndromesAbsent.length);
+      const tableRows = Array.from({length: maxRows}, (_, i) => {
+        const p = gene.syndromesPresent[i] || '';
+        const a = gene.syndromesAbsent[i] || '';
+        return `<tr><td>${p}</td><td>${a}</td></tr>`;
+      }).join('');
+
+      const syndromeTable = maxRows > 0 ? `
+        <table class="gd-table">
+          <thead><tr><th>Present in the cohort</th><th>Absent in the cohort</th></tr></thead>
+          <tbody>${tableRows}</tbody>
+        </table>` : '<span class="gd-val" style="color:#9b8f84;">—</span>';
+
+      const refLinks = gene.refs.map(r =>
+        `<span style="display:flex;gap:5px;align-items:baseline;"><span style="flex-shrink:0;color:#c8bdb5;">·</span><a href="${r.url}" target="_blank">${r.label}</a></span>`
+      ).join('');
+
+      detailEl.innerHTML = `
+        <div class="gd-row"><span class="gd-label">Full name</span><span class="gd-val">${gene.fullName}</span></div>
+        <div class="gd-row"><span class="gd-label">Protein</span><span class="gd-val">${gene.protein}</span></div>
+        <div class="gd-row"><span class="gd-label">Function</span><span class="gd-val">${gene.function}</span></div>
+        <div class="gd-row" style="flex-direction:column;gap:4px;"><span class="gd-label">Clinical syndromes</span>${syndromeTable}</div>
+        ${gene.notes ? `<div class="gd-row"><span class="gd-label">Notes</span><span class="gd-val">${gene.notes}</span></div>` : ''}
+        <div class="gd-row" style="flex-direction:column;gap:4px;"><span class="gd-label">Selected literature</span><span class="gd-val gd-refs">${refLinks}</span></div>
+      `;
+
+      row.addEventListener('click', e => {
+        e.stopPropagation();
+        const isOpen = detailEl.classList.contains('open');
+        gGrid.querySelectorAll('.gene-detail').forEach(d => d.classList.remove('open'));
+        if (!isOpen) detailEl.classList.add('open');
+        row.style.borderRadius = detailEl.classList.contains('open') ? '7px 7px 0 0' : '7px';
+      });
+
+      gGrid.appendChild(row);
+      gGrid.appendChild(detailEl);
+    });
+
+    document.querySelectorAll('.leg-item').forEach(el => {
+      el.classList.toggle('dim', el.dataset.cat !== name);
+    });
+  }
+}
+
+Object.entries(PALETTE).forEach(([name, c]) => {
+  const item = document.createElement('div');
+  item.className = 'leg-item';
+  item.dataset.cat = name;
+  item.innerHTML = `<span class="leg-dot" style="background:${c.fill}"></span><span>${name}</span>`;
+  item.addEventListener('click', () => toggleCat(name));
+  legendEl.appendChild(item);
+});
+</script>
+
+
+
+
+
+
+<style>
+:root { --arrow-col: #C2510A; }
+:root.dark { --arrow-col: #E8845A; }
+.ga [fill="#C2510A"] { fill: var(--arrow-col); }
+</style>
+</body>
+</html>

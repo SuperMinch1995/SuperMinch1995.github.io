@@ -2,7 +2,7 @@
 # Jekyll Config
 # --------------------
 baseurl: ""
-url: ""
+url: "https://minhchau-ta.github.io"
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
@@ -67,35 +67,35 @@ exclude:
 # -------------------
 # Theme Config
 # --------------------
-title: "Jekyll Curate"
+title: "Minh-Chau Ta, MD"
 category_dir: category
 
 colors:
   #light-mode colors
-  primary_bg: "#0d042b"
-  primary_bg_2: "#0d042b"
-  primary_bg_3: "#0d042b"
-  primary_text: "#fdfcf9"
-  base_bg: "#fdfcf9"
-  base_bg_2: "#f7f6ed"
-  base_bg_3: "#faebd7"
-  base_text: "#0d042b"
-  base_text_2: "#3b364c"
-  logo_text: "#0d042b"
-  header_text: "#0d042b"
+  primary_bg: "#F7F0E2"
+  primary_bg_2: "#F2E9D6"
+  primary_bg_3: "#EDE0C8"
+  primary_text: "#2C2416"
+  base_bg: "#FBF6EC"
+  base_bg_2: "#F7F0E2"
+  base_bg_3: "#F2E9D6"
+  base_text: "#2C2416"
+  base_text_2: "#4A3F2F"
+  logo_text: "#2C2416"
+  header_text: "#2C2416"
 
   # dark-mode colors
-  primary_bg_dark: "#fdfcf9"
-  primary_bg_2_dark: "#fdfcf9"
-  primary_bg_3_dark: "#fdfcf9"
-  primary_text_dark: "#0b0326"
-  base_bg_dark: "#0b0326"
-  base_bg_2_dark: "#150c32"
-  base_bg_3_dark: "#251654"
-  base_text_dark: "#f5f5ec"
-  base_text_2_dark: "#929eaf"
-  logo_text_dark: "#fdfcf9"
-  header_text_dark: "#fdfcf9"
+  primary_bg_dark: "#F0E8D8"
+  primary_bg_2_dark: "#F0E8D8"
+  primary_bg_3_dark: "#F0E8D8"
+  primary_text_dark: "#2C2416"
+  base_bg_dark: "#1C1917"
+  base_bg_2_dark: "#232019"
+  base_bg_3_dark: "#2A271F"
+  base_text_dark: "#E8DCC8"
+  base_text_2_dark: "#B8A888"
+  logo_text_dark: "#F0E8D8"
+  header_text_dark: "#F0E8D8"
 
 fonts:
   use_google_fonts: false
@@ -107,15 +107,15 @@ fonts:
   logo: "'DM Sans'"
 
 logo:
-  logo_text: "Jekyll Curate"
+  logo_text: "Minh-Chau Ta, MD"
   logo_image: assets/images/logo/logo.png
   logo_image_mobile: assets/images/logo/logo-mobile.png
   logo_image_invert: assets/images/logo/logo-invert.png
   logo_image_invert_mobile: assets/images/logo/logo-invert-mobile.png
-  logo_image_desktop_height: "28px"
-  logo_image_desktop_width: "28px"
-  logo_image_mobile_height: "28px"
-  logo_image_mobile_width: "28px"
+  logo_image_desktop_height: "48px"
+  logo_image_desktop_width: "48px"
+  logo_image_mobile_height: "40px"
+  logo_image_mobile_width: "40px"
   show_logo_image_on_mobile: true
   show_logo_image_on_desktop: true
   show_logo_text_on_mobile: false
@@ -127,8 +127,8 @@ header:
 open_graph:
   meta_opengraph_type: "website"
   meta_twitter_card: "summary"
-  meta_twitter_site: "@zerostaticio"
-  meta_twitter_creator: "@zerostaticio"
+  meta_twitter_site: ""
+  meta_twitter_creator: ""
 
 darkmode:
   enable_dark_mode: true
@@ -152,11 +152,11 @@ comments:
   commento:
     enabled: false # you must have a commento account and be on the correct domain. does not work locally.
   disqus:
-    shortname: "zerostatic" # Your disqus shortcode for example "zerostatic". leave this blank ie "" to disable.
+    shortname: "" # Your disqus shortcode for example "zerostatic". leave this blank ie "" to disable.
 
 newsletter:
   mailchimp:
-    form_action_url: https://zerostatic.us21.list-manage.com/subscribe/post?u=798e19886b83aaab346734382&amp;id=f1c526a772&amp;f_id=0027e3e6f0
+    form_action_url: ""
     form_title: "Let's keep in touch"
 
 contact_form: 
@@ -171,19 +171,19 @@ menu:
 
 footer:
   enable_footer: true # show/hide the entire footer
-  footer_title: "Jekyll Curate"
-  footer_description: "Curate is a creative portfolio for Jekyll by Zerostatic Themes."
+  footer_title: "Minh-Chau Ta, MD"
+  footer_description: ""
   enable_social_media_icons: true
   enable_contact_details: false
-  enable_menu_footer_primary: true
-  enable_menu_footer_secondary: true
+  enable_menu_footer_primary: false
+  enable_menu_footer_secondary: false
   enable_menu_footer_tertiary: false
-  footer_primary_menu_title: "Our Projects"
-  footer_secondary_menu_title: "Company"
+  footer_primary_menu_title: "Research"
+  footer_secondary_menu_title: "Links"
   footer_tertiary_menu_title: "Other"
 
 bottom:
-  enable_bottom: false # show/hide the entire bottom (below the footer)
+  enable_bottom: true # show/hide the entire bottom (below the footer)
   enable_bottom_menu: false # if enabled, the bottom menu can be edited in `_data/menu.yml`
-  copyright_text: "© 2021 Zerostatic Themes"
+  copyright_text: "© 2026 Minh-Chau Ta"
   show_rss_icon: true

@@ -1,46 +1,96 @@
 ---
 layout: basic
-title: "About Us"
-date: 2018-11-28T15:15:34+10:00
+title: "About"
+date: 2026-04-04
 permalink: "/about/"
-description: "Business plan hackathon handshake responsive web design."
-image: "/assets/images/gen/content/content-5.webp"
 ---
 
-# Creating Modern Websites
+<style>
+.about-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 2.5rem;
+}
+.photo-wrapper {
+  position: relative;
+  width: 300px;
+  min-width: 300px;
+  height: 380px;
+}
+.blob-orange {
+  position: absolute;
+  width: 260px;
+  height: 290px;
+  background: linear-gradient(135deg, #fff451, #FF6B00);
+  border-radius: 62% 38% 70% 30% / 45% 55% 45% 55%;
+  bottom: -40px;
+  left: -30px;
+  z-index: 0;
+  animation: morph-orange 8s ease-in-out infinite;
+}
+.blob-pink {
+  position: absolute;
+  width: 230px;
+  height: 280px;
+  background: linear-gradient(135deg, #FF4D8B, #FF8C42);
+  border-radius: 38% 62% 30% 70% / 55% 45% 55% 45%;
+  top: 30px;
+  right: -20px;
+  z-index: 0;
+  animation: morph-pink 9s ease-in-out infinite;
+}
+@keyframes morph-orange {
+  0%, 100% { border-radius: 62% 38% 70% 30% / 45% 55% 45% 55%; }
+  33%       { border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%; }
+  66%       { border-radius: 30% 70% 55% 45% / 38% 62% 38% 62%; }
+}
+@keyframes morph-pink {
+  0%, 100% { border-radius: 38% 62% 30% 70% / 55% 45% 55% 45%; }
+  33%       { border-radius: 70% 30% 60% 40% / 45% 55% 35% 65%; }
+  66%       { border-radius: 45% 55% 40% 60% / 62% 38% 62% 38%; }
+}
+.photo-wrapper img {
+  position: absolute;
+  z-index: 1;
+  width: 240px;
+  border-radius: 6px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+</style>
 
-Web design encompasses many different skills and disciplines in the production and maintenance of websites.
+<div class="about-header">
+  <div class="photo-wrapper">
+    <div class="blob-orange"></div>
+    <div class="blob-pink"></div>
+    <img src="/assets/images/Pro_linkedin.jpg" alt="Minh-Chau Ta, MD">
+  </div>
+  <div>
+    <h1 style="margin-top: 0;">Minh-Chau Ta, MD</h1>
+    <p>Born in 1995 in Vietnam, I moved to France at age 7. I earned my medical degree at Sorbonne University in Paris, then completed a residency in pathology with a focus on molecular genetics.</p>
+    <p>During my full-time residency, I earned a Master of Arts in Philosophy at Sorbonne University, where I developed a way of thinking that helps me simplify complexity.</p>
+    <p>I presented my research at international conferences in the U.S. and Europe and received several awards, including the 2023 research grant from the French Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
+  </div>
+</div>
 
-Often many individuals will work in teams covering different aspects of the design process, although some designers will cover them all. Web design partially overlaps web engineering in the broader scope of web development.
+## Research Interests
 
-## What is Web Design?
+- Brain-gut axis
+- Clinical Nutrition
+- Dermatopathology
+- Tumoral clonal evolution
 
-User experience is about how a user interacts with, and experiences, a particular product, system or service. As a UX designer, you should consider the Why, What and How of product use.
+## Education
 
-{% include framework/shortcodes/figure.html src="/assets/images/gen/content/content-1.webp" title="Steve Francia" caption="Designing in Figma" alt="Photo of designing a website in Figma" link="https://figma.com" target="\_blank" %}
+- **MD** — Sorbonne University, Paris, France
+- **Residency in Pathology** — Paris, France
+- **MA in Philosophy** — Sorbonne University, Paris, France
 
-## Front-end Development
+## Awards & Grants
 
-The What addresses the things people can do with a product—its functionality. Finally, the How relates to the design of functionality in an accessible and aesthetically pleasant way. UX designers start with the Why before determining the What and then, finally, the How in order to create products that users can form meaningful experiences with. In software designs, you will need to ensure the product’s “substance” comes through an existing device and offers a seamless, fluid experience.
-
-> As a UX designer, you should consider the Why, What and How of product use.
-
-Web designers are expected to have an awareness of usability and if their role involves creating markup then they are also expected to be up to date with web accessibility guidelines.
-
-## Design Systems
-
-A Design System is a set of interconnected patterns and shared practices coherently organized to aid in digital product design and development of products such as apps or websites.
-
-{% include framework/shortcodes/youtube.html id='2M6dJ2Uynhg' %}
-
-## Process
-
-There are two primary jobs involved in creating a website: the web designer and web developer, who often work closely together on a website. The web designers are responsible for the visual aspect, which includes the layout, coloring and typography of a web page.
-
-- User experience research
-- Visual design and illustration
-- Programming and coding
-
-![Design In Figma]({{ "/assets/images/gen/content/content-2.webp" | relative_url }})
-
-Web designers will also have a working knowledge of markup languages such as HTML and CSS, although the extent of their knowledge will differ from one web designer to another.
+- Annual Research Grant — French Society of Pathology
+- Bernard Beaufrère Research Prize - French-speaking Society for Clinical Nutrition and Metabolism
+- Best Medical Thesis Prize — Rotary Club of Paris

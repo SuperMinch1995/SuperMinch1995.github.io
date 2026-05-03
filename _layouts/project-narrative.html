@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+{% assign project = page %}
+
+<div class="section" style="overflow-x:hidden;">
+  <div class="wrapper">
+
+    {% comment %} ── Hero : image pleine largeur + titre centré ── {% endcomment %}
+    <div class="narrative-hero">
+      {% if project.gallery and project.gallery.size > 0 %}
+        <div class="narrative-hero-image">
+          <img src="{{ project.gallery[0].image }}" alt="{{ project.title }}">
+        </div>
+      {% elsif project.thumbnail %}
+        <div class="narrative-hero-image">
+          <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+        </div>
+      {% endif %}
+
+      <div class="narrative-hero-text">
+        <div class="narrative-meta">
+          {% for category in project.categories %}
+            <a href="/category/{{ category | slugify }}" class="narrative-category">{{ category }}</a>
+          {% endfor %}
+        </div>
+        <h1 class="narrative-title">{{ project.title }}</h1>
+        {% if project.description %}
+          <p class="narrative-description">{{ project.description }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    {% comment %} ── Corps narratif pleine largeur ── {% endcomment %}
+    <div class="narrative-body">
+      {{ content }}
+    </div>
+
+    {% comment %} ── Métadonnées projet ── {% endcomment %}
+    <div class="narrative-footer">
+      {% if project.client %}
+        <div class="narrative-meta-item"><span class="narrative-meta-label">Client</span><span>{{ project.client }}</span></div>
+      {% endif %}
+      {% if project.role %}
+        <div class="narrative-meta-item"><span class="narrative-meta-label">Role</span><span>{{ project.role }}</span></div>
+      {% endif %}
+      {% if project.date %}
+        <div class="narrative-meta-item"><span class="narrative-meta-label">Date</span><span>{{ project.date | date: "%d %B %Y" }}</span></div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>

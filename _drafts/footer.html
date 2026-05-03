@@ -1,0 +1,240 @@
+<style>
+:root { --mc-accent: #C2510A; --mc-accent-bg: #fdf0e9; }
+html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
+.footer-feedback {
+  padding-top: 0.2rem;
+}
+.footer-built {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--color-base-text);
+  margin: 0 0 0.35rem;
+}
+.footer-prompt {
+  font-size: 0.82em;
+  color: var(--color-base-text);
+  opacity: 0.6;
+  margin: 0;
+}
+.footer-feedback-btn {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--mc-accent);
+  color: var(--mc-accent);
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  line-height: 1.4;
+}
+.footer-feedback-btn:hover { opacity: 0.7; }
+
+/* ── Feedback modal ── */
+.feedback-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.feedback-modal-overlay.open { display: flex; }
+.feedback-modal {
+  background: var(--color-base-bg);
+  border-radius: 8px;
+  padding: 2rem 2.2rem;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+  position: relative;
+}
+.feedback-modal h3 {
+  margin: 0 0 1.2rem;
+  font-size: 1.1em;
+  color: var(--color-base-text);
+}
+.feedback-modal label {
+  display: block;
+  font-size: 0.82em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-base-text);
+  opacity: 0.6;
+  margin-bottom: 0.3rem;
+}
+.feedback-modal textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.93em;
+  background: var(--color-base-bg);
+  color: var(--color-base-text);
+  margin-bottom: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+}
+.feedback-modal textarea:focus { outline: none; border-color: var(--mc-accent); }
+.feedback-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-bottom: 1rem;
+}
+.feedback-tile {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 9px 10px;
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--color-base-text);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.feedback-tile:hover { border-color: var(--mc-accent); color: var(--mc-accent); }
+.feedback-tile.active {
+  border-color: var(--mc-accent);
+  color: var(--mc-accent);
+  background: var(--mc-accent-bg);
+}
+.feedback-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+.feedback-btn-cancel {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  font-size: 0.88em;
+  color: var(--color-base-text);
+  font-family: inherit;
+}
+.feedback-btn-submit {
+  background: var(--mc-accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em 1.4em;
+  cursor: pointer;
+  font-size: 0.88em;
+  font-weight: 600;
+  font-family: inherit;
+}
+.feedback-modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+  opacity: 0.4;
+  color: var(--color-base-text);
+}
+.feedback-modal-close:hover { opacity: 1; }
+</style>
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-4">
+        <div class="footer-feedback">
+          <p class="footer-built">Built by Minh.</p>
+          <p class="footer-prompt">See something to improve? <button class="footer-feedback-btn" onclick="document.getElementById('feedbackModal').classList.add('open')">Share feedback &rarr;</button></p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8 mt-gutter mt-md-0">
+        <div class="row justify-content-end">
+
+          {% if site.footer.enable_menu_footer_primary %}
+            <div class="col-12 col-md-3 mt-gutter mt-md-0">
+              <div class="footer-menu">
+                {% if site.footer.footer_primary_menu_title %}
+                  <h3>{{ site.footer.footer_primary_menu_title }}</h3>
+                {% endif %}
+                {% include framework/menu-footer.html menu=site.data.menu.footer_primary %}
+              </div>
+            </div>
+          {% endif %}
+
+          {% if site.footer.enable_menu_footer_secondary %}
+            <div class="col-12 col-md-3 mt-gutter mt-md-0">
+              <div class="footer-menu">
+                {% if site.footer.footer_secondary_menu_title %}
+                  <h3>{{ site.footer.footer_secondary_menu_title }}</h3>
+                {% endif %}
+                {% include framework/menu-footer.html menu=site.data.menu.footer_secondary %}
+              </div>
+            </div>
+          {% endif %}
+
+          {% if site.footer.enable_menu_footer_tertiary %}
+            <div class="col-12 col-md-3 mt-gutter mt-md-0">
+              <div class="footer-menu">
+                {% if site.footer.footer_tertiary_menu_title %}
+                  <h3>{{ site.footer.footer_tertiary_menu_title }}</h3>
+                {% endif %}
+                {% include framework/menu-footer.html menu=site.data.menu.footer_tertiary %}
+              </div>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+
+    </div>
+
+    {% if site.footer.enable_contact_details %}
+    <div class="row justify-content-end mt-2">
+      <div class="col-12 col-md-4">
+        <h3>Contact Us</h3>
+        {% include framework/contact.html contact=site.data.contact %}
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
+<!-- Feedback modal -->
+<div class="feedback-modal-overlay" id="feedbackModal">
+  <div class="feedback-modal">
+    <button class="feedback-modal-close" onclick="document.getElementById('feedbackModal').classList.remove('open')">&times;</button>
+    <h3>Share feedback</h3>
+    <div class="feedback-grid">
+      <div class="feedback-tile" onclick="this.classList.toggle('active')">Report a bug</div>
+      <div class="feedback-tile" onclick="this.classList.toggle('active')">Something unclear</div>
+      <div class="feedback-tile" onclick="this.classList.toggle('active')">Improve design</div>
+      <div class="feedback-tile" onclick="this.classList.toggle('active')">Share idea</div>
+    </div>
+    <label>Message</label>
+    <textarea placeholder="Tell me more…"></textarea>
+    <div class="feedback-modal-footer">
+      <button class="feedback-btn-cancel" onclick="document.getElementById('feedbackModal').classList.remove('open')">Cancel</button>
+      <button class="feedback-btn-submit">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var modal = document.getElementById('feedbackModal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  }
+})();
+</script>

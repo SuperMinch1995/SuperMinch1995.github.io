@@ -1,13 +1,163 @@
+// ── Heading h1 ────────────────────────────────────────────────────────
 .heading .heading-heading h1 {
-  @include media-breakpoint-up(lg) {
-    font-size: 86px;
-    line-height: 1;
-    width: 80%;
-    letter-spacing: -2px;
-    font-weight: 700;
-   
-  }
   strong {
     text-decoration-color: var(--color-base-bg-3);
   }
+}
+
+// Override width: 80% du thème sur grands écrans
+@media (min-width: 992px) {
+  .heading .heading-heading h1,
+  .heading .heading-heading .h1 {
+    width: 100% !important;
+    font-size: 2.2rem !important;
+  }
+}
+
+// ── Conferences section ─────────────────────────────────────────────
+.conf-fieldset {
+  display: inline-block;
+  width: fit-content;
+  border: 1px dashed rgba(44, 36, 22, 0.25);
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem 0.75rem 1rem;
+  margin: 0.5rem 0 0;
+}
+
+.conf-legend {
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-base-text);
+  padding: 0 0.5rem;
+  opacity: 0.55;
+}
+
+// ── LinkedIn widget ─────────────────────────────────────────────────
+.li-link {
+  font-size: 0.78rem !important;
+  color: var(--color-base-text) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  margin-left: auto !important;
+  opacity: 0.8 !important;
+  border-bottom: none !important;
+}
+.li-link:hover {
+  opacity: 1 !important;
+  text-decoration: underline !important;
+}
+
+// ── Pages conférences ───────────────────────────────────────────────
+.page-basic .section .col-12.col-lg-8:has(.conf-with-sidebar) {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+}
+.page-basic .section .row:has(.conf-with-sidebar) {
+  justify-content: flex-start !important;
+}
+
+// ── Layout page home — alignement et centrage ───────────────────────
+.conf-section {
+  display: flex;
+  justify-content: center;
+}
+.page-home .heading-heading,
+.page-home .heading-description {
+  max-width: 836px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.page-home .tagline-row {
+  max-width: 836px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page-home p {
+  max-width: 836px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ── Responsive mobile ───────────────────────────────────────────────
+@media (max-width: 767px) {
+  .conf-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.2rem !important;
+  }
+  .conf-panels {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 1rem !important;
+  }
+  .pub-fieldset,
+  .conf-fieldset {
+    width: 100% !important;
+    white-space: normal !important;
+  }
+  .conf-photo img {
+    height: 120px !important;
+  }
+  .page-home .heading-heading,
+  .page-home .heading-description,
+  .page-home .tagline-row,
+  .page-home p {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .an-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .cipo-section {
+    text-align: center;
+  }
+  .cipo-stats-row {
+    gap: 1rem !important;
+  }
+}
+
+// ── Dark mode ───────────────────────────────────────────────────────
+[data-bs-theme="dark"] .kw { color: #E8845A !important; }
+
+[data-bs-theme="dark"] .tagline-row .badge {
+  color: #E8845A !important;
+  border-color: #E8845A !important;
+}
+
+[data-bs-theme="dark"] .pub-list a {
+  color: #E8845A !important;
+}
+
+[data-bs-theme="dark"] .conf-list a {
+  color: #E8845A !important;
+}
+
+// ── Vidéo allvariants ──────────────────────────────────────────────
+.q247p-section video {
+  overflow: visible;
+  border-radius: 8px;
+}
+
+// ── Global links ───────────────────────────────────────────────────
+a {
+  color: #C2510A;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+[data-bs-theme="dark"] a {
+  color: #E8845A;
+}
+
+// ── Suppression soulignement global ────────────────────────────────
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: underline !important;
 }

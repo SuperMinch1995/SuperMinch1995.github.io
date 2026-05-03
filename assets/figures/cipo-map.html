@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIPO Patient Map</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    background: transparent;
+  }
+
+  #map-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: transparent;
+  }
+
+  #map-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 18px 14px;
+    flex-wrap: wrap;
+  }
+
+  .map-title {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4a4540;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .map-subtitle {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    color: #4a4540;
+    font-weight: 400;
+  }
+
+  .map-count {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    color: #4a4540;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
+  #map {
+    width: 100%;
+    height: 490px;
+    background: #e8e3db;
+  }
+
+  .leaflet-container {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    background: #e8e3db !important;
+  }
+
+  .leaflet-tile-pane {
+    filter: saturate(0.07) brightness(1.07) sepia(0.10);
+  }
+
+  .leaflet-control-zoom a {
+    border-color: #ddd !important;
+    color: #666 !important;
+    background: #FAF7F2 !important;
+  }
+
+  .count-label {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    color: #fff;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+    line-height: 1;
+  }
+
+  /* Dark mode — appliqué uniquement si système sombre ET site sombre */
+  body.dark {
+    background: #1C1917;
+  }
+  body.dark #map-wrapper {
+    background: #1C1917;
+  }
+  body.dark .map-title { color: #9E9890; }
+  body.dark .map-subtitle { color: #9E9890; }
+  body.dark .map-count { color: #9E9890; }
+  body.dark #map { background: #2A271F; }
+  body.dark .leaflet-container { background: #2A271F !important; }
+  body.dark .leaflet-tile-pane { filter: none; }
+  body.dark .leaflet-control-zoom a {
+    border-color: #3a3530 !important;
+    color: #9E9890 !important;
+    background: #232019 !important;
+  }
+</style>
+</head>
+<body>
+
+<div id="map-wrapper">
+  <div id="map-header">
+    <div style="display:flex;flex-direction:column;gap:2px;">
+      <span class="map-title">Where Patients Were Born <span style="font-weight:400;">— Cohort of</span> Ta et al., <em style="font-weight:400;">Am J Gastroenterol</em> 2026</span>
+      <span class="map-subtitle">Zoom in to reveal patient counts</span>
+    </div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+
+const PATIENTS = [
+  ["Reunion Island",55.52,-21.13],
+  ["Reunion Island",55.53,-21.14],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["79140",-0.65,46.85],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["Mayotte",45.15,-12.82],
+  ["81000",2.14,43.92],
+  ["Comoros",44.28,-12.20],
+  ["Ile-de-France",2.33,48.86],
+  ["26000",4.90,44.92],
+  ["18700",2.39,47.46],
+  ["90000",6.85,47.64],
+  ["51140",3.84,49.31],
+  ["Mayotte",45.15,-12.82],
+  ["76400",0.40,49.73],
+  ["Ile-de-France",2.33,48.86],
+  ["44000",-1.55,47.22],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["Algeria",2.99,28.00],
+  ["Ile-de-France",2.33,48.86],
+  ["54000",6.17,48.69],
+  ["91600",2.34,48.68],
+  ["44000",-1.55,47.22],
+  ["41100",1.09,47.79],
+  ["French Guiana",-52.99,4.00],
+  ["44230",-1.50,47.20],
+  ["49000",-0.51,47.52],
+  ["44800",-1.63,47.22],
+  ["Algeria",2.99,28.00],
+  ["Algeria",2.99,28.00],
+  ["Ile-de-France",2.33,48.86],
+  ["13080",5.42,43.49],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["Bolivia",-64.99,-17.05],
+  ["Bolivia",-64.99,-17.05],
+  ["Ile-de-France",2.33,48.86],
+  ["76400",0.40,49.73],
+  ["Ile-de-France",2.33,48.86],
+  ["51000",4.37,48.96],
+  ["41200",1.79,47.39],
+  ["Martinique",-61.01,14.63],
+  ["76700",0.23,49.50],
+  ["Lebanon",35.84,33.87],
+  ["Ile-de-France",2.33,48.86],
+  ["23000",1.87,46.17],
+  ["95100",2.24,48.95],
+  ["13208",5.36,43.29],
+  ["62310",2.09,50.50],
+  ["76310",0.07,49.50],
+  ["97110",-61.53,16.24],
+  ["Cameroon",13.15,4.61],
+  ["Chile",-71.31,-31.76],
+  ["Portugal",-8.13,39.66],
+  ["57000",6.17,49.10],
+  ["29600",-3.85,48.55],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["59100",3.18,50.68],
+  ["77000",2.68,48.52],
+  ["50800",-1.25,48.82],
+  ["68000",7.36,48.11],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["82000",1.36,44.02],
+  ["35000",-1.68,48.10],
+  ["Ile-de-France",2.33,48.86],
+  ["77177",2.64,48.88],
+  ["64500",-1.63,43.38],
+  ["Germany",10.44,51.16],
+  ["Mayotte",45.15,-12.82],
+  ["Ile-de-France",2.33,48.86],
+  ["49330",-0.61,47.72],
+  ["Ile-de-France",2.33,48.86],
+  ["Reunion Island",55.52,-21.13],
+  ["Cambodia",104.81,12.54],
+  ["76600",0.12,49.49],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["Cameroon",13.15,4.61],
+  ["29000",-4.11,47.99],
+  ["Ile-de-France",2.33,48.86],
+  ["34000",3.87,43.61],
+  ["34000",3.87,43.61],
+  ["25200",6.80,47.52],
+  ["Mayotte",45.15,-12.82],
+  ["18270",2.31,46.54],
+  ["69004",4.82,45.78],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["49000",-0.51,47.52],
+  ["Algeria",2.99,28.00],
+  ["50800",-1.25,48.82],
+  ["Ile-de-France",2.33,48.86],
+  ["Italy",12.67,42.63],
+  ["69560",4.83,45.53],
+  ["Ile-de-France",2.33,48.86],
+  ["67150",7.66,48.41],
+  ["Congo",23.82,-2.98],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["77000",2.68,48.52],
+  ["69004",4.82,45.78],
+  ["45000",1.91,47.91],
+  ["37600",1.03,47.05],
+  ["Ile-de-France",2.33,48.86],
+  ["57200",7.10,49.10],
+  ["80000",2.27,49.89],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["Belgium",4.66,50.64],
+  ["28100",1.35,48.74],
+  ["Burgundy",5.07,47.05],
+  ["Ile-de-France",2.33,48.86],
+  ["Ile-de-France",2.33,48.86],
+  ["85000",-1.42,46.67],
+  ["Ile-de-France",2.33,48.86],
+  ["Serbia",20.55,44.15],
+  ["Luxembourg",6.12,49.81],
+  ["Algeria",2.99,28.00],
+  ["New Caledonia",166.45,-22.26],
+  ["54000",6.17,48.69],
+  ["14000",-0.37,49.18],
+  ["Ile-de-France",2.33,48.86]
+];
+
+// ── Détection du thème via postMessage du parent, fallback système ────────────
+const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentDark = isDark;
+
+function applyTheme(dark) {
+  currentDark = dark;
+  if (dark) {
+    document.body.classList.add('dark');
+  } else {
+    document.body.classList.remove('dark');
+  }
+  // Changer les tuiles
+  if (tileLayer) {
+    map.removeLayer(tileLayer);
+    tileLayer = dark ? darkTiles : lightTiles;
+    tileLayer.addTo(map);
+    map.getPane('tilePane').style.filter = dark ? 'none' : 'saturate(0.07) brightness(1.07) sepia(0.10)';
+  }
+  // Mettre à jour la couleur des ronds
+  ACCENT = dark ? '#E8845A' : '#E8845A';
+  buildMarkers();
+}
+
+// Écoute le thème envoyé par la page parente
+window.addEventListener('message', function(e) {
+  if (e.data && typeof e.data.dark !== 'undefined') {
+    applyTheme(e.data.dark);
+  }
+});
+
+// Demande le thème au parent
+window.parent.postMessage({ requestTheme: true }, '*');
+
+// ── Clustering ───────────────────────────────────────────────────────────────
+function haversine(lat1, lng1, lat2, lng2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat/2)**2 +
+            Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) *
+            Math.sin(dLng/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+const MERGE_KM = 50;
+const points = PATIENTS.map(([label, lng, lat]) => ({ label, lng, lat }));
+const assigned = new Array(points.length).fill(-1);
+const clusters = [];
+
+points.forEach((pt, i) => {
+  if (assigned[i] !== -1) return;
+  const clusterIdx = clusters.length;
+  clusters.push({ members: [i], lat: pt.lat, lng: pt.lng, label: pt.label });
+  assigned[i] = clusterIdx;
+  points.forEach((other, j) => {
+    if (assigned[j] !== -1) return;
+    if (haversine(pt.lat, pt.lng, other.lat, other.lng) <= MERGE_KM) {
+      clusters[clusterIdx].members.push(j);
+      assigned[j] = clusterIdx;
+      if (isNaN(parseInt(other.label.charAt(0)))) clusters[clusterIdx].label = other.label;
+    }
+  });
+  const c = clusters[clusterIdx];
+  c.lat = c.members.reduce((s, idx) => s + points[idx].lat, 0) / c.members.length;
+  c.lng = c.members.reduce((s, idx) => s + points[idx].lng, 0) / c.members.length;
+});
+
+function r(n) { return 5 + 5.5 * Math.sqrt(n); }
+
+let ACCENT = isDark ? '#E8845A' : '#E8845A';
+
+// ── Carte ────────────────────────────────────────────────────────────────────
+const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 19 });
+const darkTiles  = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',  { maxZoom: 19 });
+
+const map = L.map('map', {
+  center: [25, 15], zoom: 2,
+  zoomControl: true,
+  attributionControl: false
+});
+
+let tileLayer = isDark ? darkTiles : lightTiles;
+tileLayer.addTo(map);
+
+if (!isDark) {
+  map.getPane('tilePane').style.filter = 'saturate(0.07) brightness(1.07) sepia(0.10)';
+}
+
+// Appliquer la classe dark si nécessaire
+if (isDark) document.body.classList.add('dark');
+
+const LABEL_ZOOM = 4;
+const circleLayer = L.layerGroup().addTo(map);
+const labelLayer  = L.layerGroup().addTo(map);
+
+function buildMarkers() {
+  circleLayer.clearLayers();
+  labelLayer.clearLayers();
+  const showLabels = map.getZoom() >= LABEL_ZOOM;
+  clusters.forEach(c => {
+    const n = c.members.length;
+    const radius = r(n);
+    const fontSize = Math.max(9, Math.min(14, radius * 0.7));
+    L.circleMarker([c.lat, c.lng], {
+      radius,
+      fillColor: ACCENT,
+      color: currentDark ? 'transparent' : '#EDE8DF',
+      weight: currentDark ? 0 : 0.6,
+      fillOpacity: 0.75,
+      interactive: false
+    }).addTo(circleLayer);
+    if (showLabels) {
+      const size = radius * 2;
+      const icon = L.divIcon({
+        className: 'count-label',
+        html: `<div style="width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;font-size:${fontSize}px;">${n}</div>`,
+        iconSize: [size, size],
+        iconAnchor: [radius, radius]
+      });
+      L.marker([c.lat, c.lng], { icon, interactive: false }).addTo(labelLayer);
+    }
+  });
+}
+
+buildMarkers();
+map.on('zoomend', buildMarkers);
+
+</script>
+</body>
+</html>
