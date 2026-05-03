@@ -23,6 +23,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','DM Sans',sans-seri
   --text-tertiary:#9a918a;
   --radius-md:8px;
   --radius-lg:10px;
+  --orange:#C2510A;
 }
 [data-bs-theme="dark"],
 :root:where([data-bs-theme="dark"]){
@@ -34,6 +35,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','DM Sans',sans-seri
   --text-primary:#f0ebe4;
   --text-secondary:#a89880;
   --text-tertiary:#6e6058;
+  --orange:#E8845A;
 }
 @media(prefers-color-scheme:dark){
   :root:not([data-bs-theme="light"]){
@@ -45,6 +47,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','DM Sans',sans-seri
     --text-primary:#f0ebe4;
     --text-secondary:#a89880;
     --text-tertiary:#6e6058;
+    --orange:#E8845A;
   }
 }
 
@@ -126,10 +129,26 @@ input[type=range]{flex:1;accent-color:var(--text-secondary)}
 <body>
 <div class="fig">
 
-<div style="text-align:center;margin-bottom:5px;font-size:15px;font-style:italic;color:var(--text-tertiary);letter-spacing:.04em">ACTG2</div>
-<div class="slider-row" style="justify-content:center;gap:14px">
+<div style="text-align:center;margin-bottom:14px;font-size:15px;font-style:italic;color:var(--text-tertiary);letter-spacing:.04em">ACTG2</div>
+
+<!-- Flèche orange seule, centrée -->
+<div id="slider-arrow-hint" style="display:flex;justify-content:center;margin-bottom:10px;margin-left:10px;pointer-events:none;transition:opacity .4s ease">
+  <svg width="260" height="22" viewBox="0 0 260 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M4 11 Q65 7, 130 11 Q195 15, 246 11" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" fill="none"
+          stroke-dasharray="245" stroke-dashoffset="245" opacity=".8">
+      <animate attributeName="stroke-dashoffset" from="245" to="0" dur="0.75s" begin="0.3s" fill="freeze"/>
+    </path>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="0.8" dur="0.15s" begin="1.0s" fill="freeze"/>
+      <path d="M246 11 L234 5 M246 11 L234 17" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </svg>
+</div>
+
+<!-- Slider + labels -->
+<div class="slider-row" style="justify-content:center;gap:14px;margin-bottom:18px">
   <span class="mode-pill" id="pill-wt" style="border-color:var(--text-tertiary);color:var(--text-tertiary);background:transparent;font-size:15px;transition:all .3s">wild-type Q247</span>
-  <input type="range" id="sl" min="0" max="100" value="0" step="1" oninput="onSl(+this.value)" style="flex:0 0 260px">
+  <input type="range" id="sl" min="0" max="100" value="0" step="1" oninput="onSl(+this.value);hideArrow()" style="flex:0 0 260px">
   <span class="mode-pill" id="pill-mut" style="border-color:var(--text-tertiary);color:var(--text-tertiary);background:transparent;font-size:15px;transition:all .3s">mutant P247</span>
 </div>
 
@@ -360,6 +379,7 @@ const DATA={
   mut:{badges:[{txt:'Uncharged',bg:'var(--bg-secondary)',border:'var(--border-light)',col:'var(--text-secondary)'},{txt:'Nonpolar',bg:'rgba(216,90,48,.1)',border:'#D85A30',col:'#993C1D'}],chemNote:'The pyrrolidine ring of P247 bonds back onto backbone N, eliminating the NH donor and locking the dihedral. This rigid constraint in a naturally dynamic polyproline-II (PPII) loop disrupts subdomain 3 geometry required for filament formation.',params:PARAMS.mut,vNote:{txt:'P245',col:'#D85A30'},nglCol:0xD85A30}
 };
 function lerpHex(h1,h2,t){const p=(h,s)=>parseInt(h.slice(s,s+2),16);return '#'+[1,3,5].map(s=>Math.round(p(h1,s)+(p(h2,s)-p(h1,s))*t).toString(16).padStart(2,'0')).join('');}
+function hideArrow(){const h=document.getElementById('slider-arrow-hint');if(h&&h.style.opacity!=='0'){h.style.opacity='0';setTimeout(()=>{h.style.display='none';},400);}}
 function onSl(v){
   const t=v/100,mode=v<50?'wt':'mut',d=DATA[mode],col=lerpHex('#1D9E75','#D85A30',t),c=mode==='wt'?CWT:CMT;
   
