@@ -36,9 +36,9 @@ body{font-family:'DM Sans',sans-serif;background:transparent;padding:1.5rem 15% 
 .cat-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:12px;border:none;letter-spacing:0.02em;}.cat-badge::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.5);flex-shrink:0;}
 .detail-desc{font-size:13px;color:var(--sb-text);line-height:1.65;margin-bottom:12px;}
 .gene-grid{display:flex;flex-direction:column;gap:4px;}
-.gene-hint{display:flex;align-items:center;gap:4px;justify-content:flex-end;margin:-4px 8px -2px 0;height:32px;pointer-events:none;}
+.gene-hint{display:flex;align-items:center;gap:6px;justify-content:flex-start;margin:6px 0 -8px 8px;height:36px;pointer-events:none;}
 .gene-hint-text{font-size:0.82em;font-style:italic;color:var(--sb-text2);opacity:0.85;}
-.gene-hint-arrow{width:60px;height:36px;display:block;}
+.gene-hint-arrow{width:50px;height:40px;display:block;}
 .gene-row{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:7px;background:var(--sb-bg2);cursor:pointer;transition:background .12s;}
 .gene-row:hover{background:var(--sb-bg3);}
 .gene-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
@@ -159,16 +159,16 @@ path.arc:hover{filter:brightness(1.18);}
           <p class="detail-desc" id="det-desc"></p>
           <div class="gene-hint" id="geneHint">
             <span class="gene-hint-text">Click a gene</span>
-            <svg class="gene-hint-arrow" viewBox="0 0 60 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <!-- curve bulging downward, pointing down-right toward the first gene -->
-              <path d="M6 8 Q20 32, 50 26" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" fill="none"
+            <svg class="gene-hint-arrow" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- curve bulging right, starting from top-left, ending pointing down -->
+              <path d="M8 6 Q42 14, 30 34" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" fill="none"
                     stroke-dasharray="80" stroke-dashoffset="80">
                 <animate attributeName="stroke-dashoffset" from="80" to="0" dur="0.6s" begin="0.2s" fill="freeze"/>
               </path>
-              <!-- arrowhead at end, pointing down-right -->
+              <!-- arrowhead at end, pointing down -->
               <g opacity="0">
                 <animate attributeName="opacity" from="0" to="1" dur="0.15s" begin="0.8s" fill="freeze"/>
-                <path d="M50 26 L44 22 M50 26 L46 32" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M30 34 L24 28 M30 34 L36 30" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               </g>
             </svg>
           </div>
