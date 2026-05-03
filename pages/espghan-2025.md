@@ -118,8 +118,6 @@ permalink: /conferences/espghan-2025/
 <img src="/assets/images/espghan-2025-2.jpg"
        style="width:100%;border-radius:10px;margin:1.8rem 0;">
 
-
-
   <div class="li-card">
     <strong>Want to learn more?</strong><br>
     <p style="margin-top:0.8rem;font-size:0.9rem;line-height:1.6;">
