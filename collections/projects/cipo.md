@@ -26,8 +26,6 @@ h1 { text-align: center; }
   margin: 0 0 2.5rem;
   letter-spacing: -0.01em;
 }
-  letter-spacing: -0.01em;
-}
 .cipo-map-frame {
   width: 100%;
   overflow: hidden;
@@ -305,9 +303,15 @@ h1 { text-align: center; }
   zoom: 0.82;
   display: block;
   width: 100%;
-  height: 1320px;
+  min-height: 600px;     /* fallback ; la hauteur réelle vient du postMessage q247pHeight */
   border: none;
   background: transparent;
+}
+@media (max-width: 768px) {
+  .q247p-frame iframe {
+    zoom: 1;             /* annule le zoom desktop — layout déjà responsive côté enfant */
+    min-height: 600px;   /* idem : auto-ajusté par postMessage */
+  }
 }
 </style>
 
