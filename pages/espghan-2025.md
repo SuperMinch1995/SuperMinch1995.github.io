@@ -6,95 +6,168 @@ permalink: /conferences/espghan-2025/
 
 <style>
 .section:first-of-type { padding-bottom: 0.5rem !important; }
-.conf-meta { color: var(--color-base-text-2); font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+/* HERO */
+.hero-title {
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  max-width: 700px;
+}
+
+.hero-sub {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: var(--color-base-text-2);
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* META */
+.conf-meta {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-base-text-2);
+}
+
 .conf-role {
-  display: inline-block; border: 1px solid var(--color-base-text-2);
-  border-radius: 20px; padding: 0.2rem 0.8rem; font-size: 0.78rem;
-  font-weight: 500; margin-bottom: 1.5rem; opacity: 0.7;
+  display: inline-block;
+  border: 1px solid var(--color-base-text-2);
+  border-radius: 20px;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.72rem;
+  margin-top: 0.6rem;
+  opacity: 0.7;
 }
+
+/* BODY */
+.conf-body {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-top: 1.8rem;
+  max-width: 600px;
+}
+
+/* QUOTE */
+.conf-quote {
+  margin: 2.5rem 0;
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--color-base-text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 620px;
+}
+
+.conf-quote-meta {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--color-base-text-2);
+}
+
+/* LINKEDIN CARD */
 .li-card {
-  max-width: 560px; border: 1px solid var(--color-base-bg-3);
-  border-radius: 12px; padding: 1.25rem 1.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--color-base-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  margin-bottom: 2rem;
+  max-width: 560px;
+  border: 1px solid var(--color-base-bg-3);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  background: var(--color-base-bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-top: 2.5rem;
 }
-.li-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-.li-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
-.li-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.li-name { font-weight: 600; font-size: 0.95rem; color: var(--color-base-text); line-height: 1.2; }
-.li-subtitle { font-size: 0.78rem; color: var(--color-base-text-2); line-height: 1.3; }
-.li-body { font-size: 0.88rem; color: var(--color-base-text); line-height: 1.65; margin-bottom: 0.75rem; }
-.li-body p { margin: 0 0 0.65rem 0; }
-.li-body p:last-child { margin-bottom: 0; }
-.li-tag { color: #0a66c2; }
-.li-photo-placeholder {
-  width: 100%; aspect-ratio: 16/9; background: var(--color-base-bg-2);
-  border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  color: var(--color-base-text-2); font-size: 0.85rem; margin: 0.75rem 0;
-  border: 2px dashed var(--color-base-text-2); opacity: 0.5;
-}
-.li-footer {
-  border-top: 1px solid var(--color-base-bg-3); padding-top: 0.75rem;
-  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
-}
-.li-stat { font-size: 0.8rem; color: var(--color-base-text-2); }
-
-
-.li-comments { margin-top: 1rem; border-top: 1px solid var(--color-base-bg-3); padding-top: 0.75rem; display: flex; flex-direction: column; gap: 0.65rem; }
-.li-comment { display: flex; gap: 0.6rem; }
-.li-comment-avatar {
-  width: 34px; height: 34px; border-radius: 50%; background: var(--color-base-bg-3);
-  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-  font-size: 0.68rem; color: var(--color-base-text-2); font-weight: 600;
-}
-.li-comment-body {
-  background: var(--color-base-bg-2); border-radius: 8px; padding: 0.5rem 0.75rem;
-  font-size: 0.82rem; color: var(--color-base-text); line-height: 1.5; flex: 1;
-}
-.li-comment-name { font-weight: 600; font-size: 0.8rem; margin-bottom: 0.1rem; color: var(--color-base-text); }
-.li-comment-title { font-size: 0.72rem; color: var(--color-base-text-2); margin-bottom: 0.3rem; }
 </style>
-<div class="conf-with-sidebar" style="display:flex;gap:2rem;align-items:flex-start;max-width:960px;margin:0 auto;">
-<div style="flex:1;min-width:0;max-width:580px;">
-<div class="conf-meta">📍 Helsinki, Finland &nbsp;·&nbsp; May 2025</div>
-<span class="conf-role">Speaker</span>
 
-<div class="li-card">
-  <div class="li-header">
-    <div class="li-avatar-initials" style="width:48px;height:48px;border-radius:50%;background:var(--color-base-bg-3);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:600;color:var(--color-base-text-2);flex-shrink:0;">MT</div>
-    <div>
-      <div class="li-name">Minh-Chau Ta, MD</div>
-      <div class="li-subtitle">Physician-Researcher · Pathology &amp; Molecular Genetics</div>
+<div style="display:flex;gap:2.5rem;max-width:1000px;margin:0 auto;">
+
+<!-- MAIN -->
+<div style="flex:1;max-width:620px;">
+
+  <section>
+    <h1 class="hero-title">
+      Presenting at one of the world’s leading pediatric gastroenterology conferences
+    </h1>
+
+    <p class="hero-sub">
+      International experts. Cutting-edge pediatric research. A highly selective scientific program bringing together the forefront of gastroenterology, hepatology, and nutrition.
+    </p>
+
+    <div class="conf-meta">Helsinki, Finland · May 2025</div>
+    <span class="conf-role">Speaker</span>
+  </section>
+
+  <img src="/assets/images/espghan-2025-1.jpg"
+       style="width:100%;border-radius:10px;margin:1.8rem 0;">
+
+  <div class="conf-body">
+    <p>
+      The work was presented at the 57th annual meeting of ESPGHAN — a major European conference gathering leading clinicians and researchers dedicated to pediatric digestive diseases.
+    </p>
+
+    <p>
+      The research contributed to ongoing discussions on rare and complex gastrointestinal disorders, with a strong focus on translational impact, from mechanistic understanding to patient care.
+    </p>
+
+    <p>
+      Beyond the presentation itself, the conference offered a unique opportunity to engage with global experts, sharing perspectives and existing approaches in a rapidly evolving field.
+    </p>
+
+    <p>
+      And somewhere between scientific sessions and conversations, one word captured the spirit of the experience: <strong>Sisu</strong> — the Finnish concept of resilience, determination, and quiet strength.
+    </p>
+  </div>
+
+<img src="/assets/images/espghan-2025-2.jpg"
+       style="width:100%;border-radius:10px;margin:1.8rem 0;">
+
+  <div class="conf-quote">
+    “An environment where rigorous science meets humility, collaboration, and the drive to push boundaries in pediatric care.”
+    
+    <div class="conf-quote-meta">
+      — Reflections from ESPGHAN 2025
     </div>
   </div>
-  <div class="li-body">
-    <p>I presented our work at the 57th European Society of Paediatric Gastroenterology, Hepatology and Nutrition (ESPGHAN) in Helsinki, Finland — and learned a wonderful word: Sisu!</p>
-    <p>Thank you <span class="li-tag">#ESPGHAN25</span> 🇫🇮</p>
-  </div>
-  <img class="li-photo" src="/assets/images/espghan-2025.jpg" alt="ESPGHAN 2025 — Helsinki" style="width:100%;border-radius:8px;margin:0.75rem 0;">
-  <div class="li-footer">
-    <div class="li-stat">👍 32</div>
-    <div class="li-stat">💬 1 &nbsp;·&nbsp; 1 repost</div>
-    <a class="li-link" href="https://www.linkedin.com/posts/minh-chau-ta_espghan25-ugcPost-7328894912555356161-XLQI" target="_blank">View on LinkedIn ↗</a>
+
+  <div class="li-card">
+    <strong>Want to learn more?</strong><br>
+    <p style="margin-top:0.8rem;font-size:0.9rem;line-height:1.6;">
+      This work has also been presented at other major international conferences:
+    </p>
+
+  <ul style="margin-top:0.6rem;padding-left:1.2rem;">
+  <li>
+    <a href="/conferences/ddw-2025/" style="font-size:0.8rem;">
+       DDW 2025
+    </a>
+  </li>
+  <li>
+    <a href="/conferences/ciirta-2025/" style="font-size:0.8rem;">
+       CIIRTA 2025 — Gothenburg
+    </a>
+  </li>
+  <li>
+    <a href="/conferences/espen-2025/" style="font-size:0.8rem;">
+       ESPEN 2025 — Prague
+    </a>
+  </li>
+</ul>
+
+    <a href="https://www.linkedin.com/posts/minh-chau-ta_espghan25-ugcPost-7328894912555356161-XLQI"
+       target="_blank"
+       style="font-size:0.8rem;">
+       View on LinkedIn
+    </a>
+
+  <a href="/projects/cipo/"
+     style="font-size:0.8rem;display:block;">
+     About the project
+  </a>
+
+<a href="https://superminch1995.github.io/assets/pdfs/cipo-article.pdf"
+     target="_blank"
+     style="font-size:0.8rem;display:block;margin-top:0.2rem;">
+     Read the article
+  </a>
+
   </div>
 
 </div>
 </div>
-
-
-<div class="conf-sidebar-sticky" style="width:260px;flex-shrink:0;position:sticky;top:2rem;align-self:flex-start;">
-  <fieldset style="border:1px dashed rgba(44,36,22,0.25);border-radius:6px;padding:0.75rem 1rem;margin-bottom:1.25rem;font-family:inherit;">
-    <legend style="font-size:0.68em;text-transform:uppercase;letter-spacing:0.07em;padding:0 0.4rem;opacity:0.5;">Speaker · 2025</legend>
-    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
-          <li style="font-size:0.75em;white-space:nowrap;">— <a href="/conferences/ddw-2025/" style="color:#C2510A;text-decoration:none;font-weight:500;">DDW</a> <span style="opacity:0.5;">San Diego, USA</span></li>
-          <li style="opacity:0.4;font-weight:600;font-size:0.75em;white-space:nowrap;">— ESPGHAN <span style="font-weight:400;">Helsinki, Finland</span></li>
-          <li style="font-size:0.75em;white-space:nowrap;">— <a href="/conferences/ciirta-2025/" style="color:#C2510A;text-decoration:none;font-weight:500;">CIIRTA</a> <span style="opacity:0.5;">Gothenburg, Sweden</span></li>
-          <li style="font-size:0.75em;white-space:nowrap;">— <a href="/conferences/espen-2025/" style="color:#C2510A;text-decoration:none;font-weight:500;">ESPEN</a> <span style="opacity:0.5;">Prague, Czech Republic</span></li>
-          <li style="font-size:0.75em;white-space:nowrap;">— <a href="/conferences/eortc-cltg-2025/" style="color:#C2510A;text-decoration:none;font-weight:500;">EORTC CLTG</a> <span style="opacity:0.5;">Athens, Greece</span></li>
-    </ul>
-  </fieldset>
-  <div style="padding-top:0.75rem;border-top:1px dashed rgba(44,36,22,0.15);">
-    <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:0.06em;opacity:0.5;margin-bottom:0.4rem;">Want to know more?</div>
-    <a href="/projects/cipo/" style="font-size:0.78em;color:var(--color-base-text);text-decoration:none;font-weight:500;opacity:0.75;">→ CIPO Research</a>
-  </div>
