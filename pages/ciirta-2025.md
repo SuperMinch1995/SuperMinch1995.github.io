@@ -101,10 +101,68 @@ permalink: /conferences/ciirta-2025/
     <p>
       My presentation reported outcomes from a cohort of patients undergoing multivisceral transplantation for severe multi-organ failure. Long-term follow-up revealed markedly heterogeneous trajectories, ranging from early mortality to sustained recovery in selected cases.
     </p>
+<div style="
+  margin:2.4rem 0;
+  padding:1.3rem 1.5rem;
+  border:1px solid var(--color-base-bg-3);
+  border-radius:10px;
+  background:var(--color-base-bg);
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+">
 
-    <p>
-      Notably, two patients carrying ACTG2 mutations achieved long-term survival without the need for parenteral nutrition for 5 and 23 years after transplantation, with complete resolution of both digestive and urinary symptoms, despite the absence of bladder transplantation.
-    </p>
+  <!-- LABEL -->
+  <div style="
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    opacity:0.6;
+    margin-bottom:0.6rem;
+  ">
+    Clinical Highlight 💡
+  </div>
+
+   <!-- KEY SENTENCE -->
+  <div style="
+    font-size:0.9rem;
+    line-height:1.7;
+    margin-bottom:1.2rem;
+  ">
+    Two patients with a specific mutated gene achieved <strong>5- and 23-year survival without parenteral nutrition</strong>, with complete resolution of digestive and urinary symptoms following multivisceral transplantation.
+  </div>
+
+  <!-- DATA STRIP -->
+  <div style="
+    display:flex;
+    gap:1.8rem;
+    flex-wrap:wrap;
+    font-size:0.8rem;
+    line-height:1.4;
+  ">
+
+    <div>
+      <strong style="font-size:1.3rem;">2/2</strong><br>
+      Patients (ACTG2)
+    </div>
+
+    <div>
+      <strong style="font-size:1.3rem;">23y</strong><br>
+      Max survival
+    </div>
+
+    <div>
+      <strong style="font-size:1.3rem;">0</strong><br>
+      Parenteral nutrition
+    </div>
+
+    <div>
+      <strong style="font-size:1.3rem;">100%</strong><br>
+      Symptom resolution
+    </div>
+
+  </div>
+
+</div>
+
 
     <p>
       These findings highlight both the complexity of patient selection and the potential benefits of transplantation in carefully selected cases.

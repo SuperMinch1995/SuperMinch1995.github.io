@@ -90,7 +90,7 @@ permalink: /conferences/espghan-2025/
       International experts. Cutting-edge pediatric research. A highly selective scientific program bringing together the forefront of gastroenterology, hepatology, and nutrition.
     </p>
 
-    <div class="conf-meta">Helsinki, Finland · May 2025</div>
+    <div class="conf-meta">Helsinki</div>
     <span class="conf-role">Speaker</span>
   </section>
 
