@@ -118,13 +118,7 @@ permalink: /conferences/espghan-2025/
 <img src="/assets/images/espghan-2025-2.jpg"
        style="width:100%;border-radius:10px;margin:1.8rem 0;">
 
-  <div class="conf-quote">
-    “An environment where rigorous science meets humility, collaboration, and the drive to push boundaries in pediatric care.”
-    
-    <div class="conf-quote-meta">
-      — Reflections from ESPGHAN 2025
-    </div>
-  </div>
+
 
   <div class="li-card">
     <strong>Want to learn more?</strong><br>

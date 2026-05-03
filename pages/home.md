@@ -434,7 +434,7 @@ I'm exploring opportunities to join teams that value excellence and results.
 <div class="contact-modal-overlay" id="contactModal">
   <div class="contact-modal">
     <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">&times;</button>
-    <h3>Contact</h3>
+    <h3>Contact to collaborate</h3>
     <label>Name</label>
     <input type="text" placeholder="">
     <label>Email</label>
