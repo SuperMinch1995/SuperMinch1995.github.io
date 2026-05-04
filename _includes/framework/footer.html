@@ -96,7 +96,7 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
   padding: 9px 10px;
   font-size: 0.85em;
   font-weight: 500;
-  color: #C2510A;
+  color: var(--color-base-text);
   cursor: pointer;
   text-align: center;
   transition: border-color 0.15s, color 0.15s, background 0.15s;
@@ -176,28 +176,27 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
   <div class="feedback-modal">
     <button class="feedback-modal-close" onclick="document.getElementById('feedbackModal').classList.remove('open')">&times;</button>
     <h3>Share feedback</h3>
-    <div class="feedback-grid">
-      <div class="feedback-tile" onclick="this.classList.toggle('active')">Report a bug</div>
-      <div class="feedback-tile" onclick="this.classList.toggle('active')">Something unclear</div>
-      <div class="feedback-tile" onclick="this.classList.toggle('active')">Improve design</div>
-      <div class="feedback-tile" onclick="this.classList.toggle('active')">Share idea</div>
-    </div>
-    <label>Message</label>
-    <textarea placeholder=""></textarea>
-    <div class="feedback-modal-footer">
-      <button class="feedback-btn-cancel" onclick="document.getElementById('feedbackModal').classList.remove('open')">Cancel</button>
-      <button class="feedback-btn-submit">Send</button>
-    </div>
+    <form action="https://formspree.io/f/xrejqzrj" method="POST">
+      <div class="feedback-grid">
+        <div class="feedback-tile" onclick="this.classList.toggle('active')">Report a bug</div>
+        <div class="feedback-tile" onclick="this.classList.toggle('active')">Something unclear</div>
+        <div class="feedback-tile" onclick="this.classList.toggle('active')">Improve design</div>
+        <div class="feedback-tile" onclick="this.classList.toggle('active')">Share idea</div>
+      </div>
+      <input type="hidden" name="category" id="feedbackCategory">
+      <label>Message</label>
+      <textarea name="message" placeholder=""></textarea>
+      <div class="feedback-modal-footer">
+        <button type="button" class="feedback-btn-cancel" onclick="document.getElementById('feedbackModal').classList.remove('open')">Cancel</button>
+        <button type="submit" class="feedback-btn-submit">Send</button>
+      </div>
+    </form>
   </div>
 </div>
 
 <script>
-(function() {
-  var modal = document.getElementById('feedbackModal');
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === this) this.classList.remove('open');
-    });
-  }
-})();
+document.querySelector('.feedback-btn-submit')?.addEventListener('click', function() {
+  const active = document.querySelector('.feedback-tile.active');
+  document.getElementById('feedbackCategory').value = active ? active.textContent : 'Not specified';
+});
 </script>

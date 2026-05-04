@@ -425,20 +425,25 @@ I'm exploring opportunities to join projects with people who value excellence an
 </div>
 
 <!-- Modal -->
+<!-- Modal -->
 <div class="contact-modal-overlay" id="contactModal">
   <div class="contact-modal">
     <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">&times;</button>
     <h3>Contact to collaborate</h3>
-    <label>Name</label>
-    <input type="text" placeholder="">
-    <label>Email</label>
-    <input type="email" placeholder="">
-    <label>Message</label>
-    <textarea placeholder=""></textarea>
-    <div class="modal-footer">
-      <button class="btn-cancel" onclick="document.getElementById('contactModal').classList.remove('open')">Cancel</button>
-      <button class="btn-submit">Send</button>
-    </div>
+
+    <form action="https://formspree.io/f/mvzlapbv" method="POST">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="">
+      <label>Message</label>
+      <textarea name="message" placeholder=""></textarea>
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" onclick="document.getElementById('contactModal').classList.remove('open')">Cancel</button>
+        <button type="submit" class="btn-submit">Send</button>
+      </div>
+    </form>
+
   </div>
 </div>
 
