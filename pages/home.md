@@ -231,7 +231,7 @@ posts:
 /* ── Latest publication ── */
 .pub-section {
   max-width: 836px;
-  margin: 120px auto 0;
+  margin: 18px auto 0;
 }
 .pub-card {
   display: flex;

@@ -96,11 +96,9 @@ h1 { text-align: center; }
   height: auto;
   mix-blend-mode: multiply;
 }
-
 </style>
 
 <div class="cipo-section">
-
 
   <p class="cipo-subline">CIPO is a disorder where the <span class="pencil-mark">bowels fail to move food<img src="/assets/images/underlines/underline-bowels.svg" class="pencil-underline" aria-hidden="true" alt=""></span> despite <span class="pencil-mark">no physical blockage<img src="/assets/images/underlines/underline-blockage.svg" class="pencil-underline" aria-hidden="true" alt=""></span>.</p>
   <p class="cipo-subline">Lesions may arise anywhere along the brain-gut axis.</p>
@@ -130,11 +128,11 @@ h1 { text-align: center; }
     <iframe src="/assets/figures/cipo-map.html"
             title="Where Patients Were Born — CIPO cohort"
             loading="lazy"
-            scrolling="no">
+            scrolling="no"
+            allowtransparency="true">
     </iframe>
   </div>
 </div>
-
 
 <!-- ── END CIPO SECTION ──────────────────────────────────────────────── -->
 
@@ -164,7 +162,8 @@ h1 { text-align: center; }
             src="/assets/figures/cipo-sunburst.html"
             title="CIPO — Genetic diagnosis sunburst"
             loading="lazy"
-            scrolling="no">
+            scrolling="no"
+            allowtransparency="true">
     </iframe>
   </div>
 </div>
@@ -258,7 +257,8 @@ h1 { text-align: center; }
     <iframe src="/assets/figures/actg2-q247p.html"
             title="ACTG2 Q247P — structural impact on γ-2 actin"
             loading="lazy"
-            scrolling="no">
+            scrolling="no"
+            allowtransparency="true">
     </iframe>
   </div>
 </div>
