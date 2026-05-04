@@ -119,22 +119,6 @@
   }
 }
 
-// ── Dark mode ───────────────────────────────────────────────────────
-[data-bs-theme="dark"] .kw { color: #E8845A !important; }
-
-[data-bs-theme="dark"] .tagline-row .badge {
-  color: #E8845A !important;
-  border-color: #E8845A !important;
-}
-
-[data-bs-theme="dark"] .pub-list a {
-  color: #E8845A !important;
-}
-
-[data-bs-theme="dark"] .conf-list a {
-  color: #E8845A !important;
-}
-
 // ── Vidéo allvariants ──────────────────────────────────────────────
 .q247p-section video {
   overflow: visible;
@@ -144,20 +128,9 @@
 // ── Global links ───────────────────────────────────────────────────
 a {
   color: #C2510A;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-  opacity: 0.8;
-}
-[data-bs-theme="dark"] a {
-  color: #E8845A;
-}
-
-// ── Suppression soulignement global ────────────────────────────────
-a {
   text-decoration: none !important;
 }
 a:hover {
   text-decoration: underline !important;
+  opacity: 0.8;
 }

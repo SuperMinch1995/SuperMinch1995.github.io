@@ -199,10 +199,6 @@ posts:
   line-height: 1.2;
 }
 .contact-inline:hover { opacity: 0.7; }
-html[data-bs-theme="dark"] .contact-inline {
-  color: #E8845A;
-  border-bottom-color: #E8845A;
-}
 
 /* ── Latest publication ── */
 .pub-section {
@@ -254,7 +250,6 @@ html[data-bs-theme="dark"] .contact-inline {
   color: #C2510A;
   line-height: 1;
 }
-html[data-bs-theme="dark"] .stat-num { color: #E8845A; }
 .stat-label {
   font-size: 0.72em;
   color: var(--color-base-text);
@@ -281,7 +276,6 @@ html[data-bs-theme="dark"] .stat-num { color: #E8845A; }
   align-self: flex-start;
   transition: opacity 0.15s;
 }
-html[data-bs-theme="dark"] .pub-card-cta { color: #E8845A; border-bottom-color: #E8845A; }
 
 /* ── Modal ── */
 .contact-modal-overlay {
@@ -359,7 +353,7 @@ I'm exploring opportunities to join teams that value excellence and results.
 <div class="conf-section">
   <div class="conf-row">
     <div class="conf-photo">
-      <img src="/assets/images/Pro_linkedin.jpg" alt="Minh-Chau Ta, MD">
+      <img src="/assets/images/Pro_linkedin.jpg" alt="Minh-Chau Ta, MD" width="auto" height="193" loading="eager">
     </div>
     <div class="conf-panels">
 
@@ -406,7 +400,7 @@ I'm exploring opportunities to join teams that value excellence and results.
 <!-- Latest publication -->
 <div class="pub-section">
   <div class="pub-card">
-    <img class="pub-image" src="/assets/images/ACTG2.jpeg" alt="ACTG2 immunohistochemistry panel">
+    <img class="pub-image" src="/assets/images/ACTG2.jpeg" alt="ACTG2 immunohistochemistry panel" loading="lazy" decoding="async">
     <span class="pub-pill">Latest publication</span>
     <p class="pub-card-title">Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction</p>
     <div class="pub-stats">

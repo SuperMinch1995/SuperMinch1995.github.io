@@ -48,10 +48,8 @@ $spacers:
 // Theme Variables
 $header-height: 60px !default;
 $card-border-radius: 4px !default;
-// ── Override couleur des liens ──────────────────────────────────────
+
+// ── Couleur primaire ────────────────────────────────────────────────
 :root {
   --color-primary-bg: #C2510A;
-}
-[data-bs-theme="dark"] {
-  --color-primary-bg: #E8845A;
 }
