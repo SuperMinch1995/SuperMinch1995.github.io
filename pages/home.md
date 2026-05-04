@@ -204,11 +204,11 @@ posts:
 .scroll-transition {
   max-width: 836px;
   margin: 1.8rem auto 28px;  /* negatif = remonte pour aligner avec contact-wrap */
-  text-align: center;
+  text-align: left;
   padding-left: 0px;
 }
 .scroll-transition p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--color-base-text);
   opacity: 0.9;
@@ -373,8 +373,7 @@ posts:
   <a href="/research/" class="badge">Translational Research</a>
 </div>
 
-<p>Hi, I'm Minh. I'm based in San Diego, CA.<br> 
-I'm exploring opportunities to join projects with people who value excellence and results.
+<p>Hi, I'm Minh. I'm based in San Diego, CA.<br>I'm exploring opportunities to join projects with people who value excellence and results.
 </p>
 
 <div class="conf-section">
@@ -425,7 +424,7 @@ I'm exploring opportunities to join projects with people who value excellence an
 </div>
 
 <div class="scroll-transition">
-  <p>Behind every dataset is a story of patient care and discovery.<br><br>Explore the work below.</p>
+  <p>Behind every dataset is a story of patient care and discovery.<br>Explore the work below.</p>
   <span class="arrow">↓</span>
 </div>
 
