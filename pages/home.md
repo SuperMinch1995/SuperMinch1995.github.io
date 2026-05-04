@@ -203,7 +203,7 @@ posts:
 /* ── Scroll transition ── */
 .scroll-transition {
   max-width: 836px;
-  margin: 1.8rem auto 28px;  /* remonte pour aligner avec contact-wrap */
+  margin: 1.8rem auto 28px;  /* negatif = remonte pour aligner avec contact-wrap */
   text-align: center;
   padding-left: 0px;
 }
@@ -374,7 +374,6 @@ posts:
 </div>
 
 <p>Hi, I'm Minh. I'm based in San Diego, CA.<br> 
-I'm focused on creating a meaningful impact for patients.<br>
 I'm exploring opportunities to join projects with people who value excellence and results.
 </p>
 
