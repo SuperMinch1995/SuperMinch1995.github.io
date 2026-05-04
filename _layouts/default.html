@@ -11,6 +11,7 @@
     {% include framework/favicon.html %}
 
     <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
+    <script>localStorage.removeItem('darkMode');</script>
 
     {% if site.cookie_banner.enabled %}
       {% include framework/cookie-consent.html %}
