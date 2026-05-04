@@ -203,15 +203,15 @@ posts:
 /* ── Scroll transition ── */
 .scroll-transition {
   max-width: 836px;
-  margin: 1.5rem auto 28px;  /* remonte pour aligner avec contact-wrap */
+  margin: 1.8rem auto 28px;  /* remonte pour aligner avec contact-wrap */
   text-align: center;
   padding-left: 60px;
 }
 .scroll-transition p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--color-base-text);
-  opacity: 1;
+  opacity: 0.8;
   font-weight: 400;
   margin: 0;
 }
@@ -426,7 +426,7 @@ I'm exploring opportunities to join projects with people who value excellence an
 </div>
 
 <div class="scroll-transition">
-  <p>Behind every dataset is a story of patient care and discovery<br>Explore the work below.</p>
+  <p>Behind every dataset is a story of patient care and discovery.<br><br>Explore the work below.</p>
   <span class="arrow">↓</span>
 </div>
 
