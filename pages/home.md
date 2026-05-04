@@ -184,7 +184,7 @@ posts:
   text-align: left;
 }
 .contact-inline {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #C2510A;
   background: none;
@@ -203,15 +203,15 @@ posts:
 /* ── Scroll transition ── */
 .scroll-transition {
   max-width: 836px;
-  margin: -1.6rem auto 28px;  /* remonte pour aligner avec contact-wrap */
+  margin: 1.5rem auto 28px;  /* remonte pour aligner avec contact-wrap */
   text-align: center;
   padding-left: 60px;
 }
 .scroll-transition p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--color-base-text);
-  opacity: 0.9;
+  opacity: 1;
   font-weight: 400;
   margin: 0;
 }
