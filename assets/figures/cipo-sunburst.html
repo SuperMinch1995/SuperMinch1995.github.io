@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style id="antifouc">html,body{background:#FAF7F2;}@media(prefers-color-scheme:dark){html,body{background:#1C1917;}}</style>
+<style id="antifouc">html,body{background:#FAF7F2;}</style>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,8 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 
 :root{--sb-bg:#FAF7F2;--sb-bg2:#F0EBE4;--sb-bg3:#E8E2DA;--sb-text:#1a1612;--sb-text2:#4a4540;--sb-border:#E0D8CE;--sb-orange:#C2510A;}
-:root.dark{--sb-bg:#1C1917;--sb-bg2:#2A271F;--sb-bg3:#332F26;--sb-text:#F0EBE3;--sb-text2:#9E9890;--sb-border:#3a3530;--sb-orange:#E8845A;background:#1C1917;}
 
-body{font-family:'DM Sans',sans-serif;background:transparent;padding:1.5rem 15% 2rem;margin:0;}body.dark,html.dark body{background:#1C1917 !important;}
+body{font-family:'DM Sans',sans-serif;background:transparent;padding:1.5rem 15% 2rem;margin:0;}
 .sb-root{font-family:'DM Sans',sans-serif;background:transparent;border:none;padding:0;max-width:100%;width:100%;}
 
 /* Titre — même style que cipo-subline */
@@ -22,7 +21,6 @@ body{font-family:'DM Sans',sans-serif;background:transparent;padding:1.5rem 15% 
 /* Stats row identique à cipo-stats-row */
 .sb-stats-row{display:flex;justify-content:center;gap:3rem;margin:0 0 4.375rem;flex-wrap:wrap;max-width:836px;margin-left:auto;margin-right:auto;}
 .sb-stat{display:flex;flex-direction:column;gap:0.15rem;align-items:center;}
-:root.dark .sb-stat-num{color:#E8845A;}
 .sb-stat-num{font-size:2em;font-weight:700;color:#C2510A;line-height:1;}
 .sb-stat-lbl{font-size:0.88em;color:var(--sb-text2);letter-spacing:0.04em;text-align:center;}
 
@@ -106,21 +104,6 @@ path.arc:hover{filter:brightness(1.18);}
   pointer-events:none;
 }
 </style>
-<script>
-(function(){
-  function apply(dark){
-  document.documentElement.classList.toggle('dark',dark);
-  document.body.classList.toggle('dark',dark);
-  var c = dark ? '#E8845A' : '#C2510A';
-  document.querySelectorAll('#sbsvg text').forEach(function(t){
-    if(t.textContent.match(/^[\d]+$/)) t.setAttribute('fill', c);
-  });
-}
-  window.addEventListener('message',function(e){if(e.data&&typeof e.data.dark!=='undefined')apply(e.data.dark);});
-  window.parent.postMessage({requestTheme:true},'*');
-  apply(window.matchMedia('(prefers-color-scheme: dark)').matches);
-})();
-</script>
 </head>
 <body>
 <div class="sb-root">
@@ -130,19 +113,16 @@ path.arc:hover{filter:brightness(1.18);}
   <div class="sb-stats-row">
     <div class="sb-stat"><span class="sb-stat-num">112</span><span class="sb-stat-lbl">Patients genotyped</span></div>
     <div class="sb-stat"><span class="sb-stat-num">58%</span><span class="sb-stat-lbl">Diagnostic yield</span></div>
-
     <div class="sb-stat"><span class="sb-stat-num">13</span><span class="sb-stat-lbl">Genes involved</span></div>
   </div>
 
   <div class="sb-top">
     <div class="crayon-arrow-wrap" id="crayonArrow">
       <svg class="crayon-arrow" viewBox="0 0 90 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- curve bulging downward (concave from above), pointing left toward the sunburst -->
         <path d="M82 12 Q45 44, 12 18" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" fill="none"
               stroke-dasharray="110" stroke-dashoffset="110">
           <animate attributeName="stroke-dashoffset" from="110" to="0" dur="0.7s" begin="0.3s" fill="freeze"/>
         </path>
-        <!-- arrowhead at left end, oriented along curve tangent -->
         <g opacity="0">
           <animate attributeName="opacity" from="0" to="1" dur="0.15s" begin="0.95s" fill="freeze"/>
           <path d="M12 18 L22 16 M12 18 L18 26" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -162,12 +142,10 @@ path.arc:hover{filter:brightness(1.18);}
           <div class="gene-hint" id="geneHint">
             <span class="gene-hint-text">Click a gene</span>
             <svg class="gene-hint-arrow" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <!-- curve starting at text baseline level, bulging up-right, ending pointing down -->
               <path d="M6 18 Q42 12, 30 34" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" fill="none"
                     stroke-dasharray="80" stroke-dashoffset="80">
                 <animate attributeName="stroke-dashoffset" from="80" to="0" dur="0.6s" begin="0.2s" fill="freeze"/>
               </path>
-              <!-- arrowhead at end, pointing down -->
               <g opacity="0">
                 <animate attributeName="opacity" from="0" to="1" dur="0.15s" begin="0.8s" fill="freeze"/>
                 <path d="M30 34 L24 28 M30 34 L36 30" stroke="var(--sb-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -550,10 +528,12 @@ const cLbl = centerG.append('text')
   .attr('font-family',"'DM Sans',sans-serif").attr('font-size', 9).attr('fill','#9b8f84')
   .text('');
 
+const legendEl = document.getElementById('sb-legend');
+
 function toggleCat(name) {
-  // hide arrow on first interaction
   const arrow = document.getElementById('crayonArrow');
-  if (arrow) { arrow.style.transition = 'opacity 0.3s'; arrow.style.opacity = '0'; setTimeout(() => arrow.remove(), 350); }  if (selected === name) {
+  if (arrow) { arrow.style.transition = 'opacity 0.3s'; arrow.style.opacity = '0'; setTimeout(() => arrow.remove(), 350); }
+  if (selected === name) {
     selected = null;
     allArcs.forEach(p => p.attr('opacity', 1));
     cNum.text('65');
@@ -577,12 +557,10 @@ function toggleCat(name) {
 
     document.getElementById('detail-content').classList.add('visible');
 
-    // Reset gene hint: re-show and re-animate on each category open
     const geneHint = document.getElementById('geneHint');
     if (geneHint) {
       geneHint.style.transition = 'none';
       geneHint.style.opacity = '1';
-      // Re-trigger SVG animations by cloning the inner SVG
       const oldSvg = geneHint.querySelector('svg');
       const newSvg = oldSvg.cloneNode(true);
       oldSvg.replaceWith(newSvg);
@@ -592,7 +570,6 @@ function toggleCat(name) {
     badge.textContent = name;
     badge.style.background = col.fill;
     badge.style.color = '#ffffff';
-    
 
     document.getElementById('det-desc').textContent = cat.desc;
 
@@ -608,12 +585,6 @@ function toggleCat(name) {
       const detailEl = document.createElement('div');
       detailEl.className = 'gene-detail';
 
-      const presentRows = gene.syndromesPresent.length
-        ? gene.syndromesPresent.map(s => `<tr><td>${s}</td><td></td></tr>`).join('')
-        : '';
-      const absentRows = gene.syndromesAbsent.length
-        ? gene.syndromesAbsent.map(s => `<tr><td></td><td>${s}</td></tr>`).join('')
-        : '';
       const maxRows = Math.max(gene.syndromesPresent.length, gene.syndromesAbsent.length);
       const tableRows = Array.from({length: maxRows}, (_, i) => {
         const p = gene.syndromesPresent[i] || '';
@@ -642,7 +613,6 @@ function toggleCat(name) {
 
       row.addEventListener('click', e => {
         e.stopPropagation();
-        // hide gene hint on first interaction
         const geneHint = document.getElementById('geneHint');
         if (geneHint && geneHint.style.opacity !== '0') {
           geneHint.style.transition = 'opacity 0.3s';
@@ -673,30 +643,18 @@ Object.entries(PALETTE).forEach(([name, c]) => {
   legendEl.appendChild(item);
 });
 
-// Remove arrow immediately on mobile (touch devices or narrow screens)
 if (window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window) {
   const arrowEl = document.getElementById('crayonArrow');
   if (arrowEl) arrowEl.remove();
 }
 </script>
 
-
-
-
-
-
 <style>
 :root { --arrow-col: #C2510A; }
-:root.dark { --arrow-col: #E8845A; }
 .ga [fill="#C2510A"] { fill: var(--arrow-col); }
 </style>
 
 <script>
-/* Mobile viewBox fix —
-   Le chart est dessiné off-center (cx=145, cy=145, outerR=185), donc son
-   contenu réel s'étend de (-40,-40) à (330,330). Sur desktop, overflow:visible
-   + margin-left:60px compensent. Sur mobile (SVG scalé à 100%), il faut élargir
-   le viewBox pour englober le contenu visible.                                */
 (function() {
   function adjustViewBox() {
     var svg = document.getElementById('sbsvg');

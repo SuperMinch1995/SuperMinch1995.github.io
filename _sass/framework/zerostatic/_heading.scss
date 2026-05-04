@@ -24,9 +24,9 @@
       font-weight: 700;
       font-family: var(--font-family-heading);
       @include media-breakpoint-up(md) {
-        font-size: 46px;
-        line-height: 1;
-        letter-spacing: -2px;
+        font-size: 36px;
+        line-height: 1.1;
+        letter-spacing: -1px;
       }
       strong {
         font-style: normal;

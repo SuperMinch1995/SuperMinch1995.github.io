@@ -180,11 +180,11 @@ posts:
 /* ── Contact to collaborate ── */
 .contact-wrap {
   max-width: 836px;
-  margin: 40px auto 0;
+  margin: 20px auto 0;
   text-align: left;
 }
 .contact-inline {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 600;
   color: #C2510A;
   background: none;
@@ -342,12 +342,12 @@ posts:
 </style>
 
 <div class="tagline-row">
-  <span class="badge">Translational Research</span>
+  <a href="/research/" class="badge">Translational Research</a>
 </div>
 
-<p>Hi, I'm Minh. I'm based in La Jolla, CA.<br> 
-I'm focused on creating meaningful impact for patients and therapies.<br>
-I'm exploring opportunities to join teams that value excellence and results.
+<p>Hi, I'm Minh. I'm based in San Diego, CA.<br> 
+I'm focused on creating a meaningful impact for patients.<br>
+I'm exploring opportunities to join projects with people who value excellence and results.
 </p>
 
 <div class="conf-section">

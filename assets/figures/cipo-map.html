@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style id="antifouc">html,body{background:#FAF7F2;}@media(prefers-color-scheme:dark){html,body{background:#1C1917;}}</style>
+<style id="antifouc">html,body{background:#FAF7F2;}</style>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,24 +90,6 @@
     line-height: 1;
   }
 
-  /* Dark mode — appliqué uniquement si système sombre ET site sombre */
-  body.dark {
-    background: #1C1917;
-  }
-  body.dark #map-wrapper {
-    background: #1C1917;
-  }
-  body.dark .map-title { color: #9E9890; }
-  body.dark .map-subtitle { color: #9E9890; }
-  body.dark .map-count { color: #9E9890; }
-  body.dark #map { background: #2A271F; }
-  body.dark .leaflet-container { background: #2A271F !important; }
-  body.dark .leaflet-tile-pane { filter: none; }
-  body.dark .leaflet-control-zoom a {
-    border-color: #3a3530 !important;
-    color: #9E9890 !important;
-    background: #232019 !important;
-  }
 </style>
 </head>
 <body>
@@ -258,38 +240,7 @@ const PATIENTS = [
   ["Ile-de-France",2.33,48.86]
 ];
 
-// ── Détection du thème via postMessage du parent, fallback système ────────────
-const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-let currentDark = isDark;
-
-function applyTheme(dark) {
-  currentDark = dark;
-  if (dark) {
-    document.body.classList.add('dark');
-  } else {
-    document.body.classList.remove('dark');
-  }
-  // Changer les tuiles
-  if (tileLayer) {
-    map.removeLayer(tileLayer);
-    tileLayer = dark ? darkTiles : lightTiles;
-    tileLayer.addTo(map);
-    map.getPane('tilePane').style.filter = dark ? 'none' : 'saturate(0.07) brightness(1.07) sepia(0.10)';
-  }
-  // Mettre à jour la couleur des ronds
-  ACCENT = dark ? '#E8845A' : '#E8845A';
-  buildMarkers();
-}
-
-// Écoute le thème envoyé par la page parente
-window.addEventListener('message', function(e) {
-  if (e.data && typeof e.data.dark !== 'undefined') {
-    applyTheme(e.data.dark);
-  }
-});
-
-// Demande le thème au parent
-window.parent.postMessage({ requestTheme: true }, '*');
+const ACCENT = '#C2510A';
 
 // ── Clustering ───────────────────────────────────────────────────────────────
 function haversine(lat1, lng1, lat2, lng2) {
@@ -327,11 +278,8 @@ points.forEach((pt, i) => {
 
 function r(n) { return 5 + 5.5 * Math.sqrt(n); }
 
-let ACCENT = isDark ? '#E8845A' : '#E8845A';
-
 // ── Carte ────────────────────────────────────────────────────────────────────
 const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 19 });
-const darkTiles  = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',  { maxZoom: 19 });
 
 const map = L.map('map', {
   center: [25, 15], zoom: 2,
@@ -339,15 +287,10 @@ const map = L.map('map', {
   attributionControl: false
 });
 
-let tileLayer = isDark ? darkTiles : lightTiles;
+let tileLayer = lightTiles;
 tileLayer.addTo(map);
 
-if (!isDark) {
-  map.getPane('tilePane').style.filter = 'saturate(0.07) brightness(1.07) sepia(0.10)';
-}
-
-// Appliquer la classe dark si nécessaire
-if (isDark) document.body.classList.add('dark');
+map.getPane('tilePane').style.filter = 'saturate(0.07) brightness(1.07) sepia(0.10)';
 
 const LABEL_ZOOM = 4;
 const circleLayer = L.layerGroup().addTo(map);
@@ -364,8 +307,8 @@ function buildMarkers() {
     L.circleMarker([c.lat, c.lng], {
       radius,
       fillColor: ACCENT,
-      color: currentDark ? 'transparent' : '#EDE8DF',
-      weight: currentDark ? 0 : 0.6,
+      color: '#EDE8DF',
+      weight: 0.6,
       fillOpacity: 0.75,
       interactive: false
     }).addTo(circleLayer);

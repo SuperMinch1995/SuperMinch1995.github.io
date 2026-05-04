@@ -50,7 +50,6 @@ h1 { text-align: center; }
   flex-direction: column;
   gap: 0.15rem;
 }
-[data-bs-theme="dark"] .cipo-stat-num { color: #E8845A; }
 .cipo-stat-num {
   font-size: 2em;
   font-weight: 700;
@@ -97,10 +96,6 @@ h1 { text-align: center; }
   height: auto;
   mix-blend-mode: multiply;
 }
-[data-bs-theme="dark"] .brain-gut-img {
-  mix-blend-mode: normal;
-  opacity: 0.88;
-}
 
 </style>
 
@@ -141,41 +136,6 @@ h1 { text-align: center; }
 </div>
 
 
-<script>
-(function() {
-  function isDark() {
-    var t = document.documentElement.getAttribute('data-bs-theme');
-    return t === 'dark';
-  }
-
-  function sendTheme() {
-    var iframe = document.querySelector('.cipo-map-frame iframe');
-    if (!iframe || !iframe.contentWindow) return;
-    try { iframe.contentWindow.postMessage({ dark: isDark() }, '*'); } catch(e) {}
-  }
-
-  window.addEventListener('load', function() {
-    var iframe = document.querySelector('.cipo-map-frame iframe');
-    if (iframe) {
-      iframe.addEventListener('load', function() {
-        sendTheme();
-        setTimeout(sendTheme, 300);
-      });
-    }
-  });
-
-  window.addEventListener('message', function(e) {
-    if (e.data && e.data.requestTheme) sendTheme();
-  });
-
-  // Observe data-bs-theme sur <html>
-  new MutationObserver(sendTheme).observe(
-    document.documentElement,
-    { attributes: true, attributeFilter: ['data-bs-theme'] }
-  );
-})();
-</script>
-
 <!-- ── END CIPO SECTION ──────────────────────────────────────────────── -->
 
 <!-- ── SUNBURST SECTION ─────────────────────────────────────────────── -->
@@ -209,57 +169,6 @@ h1 { text-align: center; }
   </div>
 </div>
 
-<script>
-(function() {
-  function sendThemeToSunburst() {
-    var iframe = document.getElementById('sunburst-iframe');
-    if (!iframe || !iframe.contentWindow) return;
-    var dark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-    try { iframe.contentWindow.postMessage({ dark: dark }, '*'); } catch(e) {}
-  }
-  // Envois multiples pour garantir la réception
-  window.addEventListener('load', function() {
-    var iframe = document.getElementById('sunburst-iframe');
-    if (iframe) {
-      iframe.addEventListener('load', function() {
-        [100, 400, 800, 1500].forEach(function(d) {
-          setTimeout(sendThemeToSunburst, d);
-        });
-      });
-    }
-  });
-  window.addEventListener('message', function(e) {
-    if (e.data && e.data.requestTheme) sendThemeToSunburst();
-  });
-  new MutationObserver(sendThemeToSunburst).observe(
-    document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] }
-  );
-})();
-</script>
-
-<script>
-(function() {
-  var iframe = document.getElementById('sunburst-iframe');
-  if (!iframe) return;
-  function resizeIframe() {
-    try {
-      var h = iframe.contentDocument.body.scrollHeight;
-      iframe.style.height = Math.max(580, h + 20) + 'px';
-    } catch(e) {}
-  }
-  iframe.addEventListener('load', function() {
-    resizeIframe();
-    // Observer les mutations dans l'iframe pour resize dynamique
-    try {
-      var mo = new MutationObserver(resizeIframe);
-      mo.observe(iframe.contentDocument.body, { childList: true, subtree: true, attributes: true });
-    } catch(e) {}
-  });
-  window.addEventListener('message', function(e) {
-    if (e.data && e.data.requestTheme) resizeIframe();
-  });
-})();
-</script>
 <!-- ── END SUNBURST SECTION ─────────────────────────────────────────── -->
 
 <!-- ── ACTG2 Q247P SECTION ──────────────────────────────────────────── -->
@@ -293,7 +202,6 @@ h1 { text-align: center; }
   color: #C2510A;
   margin: 0 0 .5rem;
 }
-[data-bs-theme="dark"] .q247p-see-ex { color: #E8845A; }
 .q247p-caption-line {
   width: 32px;
   height: 1px;
@@ -301,7 +209,6 @@ h1 { text-align: center; }
   opacity: .4;
   margin: 0 auto .75rem;
 }
-[data-bs-theme="dark"] .q247p-caption-line { background: #E8845A; }
 .q247p-caption-toggle {
   transition: opacity .15s ease;
 }
@@ -325,14 +232,14 @@ h1 { text-align: center; }
   zoom: 0.82;
   display: block;
   width: 100%;
-  min-height: 600px;     /* fallback ; la hauteur réelle vient du postMessage q247pHeight */
+  min-height: 600px;
   border: none;
   background: transparent;
 }
 @media (max-width: 768px) {
   .q247p-frame iframe {
-    zoom: 1;             /* annule le zoom desktop — layout déjà responsive côté enfant */
-    min-height: 600px;   /* idem : auto-ajusté par postMessage */
+    zoom: 1;
+    min-height: 600px;
   }
 }
 </style>
@@ -356,32 +263,4 @@ h1 { text-align: center; }
   </div>
 </div>
 
-<script>
-(function() {
-  function sendTheme() {
-    var iframe = document.querySelector('.q247p-frame iframe');
-    if (!iframe || !iframe.contentWindow) return;
-    var dark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-    try { iframe.contentWindow.postMessage({ dark: dark }, '*'); } catch(e) {}
-  }
-  window.addEventListener('load', function() {
-    var iframe = document.querySelector('.q247p-frame iframe');
-    if (iframe) {
-      iframe.addEventListener('load', function() {
-        [100, 400, 800, 1500].forEach(function(d) { setTimeout(sendTheme, d); });
-      });
-    }
-  });
-  window.addEventListener('message', function(e) {
-    if (e.data && e.data.requestTheme) sendTheme();
-    if (e.data && e.data.q247pHeight) {
-      var iframe = document.querySelector('.q247p-frame iframe');
-      if (iframe) iframe.style.height = (e.data.q247pHeight + 40) + 'px';
-    }
-  });
-  new MutationObserver(sendTheme).observe(
-    document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] }
-  );
-})();
-</script>
 <!-- ── END ACTG2 Q247P SECTION ──────────────────────────────────────── -->
