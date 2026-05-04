@@ -205,13 +205,13 @@ posts:
   max-width: 836px;
   margin: 1.8rem auto 28px;  /* remonte pour aligner avec contact-wrap */
   text-align: center;
-  padding-left: 60px;
+  padding-left: 0px;
 }
 .scroll-transition p {
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-base-text);
-  opacity: 0.8;
+  opacity: 0.9;
   font-weight: 400;
   margin: 0;
 }
