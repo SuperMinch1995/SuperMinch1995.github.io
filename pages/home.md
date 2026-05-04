@@ -200,6 +200,34 @@ posts:
 }
 .contact-inline:hover { opacity: 0.7; }
 
+/* ── Scroll transition ── */
+.scroll-transition {
+  max-width: 836px;
+  margin: -1.6rem auto 28px;  /* remonte pour aligner avec contact-wrap */
+  text-align: center;
+  padding-left: 60px;
+}
+.scroll-transition p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-base-text);
+  opacity: 0.9;
+  font-weight: 400;
+  margin: 0;
+}
+.scroll-transition .arrow {
+  font-size: 17px;
+  margin-top: 10px;
+  color: var(--color-base-text);
+  opacity: 0.5;
+  animation: float 2.2s ease-in-out infinite;
+  display: block;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(6px); opacity: 0.8; }
+}
+
 /* ── Latest publication ── */
 .pub-section {
   max-width: 836px;
@@ -395,6 +423,11 @@ I'm exploring opportunities to join projects with people who value excellence an
 
 <div class="contact-wrap">
   <button class="contact-inline" onclick="document.getElementById('contactModal').classList.add('open')">Contact to collaborate &rarr;</button>
+</div>
+
+<div class="scroll-transition">
+  <p>Behind every dataset is a story of patient care and discovery<br>Explore the work below.</p>
+  <span class="arrow">↓</span>
 </div>
 
 <!-- Latest publication -->
