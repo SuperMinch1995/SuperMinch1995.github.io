@@ -84,11 +84,11 @@ permalink: /conferences/espen-2025/
   <!-- HERO -->
   <section>
     <h1 class="hero-title">
-      Presenting at one of the world’s leading conferences in clinical nutrition and metabolism
+      Presenting at the European Society for Clinical Nutrition and Metabolism
     </h1>
 
     <p class="hero-sub">
-      A global stage where fundamental biology meets clinical practice — bringing together leading experts to rethink how we understand metabolism, disease, and patient care.
+      The world-leading conference in clinical nutrition.
     </p>
 
     <div class="conf-meta">Prague, Czech Republic · September 2025</div>
@@ -103,61 +103,64 @@ permalink: /conferences/espen-2025/
   <div class="conf-body">
 
     <p>
-      ESPEN 2025 gathered an international community of clinicians, researchers, and dietitians working at the intersection of nutrition, metabolism, and complex disease.
+      The European Society for Clinical Nutrition and Metabolism brings together an international community of clinicians, researchers, and dietitians dedicated to advancing the field of nutrition and metabolism.
+    </p>
+
+     <p>
+      Far from being a niche field, clinical nutrition sits at the core of modern medicine, influencing outcomes in critical care, oncology, gastroenterology, and chronic disease. The conference offered a rare level of intellectual depth — where discussions move seamlessly from molecular mechanisms to real-world patient impact.
     </p>
 
     <p>
-      Far from being a niche field, clinical nutrition sits at the core of modern medicine — influencing outcomes in critical care, oncology, gastroenterology, and chronic disease.
+      The work was selected for presentation in the <strong>Best Abstracts session</strong>, highlighting its relevance in this field.
     </p>
 
-    <p>
-      The work was selected for presentation in the <strong>Best Abstracts session</strong>, highlighting its relevance within a highly competitive international scientific program.
-    </p>
-
-    <p>
-      Beyond the presentation itself, the conference offered a rare level of intellectual depth — where discussions move seamlessly from molecular mechanisms to real-world patient impact.
-    </p>
 
   </div>
 
-  <!-- QUOTE -->
+  <!-- QUOTES -->
+
   <div class="conf-quote">
-    “From the origin of life to insulin resistance — a single lecture that reminds you how deeply interconnected biology really is.”
+    “Congratulations for the excellent presentation and the inspiring perspectives of this work for patients”
     
     <div class="conf-quote-meta">
-      — Inspired by Prof. Lubos Sobotka’s keynote lecture
+      — Dr. Cécile Betry  
+      <br>Assistant Professor of Clinical Nutrition, Grenoble, France.
     </div>
   </div>
 
-  <!-- BODY CONTINUED -->
+  <div class="conf-quote">
+    “Important work!”
+    
+    <div class="conf-quote-meta">
+      — Prof. Tim Vanuytsel  
+      <br>Gastroenterologist and Full Professor of Nutrition, KU Leuven, Belgium.
+    </div>
+  </div>
+
+  <div class="conf-quote">
+    “Amazing presentation, work, and woman.”
+    
+    <div class="conf-quote-meta">
+      — Prof. Francisca Joly  
+      <br>Gastroenterologist, Full Professor of Nutrition, Head of Gastroenterology Department, Beaujon Hospital, France.
+      <br>
+    </div>
+  </div>
+
+  <!-- BEHIND THE SCENES -->
   <div class="conf-body">
 
     <p>
-      Exchanges with leading teams across Europe reinforced a key idea: progress in complex diseases is never the result of isolated work, but of sustained collaboration across disciplines.
+      Behind the scenes, one moment stayed with me.
     </p>
 
     <p>
-      These interactions continue to shape the next steps of the research — with a clear objective: translating scientific insights into tangible benefits for patients.
+      Professor Luboš Sobotka delivered a stellar lecture that went from the <strong>origin of life</strong> to modern metabolic challenges such as insulinoresistance. A rare kind of talk where science feels almost philosophical.
     </p>
 
-  </div>
-
-  <!-- LINKEDIN -->
-  <div class="li-card">
-    <strong>Behind the scenes</strong><br>
-
-    <p style="margin-top:0.8rem;font-size:0.9rem;line-height:1.6;">
-      A personal perspective shared during the conference:
-    </p>
-
-    <a href="https://www.linkedin.com/posts/minh-chau-ta_espen2025-ugcPost-7376400136786296832-TCE4"
-       target="_blank"
-       style="font-size:0.8rem;">
-       View on LinkedIn
-    </a>
-
-    <p style="margin-top:0.8rem;font-size:0.85rem;opacity:0.7;">
-      Including reflections on scientific exchanges, inspiration from keynote lectures, and acknowledgment of the teams contributing to this work.
+    <p>
+      After the session, I asked him a question and he handed me a small pin bearing the Rod of Asclepius, meaning
+      <strong>resilience and consistent clinical practice over time is what ultimately leads to wisdom.</strong>
     </p>
 
   </div>
@@ -175,6 +178,12 @@ permalink: /conferences/espen-2025/
       <li><a href="/conferences/espghan-2025/" style="font-size:0.8rem;">ESPGHAN 2025</a></li>
       <li><a href="/conferences/ciirta-2025/" style="font-size:0.8rem;">CIIRTA 2025</a></li>
     </ul>
+
+    <a href="https://www.linkedin.com/posts/minh-chau-ta_espen2025-ugcPost-7376400136786296832-TCE4"
+       target="_blank"
+       style="font-size:0.8rem;">
+       View on LinkedIn
+    </a>
 
     <a href="/projects/cipo/"
        style="font-size:0.8rem;display:block;">

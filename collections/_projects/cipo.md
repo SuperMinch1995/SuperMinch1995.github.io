@@ -87,12 +87,34 @@ h1 { text-align: center; }
   pointer-events: none;
   object-fit: fill;
 }
+.brain-gut-img-wrap {
+  margin: -1.5rem auto 2rem;
+  max-width: 200px;
+}
+.brain-gut-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+[data-bs-theme="dark"] .brain-gut-img {
+  mix-blend-mode: normal;
+  opacity: 0.88;
+}
+
 </style>
 
 <div class="cipo-section">
 
 
   <p class="cipo-subline">CIPO is a disorder where the <span class="pencil-mark">bowels fail to move food<img src="/assets/images/underlines/underline-bowels.svg" class="pencil-underline" aria-hidden="true" alt=""></span> despite <span class="pencil-mark">no physical blockage<img src="/assets/images/underlines/underline-blockage.svg" class="pencil-underline" aria-hidden="true" alt=""></span>.</p>
+  <p class="cipo-subline">Lesions may arise anywhere along the brain-gut axis.</p>
+  <div class="brain-gut-img-wrap">
+    <img src="/assets/images/brain-gut.png"
+         alt="Brain-gut axis — bidirectional communication diagram"
+         class="brain-gut-img">
+  </div>
+  <p class="cipo-subline">We studied the <span class="pencil-mark">largest patient cohort<img src="/assets/images/underlines/underline-largest-patient-cohort.svg" class="pencil-underline" aria-hidden="true" alt=""></span> to date.</p>
 
   <div class="cipo-stats-row">
     <div class="cipo-stat">
