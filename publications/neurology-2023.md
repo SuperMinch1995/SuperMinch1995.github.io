@@ -74,20 +74,20 @@ This case is notable because:
 
 ### What we found  
 
-Imaging showed a region of hypoperfusion and progressive and localized cortical atrophy.
+Imaging showed a region of **hypoperfusion** and localized **cortical atrophy**.
 
-Histological findings revealed characteristic vascular abnormalities:
+Histological findings revealed vascular abnormalities:
 
 <figure class="sci-figure">
-  <img src="/assets/images/neurology-2023-GNA11-2A.webp" alt="Histology of leptomeningeal angiomatosis showing enlarged veins">
+  <img src="/assets/images/neurology-1.webp" alt="Histology of leptomeningeal angiomatosis showing enlarged veins">
   <figcaption>
-    <h4>Leptomeningeal vascular pathology</h4>
-    <p>Enlarged veins (red arrowheads) with angiomatosis (empty arrow).</p>
+    <h4>Leptomeningeal vascular abnormalities</h4>
+    <p>Enlarged veins with angiomatosis.</p>
   </figcaption>
 </figure>
 
 <figure class="sci-figure">
-  <img src="/assets/images/neurology-2023-GNA11-2B.webp" alt="Immunohistochemistry showing alpha-smooth muscle actin in vein wall">
+  <img src="/assets/images/neurology-2.webp" alt="Immunohistochemistry showing alpha-smooth muscle actin in vein wall">
   <figcaption>
     <h4>Abnormal smooth muscle actin expression</h4>
     <p>Abnormally expressed alpha-smooth muscle actin in vein wall.</p>
@@ -95,7 +95,7 @@ Histological findings revealed characteristic vascular abnormalities:
 </figure>
 
 <figure class="sci-figure">
-  <img src="/assets/images/neurology-2023-GNA11-2C.webp" alt="Glomeruloid vessels in cortical layers II-III">
+  <img src="/assets/images/neurology-3.webp" alt="Glomeruloid vessels in cortical layers II-III">
   <figcaption>
     <h4>Cortical glomeruloid vessels</h4>
     <p>Cortex (layers II–III): glomeruloid vessels without neuronal loss, gliosis, or calcification (×200–400).</p>
@@ -103,7 +103,7 @@ Histological findings revealed characteristic vascular abnormalities:
 </figure>
 
 <figure class="sci-figure">
-  <img src="/assets/images/neurology-2023-GNA11-2D.webp" alt="CD34 immunostaining of glomeruloid cortical vessels">
+  <img src="/assets/images/neurology-4.webp" alt="CD34 immunostaining of glomeruloid cortical vessels">
   <figcaption>
     <h4>CD34 endothelial staining</h4>
     <p>CD34 staining of the glomeruloid vessels.</p>
