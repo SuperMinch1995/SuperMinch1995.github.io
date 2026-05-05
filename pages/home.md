@@ -239,6 +239,7 @@ posts:
   gap: 0.6rem;
   text-decoration: none;
   color: inherit;
+  align-items: center
 }
 .pub-pill {
   display: inline-block;
@@ -264,7 +265,6 @@ posts:
   gap: 1.8rem;
   align-items: baseline;
   margin: 14px 0 0 0;
-  padding-left: 15px;
 }
 .stat-block { display: flex; flex-direction: column; }
 .stat-sep {
@@ -288,11 +288,11 @@ posts:
   margin-top: 2px;
 }
 .pub-card-desc {
-  font-size: 0.83em;
+  font-size: 18px;
   color: var(--color-base-text);
   opacity: 0.7;
   line-height: 1.55;
-  margin: 8px 0 0 0;
+  margin: 20px 0 0 0;
 }
 .pub-card-cta {
   font-size: 24px;
@@ -301,7 +301,7 @@ posts:
   border-bottom: 1.5px solid #C2510A;
   margin-top: 14px;
   padding-bottom: 1px;
-  align-self: flex-start;
+  align-self: center;
   transition: opacity 0.15s;
 }
 
@@ -433,11 +433,11 @@ posts:
   <div class="pub-card">
     <img class="pub-image" src="/assets/images/ACTG2.jpeg" alt="ACTG2 immunohistochemistry panel" loading="lazy" decoding="async">
     <span class="pub-pill">Latest publication</span>
-    <p class="pub-card-title">Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction</p>
+    <p class="pub-card-title">Histogenetic Classification Predicts Outcomes in Chronic Intestinal Pseudo-Obstruction</p>
     <div class="pub-stats">
       <div class="stat-block">
         <span class="stat-num">130</span>
-        <span class="stat-label">Adults</span>
+        <span class="stat-label">Unsolved Cases</span>
       </div>
       <div class="stat-sep"></div>
       <div class="stat-block">
@@ -450,8 +450,12 @@ posts:
         <span class="stat-label">Genes</span>
       </div>
     </div>
-    <p class="pub-card-desc">Integrating genomic and histopathological data resolved 82% of idiopathic cases. Monogenic myopathy emerged as an independent predictor of favorable long-term survival.</p>
-    <a href="/projects/cipo/" class="pub-card-cta">About the project &rarr;</a>
+    <p class="pub-card-desc">We found mutations with distinct mechanisms.</p>
+    <img src="/assets/images/allvariants.gif"
+         alt="All ACTG2 variants — structural overview"
+         style="display:block;width:100%;height:auto;border-radius:4px;">
+    <p class="pub-card-desc">I modeled this protein in Python.</p>
+    <a href="/projects/cipo/" class="pub-card-cta">Interact with it in 3D &rarr;</a>
   </div>
 </div>
 
