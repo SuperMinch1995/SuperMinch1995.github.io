@@ -76,14 +76,6 @@ This case is notable because:
 
 Imaging showed a region of hypoperfusion and progressive and localized cortical atrophy.
 
-<figure class="sci-figure">
-  <img src="/assets/images/neurology-2023-GNA11-1.webp" alt="Multimodal MRI and CT neuroimaging showing leptomeningeal angioma and progressive cortical atrophy">
-  <figcaption>
-    <h4>Multimodal neuroimaging</h4>
-    <p>Subcortical hyperintensity on FLAIR images (A, arrowhead) with local leptomeningeal enhancement on postcontrast FLAIR (B) and T1 (C–D), uncalcified on CT (E). ASL perfusion map (F) showed local hypoperfusion; T1 images (G–H) showed progressive atrophy over 6 months.</p>
-  </figcaption>
-</figure>
-
 Histological findings revealed characteristic vascular abnormalities:
 
 <figure class="sci-figure">
@@ -118,15 +110,7 @@ Histological findings revealed characteristic vascular abnormalities:
   </figcaption>
 </figure>
 
-On the leptomeningeal biopsy, we identified a specific genetic mutation (*GNA11*), previously known to be involved in Sturge-Weber syndrome.
-
-<figure class="sci-figure">
-  <img src="/assets/images/neurology-2023-GNA11-3.webp" alt="IGV screenshot showing GNA11 R183C somatic mutation at 4% VAF">
-  <figcaption>
-    <h4>Somatic GNA11 mutation — NGS</h4>
-    <p>R183C GNA11 somatic mutation (VAF: 4%) in leptomeningeal tissue (Integrative Genomics Viewer).</p>
-  </figcaption>
-</figure>
+On the leptomeningeal biopsy, we identified a specific somatic mutation (*GNA11*) R183C (VAF: 4%), previously known to be involved in Sturge-Weber syndrome.
 
 Together, these findings support the diagnosis of a rare presentation known as **type III Sturge-Weber syndrome**.
 

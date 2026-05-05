@@ -173,3 +173,6 @@ bottom:
   enable_bottom_menu: false
   copyright_text: "© 2026 Minh-Chau Ta"
   show_rss_icon: true
+webrick:
+  mime_types:
+    pdb: chemical/x-pdb

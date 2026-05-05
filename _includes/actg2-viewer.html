@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACTG2 Q247P – 3D Viewer</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<style>
+  :root {
+    --orange:  #C2510A;
+    --beige:   #F5F0E8;
+    --beige2:  #EDE8DC;
+    --dark:    #1C1A17;
+    --muted:   rgba(28,26,23,0.55);
+    --radius:  12px;
+    --font:    'DM Sans', system-ui, sans-serif;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--beige);
+    font-family: var(--font);
+    color: var(--dark);
+  }
+
+  /* ─── HERO WRAPPER ─────────────────────────────── */
+  .protein-hero {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto 3rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #12100E;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.28);
+  }
+
+  /* ─── 3DMOL VIEWER ─────────────────────────────── */
+  #viewer-container {
+    width: 100%;
+    height: 520px;
+    position: relative;
+  }
+
+  #mol-viewer {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ─── PHASE 0–2s : INTRO OVERLAY ───────────────── */
+  #overlay-intro {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(12,10,8,0.60);
+    backdrop-filter: blur(2px);
+    z-index: 20;
+    transition: opacity 0.8s ease;
+  }
+  #overlay-intro.hidden { opacity: 0; pointer-events: none; }
+
+  .intro-tagline {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.82);
+    letter-spacing: 0.04em;
+    text-align: center;
+    max-width: 340px;
+    line-height: 1.55;
+  }
+  .intro-tagline em {
+    font-style: normal;
+    color: var(--orange);
+    font-weight: 500;
+  }
+
+  /* ─── MUTATION LABEL (apparaît à 4s) ────────────── */
+  #mutation-label {
+    position: absolute;
+    top: 38%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    pointer-events: none;
+  }
+  #mutation-label.visible { opacity: 1; }
+
+  .label-pill {
+    background: rgba(194,81,10,0.92);
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 0 0 3px rgba(194,81,10,0.35), 0 4px 18px rgba(0,0,0,0.5);
+    animation: pillPulse 2.4s ease-in-out infinite;
+  }
+  .label-pill span {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+    font-family: var(--font);
+  }
+
+  @keyframes pillPulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(194,81,10,0.35), 0 4px 18px rgba(0,0,0,0.5); }
+    50%       { box-shadow: 0 0 0 8px rgba(194,81,10,0.12), 0 4px 24px rgba(194,81,10,0.4); }
+  }
+
+  /* ─── CONNECTOR LINE label → residue ───────────── */
+  #label-connector {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 14;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+  }
+  #label-connector.visible { opacity: 1; }
+
+  /* ─── CONTROLS (apparaissent à 8s) ─────────────── */
+  #controls {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    display: flex;
+    gap: 8px;
+    z-index: 30;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  #controls.visible { opacity: 1; transform: translateY(0); }
+
+  .ctrl-btn {
+    background: rgba(245,240,232,0.10);
+    border: 1px solid rgba(245,240,232,0.22);
+    color: rgba(255,255,255,0.80);
+    font-family: var(--font);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .ctrl-btn:hover {
+    background: rgba(194,81,10,0.75);
+    border-color: var(--orange);
+    color: #fff;
+  }
+  .ctrl-btn.active {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #fff;
+  }
+
+  /* ─── BOTTOM INFO BAR ───────────────────────────── */
+  .protein-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: rgba(28,26,23,0.95);
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .meta-gene {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--orange);
+    letter-spacing: 0.06em;
+  }
+  .meta-desc {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+  }
+  .meta-badge {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    color: rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  /* ─── LOADING STATE ─────────────────────────────── */
+  #loading-indicator {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #12100E;
+    z-index: 40;
+    gap: 16px;
+    transition: opacity 0.5s ease;
+  }
+  #loading-indicator.hidden { opacity: 0; pointer-events: none; }
+
+  .loader-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: inline-block;
+    margin: 0 3px;
+    animation: dotBounce 1.2s ease-in-out infinite;
+  }
+  .loader-dot:nth-child(2) { animation-delay: 0.2s; }
+  .loader-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes dotBounce {
+    0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+    40%            { transform: translateY(-8px); opacity: 1; }
+  }
+  .loader-text {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+
+<div class="protein-hero">
+
+  <!-- Loading -->
+  <div id="loading-indicator">
+    <div>
+      <span class="loader-dot"></span>
+      <span class="loader-dot"></span>
+      <span class="loader-dot"></span>
+    </div>
+    <div class="loader-text">LOADING STRUCTURE</div>
+  </div>
+
+  <div id="viewer-container">
+
+    <!-- 3Dmol viewer -->
+    <div id="mol-viewer"></div>
+
+    <!-- Phase 0–2s : intro -->
+    <div id="overlay-intro">
+      <p class="intro-tagline">
+        A <em>single mutation</em> can<br>reshape a protein's function.
+      </p>
+    </div>
+
+    <!-- Label mutation (4s) -->
+    <div id="mutation-label">
+      <div class="label-pill">
+        ACTG2 · Q247P
+        <span>Associated with severe CIPO phenotype</span>
+      </div>
+    </div>
+
+    <!-- SVG connector -->
+    <svg id="label-connector" xmlns="http://www.w3.org/2000/svg">
+      <line id="connector-line"
+        x1="0" y1="0" x2="0" y2="0"
+        stroke="#C2510A" stroke-width="1.2"
+        stroke-dasharray="4 3" opacity="0.6"/>
+    </svg>
+
+    <!-- Controls (8s) -->
+    <div id="controls">
+      <button class="ctrl-btn active" id="btn-rotate">⟳ Rotate</button>
+      <button class="ctrl-btn" id="btn-surface">◈ Surface</button>
+      <button class="ctrl-btn" id="btn-reset">↺ Reset</button>
+    </div>
+
+  </div>
+
+  <!-- Meta bar -->
+  <div class="protein-meta">
+    <span class="meta-gene">ACTG2 · Q247P</span>
+    <span class="meta-desc">Smooth muscle γ-actin — Monomère modélisé</span>
+    <span class="meta-badge">AlphaFold · Chaîne A · Rés. 245</span>
+  </div>
+
+</div>
+
+<script>
+(function() {
+
+  // ── CONFIG ────────────────────────────────────────
+  const PDB_PATH    = '/assets/structures/Q247P.txt';
+  const MUT_RESI    = 245;   // numéro PDB (offset +2)
+  const MUT_CHAIN   = 'A';
+  const COLOR_BG    = 0x12100E;
+  const COLOR_MAIN  = 0x9E8E7A;  // beige-gris pour le reste
+  const COLOR_MUT   = 0xC2510A;  // orange site
+  const COLOR_NEAR  = 0xD4956B;  // halo autour mutation
+
+  // ── VIEWER INIT ───────────────────────────────────
+  const element = document.getElementById('mol-viewer');
+  const config  = { backgroundColor: COLOR_BG, antialias: true, cartoonQuality: 6 };
+  const viewer  = $3Dmol.createViewer(element, config);
+
+  // ── LOAD PDB ──────────────────────────────────────
+  fetch(PDB_PATH)
+    .then(r => { if (!r.ok) throw new Error('PDB not found'); return r.text(); })
+    .then(pdbData => {
+
+      viewer.addModel(pdbData, 'pdb');
+
+      // Style global : cartoon muted
+      viewer.setStyle({}, {
+        cartoon: {
+          color: '#9E8E7A',
+          opacity: 0.75,
+          thickness: 0.35
+        }
+      });
+
+      // Résidus proches (±4) : légèrement plus chauds
+      viewer.setStyle(
+        { chain: MUT_CHAIN, resi: [MUT_RESI-4, MUT_RESI+4] },
+        { cartoon: { color: '#D4956B', opacity: 0.90, thickness: 0.4 } }
+      );
+
+      // Résidu muté : stick + sphère orange vif
+      viewer.setStyle(
+        { chain: MUT_CHAIN, resi: MUT_RESI },
+        {
+          sphere: { color: '#C2510A', radius: 1.2, opacity: 0.95 },
+          stick:  { color: '#E8854A', radius: 0.22, opacity: 1.0 }
+        }
+      );
+
+      // Label 3D intégré
+      viewer.addLabel('Q247P', {
+        position: { chain: MUT_CHAIN, resi: MUT_RESI, atom: 'CA' },
+        fontColor: '#FFFFFF',
+        backgroundColor: 'rgba(194,81,10,0.0)',
+        fontSize: 0,   // masqué — on utilise notre overlay HTML
+        showBackground: false
+      });
+
+      viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI });
+      viewer.zoom(0.72);
+      viewer.render();
+
+      // Masquer loading
+      document.getElementById('loading-indicator').classList.add('hidden');
+
+      // Démarrer la séquence narrative
+      startNarrative();
+    })
+    .catch(err => {
+      console.error('Erreur chargement PDB:', err);
+      document.getElementById('loading-indicator').innerHTML =
+        '<div style="color:#C2510A;font-size:0.8rem;letter-spacing:0.08em">STRUCTURE UNAVAILABLE</div>';
+    });
+
+  // ── SÉQUENCE NARRATIVE ────────────────────────────
+  function startNarrative() {
+
+    // 0–2s : overlay intro visible, caméra statique
+    // 2s : fade out overlay + début rotation lente
+    setTimeout(() => {
+      document.getElementById('overlay-intro').classList.add('hidden');
+      viewer.spin('y', 0.6);  // rotation très lente
+    }, 2000);
+
+    // 4s : pulse du résidu muté + label HTML
+    setTimeout(() => {
+      // Pulse : on refait un setStyle pour forcer le re-render
+      viewer.setStyle(
+        { chain: MUT_CHAIN, resi: MUT_RESI },
+        {
+          sphere: { color: '#E8600A', radius: 1.45, opacity: 1.0 },
+          stick:  { color: '#FF9055', radius: 0.28, opacity: 1.0 }
+        }
+      );
+      viewer.render();
+
+      // Retour taille normale après 600ms (effet pulse)
+      setTimeout(() => {
+        viewer.setStyle(
+          { chain: MUT_CHAIN, resi: MUT_RESI },
+          {
+            sphere: { color: '#C2510A', radius: 1.2, opacity: 0.95 },
+            stick:  { color: '#E8854A', radius: 0.22, opacity: 1.0  }
+          }
+        );
+        viewer.render();
+      }, 600);
+
+      // Label HTML
+      document.getElementById('mutation-label').classList.add('visible');
+      document.getElementById('label-connector').classList.add('visible');
+
+      // Positionner le connector SVG vers approximativement le centre viewer
+      positionConnector();
+
+    }, 4000);
+
+    // 5.5s : arrêt rotation, zoom léger vers résidu
+    setTimeout(() => {
+      viewer.spin(false);
+      viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI }, 800);
+    }, 5500);
+
+    // 8s : afficher les contrôles
+    setTimeout(() => {
+      document.getElementById('controls').classList.add('visible');
+    }, 8000);
+  }
+
+  // ── POSITIONNER LE CONNECTOR LINE ─────────────────
+  function positionConnector() {
+    const pill = document.getElementById('mutation-label');
+    const svg  = document.getElementById('label-connector');
+    const line = document.getElementById('connector-line');
+    const cont = document.getElementById('viewer-container');
+
+    const pillRect = pill.getBoundingClientRect();
+    const contRect = cont.getBoundingClientRect();
+
+    // Centre du viewer (approximation du résidu projeté)
+    const targetX = contRect.width  * 0.50;
+    const targetY = contRect.height * 0.42;
+
+    // Bas du pill relatif au container
+    const pillX = (pillRect.left - contRect.left) + pillRect.width  / 2;
+    const pillY = (pillRect.top  - contRect.top)  + pillRect.height;
+
+    line.setAttribute('x1', pillX);
+    line.setAttribute('y1', pillY);
+    line.setAttribute('x2', targetX);
+    line.setAttribute('y2', targetY);
+  }
+
+  // ── CONTROLS ──────────────────────────────────────
+  let spinning   = true;
+  let surfaceOn  = false;
+  let surfaceId  = null;
+
+  document.getElementById('btn-rotate').addEventListener('click', function() {
+    spinning = !spinning;
+    if (spinning) {
+      viewer.spin('y', 0.6);
+      this.classList.add('active');
+      this.textContent = '⟳ Rotate';
+    } else {
+      viewer.spin(false);
+      this.classList.remove('active');
+      this.textContent = '⏸ Paused';
+    }
+  });
+
+  document.getElementById('btn-surface').addEventListener('click', function() {
+    surfaceOn = !surfaceOn;
+    if (surfaceOn) {
+      surfaceId = viewer.addSurface($3Dmol.SurfaceType.MS, {
+        opacity: 0.22,
+        color: '#C2510A'
+      }, { chain: MUT_CHAIN });
+      viewer.render();
+      this.classList.add('active');
+      this.textContent = '◈ Hide Surface';
+    } else {
+      if (surfaceId !== null) viewer.removeSurface(surfaceId);
+      viewer.render();
+      this.classList.remove('active');
+      this.textContent = '◈ Surface';
+    }
+  });
+
+  document.getElementById('btn-reset').addEventListener('click', function() {
+    viewer.spin(false);
+    spinning = false;
+    document.getElementById('btn-rotate').classList.remove('active');
+    document.getElementById('btn-rotate').textContent = '⟳ Rotate';
+
+    viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI });
+    viewer.zoom(0.72);
+    viewer.render();
+  });
+
+})();
+</script>
+</body>
+</html>
