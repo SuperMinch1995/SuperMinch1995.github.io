@@ -240,7 +240,7 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-meta">
-      First author · American Journal of Gastroenterol · 2026
+      First author · American Journal of Gastroenterology · 2026
     </p>
 
     <p class="rt-abstract">
@@ -286,7 +286,7 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-abstract">
-      NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms with distinctive epithelioid morphology and complex immunophenotypic features, making molecular characterization essential for accurate diagnosis.
+      NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms with distinctive epithelioid morphology and complex immunophenotypic features.
     </p>
 
     <div class="rt-links">
@@ -328,7 +328,7 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-abstract">
-      The 2025 French Genomic Medicine Initiative represents one of the first nationwide efforts to integrate genome sequencing into routine clinical care.
+      The 2025 French Genomic Medicine Initiative represents one of the first nationwide efforts to integrate whole genome sequencing into routine clinical care.
     </p>
 
     <div class="rt-links">
