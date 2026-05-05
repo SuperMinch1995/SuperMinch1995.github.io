@@ -293,6 +293,7 @@ posts:
   opacity: 0.7;
   line-height: 1.55;
   margin: 20px 0 0 0;
+  text-align: center
 }
 .pub-card-cta {
   font-size: 24px;
