@@ -3,7 +3,7 @@ layout: post
 title: "Late-Onset Status Epilepticus Associated With Isolated Leptomeningeal Angioma and Sturge-Weber Syndrome-Related GNA11 Pathogenic Variation"
 description: "Co-author · Neurology · 2023"
 permalink: /publications/neurology-2023/
-image: "/assets/images/neurology-2023-0.webp"
+image: "/assets/images/neurology-hero.webp"
 
 ---
 
@@ -62,7 +62,7 @@ This article reports the case of a 61-year-old man with no prior neurological hi
 
 Brain imaging (MRI) revealed a rare abnormality: a *leptomeningeal angioma*, which is a vascular malformation located on the surface of the brain. This type of lesion is typically associated with **Sturge-Weber syndrome (SWS)**, a congenital condition usually diagnosed in childhood.
 
----
+<br>
 
 ### Why it matters  
 This case is notable because:
@@ -70,7 +70,7 @@ This case is notable because:
 - The patient had **no classical features of the syndrome** (no facial birthmark, no ocular involvement)  
 - Symptoms appeared **late in adulthood**, which is highly unusual  
 
----
+<br>
 
 ### What we found  
 
@@ -114,7 +114,7 @@ On the leptomeningeal biopsy, we identified a specific somatic mutation *GNA11* 
 
 Together, these findings support the diagnosis of a rare presentation known as **type III Sturge-Weber syndrome**.
 
----
+<br>
 
 ### Contribution to knowledge  
 This case provides important evidence that:
@@ -125,6 +125,7 @@ This case provides important evidence that:
 
 In practice, this suggests that some unexplained adult-onset epilepsies may have an underlying, underdiagnosed vascular-genetic origin.
 
+<br>
 ---
 
 <a href="https://superminch1995.github.io/assets/pdfs/neurology-2023.pdf" target="_blank">Read the full article (PDF)</a>
