@@ -126,6 +126,7 @@ This case provides important evidence that:
 In practice, this suggests that some unexplained adult-onset epilepsies may have an underlying, underdiagnosed vascular-genetic origin.
 
 <br>
+
 ---
 
 <a href="https://superminch1995.github.io/assets/pdfs/neurology-2023.pdf" target="_blank">Read the full article (PDF)</a>
