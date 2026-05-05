@@ -10,6 +10,7 @@ permalink: /research/
   padding-left: 2rem;
   margin: 2rem 0;
 }
+
 .research-timeline::before {
   content: '';
   position: absolute;
@@ -19,6 +20,7 @@ permalink: /research/
   width: 0.5px;
   background: var(--color-base-border, #ddd);
 }
+
 .rt-section-title {
   font-size: 0.72em;
   font-weight: 500;
@@ -27,11 +29,16 @@ permalink: /research/
   color: #C2510A;
   margin: 2rem 0 1rem;
 }
-.rt-section-title:first-child { margin-top: 0; }
+
+.rt-section-title:first-child {
+  margin-top: 0;
+}
+
 .rt-item {
   position: relative;
   margin-bottom: 1.5rem;
 }
+
 .rt-dot {
   position: absolute;
   left: -2rem;
@@ -45,16 +52,22 @@ permalink: /research/
   align-items: center;
   justify-content: center;
 }
+
 .rt-dot-inner {
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background: #C2510A;
 }
-.rt-dot-inner.grey { background: #bbb; }
-html[data-bs-theme="dark"] .rt-dot-inner.grey { background: #555; }
 
-/* Desktop: bandeau pleine largeur au-dessus du titre */
+.rt-dot-inner.grey {
+  background: #bbb;
+}
+
+html[data-bs-theme="dark"] .rt-dot-inner.grey {
+  background: #555;
+}
+
 .rt-thumb {
   display: block;
   width: 100%;
@@ -65,6 +78,7 @@ html[data-bs-theme="dark"] .rt-dot-inner.grey { background: #555; }
   background: var(--color-base-bg);
   margin-bottom: 0.6rem;
 }
+
 html[data-bs-theme="dark"] .rt-thumb {
   border-color: rgba(255,255,255,0.1);
 }
@@ -76,12 +90,14 @@ html[data-bs-theme="dark"] .rt-thumb {
   line-height: 1.4;
   margin: 0 0 0.25rem;
 }
+
 .rt-meta {
   font-size: 0.82em;
   color: var(--color-base-text);
   opacity: 0.55;
   margin: 0 0 0.35rem;
 }
+
 .rt-abstract {
   font-size: 0.83em;
   color: var(--color-base-text);
@@ -89,19 +105,13 @@ html[data-bs-theme="dark"] .rt-thumb {
   line-height: 1.6;
   margin: 0 0 0.4rem;
 }
-.rt-citation {
-  font-size: 0.82em;
-  color: var(--color-base-text);
-  opacity: 0.65;
-  font-style: italic;
-  line-height: 1.5;
-  margin: 0 0 0.4rem;
-}
+
 .rt-links {
   display: flex;
   gap: 0.6rem;
   flex-wrap: wrap;
 }
+
 .rt-link {
   font-size: 0.75em;
   font-weight: 500;
@@ -112,31 +122,42 @@ html[data-bs-theme="dark"] .rt-thumb {
   padding: 0.15em 0.55em;
   transition: opacity 0.15s;
 }
-.rt-link:hover { opacity: 0.7; }
+
+.rt-link:hover {
+  opacity: 0.7;
+}
+
 html[data-bs-theme="dark"] .rt-link {
   color: #E8845A;
   border-color: #E8845A;
 }
+
 .rt-divider {
   border: none;
   border-top: 0.5px solid var(--color-base-border, #ddd);
   margin: 0 0 1.5rem;
 }
 
-/* Mobile: vignette latérale à droite */
-@media (max-width: 600px) {
-  .rt-item:has(.rt-thumb) {
-    padding-right: 100px;
-    min-height: 72px;
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .research-timeline {
+    padding-left: 1.5rem;
   }
+
+  .rt-dot {
+    left: -1.5rem;
+  }
+
   .rt-thumb {
-    position: absolute;
-    top: 4px;
-    right: 0;
-    width: 88px;
-    height: 60px;
-    aspect-ratio: unset;
-    margin: 0;
+    height: 90px;
+  }
+
+  .rt-title {
+    font-size: 0.95em;
+  }
+
+  .rt-abstract {
+    font-size: 0.8em;
   }
 }
 </style>
@@ -146,90 +167,272 @@ html[data-bs-theme="dark"] .rt-link {
   <div class="rt-section-title">In progress</div>
 
   <div class="rt-item">
-    <div class="rt-dot"><div class="rt-dot-inner grey"></div></div>
-    <img class="rt-thumb" src="/assets/images/MF-hero.webp" alt="Phylogenetic divergence between skin and nodal mycosis fungoides clones">
-    <p class="rt-title">Mycosis fungoides with nodal progression harbors recurrent SOCS1 mutations and JAK2 rearrangements</p>
-    <p class="rt-meta">Ta MC, … · In preparation</p>
-    <p class="rt-abstract">In advanced Mycosis fungoides with nodal progression (ISCL-EORTC N3 stage), paired skin and lymph node analyses revealed marked intratumoral heterogeneity and branched evolution, while recurrent SOCS1 mutations and JAK2 fusions highlighted a central role for JAK/STAT pathway dysregulation.</p>
+    <div class="rt-dot">
+      <div class="rt-dot-inner grey"></div>
+    </div>
+
+    <img class="rt-thumb"
+         src="/assets/images/MF-hero.webp"
+         alt="Phylogenetic divergence between skin and nodal mycosis fungoides clones">
+
+    <p class="rt-title">
+      Mycosis fungoides with nodal progression harbors recurrent SOCS1 mutations and JAK2 rearrangements
+    </p>
+
+    <p class="rt-meta">
+      Ta MC, … · In preparation
+    </p>
+
+    <p class="rt-abstract">
+      In advanced Mycosis fungoides with nodal progression (ISCL-EORTC N3 stage), paired skin and lymph node analyses revealed marked intratumoral heterogeneity and branched evolution, while recurrent SOCS1 mutations and JAK2 fusions highlighted a central role for JAK/STAT pathway dysregulation.
+    </p>
+
     <div class="rt-links">
-      <a class="rt-link" href="/publications/mf-2025/">About the project</a>
+      <a class="rt-link" href="/publications/mf-2025/">
+        About the project
+      </a>
     </div>
   </div>
 
   <div class="rt-item">
-    <div class="rt-dot"><div class="rt-dot-inner grey"></div></div>
-    <img class="rt-thumb" src="/assets/images/Clock-hero.webp" alt="Clock gene expression in NOS1+ enteric nitrergic neurons">
-    <p class="rt-title">Clock gene expression in NOS1+ nitrergic neurons in intestinal dysmotility</p>
-    <p class="rt-meta">Ta MC, … · In preparation</p>
-    <p class="rt-abstract">snRNA-seq analysis of the Drokhlyansky 2020 human enteric nervous system dataset (GSE148822). Hypothesis: circadian misalignment of nitrergic neurons as a driver of enteric dysmotility.</p>
+    <div class="rt-dot">
+      <div class="rt-dot-inner grey"></div>
+    </div>
+
+    <img class="rt-thumb"
+         src="/assets/images/Clock-hero.webp"
+         alt="Clock gene expression in NOS1+ enteric nitrergic neurons">
+
+    <p class="rt-title">
+      Clock gene expression in NOS1+ nitrergic neurons in intestinal dysmotility
+    </p>
+
+    <p class="rt-meta">
+      Ta MC, … · In preparation
+    </p>
+
+    <p class="rt-abstract">
+      snRNA-seq analysis of the Drokhlyansky 2020 human enteric nervous system dataset (GSE148822). Hypothesis: circadian misalignment of nitrergic neurons as a driver of enteric dysmotility.
+    </p>
+
     <div class="rt-links">
-      <a class="rt-link" href="/publications/clock-nos1/">About the project</a>
+      <a class="rt-link" href="/publications/clock-nos1/">
+        About the project
+      </a>
     </div>
   </div>
 
   <hr class="rt-divider">
+
   <div class="rt-section-title">Publications</div>
 
   <div class="rt-item">
-    <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/images/AJG-2026-hero.webp" alt="Histogenetic classification predicts outcomes in 130 adults with chronic intestinal pseudo-obstruction">
-    <p class="rt-title">Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction</p>
-    <p class="rt-meta">First author · American Journal of Gastroenterol · 2026</p>
-    <p class="rt-abstract">Integrating genomic and histopathological data resolved 82% of idiopathic cases. Monogenic myopathy emerged as an independent predictor of favorable long-term survival.</p>
+    <div class="rt-dot">
+      <div class="rt-dot-inner"></div>
+    </div>
+
+    <img class="rt-thumb"
+         src="/assets/images/AJG-2026-hero.webp"
+         alt="Histogenetic classification predicts outcomes in 130 adults with chronic intestinal pseudo-obstruction">
+
+    <p class="rt-title">
+      Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction
+    </p>
+
+    <p class="rt-meta">
+      First author · American Journal of Gastroenterol · 2026
+    </p>
+
+    <p class="rt-abstract">
+      Integrating genomic and histopathological data resolved 82% of idiopathic cases. Monogenic myopathy emerged as an independent predictor of favorable long-term survival.
+    </p>
+
     <div class="rt-links">
-      <a class="rt-link" href="/publications/cipo-2026/">About the project</a>
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.14309/" target="_blank" rel="noopener">DOI</a>
+      <a class="rt-link" href="/publications/cipo-2026/">
+        About the project
+      </a>
+
+      <a class="rt-link"
+         href="https://pubmed.ncbi.nlm.nih.gov/"
+         target="_blank"
+         rel="noopener">
+        PubMed
+      </a>
+
+      <a class="rt-link"
+         href="https://doi.org/10.14309/"
+         target="_blank"
+         rel="noopener">
+        DOI
+      </a>
     </div>
   </div>
 
   <div class="rt-item">
-    <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/images/NR1D1-hero.webp" alt="NR1D1::MAML3 fusion structure with breakpoints in mesenchymal neoplasm">
-    <p class="rt-title">NR1D1::MAML3 Fusion in an Aggressive Mesenchymal Neoplasm</p>
-    <p class="rt-meta">First author · Genes Chromosomes Cancer · 2025</p>
-    <p class="rt-abstract">NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms with distinctive epithelioid morphology and complex immunophenotypic features, making molecular characterization essential for accurate diagnosis.</p>
-      <a class="rt-link" href="/publications/NR1D1-2025/">About the project</a>
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.1002/" target="_blank" rel="noopener">DOI</a>
+    <div class="rt-dot">
+      <div class="rt-dot-inner"></div>
     </div>
-  </div>
 
-  <div class="rt-item">
-    <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/images/Lancet-hero.webp" alt="National framework for genomic medicine integration in France">
-    <p class="rt-title">PFMG2025 — Integrating Genomic Medicine into the National Healthcare System in France</p>
-    <p class="rt-meta">Co-author · Lancet Reg Health Eur · 2025</p>
-    <p class="rt-abstract">The 2025 French Genomic Medicine Initiative represents one of the first nationwide efforts to integrate genome sequencing into routine clinical care, aiming to improve diagnostics and personalized treatment for patients with rare diseases, cancer predisposition syndromes, and cancers.</p>
-      <a class="rt-link" href="/publications/pfmg2025/">About the project</a>
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.1016/" target="_blank" rel="noopener">DOI</a>
-    </div>
-  </div>
+    <img class="rt-thumb"
+         src="/assets/images/NR1D1-hero.webp"
+         alt="NR1D1::MAML3 fusion structure with breakpoints in mesenchymal neoplasm">
 
-  <div class="rt-item">
-    <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/images/neurology-hero.webp" alt="Leptomeningeal angioma with GNA11 pathogenic variation">
-    <p class="rt-title">Late-Onset Status Epilepticus Associated With Isolated Leptomeningeal Angioma and Sturge-Weber Syndrome-Related GNA11 Pathogenic Variation</p>
-    <p class="rt-meta">Co-author · Neurology · 2023</p>
-    <p class="rt-citation">… Ta MC, et al. <em>Neurology.</em> 2023. doi:10.1212/…</p>
+    <p class="rt-title">
+      NR1D1::MAML3 Fusion in an Aggressive Mesenchymal Neoplasm
+    </p>
+
+    <p class="rt-meta">
+      First author · Genes Chromosomes Cancer · 2025
+    </p>
+
+    <p class="rt-abstract">
+      NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms with distinctive epithelioid morphology and complex immunophenotypic features, making molecular characterization essential for accurate diagnosis.
+    </p>
+
     <div class="rt-links">
-      <a class="rt-link" href="/publications/sturge-weber-2023/">About the project</a>
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.1212/" target="_blank" rel="noopener">DOI</a>
+      <a class="rt-link" href="/publications/NR1D1-2025/">
+        About the project
+      </a>
+
+      <a class="rt-link"
+         href="https://pubmed.ncbi.nlm.nih.gov/"
+         target="_blank"
+         rel="noopener">
+        PubMed
+      </a>
+
+      <a class="rt-link"
+         href="https://doi.org/10.1002/"
+         target="_blank"
+         rel="noopener">
+        DOI
+      </a>
     </div>
   </div>
 
   <div class="rt-item">
-    <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/images/SOCS1-hero.webp" alt="Intestinal phenotypic spectrum of SOCS1 haploinsufficiency">
-    <p class="rt-title">Insights Into the Expanding Intestinal Phenotypic Spectrum of SOCS1 Haploinsufficiency and Therapeutic Options</p>
-    <p class="rt-meta">Co-author · J Clin Immunol · 2023</p>
-    <p class="rt-citation">… Ta MC, et al. <em>J Clin Immunol.</em> 2023. doi:10.1007/…</p>
+    <div class="rt-dot">
+      <div class="rt-dot-inner"></div>
+    </div>
+
+    <img class="rt-thumb"
+         src="/assets/images/Lancet-hero.webp"
+         alt="National framework for genomic medicine integration in France">
+
+    <p class="rt-title">
+      PFMG2025 — Integrating Genomic Medicine into the National Healthcare System in France
+    </p>
+
+    <p class="rt-meta">
+      Co-author · Lancet Reg Health Eur · 2025
+    </p>
+
+    <p class="rt-abstract">
+      The 2025 French Genomic Medicine Initiative represents one of the first nationwide efforts to integrate genome sequencing into routine clinical care.
+    </p>
+
     <div class="rt-links">
-      <a class="rt-link" href="/publications/socs1-2023/">About the project</a>
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.1007/" target="_blank" rel="noopener">DOI</a>
+      <a class="rt-link" href="/publications/pfmg2025/">
+        About the project
+      </a>
+
+      <a class="rt-link"
+         href="https://pubmed.ncbi.nlm.nih.gov/"
+         target="_blank"
+         rel="noopener">
+        PubMed
+      </a>
+
+      <a class="rt-link"
+         href="https://doi.org/10.1016/"
+         target="_blank"
+         rel="noopener">
+        DOI
+      </a>
+    </div>
+  </div>
+
+  <div class="rt-item">
+    <div class="rt-dot">
+      <div class="rt-dot-inner"></div>
+    </div>
+
+    <img class="rt-thumb"
+         src="/assets/images/neurology-hero.webp"
+         alt="Leptomeningeal angioma with GNA11 pathogenic variation">
+
+    <p class="rt-title">
+      Late-Onset Status Epilepticus Associated With Isolated Leptomeningeal Angioma and Sturge-Weber Syndrome-Related GNA11 Pathogenic Variation
+    </p>
+
+    <p class="rt-meta">
+      Co-author · Neurology · 2023
+    </p>
+
+    <p class="rt-abstract">
+      Some unexplained adult-onset epilepsies may have an underlying vascular-genetic origin.
+    </p>
+
+    <div class="rt-links">
+      <a class="rt-link" href="/publications/sturge-weber-2023/">
+        About the project
+      </a>
+
+      <a class="rt-link"
+         href="https://pubmed.ncbi.nlm.nih.gov/"
+         target="_blank"
+         rel="noopener">
+        PubMed
+      </a>
+
+      <a class="rt-link"
+         href="https://doi.org/10.1212/"
+         target="_blank"
+         rel="noopener">
+        DOI
+      </a>
+    </div>
+  </div>
+
+  <div class="rt-item">
+    <div class="rt-dot">
+      <div class="rt-dot-inner"></div>
+    </div>
+
+    <img class="rt-thumb"
+         src="/assets/images/SOCS1-hero.webp"
+         alt="Intestinal phenotypic spectrum of SOCS1 haploinsufficiency">
+
+    <p class="rt-title">
+      Insights Into the Expanding Intestinal Phenotypic Spectrum of SOCS1 Haploinsufficiency and Therapeutic Options
+    </p>
+
+    <p class="rt-meta">
+      Co-author · J Clin Immunol · 2023
+    </p>
+
+    <p class="rt-abstract">
+      SOCS1 haploinsufficiency can cause severe and treatment-resistant intestinal diseases, including Crohn’s-like inflammation and chronic intestinal pseudo-obstruction.
+    </p>
+
+    <div class="rt-links">
+      <a class="rt-link" href="/publications/socs1-2023/">
+        About the project
+      </a>
+
+      <a class="rt-link"
+         href="https://pubmed.ncbi.nlm.nih.gov/"
+         target="_blank"
+         rel="noopener">
+        PubMed
+      </a>
+
+      <a class="rt-link"
+         href="https://doi.org/10.1007/"
+         target="_blank"
+         rel="noopener">
+        DOI
+      </a>
     </div>
   </div>
 
