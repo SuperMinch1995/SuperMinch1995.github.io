@@ -215,7 +215,7 @@ html[data-bs-theme="dark"] .rt-link {
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/images/socs1.png" alt="Intestinal phenotypic spectrum of SOCS1 haploinsufficiency">
+    <img class="rt-thumb" src="/assets/images/SOCS1-hero.webp" alt="Intestinal phenotypic spectrum of SOCS1 haploinsufficiency">
     <p class="rt-title">Insights Into the Expanding Intestinal Phenotypic Spectrum of SOCS1 Haploinsufficiency and Therapeutic Options</p>
     <p class="rt-meta">Co-author · J Clin Immunol · 2023</p>
     <p class="rt-citation">… Ta MC, et al. <em>J Clin Immunol.</em> 2023. doi:10.1007/…</p>
