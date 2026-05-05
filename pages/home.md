@@ -434,7 +434,7 @@ posts:
   <div class="pub-card">
     <img class="pub-image" src="/assets/images/ACTG2.jpeg" alt="ACTG2 immunohistochemistry panel" loading="lazy" decoding="async">
     <span class="pub-pill">Latest publication</span>
-    <p class="pub-card-title">Histogenetic Classification Predicts Outcomes in Chronic Intestinal Pseudo-Obstruction</p>
+    <p class="pub-card-title">Histogenetic Classification Predicts Outcomes in Chronic Intestinal Pseudo-Obstruction · First author · American Journal of Gastroenterology · 2026</p>
     <div class="pub-stats">
       <div class="stat-block">
         <span class="stat-num">130</span>

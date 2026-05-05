@@ -110,7 +110,7 @@ Histological findings revealed characteristic vascular abnormalities:
   </figcaption>
 </figure>
 
-On the leptomeningeal biopsy, we identified a specific somatic mutation (*GNA11*) R183C (VAF: 4%), previously known to be involved in Sturge-Weber syndrome.
+On the leptomeningeal biopsy, we identified a specific somatic mutation *GNA11* R183C (VAF: 4%), previously known to be involved in Sturge-Weber syndrome.
 
 Together, these findings support the diagnosis of a rare presentation known as **type III Sturge-Weber syndrome**.
 
