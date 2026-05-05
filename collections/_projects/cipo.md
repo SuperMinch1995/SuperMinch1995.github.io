@@ -10,7 +10,7 @@ categories: ["Neurogastroenterology"]
 role: "Physician-Researcher"
 ---
 
-{% include actg2-viewer.html %}
+{% include actg2-q247p.html %}
 
 <!-- ── CIPO SECTION ─────────────────────────────────────────────────── -->
 <style>
