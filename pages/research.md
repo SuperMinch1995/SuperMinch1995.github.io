@@ -165,7 +165,7 @@ html[data-bs-theme="dark"] .rt-link {
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/images/cipo-survival.png" alt="Kaplan-Meier survival curves stratified by histogenetic class in 130 adults with CIPO">
+    <img class="rt-thumb" src="/assets/images/AJG-hero.webp" alt="Histogenetic classification predicts outcomes in 130 adults with chronic intestinal pseudo-obstruction - CIPO">
     <p class="rt-title">Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction</p>
     <p class="rt-meta">First author · Am J Gastroenterol · 2026</p>
     <p class="rt-citation">Ta MC, et al. <em>Am J Gastroenterol.</em> 2026. doi:10.14309/…</p>
