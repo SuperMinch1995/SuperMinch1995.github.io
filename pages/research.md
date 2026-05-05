@@ -32,10 +32,6 @@ permalink: /research/
   position: relative;
   margin-bottom: 1.5rem;
 }
-.rt-item:has(.rt-thumb) {
-  padding-right: 140px;
-  min-height: 84px;
-}
 .rt-dot {
   position: absolute;
   left: -2rem;
@@ -57,20 +53,6 @@ permalink: /research/
 }
 .rt-dot-inner.grey { background: #bbb; }
 html[data-bs-theme="dark"] .rt-dot-inner.grey { background: #555; }
-.rt-thumb {
-  position: absolute;
-  top: 4px;
-  right: 0;
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 3px;
-  border: 0.5px solid var(--color-base-border, #ddd);
-  background: var(--color-base-bg);
-}
-html[data-bs-theme="dark"] .rt-thumb {
-  border-color: rgba(255,255,255,0.1);
-}
 .rt-title {
   font-size: 1em;
   font-weight: 600;
@@ -124,20 +106,6 @@ html[data-bs-theme="dark"] .rt-link {
   border-top: 0.5px solid var(--color-base-border, #ddd);
   margin: 0 0 1.5rem;
 }
-@media (max-width: 600px) {
-  .rt-item:has(.rt-thumb) {
-    padding-right: 0;
-    min-height: 0;
-  }
-  .rt-thumb {
-    position: static;
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    margin: 0 0 0.6rem;
-  }
-}
 </style>
 
 <div class="research-timeline">
@@ -146,7 +114,6 @@ html[data-bs-theme="dark"] .rt-link {
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner grey"></div></div>
-    <img class="rt-thumb" src="/assets/img/research/mf-clonal-evolution.png" alt="Phylogenetic divergence between skin and nodal mycosis fungoides clones">
     <p class="rt-title">Mycosis fungoides with nodal progression harbors recurrent SOCS1 mutations and JAK2 rearrangements</p>
     <p class="rt-meta">Ta MC, … · In reviewing</p>
     <p class="rt-abstract">Mutations in skin and lymph node samples indicated intratumoral heterogeneity and branched evolution between the skin and the lymph node.</p>
@@ -154,7 +121,6 @@ html[data-bs-theme="dark"] .rt-link {
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner grey"></div></div>
-    <img class="rt-thumb" src="/assets/img/research/circadian-nos1.png" alt="Clock gene expression in NOS1+ enteric nitrergic neurons">
     <p class="rt-title">Clock gene expression in NOS1+ nitrergic neurons in intestinal dysmotility</p>
     <p class="rt-meta">Ta MC, … · In preparation</p>
     <p class="rt-abstract">snRNA-seq analysis of the Drokhlyansky 2020 human enteric nervous system dataset (GSE148822). Central hypothesis: circadian misalignment of nitrergic neurons as a driver of enteric dysmotility.</p>
@@ -165,63 +131,58 @@ html[data-bs-theme="dark"] .rt-link {
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/img/research/cipo-survival.png" alt="Kaplan-Meier survival curves stratified by histogenetic class in 130 adults with CIPO">
     <p class="rt-title">Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction</p>
     <p class="rt-meta">First author · Am J Gastroenterol · 2026</p>
     <p class="rt-citation">Ta MC, et al. <em>Am J Gastroenterol.</em> 2026. doi:10.14309/…</p>
     <div class="rt-links">
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.14309/" target="_blank" rel="noopener">DOI</a>
+      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">↗ PubMed</a>
+      <a class="rt-link" href="https://doi.org/10.14309/" target="_blank" rel="noopener">↗ DOI</a>
       <a class="rt-link" href="/publications/cipo-2026/">About the project</a>
     </div>
   </div>
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/img/research/nr1d1-fusion.png" alt="NR1D1::MAML3 fusion structure with breakpoints in mesenchymal neoplasm">
     <p class="rt-title">NR1D1::MAML3 Fusion in an Aggressive Mesenchymal Neoplasm</p>
     <p class="rt-meta">First author · Genes Chromosomes Cancer · 2025</p>
     <p class="rt-citation">Ta MC, et al. <em>Genes Chromosomes Cancer.</em> 2025. doi:10.1002/…</p>
     <div class="rt-links">
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.1002/" target="_blank" rel="noopener">DOI</a>
+      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">↗ PubMed</a>
+      <a class="rt-link" href="https://doi.org/10.1002/" target="_blank" rel="noopener">↗ DOI</a>
       <a class="rt-link" href="/publications/NR1D1-2025/">About the project</a>
     </div>
   </div>
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/img/research/pfmg2025.png" alt="National framework for genomic medicine integration in France">
     <p class="rt-title">PFMG2025 — Integrating Genomic Medicine into the National Healthcare System in France</p>
     <p class="rt-meta">Co-author · Lancet Reg Health Eur · 2025</p>
     <p class="rt-citation">… Ta MC, et al. <em>Lancet Reg Health Eur.</em> 2025. doi:10.1016/…</p>
     <div class="rt-links">
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.1016/" target="_blank" rel="noopener">DOI</a>
+      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">↗ PubMed</a>
+      <a class="rt-link" href="https://doi.org/10.1016/" target="_blank" rel="noopener">↗ DOI</a>
     </div>
   </div>
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/img/research/sturge-weber.png" alt="Leptomeningeal angioma with GNA11 pathogenic variation">
     <p class="rt-title">Late-Onset Status Epilepticus Associated With Isolated Leptomeningeal Angioma and Sturge-Weber Syndrome-Related GNA11 Pathogenic Variation</p>
     <p class="rt-meta">Co-author · Neurology · 2023</p>
     <p class="rt-citation">… Ta MC, et al. <em>Neurology.</em> 2023. doi:10.1212/…</p>
     <div class="rt-links">
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.1212/" target="_blank" rel="noopener">DOI</a>
+      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">↗ PubMed</a>
+      <a class="rt-link" href="https://doi.org/10.1212/" target="_blank" rel="noopener">↗ DOI</a>
     </div>
   </div>
 
   <div class="rt-item">
     <div class="rt-dot"><div class="rt-dot-inner"></div></div>
-    <img class="rt-thumb" src="/assets/img/research/socs1.png" alt="Intestinal phenotypic spectrum of SOCS1 haploinsufficiency">
     <p class="rt-title">Insights Into the Expanding Intestinal Phenotypic Spectrum of SOCS1 Haploinsufficiency and Therapeutic Options</p>
     <p class="rt-meta">Co-author · J Clin Immunol · 2023</p>
     <p class="rt-citation">… Ta MC, et al. <em>J Clin Immunol.</em> 2023. doi:10.1007/…</p>
     <div class="rt-links">
-      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a>
-      <a class="rt-link" href="https://doi.org/10.1007/" target="_blank" rel="noopener">DOI</a>
+      <a class="rt-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">↗ PubMed</a>
+      <a class="rt-link" href="https://doi.org/10.1007/" target="_blank" rel="noopener">↗ DOI</a>
     </div>
   </div>
 
