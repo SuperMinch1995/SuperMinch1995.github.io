@@ -396,7 +396,7 @@ posts:
 
      <fieldset class="pub-fieldset">
        <legend class="pub-legend">
-         Publications
+         Selected Publications
        </legend>
        <ul class="pub-list">
          <li><a href="/publications/cipo-2026/">Am J Gastroenterol</a><span class="sep">·</span><span class="pub-year">2026</span></li>
