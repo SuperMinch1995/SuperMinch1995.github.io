@@ -230,7 +230,7 @@ h1 { text-align: center; }
 </div>
 
 <!-- ══════════════════════════════════════════════════
-     SUNBURST  (UNCHANGED)
+     SUNBURST
 ═══════════════════════════════════════════════════ -->
 <style>
 .sunburst-section {
@@ -262,3 +262,18 @@ h1 { text-align: center; }
     </iframe>
   </div>
 </div>
+
+<script>
+/* Auto-adjust sunburst iframe height based on sunburstHeight messages
+   posted by /assets/figures/cipo-sunburst.html.
+   Filter by e.source so other iframes' messages don't leak in. */
+(function () {
+  window.addEventListener('message', function (e) {
+    if (!e.data || typeof e.data.sunburstHeight !== 'number') return;
+    var iframe = document.getElementById('sunburst-iframe');
+    if (!iframe || e.source !== iframe.contentWindow) return;
+    var h = Math.min(Math.max(e.data.sunburstHeight, 400), 6000); // safety cap
+    iframe.style.height = h + 'px';
+  });
+})();
+</script>

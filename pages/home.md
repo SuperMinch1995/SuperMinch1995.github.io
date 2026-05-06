@@ -441,11 +441,14 @@ posts:
  <div class="pub-card">
    <img class="pub-image" src="/assets/images/ACTG2.jpeg" alt="ACTG2 immunohistochemistry panel" loading="lazy" decoding="async">
    <span class="pub-pill">Latest publication</span>
-   <p class="pub-card-title" style="text-align:center;margin:0;">
+   
+<p class="pub-card-title" style="text-align:center;margin:0;">
   <span style="display:block;font-size:0.62em;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#C2510A;margin-bottom:0.55rem;">First author</span>
   <span style="display:block;line-height:1.35;">Histogenetic Classification Predicts Outcomes in Chronic Intestinal Pseudo-Obstruction</span>
   <span style="display:block;font-size:0.78em;font-weight:400;font-style:italic;opacity:0.6;margin-top:0.55rem;letter-spacing:0.01em;">American Journal of Gastroenterology · 2026</span>
+  <span style="display:block;font-size:0.7em;font-weight:400;opacity:0.45;margin-top:0.25rem;letter-spacing:0.02em;">Official journal of the American College of Gastroenterology</span>
 </p>
+
    <div class="pub-stats">
      <div class="stat-block">
        <span class="stat-num">130</span>
