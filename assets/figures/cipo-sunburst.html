@@ -671,5 +671,39 @@ if (window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window)
   window.addEventListener('resize', adjustViewBox);
 })();
 </script>
+
+<script>
+/* Communique la hauteur réelle au parent (cipo.md filtre par e.source).
+   Utilise document.body.scrollHeight pour éviter les boucles de feedback
+   (cf. note dans actg2-wt-mutant.html). */
+(function () {
+  var lastPosted = 0;
+  function postHeight() {
+    try {
+      var h = document.body.scrollHeight;
+      if (h === lastPosted) return;
+      lastPosted = h;
+      window.parent.postMessage({ sunburstHeight: h }, '*');
+    } catch (e) {}
+  }
+  function init() {
+    postHeight();
+    [200, 600, 1200, 2000].forEach(function (d) { setTimeout(postHeight, d); });
+    if (typeof ResizeObserver !== 'undefined') {
+      try {
+        var ro = new ResizeObserver(postHeight);
+        ro.observe(document.body);
+      } catch (e) {}
+    }
+    window.addEventListener('resize', postHeight);
+    // Repost after any user click — covers panel expansion / gene rows / legend toggles
+    document.addEventListener('click', function () {
+      requestAnimationFrame(function () { requestAnimationFrame(postHeight); });
+    });
+  }
+  if (document.readyState === 'complete') init();
+  else window.addEventListener('load', init);
+})();
+</script>
 </body>
 </html>

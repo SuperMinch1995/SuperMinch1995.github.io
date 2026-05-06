@@ -92,8 +92,9 @@ permalink: "/about/"
     <h1 style="margin-top: 0;">Minh C. Thom, MD</h1>
     <p>I am a physician-scientist with training in pathology, molecular genetics, and translational research.</p>
     <p>Born in Vietnam and raised in France, I earned my MD from Sorbonne University in Paris, where I also completed my residency.</p>
-    <p>Alongside my medical training, I completed a Master’s degree in philosophy to deepen my approach to complex reasoning, uncertainty, and decision-making across disciplines.</p>
-    <p>My work has been presented at international conferences throughout the United States and Europe and recognized through competitive awards and grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
-    <p>Having lived and trained in diverse international settings, I see adaptability, intellectual flexibility, and interdisciplinary collaboration as key drivers of innovation in medicine.</p>
+    <p>Alongside my medical training, I completed a Master’s degree in philosophy, an experience that shaped my approach to complex reasoning and decision-making.</p>
+    <p>My work has been presented at international conferences across the United States and Europe. It has been recognized through competitive awards and grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
+    <p>Having lived and trained in diverse international settings, I see intellectual flexibility, adaptability, and interdisciplinary collaboration as drivers of innovation in medicine.</p>
+    <p>I currently live in San Diego with my husband and family. Outside of medicine and research, I enjoy travel, pickleball, philosophy, and exploring how different cultures, languages, and disciplines shape the way we understand health and science.</p>
   </div>
 </div>
