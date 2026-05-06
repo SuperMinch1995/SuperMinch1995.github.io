@@ -357,19 +357,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','DM Sans',sans-seri
 .footnote{margin-top:14px;font-size:11.9px;color:var(--text-tertiary);line-height:1.6;text-align:center}
 
 /* ────────────────────────────────────────────────────────
-   MOBILE — full-screen sections
+   MOBILE — full-screen sections (standalone only)
+   When embedded in an iframe (html.in-iframe), drop min-height:100vh
+   to prevent the runaway feedback loop with auto-sizing parent.
 ──────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   body { font-size: 14px; }
   .fig{padding:.6rem 0 .4rem}
 
   .story-section{
+    padding:32px 16px;
+  }
+  html:not(.in-iframe) .story-section{
     min-height:100vh;
     min-height:100svh;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    padding:32px 16px;
   }
 
   .section-title{font-size:12px}
@@ -975,6 +979,17 @@ function postHeight(){
 }
 
 /* ── INIT ────────────────────────────────────────────── */
+// Detect iframe embedding — disables full-screen mobile sections
+// to prevent the 100vh feedback loop with auto-sizing parent.
+try {
+  if (window.self !== window.top) {
+    document.documentElement.classList.add('in-iframe');
+  }
+} catch(e) {
+  // Cross-origin access throws → we're definitely in an iframe
+  document.documentElement.classList.add('in-iframe');
+}
+
 document.querySelectorAll('.story-section[data-section]').forEach(section => {
   renderSection(section, 'wt');
   setupSectionToggle(section);
