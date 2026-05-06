@@ -230,10 +230,11 @@ permalink: "/about/"
     <br><p>I am a physician-scientist with training in pathology and molecular genetics.</p>
     <p>Born in Vietnam and raised in France, I earned my MD from Sorbonne University in Paris, where I also completed my residency.</p>
 
-    <p>Alongside my medical training, I also completed a Master’s degree in philosophy.</p>
+    <p>Alongside my medical training, I also completed a Master’s degree in philosophy with honors.</p>
+
+    <p>I independently developed computational skills to support research and data-driven problem-solving.</p>
   </div>
 </div>
-
 <p>My research has been presented internationally across the United States and Europe.</p>
 
 <div class="photo-wrapper pw-espen">
@@ -250,7 +251,7 @@ permalink: "/about/"
 
 <p>I currently live in San Diego with my husband and family.</p>
 
-<p>Outside of medicine and research, I enjoy travel, pickleball, and exploring how different cultures, languages, and disciplines shape the way we understand health and science.</p>
+<p>Outside of medicine and research, I enjoy playing chess, pickleball, and exploring how different cultures, languages, and disciplines shape the way we understand health and science.</p>
 
 <div class="photo-wrapper pw-beach">
   <div class="blob-beach-mass"></div>
