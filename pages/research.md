@@ -180,18 +180,13 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-meta">
-      Ta MC, … · In preparation
+      In preparation
     </p>
 
     <p class="rt-abstract">
       In advanced Mycosis fungoides with nodal progression (ISCL-EORTC N3 stage), paired skin and lymph node analyses revealed marked intratumoral heterogeneity and branched evolution, while recurrent SOCS1 mutations and JAK2 fusions highlighted a central role for JAK/STAT pathway dysregulation.
     </p>
 
-    <div class="rt-links">
-      <a class="rt-link" href="/publications/mf-2025/">
-        About the project
-      </a>
-    </div>
   </div>
 
   <div class="rt-item">
@@ -208,18 +203,13 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-meta">
-      Ta MC, … · In preparation
+      In preparation
     </p>
 
     <p class="rt-abstract">
-      snRNA-seq analysis of the Drokhlyansky 2020 human enteric nervous system dataset (GSE148822). Hypothesis: circadian misalignment of nitrergic neurons as a driver of enteric dysmotility.
+      snRNA-seq analysis of the Drokhlyansky 2020 human enteric nervous system dataset. Hypothesis: circadian misalignment of nitrergic neurons as a driver of enteric dysmotility.
     </p>
 
-    <div class="rt-links">
-      <a class="rt-link" href="/publications/clock-nos1/">
-        About the project
-      </a>
-    </div>
   </div>
 
   <hr class="rt-divider">
@@ -253,14 +243,14 @@ html[data-bs-theme="dark"] .rt-link {
       </a>
 
       <a class="rt-link"
-         href="https://pubmed.ncbi.nlm.nih.gov/"
+         href="https://pubmed.ncbi.nlm.nih.gov/41744400/"
          target="_blank"
          rel="noopener">
         PubMed
       </a>
 
       <a class="rt-link"
-         href="https://doi.org/10.14309/"
+         href="https://journals.lww.com/ajg/fulltext/9900/histogenetic_classification_predicts_outcomes_in.2123.aspx"
          target="_blank"
          rel="noopener">
         DOI
@@ -295,14 +285,14 @@ html[data-bs-theme="dark"] .rt-link {
       </a>
 
       <a class="rt-link"
-         href="https://pubmed.ncbi.nlm.nih.gov/"
+         href="https://pubmed.ncbi.nlm.nih.gov/40249078/"
          target="_blank"
          rel="noopener">
         PubMed
       </a>
 
       <a class="rt-link"
-         href="https://doi.org/10.1002/"
+         href="https://onlinelibrary.wiley.com/doi/10.1002/gcc.70049"
          target="_blank"
          rel="noopener">
         DOI
@@ -332,19 +322,19 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <div class="rt-links">
-      <a class="rt-link" href="/publications/pfmg2025/">
+      <a class="rt-link" href="/publications/PFMG-2025/">
         About the project
       </a>
 
       <a class="rt-link"
-         href="https://pubmed.ncbi.nlm.nih.gov/"
+         href="https://pubmed.ncbi.nlm.nih.gov/40093400/"
          target="_blank"
          rel="noopener">
         PubMed
       </a>
 
       <a class="rt-link"
-         href="https://doi.org/10.1016/"
+         href="https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(24)00352-1/fulltext"
          target="_blank"
          rel="noopener">
         DOI
@@ -374,19 +364,19 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <div class="rt-links">
-      <a class="rt-link" href="/publications/sturge-weber-2023/">
+      <a class="rt-link" href="/publications/neurology-2023/">
         About the project
       </a>
 
       <a class="rt-link"
-         href="https://pubmed.ncbi.nlm.nih.gov/"
+         href="https://pubmed.ncbi.nlm.nih.gov/37813580/"
          target="_blank"
          rel="noopener">
         PubMed
       </a>
 
       <a class="rt-link"
-         href="https://doi.org/10.1212/"
+         href="https://www.neurology.org/doi/10.1212/WNL.0000000000207839"
          target="_blank"
          rel="noopener">
         DOI
@@ -408,7 +398,7 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-meta">
-      Co-author · J Clin Immunol · 2023
+      Co-author · Journal of Clinical Immunology · 2023
     </p>
 
     <p class="rt-abstract">
@@ -416,19 +406,19 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <div class="rt-links">
-      <a class="rt-link" href="/publications/socs1-2023/">
+      <a class="rt-link" href="/publications/SOCS1-2023/">
         About the project
       </a>
 
       <a class="rt-link"
-         href="https://pubmed.ncbi.nlm.nih.gov/"
+         href="https://pubmed.ncbi.nlm.nih.gov/37156989/"
          target="_blank"
          rel="noopener">
         PubMed
       </a>
 
       <a class="rt-link"
-         href="https://doi.org/10.1007/"
+         href="https://link.springer.com/article/10.1007/s10875-023-01495-7"
          target="_blank"
          rel="noopener">
         DOI
