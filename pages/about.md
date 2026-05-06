@@ -13,6 +13,18 @@ permalink: "/about/"
   gap: 2.5rem;
 }
 
+/* ===== Légende sous les photos ===== */
+.photo-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #8a7f73;
+  max-width: 600px;
+  margin: -1.5rem auto 2.5rem;
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
 /* ===== Photo 1 — Pro_linkedin (dans about-header, inchangé) ===== */
 .photo-wrapper.pw-pro {
   position: relative;
@@ -39,7 +51,8 @@ permalink: "/about/"
   bottom: -40px;
   left: -30px;
   z-index: 0;
-  animation: morph-orange 8s ease-in-out infinite;
+  will-change: border-radius;
+  animation: morph-orange 14s ease-in-out infinite;
 }
 .blob-pink {
   position: absolute;
@@ -50,7 +63,8 @@ permalink: "/about/"
   top: 30px;
   right: -20px;
   z-index: 0;
-  animation: morph-pink 9s ease-in-out infinite;
+  will-change: border-radius;
+  animation: morph-pink 16s ease-in-out infinite;
 }
 @keyframes morph-orange {
   0%, 100% { border-radius: 62% 38% 70% 30% / 45% 55% 45% 55%; }
@@ -91,7 +105,8 @@ permalink: "/about/"
   left: -5%;
   z-index: 0;
   border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
-  animation: morph-espen-a 8s ease-in-out infinite;
+  will-change: border-radius;
+  animation: morph-espen-a 14s ease-in-out infinite;
 }
 .blob-espen-b {
   position: absolute;
@@ -102,7 +117,8 @@ permalink: "/about/"
   right: -7%;
   z-index: 0;
   border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
-  animation: morph-espen-b 10s ease-in-out infinite -2s;
+  will-change: border-radius;
+  animation: morph-espen-b 17s ease-in-out infinite -3s;
 }
 .blob-espen-c {
   position: absolute;
@@ -113,7 +129,8 @@ permalink: "/about/"
   left: -3%;
   z-index: 0;
   border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
-  animation: morph-espen-c 9s ease-in-out infinite -1s;
+  will-change: border-radius;
+  animation: morph-espen-c 15s ease-in-out infinite -2s;
 }
 @keyframes morph-espen-a {
   0%, 100% { border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%; }
@@ -157,7 +174,8 @@ permalink: "/about/"
   left: 18%;
   z-index: 0;
   border-radius: 60% 40% 30% 70% / 50% 50% 50% 50%;
-  animation: morph-rotary-a 10s ease-in-out infinite;
+  will-change: border-radius;
+  animation: morph-rotary-a 16s ease-in-out infinite;
 }
 .blob-rotary-b {
   position: absolute;
@@ -168,7 +186,8 @@ permalink: "/about/"
   right: -8%;
   z-index: 0;
   border-radius: 30% 70% 60% 40% / 40% 60% 50% 50%;
-  animation: morph-rotary-b 11s ease-in-out infinite -2s;
+  will-change: border-radius;
+  animation: morph-rotary-b 18s ease-in-out infinite -3s;
 }
 .blob-rotary-c {
   position: absolute;
@@ -179,7 +198,8 @@ permalink: "/about/"
   left: 18%;
   z-index: 0;
   border-radius: 50% 50% 60% 40% / 30% 60% 40% 70%;
-  animation: morph-rotary-c 12s ease-in-out infinite -1s;
+  will-change: border-radius;
+  animation: morph-rotary-c 17s ease-in-out infinite -2s;
 }
 .blob-rotary-d {
   position: absolute;
@@ -190,7 +210,8 @@ permalink: "/about/"
   left: -8%;
   z-index: 0;
   border-radius: 70% 30% 40% 60% / 60% 40% 50% 50%;
-  animation: morph-rotary-d 11s ease-in-out infinite -3s;
+  will-change: border-radius;
+  animation: morph-rotary-d 16s ease-in-out infinite -4s;
 }
 @keyframes morph-rotary-a {
   0%, 100% { border-radius: 60% 40% 30% 70% / 50% 50% 50% 50%; }
@@ -237,7 +258,8 @@ permalink: "/about/"
   left: -25px;
   z-index: 0;
   border-radius: 60% 40% 50% 50% / 50% 50% 50% 50%;
-  animation: morph-beach-mass 14s ease-in-out infinite;
+  will-change: border-radius;
+  animation: morph-beach-mass 18s ease-in-out infinite;
 }
 .blob-beach-accent {
   position: absolute;
@@ -248,7 +270,8 @@ permalink: "/about/"
   right: -20px;
   z-index: 0;
   border-radius: 50% 50% 60% 40% / 50% 60% 40% 50%;
-  animation: morph-beach-accent 9s ease-in-out infinite -1s;
+  will-change: border-radius;
+  animation: morph-beach-accent 14s ease-in-out infinite -2s;
 }
 @keyframes morph-beach-mass {
   0%, 100% { border-radius: 60% 40% 50% 50% / 50% 50% 50% 50%; }
@@ -304,6 +327,27 @@ permalink: "/about/"
     width: 85%;
     max-width: 360px;
   }
+  .photo-caption {
+    font-size: 0.8rem;
+    margin: -1rem auto 2rem;
+  }
+}
+
+/* ===== Accessibilité : coupe les animations si l'utilisateur le demande ===== */
+@media (prefers-reduced-motion: reduce) {
+  .blob-orange,
+  .blob-pink,
+  .blob-espen-a,
+  .blob-espen-b,
+  .blob-espen-c,
+  .blob-rotary-a,
+  .blob-rotary-b,
+  .blob-rotary-c,
+  .blob-rotary-d,
+  .blob-beach-mass,
+  .blob-beach-accent {
+    animation: none;
+  }
 }
 </style>
 
@@ -331,6 +375,7 @@ permalink: "/about/"
   <div class="blob-espen-c"></div>
   <img src="/assets/images/espen-2025.webp" alt="Lecture at the 47th ESPEN Congress, 2025">
 </div>
+<p class="photo-caption">Presented at the Plenary Session of the 47th European Society for Clinical Nutrition and Metabolism (ESPEN) conference in Prague, September 2025</p>
 
 <br>
 <p>I received multiple awards and competitive grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
@@ -342,6 +387,7 @@ permalink: "/about/"
   <div class="blob-rotary-d"></div>
   <img src="/assets/images/rotary.webp" alt="Acceptance speech for the Best Medical Thesis Prize, Rotary Club of Paris">
 </div>
+<p class="photo-caption">Receiving the Best Medical Thesis Prize at the Rotary Club of Paris</p>
 
 <p>Having lived and trained in diverse international settings, I see intellectual flexibility and interdisciplinary collaboration as drivers of innovation.</p>
 
