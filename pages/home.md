@@ -412,10 +412,10 @@ posts:
        <legend class="conf-legend">Selected talks · Past Year</legend>
        <ul class="conf-list">
          <li><a href="/conferences/ddw-2025/">DDW 2025</a><span class="sep">·</span><span>San Diego, USA</span></li>
-         <li><a href="/conferences/espghan-2025/">ESPGHAN 2025</a><span class="sep">·</span><span>Helsinki, Finland</span></li>
-         <li><a href="/conferences/ciirta-2025/">CIIRTA 2025</a><span class="sep">·</span><span>Gothenburg, Sweden</span></li>
          <li><a href="/conferences/espen-2025/">ESPEN 2025</a><span class="sep">·</span><span>Prague, Czech Republic</span></li>
          <li><a href="/conferences/eortc-cltg-2025/">EORTC CLTG 2025</a><span class="sep">·</span><span>Athens, Greece</span></li>
+         <li><a href="/conferences/ciirta-2025/">CIIRTA 2025</a><span class="sep">·</span><span>Gothenburg, Sweden</span></li>
+         <li><a href="/conferences/espghan-2025/">ESPGHAN 2025</a><span class="sep">·</span><span>Helsinki, Finland</span></li>
        </ul>
      </fieldset>
 

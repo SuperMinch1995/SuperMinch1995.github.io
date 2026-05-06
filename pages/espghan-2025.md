@@ -94,7 +94,7 @@ permalink: /conferences/espghan-2025/
     <span class="conf-role">Speaker</span>
   </section>
 
-  <img src="/assets/images/espghan-2025-1.jpg"
+  <img src="/assets/images/espghan-2025-1.webp"
        style="width:100%;border-radius:10px;margin:1.8rem 0;">
 
   <div class="conf-body">
@@ -115,7 +115,7 @@ permalink: /conferences/espghan-2025/
     </p>
   </div>
 
-<img src="/assets/images/espghan-2025-2.jpg"
+<img src="/assets/images/espghan-2025-2.webp"
        style="width:100%;border-radius:10px;margin:1.8rem 0;">
 
   <div class="li-card">
@@ -131,13 +131,13 @@ permalink: /conferences/espghan-2025/
     </a>
   </li>
   <li>
-    <a href="/conferences/ciirta-2025/" style="font-size:0.8rem;">
-       CIIRTA 2025
+    <a href="/conferences/espen-2025/" style="font-size:0.8rem;">
+       ESPEN 2025
     </a>
   </li>
   <li>
-    <a href="/conferences/espen-2025/" style="font-size:0.8rem;">
-       ESPEN 2025
+    <a href="/conferences/ciirta-2025/" style="font-size:0.8rem;">
+       CIIRTA 2025
     </a>
   </li>
 </ul>

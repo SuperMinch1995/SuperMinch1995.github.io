@@ -80,7 +80,7 @@ permalink: /conferences/ciirta-2025/
   </section>
 
   <!-- IMAGE -->
-  <img src="/assets/images/ciirta-2025.jpg"
+  <img src="/assets/images/ciirta-2025.webp"
        style="width:100%;border-radius:10px;margin:1.8rem 0;">
 
   <!-- BODY -->
@@ -180,8 +180,8 @@ permalink: /conferences/ciirta-2025/
 
     <ul style="margin-top:0.6rem;padding-left:1.2rem;">
       <li><a href="/conferences/ddw-2025/" style="font-size:0.8rem;">DDW 2025</a></li>
-      <li><a href="/conferences/espghan-2025/" style="font-size:0.8rem;">ESPGHAN 2025</a></li>
       <li><a href="/conferences/espen-2025/" style="font-size:0.8rem;">ESPEN 2025</a></li>
+      <li><a href="/conferences/espghan-2025/" style="font-size:0.8rem;">ESPGHAN 2025</a></li>
     </ul>
 
     <a href="https://www.linkedin.com/posts/minh-chau-ta_ciirta2025-ugcPost-7373117664837279744-iB35"

@@ -75,7 +75,7 @@ permalink: /conferences/eortc-cltg-2025/
     <p>This opportunity marked the final month of my residency, and I gratefully recall all the mentors who believed in my potential and gave me the chance to grow.</p>
     <p>After the conference, I visited Santorini — a serene pause before the next chapter. Thank you, EORTC CLTG! <span class="li-tag">#Dermatology</span> <span class="li-tag">#Oncology</span> <span class="li-tag">#MycosisFungoides</span> 🇬🇷</p>
   </div>
-  <img src="/assets/images/eortc-mt-2025.jpg" alt="EORTC CLTG 2025 — Athens" style="width:55%;display:block;margin:0.75rem auto;border-radius:8px;">
+  <img src="/assets/images/eortc-mt-2025.webp" alt="EORTC CLTG 2025 — Athens" style="width:55%;display:block;margin:0.75rem auto;border-radius:8px;">
   <div class="li-footer">
     <div class="li-stat">👍 29</div>
     <div class="li-stat">💬 2 &nbsp;·&nbsp; 1 repost</div>
@@ -116,7 +116,7 @@ permalink: /conferences/eortc-cltg-2025/
     <p>Congratulations too to all Speakers and researchers of the French Cutaneous Lymphoma Group <span class="li-tag">#Gfelc</span>, again demonstrating the power of collaboration at the national level to impact international practice.</p>
     <p>Thank you EORTC CLTG board members, members, headquarters, and especially Evangelia Papadavid for making this meeting a success!</p>
   </div>
-  <img class="li-photo" src="/assets/images/eortc-mb-2025.jpg" alt="EORTC CLTG 2025 — Athens, Maxime Battistella">
+  <img class="li-photo" src="/assets/images/eortc-2025.webp" alt="EORTC CLTG 2025 — Athens, Maxime Battistella">
   <div class="li-footer">
     <div class="li-stat">👍 78</div>
     <div class="li-stat">💬 3 &nbsp;·&nbsp; 5 reposts</div>
