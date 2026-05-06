@@ -129,7 +129,87 @@ permalink: "/about/"
   50%      { border-radius: 65% 35% 40% 60% / 35% 65% 35% 65%; }
 }
 
-/* ===== Photo 3 — Beach (pleine largeur, vignette enveloppante) ===== */
+/* ===== Photo 3 — Rotary (pleine largeur, quatre éclats giratoires) ===== */
+.photo-wrapper.pw-rotary {
+  position: relative;
+  width: 720px;
+  max-width: 100%;
+  height: 580px;
+  margin: 3rem auto;
+}
+.photo-wrapper.pw-rotary img {
+  position: absolute;
+  z-index: 1;
+  width: 600px;
+  max-width: 85%;
+  border-radius: 6px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.blob-rotary-a {
+  position: absolute;
+  width: 32%;
+  height: 36%;
+  background: linear-gradient(135deg, #D4923C, #C4A57B);
+  top: -8%;
+  left: 18%;
+  z-index: 0;
+  border-radius: 60% 40% 30% 70% / 50% 50% 50% 50%;
+  animation: morph-rotary-a 10s ease-in-out infinite;
+}
+.blob-rotary-b {
+  position: absolute;
+  width: 30%;
+  height: 34%;
+  background: linear-gradient(135deg, #9B6B7C, #C88FA0);
+  top: 30%;
+  right: -8%;
+  z-index: 0;
+  border-radius: 30% 70% 60% 40% / 40% 60% 50% 50%;
+  animation: morph-rotary-b 11s ease-in-out infinite -2s;
+}
+.blob-rotary-c {
+  position: absolute;
+  width: 32%;
+  height: 36%;
+  background: linear-gradient(135deg, #5B3144, #9B6B7C);
+  bottom: -8%;
+  left: 18%;
+  z-index: 0;
+  border-radius: 50% 50% 60% 40% / 30% 60% 40% 70%;
+  animation: morph-rotary-c 12s ease-in-out infinite -1s;
+}
+.blob-rotary-d {
+  position: absolute;
+  width: 30%;
+  height: 34%;
+  background: linear-gradient(135deg, #E8D5B7, #C4A57B);
+  top: 30%;
+  left: -8%;
+  z-index: 0;
+  border-radius: 70% 30% 40% 60% / 60% 40% 50% 50%;
+  animation: morph-rotary-d 11s ease-in-out infinite -3s;
+}
+@keyframes morph-rotary-a {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 50% 50% 50% 50%; }
+  50%      { border-radius: 50% 50% 60% 40% / 60% 40% 60% 40%; }
+}
+@keyframes morph-rotary-b {
+  0%, 100% { border-radius: 30% 70% 60% 40% / 40% 60% 50% 50%; }
+  50%      { border-radius: 60% 40% 30% 70% / 50% 50% 60% 40%; }
+}
+@keyframes morph-rotary-c {
+  0%, 100% { border-radius: 50% 50% 60% 40% / 30% 60% 40% 70%; }
+  50%      { border-radius: 60% 40% 50% 50% / 50% 50% 50% 50%; }
+}
+@keyframes morph-rotary-d {
+  0%, 100% { border-radius: 70% 30% 40% 60% / 60% 40% 50% 50%; }
+  50%      { border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%; }
+}
+
+/* ===== Photo 4 — Beach (pleine largeur, vignette enveloppante) ===== */
 .photo-wrapper.pw-beach {
   position: relative;
   width: 720px;
@@ -206,6 +286,15 @@ permalink: "/about/"
     width: 70%;
     max-width: 280px;
   }
+  .photo-wrapper.pw-rotary {
+    width: 100%;
+    height: 320px;
+    margin: 2.5rem auto;
+  }
+  .photo-wrapper.pw-rotary img {
+    width: 85%;
+    max-width: 360px;
+  }
   .photo-wrapper.pw-beach {
     width: 100%;
     height: 320px;
@@ -222,7 +311,7 @@ permalink: "/about/"
   <div class="photo-wrapper pw-pro">
     <div class="blob-orange"></div>
     <div class="blob-pink"></div>
-    <img src="/assets/images/Pro_linkedin.jpg" alt="Minh-Chau Ta, MD">
+    <img src="/assets/images/pro_linkedin.webp" alt="Minh-Chau Ta, MD">
   </div>
   <div>
     <br><h1 style="margin-top: 0;">Minh C. Thom, MD</h1>
@@ -230,7 +319,7 @@ permalink: "/about/"
     <br><p>I am a physician-scientist with training in pathology and molecular genetics.</p>
     <p>Born in Vietnam and raised in France, I earned my MD from Sorbonne University in Paris, where I also completed my residency.</p>
 
-    <p>Alongside my medical training, I completed a Master’s degree in philosophy with honors.</p>
+    <p>Alongside my medical training, I completed a Master’s degree in Philosophy with honors.</p>
 
     <p>I independently developed computational skills to support research and data-driven problem-solving.</p>
   </div>
@@ -246,11 +335,19 @@ permalink: "/about/"
 <br>
 <p>I received multiple awards and competitive grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
 
-<p>Having lived and trained in diverse international settings, I see intellectual flexibility and interdisciplinary collaboration as drivers of innovation in medicine.</p>
+<div class="photo-wrapper pw-rotary">
+  <div class="blob-rotary-a"></div>
+  <div class="blob-rotary-b"></div>
+  <div class="blob-rotary-c"></div>
+  <div class="blob-rotary-d"></div>
+  <img src="/assets/images/rotary.webp" alt="Acceptance speech for the Best Medical Thesis Prize, Rotary Club of Paris">
+</div>
+
+<p>Having lived and trained in diverse international settings, I see intellectual flexibility and interdisciplinary collaboration as drivers of innovation.</p>
 
 <p>I currently live in San Diego with my husband and family.</p>
 
-<p>Outside of medicine and research, I enjoy playing chess, pickleball, and exploring how different cultures, languages, and disciplines shape the way we understand health and science.</p>
+<p>Outside of medicine and research, I enjoy playing violin, chess, and pickleball, and exploring how culture and language shape the way we understand the world.</p>
 
 <div class="photo-wrapper pw-beach">
   <div class="blob-beach-mass"></div>

@@ -389,7 +389,7 @@ posts:
 <div class="conf-section">
  <div class="conf-row">
    <div class="conf-photo">
-     <img src="/assets/images/Pro_linkedin.jpg" alt="Minh-Chau Ta, MD" width="auto" height="193" loading="eager">
+     <img src="/assets/images/pro_linkedin.webp" alt="Minh-Chau Ta, MD" width="auto" height="193" loading="eager">
    </div>
    <div class="conf-panels">
 
