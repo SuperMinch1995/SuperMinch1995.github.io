@@ -378,7 +378,7 @@ permalink: "/about/"
 <p class="photo-caption">Presented at the Plenary Session of the 47th European Society for Clinical Nutrition and Metabolism (ESPEN) conference in Prague, September 2025</p>
 
 <br>
-<p>I received multiple awards and competitive grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
+<p>I received multiple awards and competitive grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p><br>
 
 <div class="photo-wrapper pw-rotary">
   <div class="blob-rotary-a"></div>
@@ -387,9 +387,9 @@ permalink: "/about/"
   <div class="blob-rotary-d"></div>
   <img src="/assets/images/rotary.webp" alt="Acceptance speech for the Best Medical Thesis Prize, Rotary Club of Paris">
 </div>
-<p class="photo-caption">Receiving the Best Medical Thesis Prize at the Rotary Club of Paris</p>
 
-<p>Having lived and trained in diverse international settings, I see intellectual flexibility and interdisciplinary collaboration as drivers of innovation.</p>
+
+<br><p>Having lived and trained in diverse international settings, I see intellectual flexibility and interdisciplinary collaboration as drivers of innovation.</p>
 
 <p>I currently live in San Diego with my husband and family.</p>
 
