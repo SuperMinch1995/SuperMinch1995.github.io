@@ -148,21 +148,36 @@ permalink: "/about/"
   transform: translate(-50%, -50%);
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
-.blob-beach {
+.blob-beach-mass {
   position: absolute;
-  width: 110%;
-  height: 90%;
-  background: linear-gradient(135deg, #82B6D6 0%, #FFB088 35%, #E8D5B7 65%, #E8A0B4 100%);
-  bottom: -8%;
-  left: -8%;
+  width: 165px;
+  height: 300px;
+  background: linear-gradient(160deg, #82B6D6 0%, #FFB088 40%, #E8D5B7 70%, #E8A0B4 100%);
+  top: -20px;
+  left: -25px;
   z-index: 0;
-  border-radius: 60% 40% 35% 65% / 50% 60% 40% 50%;
-  animation: morph-beach 12s ease-in-out infinite;
+  border-radius: 60% 40% 50% 50% / 50% 50% 50% 50%;
+  animation: morph-beach-mass 14s ease-in-out infinite;
 }
-@keyframes morph-beach {
-  0%, 100% { border-radius: 60% 40% 35% 65% / 50% 60% 40% 50%; }
-  33%      { border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; }
-  66%      { border-radius: 55% 45% 50% 50% / 40% 60% 50% 50%; }
+.blob-beach-accent {
+  position: absolute;
+  width: 75px;
+  height: 80px;
+  background: linear-gradient(135deg, #E8A0B4, #E8D5B7);
+  bottom: -15px;
+  right: -20px;
+  z-index: 0;
+  border-radius: 50% 50% 60% 40% / 50% 60% 40% 50%;
+  animation: morph-beach-accent 9s ease-in-out infinite -1s;
+}
+@keyframes morph-beach-mass {
+  0%, 100% { border-radius: 60% 40% 50% 50% / 50% 50% 50% 50%; }
+  33%      { border-radius: 50% 50% 60% 40% / 60% 40% 50% 50%; }
+  66%      { border-radius: 70% 30% 40% 60% / 40% 60% 50% 50%; }
+}
+@keyframes morph-beach-accent {
+  0%, 100% { border-radius: 50% 50% 60% 40% / 50% 60% 40% 50%; }
+  50%      { border-radius: 65% 35% 40% 60% / 40% 60% 60% 40%; }
 }
 
 /* ===== Mobile responsive ===== */
@@ -210,16 +225,15 @@ permalink: "/about/"
     <img src="/assets/images/Pro_linkedin.jpg" alt="Minh-Chau Ta, MD">
   </div>
   <div>
-    <h1 style="margin-top: 0;">Minh C. Thom, MD</h1>
+    <br><h1 style="margin-top: 0;">Minh C. Thom, MD</h1>
 
     <br><p>I am a physician-scientist with training in pathology and molecular genetics.</p>
     <p>Born in Vietnam and raised in France, I earned my MD from Sorbonne University in Paris, where I also completed my residency.</p>
 
-    <p>Alongside my medical training, I completed a Master’s degree in philosophy - an experience that deepened my reasoning and decision-making.</p>
+    <p>Alongside my medical training, I also completed a Master’s degree in philosophy.</p>
   </div>
 </div>
 
-<br>
 <p>My research has been presented internationally across the United States and Europe.</p>
 
 <div class="photo-wrapper pw-espen">
@@ -239,6 +253,7 @@ permalink: "/about/"
 <p>Outside of medicine and research, I enjoy travel, pickleball, and exploring how different cultures, languages, and disciplines shape the way we understand health and science.</p>
 
 <div class="photo-wrapper pw-beach">
-  <div class="blob-beach"></div>
+  <div class="blob-beach-mass"></div>
+  <div class="blob-beach-accent"></div>
   <img src="/assets/images/Beach.webp" alt="Family in San Diego">
 </div>
