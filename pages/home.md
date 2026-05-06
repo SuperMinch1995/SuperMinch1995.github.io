@@ -269,7 +269,7 @@ posts:
  display: flex;
  gap: 1.8rem;
  align-items: baseline;
- margin: 14px 0 0 0;
+ margin: 20px 0 0 0;
 }
 .stat-block { display: flex; flex-direction: column; }
 .stat-sep {

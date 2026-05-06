@@ -276,7 +276,7 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-abstract">
-      NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms with distinctive epithelioid morphology and complex immunophenotypic features.
+      NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms.
     </p>
 
     <div class="rt-links">
@@ -402,7 +402,7 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-abstract">
-      SOCS1 haploinsufficiency can cause severe and treatment-resistant intestinal diseases, including Crohn’s-like inflammation and chronic intestinal pseudo-obstruction.
+      SOCS1 haploinsufficiency can cause severe intestinal diseases, including Crohn’s disease and chronic intestinal pseudo-obstruction.
     </p>
 
     <div class="rt-links">

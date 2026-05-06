@@ -12,6 +12,37 @@ role: "Physician-Researcher"
 
 <style>
 h1 { text-align: center; }
+
+/* Narration bridges between acts. Three variants:
+   - default: standard transition phrase between acts
+   - --first: opening hook at top of page
+   - --caption: small italic subtitle under a figure
+   - --closing: emotional landing at end of page */
+.act-bridge {
+  font-size: 0.98em;
+  color: var(--color-base-text);
+  line-height: 1.6;
+  text-align: center;
+  margin: 3.5rem auto;
+  max-width: 620px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+.act-bridge--first {
+  margin: 2.5rem auto 1rem;
+}
+.act-bridge--caption {
+  font-size: 0.78em;
+  color: var(--color-base-text-2);
+  font-style: italic;
+  margin: -1.5rem auto 3rem;
+  letter-spacing: 0.02em;
+}
+.act-bridge--closing {
+  font-style: italic;
+  color: var(--color-base-text-2);
+  margin: 4rem auto 4.5rem;
+}
 </style>
 
 <!-- ══════════════════════════════════════════════════
@@ -41,6 +72,8 @@ h1 { text-align: center; }
 }
 </style>
 
+<p class="act-bridge act-bridge--first">Your gut never stops moving.<br><br>It needs a protein called γ-2 actin.</p>
+
 <div class="act1-section">
   <div class="act1-frame">
     <iframe src="/assets/figures/actg2-q247p.html"
@@ -51,6 +84,14 @@ h1 { text-align: center; }
     </iframe>
   </div>
 </div>
+
+<p class="act-bridge">Proteins are made of amino acids.</p>
+
+<p class="act-bridge">What if one amino acid was wrong?</p>
+
+<p class="act-bridge">In this example, the Glutamine (Q) at the position 247</p>
+
+<p class="act-bridge">is replaced by a proline (P, mutant).</p>
 
 <!-- ══════════════════════════════════════════════════
      ACT 2 — WILD-TYPE → MUTANT TRANSITION
@@ -104,8 +145,10 @@ h1 { text-align: center; }
 })();
 </script>
 
+<p class="act-bridge">This is what happens in real patients.</p>
+
 <!-- ══════════════════════════════════════════════════
-     ACT 3 — CIPO STORY  (UNCHANGED)
+     ACT 3 — CIPO STORY
 ═══════════════════════════════════════════════════ -->
 <style>
 .cipo-section {
@@ -202,7 +245,7 @@ h1 { text-align: center; }
          alt="Brain-gut axis — bidirectional communication diagram"
          class="brain-gut-img">
   </div>
-  <p class="cipo-subline">We studied the <span class="pencil-mark">largest patient cohort<img src="/assets/images/underlines/underline-largest-patient-cohort.svg" class="pencil-underline" aria-hidden="true" alt=""></span> to date.</p>
+  <p class="cipo-subline">We explore it in 130 people.</p>
 
   <div class="cipo-stats-row">
     <div class="cipo-stat">
@@ -229,6 +272,8 @@ h1 { text-align: center; }
   </div>
 </div>
 
+<p class="act-bridge">ACTG2 is the gene behind γ-2 actin.</p>
+
 <!-- ══════════════════════════════════════════════════
      SUNBURST
 ═══════════════════════════════════════════════════ -->
@@ -250,6 +295,8 @@ h1 { text-align: center; }
   background: transparent;
 }
 </style>
+
+<p class="act-bridge">ACTG2 wasn't the only suspect.</p>
 
 <div class="sunburst-section">
   <div class="sunburst-frame">
@@ -277,3 +324,5 @@ h1 { text-align: center; }
   });
 })();
 </script>
+
+<p class="act-bridge act-bridge--closing">Behind every mutation, a person waiting.</p>
