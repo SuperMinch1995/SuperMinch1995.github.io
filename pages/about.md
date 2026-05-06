@@ -60,6 +60,28 @@ permalink: "/about/"
   transform: translate(-50%, -50%);
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
+@media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .photo-wrapper {
+    width: 100%;
+    min-width: unset;
+    height: 340px;
+  }
+
+  .about-header > div:last-child {
+    width: 100%;
+  }
+
+  .about-header p,
+  .about-header h1 {
+    text-align: left;
+  }
+}
 </style>
 
 <div class="about-header">
@@ -69,28 +91,11 @@ permalink: "/about/"
     <img src="/assets/images/Pro_linkedin.jpg" alt="Minh-Chau Ta, MD">
   </div>
   <div>
-    <h1 style="margin-top: 0;">Minh-Chau Ta, MD</h1>
-    <p>Born in 1995 in Vietnam, I moved to France at age 7. I earned my medical degree at Sorbonne University in Paris, then completed a residency in pathology with a focus on molecular genetics.</p>
-    <p>During my full-time residency, I earned a Master of Arts in Philosophy at Sorbonne University, where I developed a way of thinking that helps me simplify complexity.</p>
-    <p>I presented my research at international conferences in the U.S. and Europe and received several awards, including the 2023 research grant from the French Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
+    <h1 style="margin-top: 0;">Minh C. Thom, MD</h1>
+    <p>I am a physician-scientist with training in pathology, molecular genetics, and translational research.</p>
+    <p>Born in Vietnam and raised in France, I earned my MD from Sorbonne University in Paris, where I also completed my residency.</p>
+    <p>Alongside my medical training, I completed a Master’s degree in philosophy to deepen my approach to complex reasoning, uncertainty, and decision-making across disciplines.</p>
+    <p>My work has been presented at international conferences throughout the United States and Europe and recognized through competitive awards and grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
+    <p>Having lived and trained in diverse international settings, I see adaptability, intellectual flexibility, and interdisciplinary collaboration as key drivers of innovation in medicine and biomedical research.</p>
   </div>
 </div>
-
-## Research Interests
-
-- Brain-gut axis
-- Clinical Nutrition
-- Dermatopathology
-- Tumoral clonal evolution
-
-## Education
-
-- **MD** — Sorbonne University, Paris, France
-- **Residency in Pathology** — Paris, France
-- **MA in Philosophy** — Sorbonne University, Paris, France
-
-## Awards & Grants
-
-- Annual Research Grant — French Society of Pathology
-- Bernard Beaufrère Research Prize - French-speaking Society for Clinical Nutrition and Metabolism
-- Best Medical Thesis Prize — Rotary Club of Paris

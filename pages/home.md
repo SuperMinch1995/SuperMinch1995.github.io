@@ -397,14 +397,6 @@ posts:
      <fieldset class="pub-fieldset">
        <legend class="pub-legend">
          Publications
-         <a href="https://orcid.org/0009-0001-8503-9574" target="_blank" rel="noopener">
-           <svg width="13" height="13" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0z" fill="#A6CE39"/><path d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4zM88.7 56.8c0 5.5-4.5 9.9-10 9.9s-10-4.4-10-9.9 4.5-9.9 10-9.9 10 4.4 10 9.9z" fill="#fff"/></svg>
-           ORCID
-         </a>
-         <a href="https://www.ncbi.nlm.nih.gov/myncbi/minh-chau.ta.1/bibliography/public/" target="_blank" rel="noopener">
-           <svg width="13" height="13" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="8" fill="#205493"/><text x="50" y="68" font-size="52" font-family="sans-serif" font-weight="bold" fill="white" text-anchor="middle">PM</text></svg>
-           PubMed
-         </a>
        </legend>
        <ul class="pub-list">
          <li><a href="/publications/cipo-2026/">Am J Gastroenterol</a><span class="sep">·</span><span class="pub-year">2026</span></li>
@@ -417,7 +409,7 @@ posts:
 
 
      <fieldset class="conf-fieldset">
-       <legend class="conf-legend">Speaker</legend>
+       <legend class="conf-legend">Selected Oral Presentations · Past Year</legend>
        <ul class="conf-list">
          <li><a href="/conferences/ddw-2025/">DDW 2025</a><span class="sep">·</span><span>San Diego, USA</span></li>
          <li><a href="/conferences/espghan-2025/">ESPGHAN 2025</a><span class="sep">·</span><span>Helsinki, Finland</span></li>
