@@ -90,13 +90,16 @@ h1 { text-align: center; }
 
 <script>
 /* Auto-adjust iframe height based on q247pHeight messages
-   posted by /assets/figures/actg2-wt-mutant.html */
+   posted by /assets/figures/actg2-wt-mutant.html.
+   IMPORTANT: filter by e.source so messages from other iframes
+   (e.g. act1-iframe = 3D viewer) don't accidentally resize this one. */
 (function () {
   window.addEventListener('message', function (e) {
-    if (e.data && typeof e.data.q247pHeight === 'number') {
-      var iframe = document.getElementById('act2-iframe');
-      if (iframe) iframe.style.height = e.data.q247pHeight + 'px';
-    }
+    if (!e.data || typeof e.data.q247pHeight !== 'number') return;
+    var iframe = document.getElementById('act2-iframe');
+    if (!iframe || e.source !== iframe.contentWindow) return;
+    var h = Math.min(Math.max(e.data.q247pHeight, 400), 6000); // safety cap
+    iframe.style.height = h + 'px';
   });
 })();
 </script>
