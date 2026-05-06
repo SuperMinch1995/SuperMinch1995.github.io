@@ -409,7 +409,7 @@ posts:
 
 
      <fieldset class="conf-fieldset">
-       <legend class="conf-legend">Selected Oral Presentations · Past Year</legend>
+       <legend class="conf-legend">Selected talks · Past Year</legend>
        <ul class="conf-list">
          <li><a href="/conferences/ddw-2025/">DDW 2025</a><span class="sep">·</span><span>San Diego, USA</span></li>
          <li><a href="/conferences/espghan-2025/">ESPGHAN 2025</a><span class="sep">·</span><span>Helsinki, Finland</span></li>

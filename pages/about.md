@@ -71,17 +71,15 @@ permalink: "/about/"
     width: 100%;
     min-width: unset;
     height: 340px;
+    padding-bottom: 3rem; /* espace sous la photo */
   }
 
   .about-header > div:last-child {
     width: 100%;
-  }
-
-  .about-header p,
-  .about-header h1 {
-    text-align: left;
+    margin-top: 2rem; /* espace supplémentaire avant le texte */
   }
 }
+
 </style>
 
 <div class="about-header">
@@ -96,6 +94,6 @@ permalink: "/about/"
     <p>Born in Vietnam and raised in France, I earned my MD from Sorbonne University in Paris, where I also completed my residency.</p>
     <p>Alongside my medical training, I completed a Master’s degree in philosophy to deepen my approach to complex reasoning, uncertainty, and decision-making across disciplines.</p>
     <p>My work has been presented at international conferences throughout the United States and Europe and recognized through competitive awards and grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p>
-    <p>Having lived and trained in diverse international settings, I see adaptability, intellectual flexibility, and interdisciplinary collaboration as key drivers of innovation in medicine and biomedical research.</p>
+    <p>Having lived and trained in diverse international settings, I see adaptability, intellectual flexibility, and interdisciplinary collaboration as key drivers of innovation in medicine.</p>
   </div>
 </div>

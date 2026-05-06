@@ -56,275 +56,48 @@ h1 { text-align: center; }
      ACT 2 — WILD-TYPE → MUTANT TRANSITION
 ═══════════════════════════════════════════════════ -->
 <style>
-.q247p-section {
-  margin: 4rem 0 5rem;
+.act2-section {
+  margin: 4rem auto 5rem;
   text-align: center;
-  font-size: 0.85em;
 }
-.q247p-section .cipo-subline {
-  font-size: 1.15em;
-  color: var(--color-base-text);
-  line-height: 1.6;
-  text-align: center;
+.act2-frame {
+  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
-  max-width: 620px;
-  font-weight: 400;
+  overflow: hidden;
+  background: transparent;
 }
-
-.aa-stage {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 3rem auto;
-  max-width: 640px;
-  padding: 0 1rem;
-}
-
-.aa-card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.45rem;
-  padding: 1.5rem 0.5rem;
-  min-width: 0;
-}
-
-.aa-tag {
-  font-size: 0.62em;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-base-text-2);
-}
-.aa-tag.mut { color: #C2510A; }
-
-.aa-letter {
-  font-family: 'DM Mono', 'DM Sans', monospace;
-  font-size: 5em;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--color-base-text);
-  margin: 0.4rem 0 0.25rem;
-  position: relative;
-  display: inline-block;
-}
-.aa-letter.mut { color: #C2510A; }
-
-.aa-letter .yellow-stroke {
-  position: absolute;
-  left: -10%;
-  right: -10%;
-  bottom: -4px;
-  width: 120%;
-  height: 12px;
-  pointer-events: none;
-  overflow: visible;
-}
-.aa-letter .yellow-stroke path {
-  stroke: #F5C842;
-  stroke-width: 5;
-  stroke-linecap: round;
-  fill: none;
-  stroke-dasharray: 130;
-  stroke-dashoffset: 130;
-  filter: drop-shadow(0 0 3px rgba(245, 200, 66, 0.5));
-}
-
-.aa-name {
-  font-size: 0.92em;
-  color: var(--color-base-text);
-  font-weight: 500;
-  margin-top: 0.5rem;
-}
-
-.aa-trait {
-  font-size: 0.72em;
-  color: var(--color-base-text-2);
-  letter-spacing: 0.04em;
-  font-weight: 400;
-}
-
-/* ── Lightning bolt zone ── */
-.aa-bolt-zone {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.4rem;
-  min-width: 64px;
-  flex-shrink: 0;
-}
-
-.bolt {
-  width: 36px;
-  height: 54px;
-  filter: drop-shadow(0 0 6px rgba(245, 200, 66, 0.45));
-}
-
-.spark {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #F5C842;
-  box-shadow: 0 0 6px rgba(255, 224, 102, 0.9);
-  opacity: 0;
-  pointer-events: none;
-}
-.spark:nth-child(2) { top: 30%; left: 6%;  --tx: -18px; --ty: -16px; }
-.spark:nth-child(3) { top: 38%; right: 6%; --tx:  18px; --ty: -12px; }
-.spark:nth-child(4) { bottom: 30%; left: 8%; --tx: -16px; --ty: 14px; }
-.spark:nth-child(5) { bottom: 28%; right: 6%; --tx: 16px; --ty: 16px; }
-
-.bolt-label {
-  font-family: 'DM Mono', 'DM Sans', monospace;
-  font-size: 0.6em;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #C2510A;
-  margin-top: 0.55rem;
-  white-space: nowrap;
-  opacity: 0;
-}
-
-/* ── Animations triggered when section enters viewport ── */
-.aa-stage.in-view .bolt {
-  animation: boltStrike 0.7s 0.4s ease-out forwards,
-             boltPulse 2.4s 1.2s ease-in-out infinite;
-}
-.aa-stage.in-view .spark {
-  animation: sparkFly 2.4s ease-out infinite;
-}
-.aa-stage.in-view .spark:nth-child(2) { animation-delay: 1.0s; }
-.aa-stage.in-view .spark:nth-child(3) { animation-delay: 1.4s; }
-.aa-stage.in-view .spark:nth-child(4) { animation-delay: 1.8s; }
-.aa-stage.in-view .spark:nth-child(5) { animation-delay: 2.2s; }
-.aa-stage.in-view .bolt-label {
-  animation: fadeIn 0.6s 0.9s ease-out forwards;
-}
-
-.aa-stage.in-view .aa-card.mut .aa-tag    { animation: fadeUp 0.55s 1.2s ease-out backwards; }
-.aa-stage.in-view .aa-card.mut .aa-letter { animation: fadeUp 0.55s 1.35s ease-out backwards; }
-.aa-stage.in-view .aa-card.mut .aa-name   { animation: fadeUp 0.55s 1.55s ease-out backwards; }
-.aa-stage.in-view .aa-card.mut .aa-trait  { animation: fadeUp 0.55s 1.7s ease-out backwards; }
-.aa-stage.in-view .aa-letter.mut .yellow-stroke path {
-  animation: drawStroke 1s 1.7s ease-out forwards;
-}
-
-/* Pre-animation state (only when JS attaches the observer) */
-.aa-stage.js-armed .aa-card.mut > * { opacity: 0; }
-.aa-stage.js-armed .bolt           { opacity: 0; transform: scale(0.3); }
-.aa-stage.js-armed .bolt-label     { opacity: 0; }
-
-@keyframes boltStrike {
-  0%   { opacity: 0; transform: scale(0.3); filter: drop-shadow(0 0 0 rgba(245,200,66,0)); }
-  45%  { opacity: 1; transform: scale(1.45); filter: drop-shadow(0 0 26px rgba(255,215,0,1))
-                                                       drop-shadow(0 0 50px rgba(255,200,80,0.55)); }
-  100% { opacity: 1; transform: scale(1);   filter: drop-shadow(0 0 6px rgba(245,200,66,0.45)); }
-}
-@keyframes boltPulse {
-  0%, 100% { filter: drop-shadow(0 0 6px rgba(245,200,66,0.4)); transform: scale(1); }
-  50%      { filter: drop-shadow(0 0 16px rgba(245,200,66,0.85))
-                     drop-shadow(0 0 30px rgba(255,215,0,0.5)); transform: scale(1.08); }
-}
-@keyframes sparkFly {
-  0%   { opacity: 0; transform: translate(0,0) scale(1); }
-  18%  { opacity: 1; }
-  100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.3); }
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes drawStroke {
-  to { stroke-dashoffset: 0; }
-}
-
-/* ── Mobile: stack cards vertically, one panel at a time ── */
-@media (max-width: 600px) {
-  .aa-stage {
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 320px;
-  }
-  .aa-card { padding: 1rem 0.5rem; }
-  .aa-letter { font-size: 4em; }
-  .aa-bolt-zone {
-    flex-direction: row;
-    padding: 0.4rem 0;
-    min-height: 60px;
-    gap: 0.7rem;
-  }
-  .bolt-label { margin-top: 0; margin-left: 0.3rem; }
+.act2-frame iframe {
+  display: block;
+  width: 100%;
+  height: 1200px;
+  border: none;
+  background: transparent;
 }
 </style>
 
-<div class="q247p-section">
-
-  <p class="cipo-subline">A single substitution rewrites the protein.</p>
-
-  <div class="aa-stage" id="aa-stage">
-
-    <!-- Wild-type -->
-    <div class="aa-card">
-      <div class="aa-tag">Wild-type</div>
-      <div class="aa-letter">Q</div>
-      <div class="aa-name">Glutamine</div>
-      <div class="aa-trait">flexible · polar</div>
-    </div>
-
-    <!-- Lightning -->
-    <div class="aa-bolt-zone">
-      <svg class="bolt" viewBox="0 0 24 36" fill="none" aria-hidden="true">
-        <path d="M14 1.5L2.5 20.5h8L8.5 34.5l13-18h-8L14 1.5z"
-              fill="#F5C842" stroke="#FFE066" stroke-width="0.5"
-              stroke-linejoin="round"/>
-      </svg>
-      <span class="spark"></span>
-      <span class="spark"></span>
-      <span class="spark"></span>
-      <span class="spark"></span>
-      <div class="bolt-label">Q247P</div>
-    </div>
-
-    <!-- Mutant -->
-    <div class="aa-card mut">
-      <div class="aa-tag mut">Mutant</div>
-      <div class="aa-letter mut">P<svg class="yellow-stroke" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3,7 Q22,3 48,5.5 T97,4.5"/></svg></div>
-      <div class="aa-name">Proline</div>
-      <div class="aa-trait">rigid · cyclic</div>
-    </div>
-
+<div class="act2-section">
+  <div class="act2-frame">
+    <iframe id="act2-iframe"
+            src="/assets/figures/actg2-wt-mutant.html"
+            title="ACTG2 Q247P — wild-type vs mutant"
+            loading="lazy"
+            scrolling="no"
+            allowtransparency="true">
+    </iframe>
   </div>
-
-  <p class="cipo-subline">Disrupting γ-2 actin polymerization in intestinal smooth muscle.</p>
-
 </div>
 
 <script>
+/* Auto-adjust iframe height based on q247pHeight messages
+   posted by /assets/figures/actg2-wt-mutant.html */
 (function () {
-  var stage = document.getElementById('aa-stage');
-  if (!stage) return;
-  stage.classList.add('js-armed');
-  if (!('IntersectionObserver' in window)) {
-    stage.classList.add('in-view');
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        stage.classList.add('in-view');
-        io.unobserve(stage);
-      }
-    });
-  }, { threshold: 0.35 });
-  io.observe(stage);
+  window.addEventListener('message', function (e) {
+    if (e.data && typeof e.data.q247pHeight === 'number') {
+      var iframe = document.getElementById('act2-iframe');
+      if (iframe) iframe.style.height = e.data.q247pHeight + 'px';
+    }
+  });
 })();
 </script>
 
