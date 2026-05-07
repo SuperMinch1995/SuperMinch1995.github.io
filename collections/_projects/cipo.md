@@ -296,7 +296,7 @@ h1 { text-align: center; }
 
 <p class="act-bridge">ACTG2 wasn't the only suspect.</p>
 
-<p class="act-bridge">We genotyped idiopathic cases.</p>
+<p class="act-bridge">We genotyped hundred of unsolved cases.</p>
 
 <div class="sunburst-section">
   <div class="sunburst-frame">
@@ -325,4 +325,8 @@ h1 { text-align: center; }
 })();
 </script>
 
-<p class="act-bridge act-bridge--closing">Behind every mutation, a person waiting.</p>
+<p class="act-bridge">Sometimes, the mutation is invisible.</p>
+
+<p class="act-bridge">Behind every mutation is a person waiting.</p>
+
+<p class="act-bridge act-bridge--closing">Discover our patients' stories.</p>
