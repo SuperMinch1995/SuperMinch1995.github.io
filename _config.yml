@@ -161,7 +161,7 @@ footer:
   footer_description: ""
   enable_social_media_icons: true
   enable_contact_details: false
-  enable_menu_footer_primary: false
+  enable_menu_footer_primary: true
   enable_menu_footer_secondary: false
   enable_menu_footer_tertiary: false
   footer_primary_menu_title: "Research"
@@ -171,7 +171,7 @@ footer:
 bottom:
   enable_bottom: true
   enable_bottom_menu: false
-  copyright_text: "© 2026 Minh-Chau Ta"
+  copyright_text: "© 2026 Minh-Chau Thom"
   show_rss_icon: true
 webrick:
   mime_types:
