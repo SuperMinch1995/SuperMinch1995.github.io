@@ -112,6 +112,7 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
   justify-content: flex-end;
   gap: 0.8rem;
   margin-top: 0.5rem;
+  align-items: center;
 }
 .feedback-btn-cancel {
   background: none;
@@ -133,7 +134,9 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
   font-size: 0.88em;
   font-weight: 600;
   font-family: inherit;
+  transition: opacity 0.15s;
 }
+.feedback-btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .feedback-modal-close {
   position: absolute;
   top: 0.9rem;
@@ -146,6 +149,16 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
   color: #C2510A;
 }
 .feedback-modal-close:hover { opacity: 1; }
+
+/* Status message inside modal footer */
+.feedback-status {
+  display: none;
+  font-size: 0.82em;
+  font-style: italic;
+  margin-right: auto;
+}
+.feedback-status.success { color: var(--mc-accent); }
+.feedback-status.error   { color: #b00020; }
 </style>
 
 <div class="footer">
@@ -154,10 +167,9 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
 
       <div class="col-12 col-md-4">
         <div class="footer-feedback">
-          <p class="footer-prompt">See something to improve? <button class="footer-feedback-btn" onclick="document.getElementById('feedbackModal').classList.add('open')">Share feedback &rarr;</button></p>
+          <p class="footer-prompt">See something to improve? <button class="footer-feedback-btn" id="feedbackOpenBtn">Share feedback &rarr;</button></p>
         </div>
       </div>
-
 
     {% if site.footer.enable_contact_details %}
     <div class="row justify-content-end mt-2">
@@ -174,9 +186,9 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
 <!-- Feedback modal -->
 <div class="feedback-modal-overlay" id="feedbackModal">
   <div class="feedback-modal">
-    <button class="feedback-modal-close" onclick="document.getElementById('feedbackModal').classList.remove('open')">&times;</button>
+    <button class="feedback-modal-close" id="feedbackCloseBtn">&times;</button>
     <h3>Share feedback</h3>
-    <form action="https://formspree.io/f/xrejqzrj" method="POST">
+    <form id="feedbackForm">
       <div class="feedback-grid">
         <div class="feedback-tile" onclick="this.classList.toggle('active')">Report a bug</div>
         <div class="feedback-tile" onclick="this.classList.toggle('active')">Something unclear</div>
@@ -187,16 +199,83 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
       <label>Message</label>
       <textarea name="message" placeholder=""></textarea>
       <div class="feedback-modal-footer">
-        <button type="button" class="feedback-btn-cancel" onclick="document.getElementById('feedbackModal').classList.remove('open')">Cancel</button>
-        <button type="submit" class="feedback-btn-submit">Send</button>
+        <span class="feedback-status" id="feedbackStatus"></span>
+        <button type="button" class="feedback-btn-cancel" id="feedbackCancelBtn">Cancel</button>
+        <button type="submit" class="feedback-btn-submit" id="feedbackSubmitBtn">Send</button>
       </div>
     </form>
   </div>
 </div>
 
 <script>
-document.querySelector('.feedback-btn-submit')?.addEventListener('click', function() {
-  const active = document.querySelector('.feedback-tile.active');
-  document.getElementById('feedbackCategory').value = active ? active.textContent : 'Not specified';
-});
+(function () {
+  var overlay    = document.getElementById('feedbackModal');
+  var form       = document.getElementById('feedbackForm');
+  var openBtn    = document.getElementById('feedbackOpenBtn');
+  var closeBtn   = document.getElementById('feedbackCloseBtn');
+  var cancelBtn  = document.getElementById('feedbackCancelBtn');
+  var submitBtn  = document.getElementById('feedbackSubmitBtn');
+  var status     = document.getElementById('feedbackStatus');
+
+  function openModal() { overlay.classList.add('open'); }
+  function closeModal() {
+    overlay.classList.remove('open');
+    status.style.display = 'none';
+    status.className = 'feedback-status';
+    submitBtn.textContent = 'Send';
+    submitBtn.disabled = false;
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  cancelBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Collect active category tile
+    var active = form.querySelector('.feedback-tile.active');
+    document.getElementById('feedbackCategory').value = active ? active.textContent : 'Not specified';
+
+    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Sending…';
+    status.style.display  = 'none';
+    status.className      = 'feedback-status';
+
+    fetch('https://formspree.io/f/xrejqzrj', {
+      method:  'POST',
+      body:    new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (response) {
+      if (response.ok) {
+        form.reset();
+        form.querySelectorAll('.feedback-tile').forEach(function (t) { t.classList.remove('active'); });
+        submitBtn.textContent = 'Send';
+        submitBtn.disabled    = false;
+        status.textContent    = '✓ Feedback sent — thank you!';
+        status.className      = 'feedback-status success';
+        status.style.display  = 'inline';
+      } else {
+        return response.json().then(function (json) {
+          throw new Error(
+            json.errors
+              ? json.errors.map(function (err) { return err.message; }).join(', ')
+              : 'Something went wrong.'
+          );
+        });
+      }
+    })
+    .catch(function (err) {
+      submitBtn.textContent = 'Send';
+      submitBtn.disabled    = false;
+      status.textContent    = '✗ ' + (err.message || 'Network error — please try again.');
+      status.className      = 'feedback-status error';
+      status.style.display  = 'inline';
+    });
+  });
+})();
 </script>
