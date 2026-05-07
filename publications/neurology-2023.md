@@ -55,7 +55,7 @@ figure.sci-figure figcaption p {
 }
 </style>
 
-<span class="pub-reading-badge">4 min read</span>
+<span class="pub-reading-badge">2 min read</span>
 
 ### Context  
 This article reports the case of a 61-year-old man with no prior neurological history who developed severe and unusual epileptic seizures known as *status epilepticus*. These episodes were prolonged, difficult to control, and led to temporary neurological deficits such as weakness on one side of the body.

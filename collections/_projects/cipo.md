@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Chronic Intestinal Pseudo-Obstruction (CIPO)"
+title: "This is an interactive scientific narrative built from my first research project"
 description: ""
 date: 2024-01-01
 weight: 1
@@ -85,13 +85,9 @@ h1 { text-align: center; }
   </div>
 </div>
 
-<p class="act-bridge">Proteins are made of amino acids.</p>
-
 <p class="act-bridge">What if one amino acid was wrong?</p>
 
-<p class="act-bridge">In this example, the Glutamine (Q) at the position 247</p>
-
-<p class="act-bridge">is replaced by a proline (P, mutant).</p>
+<p class="act-bridge">In this example, the Glutamine (Q) at the position 247 is replaced by a Proline (P).</p>
 
 <!-- ══════════════════════════════════════════════════
      ACT 2 — WILD-TYPE → MUTANT TRANSITION

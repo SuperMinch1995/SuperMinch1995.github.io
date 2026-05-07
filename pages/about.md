@@ -389,11 +389,12 @@ permalink: "/about/"
 </div>
 
 
-<br><p>Having lived and trained in diverse international settings, I see intellectual flexibility and interdisciplinary collaboration as drivers of innovation.</p>
+<br>
+<p>Having lived and trained in diverse international settings, I see intellectual flexibility and interdisciplinary collaboration as drivers of innovation.</p>
 
 <p>I currently live in San Diego with my husband and family.</p>
 
-<p>Outside of medicine and research, I enjoy playing violin, chess, and pickleball, and exploring how culture and language shape the way we understand the world.</p>
+<p>Outside of medicine and research, I enjoy playing violin, pickleball, and chess - and exploring how culture and language shape the way we understand the world.</p>
 
 <div class="photo-wrapper pw-beach">
   <div class="blob-beach-mass"></div>
