@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "This is an interactive scientific narrative built from my first research project"
+title: "This is an interactive scientific journey built from my first research project"
 description: ""
 date: 2024-01-01
 weight: 1
@@ -87,7 +87,7 @@ h1 { text-align: center; }
 
 <p class="act-bridge">What if one amino acid was wrong?</p>
 
-<p class="act-bridge">In this example, the Glutamine (Q) at the position 247 is replaced by a Proline (P).</p>
+<p class="act-bridge">In this example,<br>the Glutamine (Q) at the position 247 is replaced by a Proline (P).</p>
 
 <!-- ══════════════════════════════════════════════════
      ACT 2 — WILD-TYPE → MUTANT TRANSITION
@@ -235,7 +235,7 @@ h1 { text-align: center; }
 <div class="cipo-section">
 
   <p class="cipo-subline">CIPO is a disorder where the <span class="pencil-mark">bowels fail to move food<img src="/assets/images/underlines/underline-bowels.svg" class="pencil-underline" aria-hidden="true" alt=""></span> despite <span class="pencil-mark">no physical blockage<img src="/assets/images/underlines/underline-blockage.svg" class="pencil-underline" aria-hidden="true" alt=""></span>.</p>
-  <p class="cipo-subline">Lesions may arise anywhere along the brain-gut axis.</p>
+  <p class="cipo-subline">Dysfunction may emerge from any point along the brain–gut axis</p>
   <div class="brain-gut-img-wrap">
     <img src="/assets/images/brain-gut.png"
          alt="Brain-gut axis — bidirectional communication diagram"
@@ -293,6 +293,8 @@ h1 { text-align: center; }
 </style>
 
 <p class="act-bridge">ACTG2 wasn't the only suspect.</p>
+
+<p class="act-bridge">We genotyped idiopathic cases.</p>
 
 <div class="sunburst-section">
   <div class="sunburst-frame">

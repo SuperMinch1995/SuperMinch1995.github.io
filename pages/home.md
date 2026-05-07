@@ -166,6 +166,27 @@ posts:
  text-decoration: none !important;
  opacity: 0.7;
 }
+.pub-link-wrap {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 0.6rem;
+ width: 100%;
+ text-decoration: none;
+ color: inherit;
+}
+.pub-link-wrap:hover,
+.pub-link-wrap:focus,
+.pub-link-wrap:active {
+ text-decoration: none !important;
+ opacity: 1;
+ color: inherit;
+}
+.pub-link-wrap:hover .pub-image,
+.pub-link-wrap:hover .pub-pill,
+.pub-link-wrap:hover .pub-card-title {
+ opacity: 1;
+}
 .pub-card-title {
  font-size: 1.1em;
  font-weight: 600;
@@ -439,6 +460,7 @@ posts:
 <!-- Latest publication -->
 <div class="pub-section">
  <div class="pub-card">
+   <a href="https://superminch1995.github.io/projects/cipo/" class="pub-link-wrap">
    <img class="pub-image" src="/assets/images/ACTG2.jpeg" alt="ACTG2 immunohistochemistry panel" loading="lazy" decoding="async">
    <span class="pub-pill">Latest publication</span>
    
@@ -448,6 +470,7 @@ posts:
   <span style="display:block;font-size:0.78em;font-weight:400;font-style:italic;opacity:0.6;margin-top:0.55rem;letter-spacing:0.01em;">American Journal of Gastroenterology · 2026</span>
   <span style="display:block;font-size:0.7em;font-weight:400;opacity:0.45;margin-top:0.25rem;letter-spacing:0.02em;">Official journal of the American College of Gastroenterology</span>
 </p>
+   </a>
 
    <div class="pub-stats">
      <div class="stat-block">
@@ -506,4 +529,3 @@ document.getElementById('contactModal').addEventListener('click', function(e) {
  if (e.target === this) this.classList.remove('open');
 });
 </script>
-
