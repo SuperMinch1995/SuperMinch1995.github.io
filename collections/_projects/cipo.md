@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "This is an interactive scientific journey built from my first research project"
+title: "This is an interactive scientific journey built from my research project"
 description: ""
 date: 2024-01-01
 weight: 1
@@ -84,6 +84,8 @@ h1 { text-align: center; }
     </iframe>
   </div>
 </div>
+
+<p class="act-bridge">γ-2 actin is made of 376 amino acids.</p>
 
 <p class="act-bridge">What if one amino acid was wrong?</p>
 

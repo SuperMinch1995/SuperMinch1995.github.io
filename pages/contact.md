@@ -219,7 +219,7 @@ wide_content: true
 
 <div class="contact-editorial">
   <div class="contact-left">
-    <img src="{{ '/assets/images/GC_ATTAR_LE-CANTIQUE-DES-OISEAUX_SITE.jpg' | relative_url }}" alt="Le Cantique des Oiseaux">
+    <img src="{{ '/assets/images/mayo.webp' | relative_url }}" alt="Mayo Clinic">
   </div>
   <div class="contact-right">
     
