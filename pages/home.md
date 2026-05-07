@@ -228,7 +228,7 @@ posts:
 /* ── Scroll transition ── */
 .scroll-transition {
  max-width: 836px;
- margin: 1.8rem auto 28px;  /* negatif = remonte pour aligner avec contact-wrap */
+ margin: 1.8rem auto 28px;
  text-align: left;
  padding-left: 0px;
 }
@@ -379,7 +379,7 @@ posts:
 .contact-modal input:focus,
 .contact-modal textarea:focus { outline: none; border-color: #C2510A; }
 .contact-modal textarea { resize: vertical; min-height: 90px; }
-.modal-footer { display: flex; justify-content: flex-end; gap: 0.8rem; margin-top: 0.5rem; }
+.modal-footer { display: flex; justify-content: flex-end; gap: 0.8rem; margin-top: 0.5rem; align-items: center; }
 .btn-cancel {
  background: none; border: 1px solid #ccc; border-radius: 4px;
  padding: 0.5em 1.2em; cursor: pointer; font-size: 0.88em;
@@ -388,13 +388,25 @@ posts:
 .btn-submit {
  background: #C2510A; color: #fff; border: none; border-radius: 4px;
  padding: 0.5em 1.4em; cursor: pointer; font-size: 0.88em; font-weight: 600;
+ transition: opacity 0.15s;
 }
+.btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .modal-close {
  position: absolute; top: 0.9rem; right: 1rem;
  background: none; border: none; font-size: 1.3em;
  cursor: pointer; opacity: 0.4; color: var(--color-base-text);
 }
 .modal-close:hover { opacity: 1; }
+
+/* Status message inside modal */
+.modal-status {
+ display: none;
+ font-size: 0.82em;
+ font-style: italic;
+ margin-right: auto; /* pousse le message à gauche, boutons à droite */
+}
+.modal-status.success { color: #C2510A; }
+.modal-status.error   { color: #b00020; }
 </style>
 
 
@@ -499,14 +511,12 @@ posts:
 
 
 <!-- Modal -->
-<!-- Modal -->
 <div class="contact-modal-overlay" id="contactModal">
  <div class="contact-modal">
-   <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">&times;</button>
+   <button class="modal-close" id="modalCloseBtn">&times;</button>
    <h3>Contact to collaborate</h3>
 
-
-   <form action="https://formspree.io/f/mvzlapbv" method="POST">
+   <form id="modalContactForm">
      <label>Name</label>
      <input type="text" name="name" placeholder="">
      <label>Email</label>
@@ -514,18 +524,84 @@ posts:
      <label>Message</label>
      <textarea name="message" placeholder=""></textarea>
      <div class="modal-footer">
-       <button type="button" class="btn-cancel" onclick="document.getElementById('contactModal').classList.remove('open')">Cancel</button>
-       <button type="submit" class="btn-submit">Send</button>
+       <span class="modal-status" id="modalStatus"></span>
+       <button type="button" class="btn-cancel" id="modalCancelBtn">Cancel</button>
+       <button type="submit" class="btn-submit" id="modalSubmitBtn">Send</button>
      </div>
    </form>
-
 
  </div>
 </div>
 
 
 <script>
-document.getElementById('contactModal').addEventListener('click', function(e) {
- if (e.target === this) this.classList.remove('open');
-});
+(function () {
+  var overlay   = document.getElementById('contactModal');
+  var form      = document.getElementById('modalContactForm');
+  var submitBtn = document.getElementById('modalSubmitBtn');
+  var cancelBtn = document.getElementById('modalCancelBtn');
+  var closeBtn  = document.getElementById('modalCloseBtn');
+  var status    = document.getElementById('modalStatus');
+
+  function openModal()  { overlay.classList.add('open'); }
+  function closeModal() {
+    overlay.classList.remove('open');
+    // reset status on close so next open is clean
+    status.style.display = 'none';
+    status.className = 'modal-status';
+    submitBtn.textContent = 'Send';
+    submitBtn.disabled = false;
+  }
+
+  cancelBtn.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  // Keep the inline onclick on the trigger button working too
+  window.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('contact-inline')) openModal();
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Sending…';
+    status.style.display  = 'none';
+    status.className      = 'modal-status';
+
+    fetch('https://formspree.io/f/mvzlapbv', {
+      method:  'POST',
+      body:    new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (response) {
+      if (response.ok) {
+        form.reset();
+        submitBtn.textContent = 'Send';
+        submitBtn.disabled    = false;
+        status.textContent    = '✓ Sent — I\'ll be in touch soon.';
+        status.className      = 'modal-status success';
+        status.style.display  = 'inline';
+      } else {
+        return response.json().then(function (json) {
+          throw new Error(
+            json.errors
+              ? json.errors.map(function (err) { return err.message; }).join(', ')
+              : 'Something went wrong.'
+          );
+        });
+      }
+    })
+    .catch(function (err) {
+      submitBtn.textContent = 'Send';
+      submitBtn.disabled    = false;
+      status.textContent    = '✗ ' + (err.message || 'Network error — please try again.');
+      status.className      = 'modal-status error';
+      status.style.display  = 'inline';
+    });
+  });
+})();
 </script>
