@@ -132,6 +132,20 @@ html[data-bs-theme="dark"] .rt-link {
   border-color: #E8845A;
 }
 
+.rt-thumb-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rt-thumb-link:hover,
+.rt-thumb-link:focus,
+.rt-thumb-link:active {
+  text-decoration: none !important;
+  opacity: 1;
+  color: inherit;
+}
+
 .rt-divider {
   border: none;
   border-top: 0.5px solid var(--color-base-border, #ddd);
@@ -221,6 +235,7 @@ html[data-bs-theme="dark"] .rt-link {
       <div class="rt-dot-inner"></div>
     </div>
 
+    <a href="https://superminch1995.github.io/projects/cipo/" class="rt-thumb-link">
     <img class="rt-thumb"
          src="/assets/images/AJG-2026-hero.webp"
          alt="Histogenetic classification predicts outcomes in 130 adults with chronic intestinal pseudo-obstruction">
@@ -236,6 +251,7 @@ html[data-bs-theme="dark"] .rt-link {
     <p class="rt-abstract">
       Integrating genomic and histopathological data resolved 82% of idiopathic cases. Monogenic myopathy emerged as an independent predictor of favorable long-term survival.
     </p>
+    </a>
 
     <div class="rt-links">
       <a class="rt-link" href="/publications/cipo-2026/">

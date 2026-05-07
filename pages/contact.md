@@ -38,7 +38,7 @@ wide_content: true
     margin-top: 0;
   }
 
-  .contact-editorial .contact-message {
+  .contact-editorial {
     font-size: 13px;
     font-weight: 300;
     line-height: 1.7;
@@ -47,7 +47,7 @@ wide_content: true
     font-style: italic;
   }
 
-  .contact-editorial .contact-message strong {
+  .contact-editorial strong {
     font-style: normal;
     font-weight: 500;
   }
@@ -222,7 +222,7 @@ wide_content: true
     <img src="{{ '/assets/images/GC_ATTAR_LE-CANTIQUE-DES-OISEAUX_SITE.jpg' | relative_url }}" alt="Le Cantique des Oiseaux">
   </div>
   <div class="contact-right">
-    <p class="contact-message">Thank you for reaching out. I read every message and will respond when I can, though my time is limited. <em>Sincerely, Minh.</em></p>
+    
 
     <div class="form-box">
       {% assign form_action = nil %}
@@ -241,40 +241,7 @@ wide_content: true
       <div>
       {% endif %}
 
-        <div class="field-row">
-          <div class="field-group" style="margin-bottom: 0;">
-            <label class="field-label" for="topic">What is this about?</label>
-            <select class="field-select" id="topic" name="topic">
-              <option>Something I think you would want to know about</option>
-              <option>Research collaboration</option>
-              <option>Mentorship / advice</option>
-              <option>Press or interview</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field-group" style="margin-bottom: 0;">
-            <label class="field-label" for="urgency">How urgent is this?</label>
-            <select class="field-select" id="urgency" name="urgency">
-              <option>Next month is fine</option>
-              <option>Within a couple of weeks</option>
-              <option>This week</option>
-              <option>Time-sensitive</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field-group">
-          <span class="field-label">Do you need a reply?</span>
-          <div class="radio-group">
-            <label class="radio-option">
-              <input type="radio" name="reply" value="yes"> Yes please
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="reply" value="no"> No, this is just to let you know
-            </label>
-          </div>
-        </div>
-
+      
         <div class="field-group">
           <label class="field-label" for="subject">Subject</label>
           <input class="field-input" type="text" id="subject" name="subject" placeholder="Be as specific as possible">
