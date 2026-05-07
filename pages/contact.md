@@ -197,6 +197,29 @@ wide_content: true
     background: var(--color-primary, #C2510A);
   }
 
+  .contact-editorial .submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Success / error status message */
+  .contact-editorial .form-status {
+    display: none;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  .contact-editorial .form-status.success {
+    color: var(--color-primary, #C2510A);
+  }
+
+  .contact-editorial .form-status.error {
+    color: #b00020;
+  }
+
   @media (max-width: 768px) {
     .contact-editorial {
       grid-template-columns: 1fr;
@@ -222,26 +245,11 @@ wide_content: true
     <img src="{{ '/assets/images/mayo.webp' | relative_url }}" alt="Mayo Clinic">
   </div>
   <div class="contact-right">
-    
 
     <div class="form-box">
-      {% assign form_action = nil %}
-      {% if site.contact_form.use_netlify_form %}
-        {% assign form_action = "netlify" %}
-      {% elsif site.contact_form.use_formspree_form and site.contact_form.formspree_endpoint %}
-        {% assign form_action = "formspree" %}
-      {% endif %}
 
-      {% if form_action == "netlify" %}
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
-      {% elsif form_action == "formspree" %}
-      <form action="{{ site.contact_form.formspree_endpoint }}" method="POST">
-      {% else %}
-      <div>
-      {% endif %}
+      <form id="contact-form">
 
-      
         <div class="field-group">
           <label class="field-label" for="subject">Subject</label>
           <input class="field-input" type="text" id="subject" name="subject" placeholder="Be as specific as possible">
@@ -258,25 +266,74 @@ wide_content: true
             <input class="field-input" type="email" id="email" name="email">
           </div>
           <div class="field-group" style="margin-bottom: 0;">
-            <label class="field-label" for="full-name">Full Name</label>
-            <input class="field-input" type="text" id="full-name" name="name">
+            <label class="field-label" for="cell-phone">Cell phone</label>
+            <input class="field-input" type="text" id="cell-phone" name="phone">
           </div>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="bio">Bio</label>
-          <textarea class="field-input field-bio" id="bio" name="bio" placeholder="Briefly say who you are"></textarea>
+          <label class="field-label" for="full-name">Full Name</label>
+          <input class="field-input" type="text" id="full-name" name="name">
         </div>
 
         <p class="thank-you">Thank you 🕊️</p>
 
-        <button class="submit-btn" type="submit">Submit</button>
+        <button class="submit-btn" type="submit" id="submit-btn">Submit</button>
 
-      {% if form_action %}
+        <p class="form-status" id="form-status"></p>
+
       </form>
-      {% else %}
-      </div>
-      {% endif %}
+
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    var form    = document.getElementById('contact-form');
+    var btn     = document.getElementById('submit-btn');
+    var status  = document.getElementById('form-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      btn.disabled    = true;
+      btn.textContent = 'Sending…';
+      status.className   = 'form-status';
+      status.style.display = 'none';
+
+      var data = new FormData(form);
+
+      fetch('https://formspree.io/f/mzdoadww', {
+        method:  'POST',
+        body:    data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          form.reset();
+          btn.textContent      = 'Submit';
+          btn.disabled         = false;
+          status.textContent   = '✓ Sent — I\'ll be in touch soon.';
+          status.className     = 'form-status success';
+          status.style.display = 'block';
+        } else {
+          return response.json().then(function (json) {
+            throw new Error(
+              json.errors
+                ? json.errors.map(function (err) { return err.message; }).join(', ')
+                : 'Something went wrong.'
+            );
+          });
+        }
+      })
+      .catch(function (err) {
+        btn.textContent      = 'Submit';
+        btn.disabled         = false;
+        status.textContent   = '✗ ' + (err.message || 'Network error — please try again.');
+        status.className     = 'form-status error';
+        status.style.display = 'block';
+      });
+    });
+  })();
+</script>
