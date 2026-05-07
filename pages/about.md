@@ -361,7 +361,8 @@ permalink: "/about/"
     <br><h1 style="margin-top: 0;">Minh C. Thom, MD</h1>
 
     <br><p>I am a physician-scientist with training in pathology and molecular genetics.</p>
-    <p>Born in Vietnam and raised in France, I earned my MD from Sorbonne University in Paris, where I also completed my residency.</p>
+    
+    <br><p>Born in Vietnam and raised in France, I earned my MD from Sorbonne University in Paris, where I also completed my residency.</p>
 
     <p>Alongside my medical training, I completed a Master’s degree in Philosophy with honors.</p>
 
