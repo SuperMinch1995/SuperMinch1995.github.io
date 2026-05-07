@@ -58,9 +58,15 @@ figure.sci-figure figcaption p {
 <span class="pub-reading-badge">2 min read</span>
 
 ### Context  
-This article reports the case of a 61-year-old man with no prior neurological history who developed severe and unusual epileptic seizures known as *status epilepticus*. These episodes were prolonged, difficult to control, and led to temporary neurological deficits such as weakness on one side of the body.
+**Sturge-Weber syndrome** is a congenital condition usually diagnosed in childhood.
 
-Brain imaging (MRI) revealed a rare abnormality: a *leptomeningeal angioma*, which is a vascular malformation located on the surface of the brain. This type of lesion is typically associated with **Sturge-Weber syndrome (SWS)**, a congenital condition usually diagnosed in childhood.
+This article reports the case of a 61-year-old man with no prior neurological history who developed severe epileptic seizures known as *status epilepticus*. 
+
+These episodes were prolonged, difficult to control, and led to temporary neurological deficits such as weakness on one side of the body.
+
+Brain imaging (MRI) revealed a rare abnormality: a *leptomeningeal angioma*, which is a vascular malformation located on the surface of the brain. 
+
+This type of lesion is typically associated with **Sturge-Weber syndrome**.
 
 <br>
 
@@ -129,4 +135,123 @@ In practice, this suggests that some unexplained adult-onset epilepsies may have
 
 ---
 
-<a href="https://superminch1995.github.io/assets/pdfs/neurology-2023.pdf" target="_blank">Read the full article (PDF)</a>
+## Other publications
+
+<div class="publication-grid">
+
+  <a class="publication-card" href="/publications/cipo-2026/">
+    <img src="/assets/images/AJG-2026-hero.webp" alt="American Journal of Gastroenterology 2026 publication cover">
+    <div class="publication-card-content">
+      <h3>Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction</h3>
+      <p>Integrating genomic and histopathological data resolved 82% of idiopathic cases. Monogenic myopathy emerged as an independent predictor of favorable long-term survival.</p>
+    </div>
+  </a>
+
+  <a class="publication-card" href="/publications/SOCS1-2023/">
+    <img src="/assets/images/SOCS1-hero.webp" alt="SOCS1 2023 publication cover">
+    <div class="publication-card-content">
+      <h3>Insights into the expanding intestinal phenotypic spectrum of SOCS1 haploinsufficiency and therapeutic options</h3>
+      <p>SOCS1 haploinsufficiency can cause severe intestinal diseases, including Crohn's disease and chronic intestinal pseudo-obstruction.</p>
+    </div>
+  </a>
+
+  <a class="publication-card" href="/publications/NR1D1-2025/">
+    <img src="/assets/images/NR1D1-hero.webp" alt="NR1D1 2025 publication cover">
+    <div class="publication-card-content">
+      <h3>NR1D1::MAML3 Fusion in an Aggressive Mesenchymal Neoplasm</h3>
+      <p>NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms.</p>
+    </div>
+  </a>
+
+  <a class="publication-card" href="/publications/PFMG-2025/">
+    <img src="/assets/images/Lancet-hero.webp" alt="PFMG 2025 publication cover">
+    <div class="publication-card-content">
+      <h3>PFMG2025-integrating genomic medicine into the national healthcare system in France</h3>
+      <p>The 2025 French Genomic Medicine Initiative represents one of the first nationwide efforts to integrate whole genome sequencing into routine clinical care.</p>
+    </div>
+  </a>
+
+</div>
+
+<style>
+.publication-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.publication-card {
+  display: block;
+  background: #faf9f7;
+  border: 1px solid #ead9bf;
+  border-radius: 12px;
+  overflow: hidden;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication-card,
+.publication-card *,
+.publication-card:hover,
+.publication-card:hover *,
+.publication-card:focus,
+.publication-card:focus * {
+  text-decoration: none !important;
+}
+
+.publication-card-content h3,
+.publication-card-content p,
+.publication-card:hover .publication-card-content h3,
+.publication-card:hover .publication-card-content p {
+  border-bottom: none !important;
+  background-image: none !important;
+}
+
+.publication-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.publication-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: top;
+}
+
+.publication-card-content {
+  padding: 1rem 1.1rem 1.1rem;
+  margin: 0 !important;
+}
+
+.publication-card-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #3a3028;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.publication-card-content p {
+  margin: 0;
+  color: #6b5e4f;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.pub-reading-badge {
+  display: inline-block;
+  font-size: 0.72em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #C2510A;
+  border: 1px solid #C2510A;
+  border-radius: 3px;
+  padding: 0.2em 0.65em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+}
+</style>
