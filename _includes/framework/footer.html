@@ -169,16 +169,12 @@ html[data-bs-theme="dark"] { --mc-accent: #E8845A; --mc-accent-bg: #2d1a0e; }
         <div class="footer-feedback">
           <p class="footer-prompt">See something to improve? <button class="footer-feedback-btn" id="feedbackOpenBtn">Share feedback &rarr;</button></p>
         </div>
+        {% if site.footer.enable_menu_footer_primary %}
+          <div class="footer-menu" style="margin-top: 1rem;">
+            {% include framework/menu-footer.html menu=site.data.menu.footer_primary %}
+          </div>
+        {% endif %}
       </div>
-
-    {% if site.footer.enable_contact_details %}
-    <div class="row justify-content-end mt-2">
-      <div class="col-12 col-md-4">
-        <h3>Contact Us</h3>
-        {% include framework/contact.html contact=site.data.contact %}
-      </div>
-    </div>
-    {% endif %}
 
   </div>
 </div>

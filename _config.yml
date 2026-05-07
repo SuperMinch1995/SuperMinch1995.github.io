@@ -164,7 +164,7 @@ footer:
   enable_menu_footer_primary: true
   enable_menu_footer_secondary: false
   enable_menu_footer_tertiary: false
-  footer_primary_menu_title: "Research"
+  footer_primary_menu_title: ""
   footer_secondary_menu_title: "Links"
   footer_tertiary_menu_title: "Other"
 
