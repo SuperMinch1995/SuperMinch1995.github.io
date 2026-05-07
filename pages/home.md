@@ -505,7 +505,7 @@ posts:
         alt="All ACTG2 variants — structural overview"
         style="display:block;width:100%;height:auto;border-radius:4px;">
    <p class="pub-card-desc">I modeled this protein in Python.</p>
-   <a href="/projects/cipo/" class="pub-card-cta">Interact with it in 3D &rarr;</a>
+   <a href="/projects/cipo/" class="pub-card-cta">Explore it in 3D &rarr;</a>
  </div>
 </div>
 
