@@ -84,7 +84,7 @@ permalink: /conferences/espen-2025/
   <!-- HERO -->
   <section>
     <h1 class="hero-title">
-      Presenting at the world-leading conference in clinical nutrition
+      Presenting at one of the world-leading conference in clinical nutrition
     </h1>
 
     <p class="hero-sub">
@@ -111,7 +111,7 @@ permalink: /conferences/espen-2025/
     </p>
 
     <p>
-      My work was selected for presentation in the Best Abstracts session, highlighting its relevance in this field.
+     My research was selected for plenary presentation, highlighting its relevance in this field.
     </p>
 
 
@@ -151,15 +151,15 @@ permalink: /conferences/espen-2025/
   <div class="conf-body">
 
     <p>
-      One moment behind the scenes stayed with me.
+      During the conference, Professor Luboš Sobotka gave a fascinating lecture connecting the origins of life with metabolic challenges like insulin resistance. It was the kind of presentation where rigorous science becomes almost philosophical.
     </p>
 
     <p>
-      Professor Luboš Sobotka gave a fascinating lecture connecting the origins of life with metabolic challenges like insulin resistance. It was the kind of presentation where rigorous science becomes almost philosophical.
+      After the session, we spoke briefly, and he handed me a small pin bearing the Rod of Asclepius — a quiet reminder that resilience, humility, and long-term dedication remain at the heart of medicine.
     </p>
 
     <p>
-      Afterward, I spoke with him briefly. He handed me his small pin bearing the Rod of Asclepius, meaning that resilience and long-term dedication to patient care shape medical wisdom.
+    It was a moment I will remember for a long time.
     </p>
 
   </div>
