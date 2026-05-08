@@ -222,7 +222,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/projects/cipo/">
-        Behind the Research
+        Behind the Research →
       </a>
 
       <a class="rt-link" href="/publications/cipo-2026/">
@@ -279,7 +279,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/publications/NR1D1-2025/">
-        About the project
+        About the project →
       </a>
 
       <a class="rt-link"
@@ -328,7 +328,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/publications/PFMG-2025/">
-        About the project
+        About the project →
       </a>
 
       <a class="rt-link"
@@ -377,7 +377,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/publications/neurology-2023/">
-        About the project
+        About the project →
       </a>
 
       <a class="rt-link"
@@ -419,7 +419,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/publications/SOCS1-2023/">
-        About the project
+        About the project →
       </a>
 
       <a class="rt-link"

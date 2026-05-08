@@ -369,10 +369,8 @@ permalink: "/about/"
     <p>I independently developed computational skills to support research and data-driven problem-solving.</p>
 
   </div>
-
-<p>My research has been presented internationally across the United States and Europe.</p>
-
 </div>
+<p>My research has been presented internationally across the United States and Europe.</p>
 
 <div class="photo-wrapper pw-espen">
   <div class="blob-espen-a"></div>
