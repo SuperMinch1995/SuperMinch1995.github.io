@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACTG2 Q247P — Pédagogique</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange:        #D9785A;   /* dusty coral */
+    --orange-deep:   #B85738;
+    --orange-soft:   #EAA88C;
+    --residue:       #C2510A;   /* the residue keeps its punch */
+    --residue-deep:  #9E4218;
+    --cream:         #FCF9F1;
+    --beige:         #F6F0E2;
+    --beige-2:       #EFE7D6;
+    --dark:          #4D4238;
+    --muted:         rgba(77, 66, 56, 0.52);
+    --muted-2:       rgba(77, 66, 56, 0.32);
+    --line:          rgba(77, 66, 56, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: transparent;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    color: var(--dark);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--beige-2);
+    box-shadow:
+      0 1px 16px rgba(77, 66, 56, 0.06),
+      inset 0 0 0 1px var(--line);
+  }
+
+  /* ─── Top help row ─── */
+  .help-row {
+    display: flex;
+    align-items: stretch;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+  }
+  .help-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    color: var(--muted);
+  }
+  .help-item + .help-item {
+    border-left: 1px solid var(--line);
+  }
+  .help-icon-wrap {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: rgba(217, 120, 90, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .help-icon-wrap svg {
+    width: 13px;
+    height: 13px;
+    color: var(--orange);
+  }
+  .help-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    line-height: 1.2;
+  }
+  .help-verb {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--dark);
+    letter-spacing: 0.03em;
+  }
+  .help-hint {
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── Viewer ─── */
+  #viewer-wrap {
+    position: relative;
+    width: 100%;
+    height: 460px;
+  }
+  #mol-viewer { width: 100%; height: 100%; }
+
+  /* ─── Phase 1: intro ─── */
+  #intro {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(239, 231, 214, 0.62);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 20;
+    transition: opacity 1s ease;
+    padding: 0 2rem;
+  }
+  #intro.hidden { opacity: 0; pointer-events: none; }
+  .intro-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    max-width: 380px;
+    line-height: 1.5;
+  }
+  .intro-text em {
+    font-style: normal;
+    color: var(--residue);
+    font-weight: 500;
+  }
+
+  /* ─── Phase 2: mutation label ─── */
+  #mut-label {
+    position: absolute;
+    top: 28%;
+    right: 11%;
+    z-index: 15;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: none;
+  }
+  #mut-label.visible { opacity: 1; transform: translateY(0); }
+  .label-pill {
+    background: rgba(252, 249, 241, 0.96);
+    padding: 9px 14px 10px;
+    border-radius: 8px;
+    box-shadow:
+      0 2px 12px rgba(77, 66, 56, 0.12),
+      inset 0 0 0 1px rgba(194, 81, 10, 0.18);
+    text-align: left;
+    min-width: 180px;
+  }
+  .label-gene {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--residue);
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+  .label-desc {
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ─── Toolbar (controls + pan, integrated bottom bar) ─── */
+  .toolbar {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px;
+    background: rgba(252, 249, 241, 0.92);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 10px rgba(77, 66, 56, 0.08);
+    z-index: 30;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .toolbar.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .tb-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .tb-btn:hover {
+    background: var(--orange);
+    color: #fff;
+  }
+  .tb-btn.active {
+    background: var(--orange);
+    color: #fff;
+  }
+  .tb-btn svg { width: 12px; height: 12px; }
+  .tb-btn.tb-arrow { width: 28px; height: 28px; padding: 0; }
+  .tb-btn.tb-text { padding: 6px 12px; }
+  .tb-divider {
+    width: 1px;
+    height: 18px;
+    background: var(--line);
+    margin: 0 3px;
+  }
+
+  /* ─── Meta ─── */
+  .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 18px;
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+  }
+  .meta-gene {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--residue);
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+  .meta-desc { font-size: 0.7rem; color: var(--muted); }
+  .meta-tag {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    border: 1px solid rgba(77, 66, 56, 0.10);
+    padding: 3px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  /* ─── Loader ─── */
+  #loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--beige-2);
+    z-index: 40;
+    gap: 14px;
+    transition: opacity 0.5s ease;
+  }
+  #loader.hidden { opacity: 0; pointer-events: none; }
+  .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: inline-block;
+    margin: 0 3px;
+    animation: bounce 1.2s infinite ease-in-out both;
+  }
+  .dot:nth-child(2) { animation-delay: 0.15s; }
+  .dot:nth-child(3) { animation-delay: 0.30s; }
+  @keyframes bounce {
+    0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+    40%           { transform: translateY(-7px); opacity: 1; }
+  }
+  .loader-txt {
+    font-size: 0.66rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+  }
+
+  /* ─── Mobile ─── */
+  @media (max-width: 640px) {
+    #viewer-wrap { height: 360px; }
+    .intro-text { font-size: 1.05rem; }
+    #mut-label { top: 24%; right: 6%; }
+    .label-pill { min-width: 150px; padding: 7px 11px 8px; }
+    .meta { padding: 9px 12px; }
+    .meta-desc { display: none; }
+    .help-item { padding: 8px 9px; gap: 6px; }
+    .help-icon-wrap { width: 22px; height: 22px; }
+    .help-verb { font-size: 0.64rem; }
+    .help-hint { font-size: 0.56rem; }
+    .toolbar { gap: 2px; padding: 4px; }
+    .tb-btn.tb-text { padding: 5px 9px; font-size: 0.64rem; }
+    .tb-btn.tb-arrow { width: 24px; height: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+
+  <!-- Persistent help row at top -->
+  <div class="help-row">
+    <div class="help-item">
+      <div class="help-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12a9 9 0 1 1-3-6.7L21 8"/>
+          <polyline points="21 3 21 8 16 8"/>
+        </svg>
+      </div>
+      <div class="help-text">
+        <div class="help-verb">Rotate</div>
+        <div class="help-hint">Click and drag</div>
+      </div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <line x1="11" y1="8" x2="11" y2="14"/>
+          <line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+      </div>
+      <div class="help-text">
+        <div class="help-verb">Zoom</div>
+        <div class="help-hint">Scroll wheel</div>
+      </div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="5 9 2 12 5 15"/>
+          <polyline points="9 5 12 2 15 5"/>
+          <polyline points="15 19 12 22 9 19"/>
+          <polyline points="19 9 22 12 19 15"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <line x1="12" y1="2" x2="12" y2="22"/>
+        </svg>
+      </div>
+      <div class="help-text">
+        <div class="help-verb">Pan</div>
+        <div class="help-hint">Use arrow buttons below</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewer-wrap">
+
+    <div id="loader">
+      <div>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <div class="loader-txt">LOADING STRUCTURE</div>
+    </div>
+
+    <div id="mol-viewer"></div>
+
+    <!-- Intro -->
+    <div id="intro">
+      <p class="intro-text">
+        A <em>single mutation</em> can reshape a protein.
+      </p>
+    </div>
+
+    <!-- Mutation label -->
+    <div id="mut-label">
+      <div class="label-pill">
+        <div class="label-gene">ACTG2 · Q247P</div>
+        <div class="label-desc">Severe CIPO phenotype</div>
+      </div>
+    </div>
+
+    <!-- Unified toolbar: pan arrows + replay + surface -->
+    <div class="toolbar" id="toolbar">
+      <button class="tb-btn tb-arrow" id="pan-up" aria-label="Pan up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+      <button class="tb-btn tb-arrow" id="pan-left" aria-label="Pan left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="tb-btn tb-arrow" id="pan-down" aria-label="Pan down">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <button class="tb-btn tb-arrow" id="pan-right" aria-label="Pan right">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="tb-divider"></div>
+      <button class="tb-btn tb-text" id="btn-recenter">⌂ Recenter</button>
+      <div class="tb-divider"></div>
+      <button class="tb-btn tb-text" id="btn-replay">↻ Replay</button>
+      <button class="tb-btn tb-text" id="btn-surface">◈ Surface</button>
+    </div>
+
+  </div>
+
+  <div class="meta">
+    <span class="meta-gene">ACTG2 · Q247P</span>
+    <span class="meta-desc">γ-2 actin · smooth muscle isoform</span>
+    <span class="meta-tag">AlphaFold · Chain A</span>
+  </div>
+
+</div>
+
+<script>
+(function () {
+
+  const PDB_PATH    = '/assets/structures/Q247P.txt';
+  const MUT_RESI    = 245;
+  const MUT_CHAIN   = 'A';
+  const PAN_STEP    = 28;
+
+  const COLOR_BG     = 0xEFE7D6;
+  const COLOR_MAIN   = '#7A6856';
+  const COLOR_NEAR   = '#A87B58';
+  const COLOR_SPHERE = '#C2510A';
+  const COLOR_STICK  = '#9E4218';
+
+  const el = document.getElementById('mol-viewer');
+  const viewer = $3Dmol.createViewer(el, {
+    backgroundColor: COLOR_BG,
+    antialias: true,
+    cartoonQuality: 8
+  });
+
+  let spinning = false;
+  let surfaceOn = false;
+  let surfaceId = null;
+  let timers = [];
+
+  function applyBaseStyle() {
+    viewer.setStyle({}, {
+      cartoon: { color: COLOR_MAIN, opacity: 0.65, thickness: 0.30 }
+    });
+    viewer.setStyle(
+      { chain: MUT_CHAIN, resi: (MUT_RESI - 4) + '-' + (MUT_RESI + 4) },
+      { cartoon: { color: COLOR_NEAR, opacity: 0.84, thickness: 0.34 } }
+    );
+    viewer.setStyle(
+      { chain: MUT_CHAIN, resi: MUT_RESI },
+      {
+        sphere: { color: COLOR_SPHERE, radius: 0.65, opacity: 0.95 },
+        stick:  { color: COLOR_STICK,  radius: 0.18, opacity: 1.0  }
+      }
+    );
+  }
+
+  function pulseResidue() {
+    viewer.setStyle(
+      { chain: MUT_CHAIN, resi: MUT_RESI },
+      {
+        sphere: { color: COLOR_SPHERE, radius: 0.95, opacity: 1.0 },
+        stick:  { color: COLOR_STICK,  radius: 0.22, opacity: 1.0 }
+      }
+    );
+    viewer.render();
+    setTimeout(() => {
+      viewer.setStyle(
+        { chain: MUT_CHAIN, resi: MUT_RESI },
+        {
+          sphere: { color: COLOR_SPHERE, radius: 0.65, opacity: 0.95 },
+          stick:  { color: COLOR_STICK,  radius: 0.18, opacity: 1.0  }
+        }
+      );
+      viewer.render();
+    }, 700);
+  }
+
+  function clearTimers() {
+    timers.forEach(t => clearTimeout(t));
+    timers = [];
+  }
+
+  function stopSpin() {
+    if (spinning) { viewer.spin(false); spinning = false; }
+  }
+
+  function panView(dx, dy) {
+    stopSpin();
+    viewer.translate(dx, dy, 200);
+  }
+
+  function recenter() {
+    stopSpin();
+    viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI }, 600);
+    viewer.zoom(0.6, 600);
+  }
+
+  function startNarrative() {
+    clearTimers();
+
+    document.getElementById('intro').classList.remove('hidden');
+    document.getElementById('mut-label').classList.remove('visible');
+    document.getElementById('toolbar').classList.remove('visible');
+
+    applyBaseStyle();
+    viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI });
+    viewer.zoom(0.6);
+    viewer.spin(false);
+    spinning = false;
+    viewer.render();
+
+    timers.push(setTimeout(() => {
+      document.getElementById('intro').classList.add('hidden');
+      viewer.spin('y', 0.4);
+      spinning = true;
+    }, 2000));
+
+    timers.push(setTimeout(() => {
+      pulseResidue();
+      document.getElementById('mut-label').classList.add('visible');
+    }, 4000));
+
+    timers.push(setTimeout(() => {
+      stopSpin();
+      viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI }, 1000);
+    }, 6500));
+
+    timers.push(setTimeout(() => {
+      document.getElementById('toolbar').classList.add('visible');
+    }, 8000));
+  }
+
+  fetch(PDB_PATH)
+    .then(r => { if (!r.ok) throw new Error('PDB not found'); return r.text(); })
+    .then(pdb => {
+      viewer.addModel(pdb, 'pdb');
+      applyBaseStyle();
+      viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI });
+      viewer.zoom(0.6);
+      viewer.render();
+      document.getElementById('loader').classList.add('hidden');
+      startNarrative();
+    })
+    .catch(err => {
+      console.error('PDB load failed:', err);
+      document.getElementById('loader').innerHTML =
+        '<div style="color:#D9785A;font-size:0.7rem;letter-spacing:0.1em">STRUCTURE UNAVAILABLE</div>';
+    });
+
+  document.getElementById('btn-replay').addEventListener('click', startNarrative);
+  document.getElementById('btn-recenter').addEventListener('click', recenter);
+
+  document.getElementById('btn-surface').addEventListener('click', function () {
+    surfaceOn = !surfaceOn;
+    if (surfaceOn) {
+      surfaceId = viewer.addSurface($3Dmol.SurfaceType.MS, {
+        opacity: 0.18, color: '#D9785A'
+      }, { chain: MUT_CHAIN });
+      viewer.render();
+      this.classList.add('active');
+    } else {
+      if (surfaceId !== null) viewer.removeSurface(surfaceId);
+      viewer.render();
+      this.classList.remove('active');
+    }
+  });
+
+  document.getElementById('pan-up').addEventListener('click',    () => panView(0, -PAN_STEP));
+  document.getElementById('pan-down').addEventListener('click',  () => panView(0,  PAN_STEP));
+  document.getElementById('pan-left').addEventListener('click',  () => panView(-PAN_STEP, 0));
+  document.getElementById('pan-right').addEventListener('click', () => panView( PAN_STEP, 0));
+
+  el.addEventListener('mousedown', stopSpin);
+  el.addEventListener('touchstart', stopSpin, { passive: true });
+
+})();
+</script>
+</body>
+</html>

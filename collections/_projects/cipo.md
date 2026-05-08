@@ -126,6 +126,39 @@ h1 {
   </div>
 </div>
 
+<div class="act1-section">
+  <div class="act1-frame">
+    <iframe src="/assets/figures/actg2-q247p-v1-aerienne.html"
+            title="ACTG2 Q247P — interactive 3D viewer"
+            loading="lazy"
+            scrolling="no"
+            allowtransparency="true">
+    </iframe>
+  </div>
+</div>
+
+<div class="act1-section">
+  <div class="act1-frame">
+    <iframe src="/assets/figures/actg2-q247p-v2-boussole.html"
+            title="ACTG2 Q247P — interactive 3D viewer"
+            loading="lazy"
+            scrolling="no"
+            allowtransparency="true">
+    </iframe>
+  </div>
+</div>
+
+<div class="act1-section">
+  <div class="act1-frame">
+    <iframe src="/assets/figures/actg2-q247p-v3-pedagogique.html"
+            title="ACTG2 Q247P — interactive 3D viewer"
+            loading="lazy"
+            scrolling="no"
+            allowtransparency="true">
+    </iframe>
+  </div>
+</div>
+
 <p class="act-bridge">γ-2 actin is made of 376 amino acids.</p>
 
 <p class="act-bridge">What if one amino acid was wrong?</p>
