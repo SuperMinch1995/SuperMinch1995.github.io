@@ -83,7 +83,7 @@ permalink: /conferences/espghan-2025/
 
   <section>
     <h1 class="hero-title">
-      Presenting at one of the world’s leading pediatric gastroenterology conferences
+      Presenting at one of the leading pediatric gastroenterology conferences
     </h1>
 
     <p class="hero-sub">

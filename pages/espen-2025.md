@@ -84,11 +84,11 @@ permalink: /conferences/espen-2025/
   <!-- HERO -->
   <section>
     <h1 class="hero-title">
-      Presenting at the European Society for Clinical Nutrition and Metabolism
+      Presenting at the world-leading conference in clinical nutrition
     </h1>
 
     <p class="hero-sub">
-      The world-leading conference in clinical nutrition.
+      Plenary session.
     </p>
 
     <div class="conf-meta">Prague, Czech Republic · September 2025</div>
@@ -107,11 +107,11 @@ permalink: /conferences/espen-2025/
     </p>
 
      <p>
-      Far from being a niche field, clinical nutrition sits at the core of modern medicine, influencing outcomes in critical care, oncology, gastroenterology, and chronic disease. The conference offered a rare level of intellectual depth — where discussions move seamlessly from molecular mechanisms to real-world patient impact.
+      Clinical nutrition sits at the core of modern medicine, influencing outcomes in critical care, oncology, gastroenterology, and chronic disease.
     </p>
 
     <p>
-      The work was selected for presentation in the <strong>Best Abstracts session</strong>, highlighting its relevance in this field.
+      My work was selected for presentation in the Best Abstracts session, highlighting its relevance in this field.
     </p>
 
 
@@ -151,16 +151,15 @@ permalink: /conferences/espen-2025/
   <div class="conf-body">
 
     <p>
-      Behind the scenes, one moment stayed with me.
+      One moment behind the scenes stayed with me.
     </p>
 
     <p>
-      Professor Luboš Sobotka delivered a stellar lecture that went from the <strong>origin of life</strong> to modern metabolic challenges such as insulinoresistance. A rare kind of talk where science feels almost philosophical.
+      Professor Luboš Sobotka gave a fascinating lecture connecting the origins of life with metabolic challenges like insulin resistance. It was the kind of presentation where rigorous science becomes almost philosophical.
     </p>
 
     <p>
-      After the session, I asked him a question and he handed me a small pin bearing the Rod of Asclepius, meaning
-      <strong>resilience and consistent clinical practice over time is what ultimately leads to wisdom.</strong>
+      Afterward, I spoke with him briefly. He handed me his small pin bearing the Rod of Asclepius, meaning that resilience and long-term dedication to patient care shape medical wisdom.
     </p>
 
   </div>

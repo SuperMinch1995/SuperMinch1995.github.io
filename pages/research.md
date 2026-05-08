@@ -176,7 +176,7 @@ html[data-bs-theme="dark"] .rt-link {
          alt="Phylogenetic divergence between skin and nodal mycosis fungoides clones">
 
     <p class="rt-title">
-      Mycosis fungoides with nodal progression harbors recurrent SOCS1 mutations and JAK2 rearrangements
+      Mycosis fungoides with nodal progression harbors recurrent <i>SOCS1</i> mutations and <i>JAK2</i> rearrangements
     </p>
 
     <p class="rt-meta">
@@ -184,31 +184,14 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-abstract">
-      In advanced Mycosis fungoides with nodal progression (ISCL-EORTC N3 stage), paired skin and lymph node analyses revealed marked intratumoral heterogeneity and branched evolution, while recurrent SOCS1 mutations and JAK2 fusions highlighted a central role for JAK/STAT pathway dysregulation.
+      In advanced Mycosis fungoides with nodal progression (ISCL-EORTC N3 stage), paired skin and lymph node analyses revealed marked intratumoral heterogeneity and branched evolution, while recurrent <i>SOCS1</i> mutations and <i>JAK2</i> fusions highlighted a central role for JAK/STAT pathway dysregulation.
     </p>
 
-  </div>
-
-  <div class="rt-item">
-    <div class="rt-dot">
-      <div class="rt-dot-inner grey"></div>
+    <div class="rt-links">
+      <a class="rt-link" href="/conferences/eortc-cltg-2025/">
+        Oral presentation · EORTC
+      </a>
     </div>
-
-    <img class="rt-thumb"
-         src="/assets/images/Clock-hero.webp"
-         alt="Clock gene expression in NOS1+ enteric nitrergic neurons">
-
-    <p class="rt-title">
-      Clock gene expression in NOS1+ nitrergic neurons in intestinal dysmotility
-    </p>
-
-    <p class="rt-meta">
-      In preparation
-    </p>
-
-    <p class="rt-abstract">
-      snRNA-seq analysis of the Drokhlyansky 2020 human enteric nervous system dataset. Hypothesis: circadian misalignment of nitrergic neurons as a driver of enteric dysmotility.
-    </p>
 
   </div>
 
@@ -246,6 +229,17 @@ html[data-bs-theme="dark"] .rt-link {
         About the project
       </a>
 
+      <a class="rt-link" href="/conferences/ddw-2025/">
+        Oral presentation · DDW
+      </a>
+
+      <a class="rt-link"
+         href="https://superminch1995.github.io/assets/pdfs/cipo-article.pdf"
+         target="_blank"
+         rel="noopener">
+        PDF
+      </a>
+
       <a class="rt-link"
          href="https://pubmed.ncbi.nlm.nih.gov/41744400/"
          target="_blank"
@@ -272,7 +266,7 @@ html[data-bs-theme="dark"] .rt-link {
          alt="NR1D1::MAML3 fusion structure with breakpoints in mesenchymal neoplasm">
 
     <p class="rt-title">
-      NR1D1::MAML3 Fusion in an Aggressive Mesenchymal Neoplasm
+      <i>NR1D1::MAML3</i> Fusion in an Aggressive Mesenchymal Neoplasm
     </p>
 
     <p class="rt-meta">
@@ -280,12 +274,19 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-abstract">
-      NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms.
+      <i>NR1D1</i>-rearranged tumors are emerging aggressive mesenchymal neoplasms.
     </p>
 
     <div class="rt-links">
       <a class="rt-link" href="/publications/NR1D1-2025/">
         About the project
+      </a>
+
+      <a class="rt-link"
+         href="https://superminch1995.github.io/assets/pdfs/NR1D1-article.pdf"
+         target="_blank"
+         rel="noopener">
+        PDF
       </a>
 
       <a class="rt-link"
@@ -331,6 +332,13 @@ html[data-bs-theme="dark"] .rt-link {
       </a>
 
       <a class="rt-link"
+         href="https://superminch1995.github.io/assets/pdfs/PFMG-2025.pdf"
+         target="_blank"
+         rel="noopener">
+        PDF
+      </a>
+
+      <a class="rt-link"
          href="https://pubmed.ncbi.nlm.nih.gov/40093400/"
          target="_blank"
          rel="noopener">
@@ -356,7 +364,7 @@ html[data-bs-theme="dark"] .rt-link {
          alt="Leptomeningeal angioma with GNA11 pathogenic variation">
 
     <p class="rt-title">
-      Late-Onset Status Epilepticus Associated With Isolated Leptomeningeal Angioma and Sturge-Weber Syndrome-Related GNA11 Pathogenic Variation
+      Late-Onset Status Epilepticus Associated With Isolated Leptomeningeal Angioma and Sturge-Weber Syndrome-Related <i>GNA11</i> Pathogenic Variation
     </p>
 
     <p class="rt-meta">
@@ -398,7 +406,7 @@ html[data-bs-theme="dark"] .rt-link {
          alt="Intestinal phenotypic spectrum of SOCS1 haploinsufficiency">
 
     <p class="rt-title">
-      Insights Into the Expanding Intestinal Phenotypic Spectrum of SOCS1 Haploinsufficiency and Therapeutic Options
+      Insights Into the Expanding Intestinal Phenotypic Spectrum of <i>SOCS1</i> Haploinsufficiency and Therapeutic Options
     </p>
 
     <p class="rt-meta">
@@ -406,12 +414,19 @@ html[data-bs-theme="dark"] .rt-link {
     </p>
 
     <p class="rt-abstract">
-      SOCS1 haploinsufficiency can cause severe intestinal diseases, including Crohn’s disease and chronic intestinal pseudo-obstruction.
+      <i>SOCS1</i> haploinsufficiency can cause severe intestinal diseases, including Crohn’s disease and chronic intestinal pseudo-obstruction.
     </p>
 
     <div class="rt-links">
       <a class="rt-link" href="/publications/SOCS1-2023/">
         About the project
+      </a>
+
+      <a class="rt-link"
+         href="https://superminch1995.github.io/assets/pdfs/SOCS1-2023.pdf"
+         target="_blank"
+         rel="noopener">
+        PDF
       </a>
 
       <a class="rt-link"

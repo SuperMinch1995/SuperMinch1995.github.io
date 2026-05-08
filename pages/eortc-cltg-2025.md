@@ -116,11 +116,11 @@ permalink: /conferences/eortc-cltg-2025/
   <!-- HERO -->
   <section>
     <h1 class="hero-title">
-      Presenting research at one of Europe’s leading meetings in cutaneous lymphoma
+      Presenting at one of the world’s leading meetings in cutaneous lymphoma
     </h1>
 
     <p class="hero-sub">
-      A highly specialized international conference bringing together experts in dermatology, hematology, molecular pathology, and translational oncology.
+      Plenary session.
     </p>
 
     <div class="conf-meta">
@@ -138,19 +138,19 @@ permalink: /conferences/eortc-cltg-2025/
   <div class="conf-body">
 
     <p>
-      The EORTC Cutaneous Lymphoma Tumour Group Annual Meeting gathers leading international specialists working on cutaneous lymphomas, spanning clinical dermatology, hematology, molecular genetics, and oncologic research.
+      The European Organisation for Research and Treatment of Cancer (EORTC) Cutaneous Lymphoma Tumour Group Annual Meeting brings together leading experts in dermatology, hematology, oncology, and dermatopathology.
     </p>
 
     <p>
-      Unlike large multidisciplinary congresses, the meeting is designed around highly focused scientific exchange, where complex cases, emerging molecular findings, and translational strategies are discussed among experts shaping the field internationally.
+      The conference is designed around highly focused scientific exchange on cutaneous lymphomas, where complex cases, emerging molecular findings, and translational strategies are discussed among experts shaping the field internationally.
     </p>
 
     <p>
-      Research presented during the meeting explored the genomic landscape of nodal involvement in mycosis fungoides, highlighting evolving perspectives on disease progression and molecular characterization.
+      The research I presented characterized the genomic landscape of nodal involvement in mycosis fungoides. It offered new insights into disease progression and molecular evolution.
     </p>
 
     <p>
-      The presentation was conducted in collaboration with teams from Hôpital Saint-Louis and the French Cutaneous Lymphoma Group (GFELC), internationally recognized for their contribution to cutaneous lymphoma research.
+      This work was conducted in collaboration with several teams at Hôpital Saint-Louis, an internationally renowned center for Dermatology.
     </p>
 
   </div>
@@ -163,7 +163,7 @@ permalink: /conferences/eortc-cltg-2025/
     </div>
 
     <div class="conf-highlight-text">
-      Presentation of novel findings on the genomic landscape of nodal involvement in mycosis fungoides within an international expert forum dedicated to cutaneous lymphomas.
+      Presentation of novel findings in mycosis fungoides.
     </div>
 
     <div class="conf-highlight-stats">
@@ -175,11 +175,11 @@ permalink: /conferences/eortc-cltg-2025/
 
       <div>
         <strong style="font-size:1.1rem;">Translational</strong><br>
-        Oncology research
+        Research
       </div>
 
       <div>
-        <strong style="font-size:1.1rem;">GFELC</strong><br>
+        <strong style="font-size:1.1rem;">Interdisciplinary</strong><br>
         Collaboration
       </div>
 
@@ -197,7 +197,7 @@ permalink: /conferences/eortc-cltg-2025/
     “Your group presented great new findings.”
     
     <div class="conf-quote-meta">
-      — Prof. Shamir Geller  
+      — Dr. Shamir Geller  
       <br>Associate Professor of Clinical Dermatology, Memorial Sloan Kettering Cancer Center, New York.
     </div>
   </div>
@@ -205,16 +205,8 @@ permalink: /conferences/eortc-cltg-2025/
   <!-- BEHIND THE SCENES -->
   <div class="conf-body">
 
-    <p>
-      Beyond the scientific sessions, the meeting highlighted the importance of international collaboration in rare oncologic diseases, where progress often emerges from close interaction between clinicians, pathologists, and translational researchers.
-    </p>
-
-    <p>
-      One particularly rewarding aspect of the conference was the opportunity to discuss ongoing projects directly with internationally recognized experts in cutaneous lymphoma, in an environment where conversations remained highly accessible despite the scientific level of the meeting.
-    </p>
-
-    <p>
-      The conference also marked the final months of residency training — a meaningful transition point before the next stage of academic and research development.
+     <p>
+      The conference also marked the final months of residency training - a meaningful transition point before the next stage of my academic and research development.
     </p>
 
   </div>
@@ -225,17 +217,10 @@ permalink: /conferences/eortc-cltg-2025/
     <strong>Want to learn more?</strong><br>
 
     <p style="margin-top:0.8rem;font-size:0.9rem;line-height:1.6;">
-      Explore additional conferences and related research projects:
+      Explore additional international conferences featuring my work:
     </p>
 
     <ul style="margin-top:0.6rem;padding-left:1.2rem;">
-      <li>
-        <a href="/projects/mycosis-fungoides/"
-           style="font-size:0.8rem;">
-           Mycosis Fungoides Research
-        </a>
-      </li>
-
       <li>
         <a href="/conferences/ddw-2025/"
            style="font-size:0.8rem;">

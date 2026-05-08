@@ -58,13 +58,13 @@ figure.sci-figure figcaption p {
 <span class="pub-reading-badge">2 min read</span>
 
 ### Context  
-**Sturge-Weber syndrome** is a congenital condition usually diagnosed in childhood.
+**Sturge-Weber syndrome** is a condition usually diagnosed in childhood.
 
-This article reports the case of a 61-year-old man with no prior neurological history who developed severe epileptic seizures known as *status epilepticus*. 
+This article reports the unusual case of a 61-year-old man with no prior neurological history who developed severe epileptic seizures known as *status epilepticus*. 
 
 These episodes were prolonged, difficult to control, and led to temporary neurological deficits such as weakness on one side of the body.
 
-Brain imaging (MRI) revealed a rare abnormality: a *leptomeningeal angioma*, which is a vascular malformation located on the surface of the brain. 
+Brain imaging (MRI) revealed a **leptomeningeal angioma**, a vascular malformation located on the surface of the brain. 
 
 This type of lesion is typically associated with **Sturge-Weber syndrome**.
 
@@ -80,9 +80,9 @@ This case is notable because:
 
 ### What we found  
 
-Imaging showed a region of **hypoperfusion** and localized **cortical atrophy**.
+Imaging showed focal **hypoperfusion** and localized **cortical atrophy**.
 
-Histological findings revealed vascular abnormalities:
+Histological findings revealed vascular abnormalities.
 
 <figure class="sci-figure">
   <img src="/assets/images/neurology-1.webp" alt="Histology of leptomeningeal angiomatosis showing enlarged veins">
@@ -116,14 +116,14 @@ Histological findings revealed vascular abnormalities:
   </figcaption>
 </figure>
 
-On the leptomeningeal biopsy, we identified a specific somatic mutation *GNA11* R183C (VAF: 4%), previously known to be involved in Sturge-Weber syndrome.
+On the leptomeningeal biopsy, we identified a specific somatic mutation **_GNA11_** R183C (VAF: 4%), previously known to be involved in Sturge-Weber syndrome.
 
-Together, these findings support the diagnosis of a rare presentation known as **type III Sturge-Weber syndrome**.
+Together, these findings support the diagnosis of **type III Sturge-Weber syndrome**.
 
 <br>
 
 ### Contribution to knowledge  
-This case provides important evidence that:
+This case shows that:
 
 - Sturge-Weber syndrome can exist without the full set of signs and symptoms
 - It can manifest later in life as severe epilepsy  
@@ -150,16 +150,16 @@ In practice, this suggests that some unexplained adult-onset epilepsies may have
   <a class="publication-card" href="/publications/SOCS1-2023/">
     <img src="/assets/images/SOCS1-hero.webp" alt="SOCS1 2023 publication cover">
     <div class="publication-card-content">
-      <h3>Insights into the expanding intestinal phenotypic spectrum of SOCS1 haploinsufficiency and therapeutic options</h3>
-      <p>SOCS1 haploinsufficiency can cause severe intestinal diseases, including Crohn's disease and chronic intestinal pseudo-obstruction.</p>
+      <h3>Insights into the expanding intestinal phenotypic spectrum of <i>SOCS1</i> haploinsufficiency and therapeutic options</h3>
+      <p><i>SOCS1</i> haploinsufficiency can cause severe intestinal diseases, including Crohn's disease and chronic intestinal pseudo-obstruction.</p>
     </div>
   </a>
 
   <a class="publication-card" href="/publications/NR1D1-2025/">
     <img src="/assets/images/NR1D1-hero.webp" alt="NR1D1 2025 publication cover">
     <div class="publication-card-content">
-      <h3>NR1D1::MAML3 Fusion in an Aggressive Mesenchymal Neoplasm</h3>
-      <p>NR1D1-rearranged tumors are emerging aggressive mesenchymal neoplasms.</p>
+      <h3><i>NR1D1::MAML3</i> Fusion in an Aggressive Mesenchymal Neoplasm</h3>
+      <p><i>NR1D1</i>-rearranged tumors are emerging aggressive mesenchymal neoplasms.</p>
     </div>
   </a>
 
