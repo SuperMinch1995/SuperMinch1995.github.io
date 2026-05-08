@@ -1,6 +1,6 @@
 ---
 layout: basic
-title: "ESPEN 2025"
+title: "European Society for Clinical Nutrition and Metabolism 2025"
 permalink: /conferences/espen-2025/
 ---
 
@@ -103,7 +103,7 @@ permalink: /conferences/espen-2025/
   <div class="conf-body">
 
     <p>
-      The European Society for Clinical Nutrition and Metabolism brings together an international community of clinicians, researchers, and dietitians dedicated to advancing the field of nutrition and metabolism.
+      The European Society for Clinical Nutrition and Metabolism (ESPEN) brings together an international community of clinicians, researchers, and dietitians dedicated to advancing the field of nutrition and metabolism.
     </p>
 
      <p>

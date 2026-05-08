@@ -1,6 +1,6 @@
 ---
 layout: basic
-title: "CIIRTA 2025"
+title: "XIX Congress of the International Intestinal Rehabilitation and Transplantation Association - 2025"
 permalink: /conferences/ciirta-2025/
 ---
 

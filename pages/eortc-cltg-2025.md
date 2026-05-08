@@ -1,6 +1,6 @@
 ---
 layout: basic
-title: "EORTC CLTG 2025"
+title: "European Organisation for Research and Treatment of Cancer - Cutaneous Lymphoma Tumour Group 2025"
 permalink: /conferences/eortc-cltg-2025/
 ---
 
@@ -155,43 +155,6 @@ permalink: /conferences/eortc-cltg-2025/
 
   </div>
 
-  <!-- HIGHLIGHT -->
-  <div class="conf-highlight">
-
-    <div class="conf-highlight-label">
-      Scientific Highlight ✨
-    </div>
-
-    <div class="conf-highlight-text">
-      Presentation of novel findings in mycosis fungoides.
-    </div>
-
-    <div class="conf-highlight-stats">
-
-      <div>
-        <strong style="font-size:1.1rem;">International</strong><br>
-        Expert meeting
-      </div>
-
-      <div>
-        <strong style="font-size:1.1rem;">Translational</strong><br>
-        Research
-      </div>
-
-      <div>
-        <strong style="font-size:1.1rem;">Interdisciplinary</strong><br>
-        Collaboration
-      </div>
-
-      <div>
-        <strong style="font-size:1.1rem;">Athens</strong><br>
-        Greece
-      </div>
-
-    </div>
-
-  </div>
-
   <!-- QUOTE -->
   <div class="conf-quote">
     “Your group presented great new findings.”
@@ -206,7 +169,7 @@ permalink: /conferences/eortc-cltg-2025/
   <div class="conf-body">
 
      <p>
-      The conference also marked the final months of residency training - a meaningful transition point before the next stage of my academic and research development.
+      The conference also marked the final months of residency training - a meaningful transition point before the next stage of my career.
     </p>
 
   </div>
@@ -217,7 +180,7 @@ permalink: /conferences/eortc-cltg-2025/
     <strong>Want to learn more?</strong><br>
 
     <p style="margin-top:0.8rem;font-size:0.9rem;line-height:1.6;">
-      Explore additional international conferences featuring my work:
+      Explore other international conferences featuring my work:
     </p>
 
     <ul style="margin-top:0.6rem;padding-left:1.2rem;">

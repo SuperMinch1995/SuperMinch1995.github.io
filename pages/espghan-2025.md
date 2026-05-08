@@ -1,6 +1,6 @@
 ---
 layout: basic
-title: "ESPGHAN 2025"
+title: "European Society for Paediatric Gastroenterology, Hepatology and Nutrition 2025"
 permalink: /conferences/espghan-2025/
 ---
 

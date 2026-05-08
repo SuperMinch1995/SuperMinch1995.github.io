@@ -378,7 +378,7 @@ permalink: "/about/"
   <div class="blob-espen-c"></div>
   <img src="/assets/images/espen-2025.webp" alt="Lecture at the 47th ESPEN Congress, 2025">
 </div>
-<p class="photo-caption">Presented at the Plenary Session of the 47th European Society for Clinical Nutrition and Metabolism (ESPEN) conference in Prague, September 2025</p>
+<p class="photo-caption">Plenary presentation at the 47th European Society for Clinical Nutrition and Metabolism (ESPEN) conference in Prague, September 2025</p>
 
 <br>
 <p>I received multiple awards and competitive grants, including the 2023 Research Grant from the Society of Pathology, the Bernard Beaufrère Research Prize, and the Best Medical Thesis Prize from the Rotary Club of Paris.</p><br>
