@@ -52,7 +52,85 @@ h1 {
   color: var(--color-base-text-2);
   margin: 4rem auto 4.5rem;
 }
+.reveal-cta {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem auto 4rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  pointer-events: none;
+}
+.reveal-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.reveal-cta.hiding {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.cta-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-base-bg, #FBF6EC);
+  color: #C2510A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  transition: transform 0.2s ease, background 0.25s ease, color 0.25s ease;
+}
+.cta-arrow:hover {
+  transform: translateY(3px);
+  background: #C2510A;
+  color: var(--color-base-bg, #FBF6EC);
+}
+.cta-arrow svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 200, 66, 0),
+                0 0 0 0 rgba(245, 200, 66, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(245, 200, 66, 0.7),
+                0 0 24px 4px rgba(245, 200, 66, 0.55),
+                0 0 48px 8px rgba(245, 200, 66, 0.3);
+  }
+}
+.cta-halo {
+  animation: ctaPulse 1.6s ease-in-out infinite;
+}
+
+.reveal-target {
+  display: none;
+}
+.reveal-target.revealed {
+  display: block;
+  animation: revealFade 0.9s ease-out;
+}
+@keyframes revealFade {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 </style>
+
+<noscript>
+<style>
+  .reveal-target { display: block !important; }
+  .reveal-cta { display: none !important; }
+</style>
+</noscript>
 
 <!-- ══════════════════════════════════════════════════
      OPENING — SILENCE TO MOTION
@@ -88,6 +166,16 @@ h1 {
   </div>
 </div>
 
+<div class="reveal-cta" id="reveal-cta">
+  <button class="cta-arrow cta-halo" id="reveal-button" aria-label="Continue the journey">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+</div>
+
+<div class="reveal-target" id="reveal-target">
+
 <!-- ══════════════════════════════════════════════════
      ACT 1 — 3D PROTEIN VIEWER
 ═══════════════════════════════════════════════════ -->
@@ -117,42 +205,9 @@ h1 {
 
 <div class="act1-section">
   <div class="act1-frame">
-    <iframe src="/assets/figures/actg2-q247p.html"
+    <iframe data-src="/assets/figures/actg2-q247p-v3-pedagogique.html"
             title="ACTG2 Q247P — interactive 3D viewer"
-            loading="lazy"
-            scrolling="no"
-            allowtransparency="true">
-    </iframe>
-  </div>
-</div>
-
-<div class="act1-section">
-  <div class="act1-frame">
-    <iframe src="/assets/figures/actg2-q247p-v1-aerienne.html"
-            title="ACTG2 Q247P — interactive 3D viewer"
-            loading="lazy"
-            scrolling="no"
-            allowtransparency="true">
-    </iframe>
-  </div>
-</div>
-
-<div class="act1-section">
-  <div class="act1-frame">
-    <iframe src="/assets/figures/actg2-q247p-v2-boussole.html"
-            title="ACTG2 Q247P — interactive 3D viewer"
-            loading="lazy"
-            scrolling="no"
-            allowtransparency="true">
-    </iframe>
-  </div>
-</div>
-
-<div class="act1-section">
-  <div class="act1-frame">
-    <iframe src="/assets/figures/actg2-q247p-v3-pedagogique.html"
-            title="ACTG2 Q247P — interactive 3D viewer"
-            loading="lazy"
+            loading="eager"
             scrolling="no"
             allowtransparency="true">
     </iframe>
@@ -404,3 +459,61 @@ h1 {
 <p class="act-bridge">Behind every mutation is a person waiting.</p>
 
 <p class="act-bridge act-bridge--closing">Discover our patients' stories.</p>
+
+</div>
+
+<script>
+(function () {
+  var ctaEl = document.getElementById('reveal-cta');
+  var targetEl = document.getElementById('reveal-target');
+  var btn = document.getElementById('reveal-button');
+  var arrowShown = false;
+  var revealed = false;
+
+  function showArrow() {
+    if (arrowShown) return;
+    arrowShown = true;
+    ctaEl.classList.add('visible');
+  }
+
+  /* Listen specifically to the opening iframe — filter by source
+     so other iframes' messages (sunburst, wt-mutant) don't trigger this. */
+  window.addEventListener('message', function (e) {
+    var openingFrame = document.querySelector('.opening-frame iframe');
+    if (!openingFrame || e.source !== openingFrame.contentWindow) return;
+    if (e.data && e.data.cipoOpeningTextReady) {
+      setTimeout(showArrow, 1500);
+    }
+  });
+
+  /* Fallback: if the message is ever missed (iframe load failure, etc.),
+     show the arrow at 10s so the page never gets stuck. */
+  setTimeout(showArrow, 10000);
+
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+
+    /* Lazy-load any iframe with data-src. This is what keeps actg2-q247p
+       from auto-playing its narrative until the user is ready. */
+    var lazyIframes = targetEl.querySelectorAll('iframe[data-src]');
+    Array.prototype.forEach.call(lazyIframes, function (iframe) {
+      iframe.src = iframe.getAttribute('data-src');
+      iframe.removeAttribute('data-src');
+    });
+
+    targetEl.classList.add('revealed');
+    ctaEl.classList.add('hiding');
+
+    /* Smooth scroll to the protein viewer once the reveal has begun. */
+    setTimeout(function () {
+      var act1 = document.querySelector('.act1-section');
+      if (act1) {
+        act1.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 400);
+  }
+
+  btn.addEventListener('click', reveal);
+})();
+</script>

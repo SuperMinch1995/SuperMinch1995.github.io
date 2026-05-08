@@ -111,6 +111,7 @@ svg { display: block; width: 100%; height: 100%; }
 
   var HOLD_AT = 8.0;
   var t0 = performance.now();
+  var messagedT2 = false;
   var ease = function(x){ return x < 0.5 ? 2*x*x : 1 - Math.pow(-2*x+2, 2)/2; };
 
   function tick(now){
@@ -179,6 +180,16 @@ svg { display: block; width: 100%; height: 100%; }
 
     t1.setAttribute('opacity', t1Op.toFixed(3));
     t2.setAttribute('opacity', t2Op.toFixed(3));
+
+    if (t >= 6.1 && !messagedT2) {
+      messagedT2 = true;
+      try {
+        if (window.parent !== window) {
+          window.parent.postMessage({ cipoOpeningTextReady: true }, '*');
+        }
+      } catch (_) {}
+    }
+
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
