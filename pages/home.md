@@ -472,7 +472,7 @@ posts:
 <!-- Latest publication -->
 <div class="pub-section">
  <div class="pub-card">
-   <a href="https://superminch1995.github.io/projects/cipo/" class="pub-link-wrap">
+   <a href="/projects/cipo/" class="pub-link-wrap">
    <img class="pub-image" src="/assets/images/ACTG2.jpeg" alt="ACTG2 immunohistochemistry panel" loading="lazy" decoding="async">
    <span class="pub-pill">Latest publication</span>
    

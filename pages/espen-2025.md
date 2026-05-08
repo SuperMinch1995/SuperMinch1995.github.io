@@ -186,10 +186,10 @@ permalink: /conferences/espen-2025/
 
     <a href="/projects/cipo/"
        style="font-size:0.8rem;display:block;">
-       About the project
+       Behind the Research
     </a>
 
-    <a href="https://superminch1995.github.io/assets/pdfs/cipo-article.pdf"
+    <a href="/assets/pdfs/cipo-article.pdf"
        target="_blank"
        style="font-size:0.8rem;display:block;margin-top:0.2rem;">
        Read the article

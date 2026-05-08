@@ -87,19 +87,19 @@ permalink: /conferences/ciirta-2025/
   <div class="conf-body">
 
     <p>
-      Organized by the International Intestinal Rehabilitation & Transplant Association, CIIRTA brings together a group of international clinicians and researchers working in intestinal failure and transplantation, with a strong emphasis on in-depth scientific exchange and clinical decision-making.
+      Organized by the International Intestinal Rehabilitation & Transplant Association, CIIRTA brings together a group of international clinicians and researchers working in intestinal failure and transplantation.
     </p>
 
     <p>
-      Unlike large-scale international congresses, CIIRTA is designed to foster detailed discussions on complex cases, emerging therapeutic strategies, and evolving transplantation paradigms.
+      CIIRTA is designed to foster detailed discussions on complex cases, systemic complications of intestinal failure, mechanisms of transplant rejection, emerging therapeutic strategies, and evolving transplantation paradigms.
     </p>
 
     <p>
-      Discussions focused on systemic complications of intestinal failure and mechanisms of transplant rejection, with particular attention to the role of preemptive transplantation.
+      I found the discussions on preemptive transplantation especially insightful.
     </p>
 
     <p>
-      My presentation reported outcomes from a cohort of patients undergoing multivisceral transplantation for severe multi-organ failure. Long-term follow-up revealed heterogeneous trajectories, ranging from early mortality to sustained recovery in selected cases.
+      My presentation reported outcomes of patients undergoing multivisceral transplantation for severe multi-organ failure. Long-term follow-up revealed heterogeneous trajectories, ranging from early mortality to sustained recovery.
     </p>
 <div style="
   margin:2.4rem 0;
@@ -128,37 +128,6 @@ permalink: /conferences/ciirta-2025/
     margin-bottom:1.2rem;
   ">
     Two patients with a specific mutated gene achieved <strong>5- and 23-year survival without parenteral nutrition</strong>, with complete resolution of digestive and urinary symptoms following multivisceral transplantation.
-  </div>
-
-  <!-- DATA STRIP -->
-  <div style="
-    display:flex;
-    gap:1.8rem;
-    flex-wrap:wrap;
-    font-size:0.8rem;
-    line-height:1.4;
-  ">
-
-    <div>
-      <strong style="font-size:1.3rem;">2/2</strong><br>
-      Patients (ACTG2)
-    </div>
-
-    <div>
-      <strong style="font-size:1.3rem;">23y</strong><br>
-      Max survival
-    </div>
-
-    <div>
-      <strong style="font-size:1.3rem;">0</strong><br>
-      Parenteral nutrition
-    </div>
-
-    <div>
-      <strong style="font-size:1.3rem;">100%</strong><br>
-      Symptom resolution
-    </div>
-
   </div>
 
 </div>
@@ -192,10 +161,10 @@ permalink: /conferences/ciirta-2025/
 
     <a href="/projects/cipo/"
        style="font-size:0.8rem;display:block;">
-       About the project
+       Behind the Research
     </a>
 
-    <a href="https://superminch1995.github.io/assets/pdfs/cipo-article.pdf"
+    <a href="/assets/pdfs/cipo-article.pdf"
        target="_blank"
        style="font-size:0.8rem;display:block;margin-top:0.2rem;">
        Read the article

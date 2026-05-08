@@ -367,8 +367,12 @@ permalink: "/about/"
     <p>Alongside my medical training, I completed a Master’s degree in Philosophy with honors.</p>
 
     <p>I independently developed computational skills to support research and data-driven problem-solving.</p>
+
   </div>
-</div><p>My research has been presented internationally across the United States and Europe.</p>
+
+<p>My research has been presented internationally across the United States and Europe.</p>
+
+</div>
 
 <div class="photo-wrapper pw-espen">
   <div class="blob-espen-a"></div>

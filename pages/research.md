@@ -189,7 +189,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/conferences/eortc-cltg-2025/">
-        Presented at EORTC
+        Presented at EORTC →
       </a>
     </div>
 
@@ -234,7 +234,7 @@ html[data-bs-theme="dark"] .rt-link {
       </a>
 
       <a class="rt-link"
-         href="https://superminch1995.github.io/assets/pdfs/cipo-article.pdf"
+         href="/assets/pdfs/cipo-article.pdf"
          target="_blank"
          rel="noopener">
         PDF
@@ -283,7 +283,7 @@ html[data-bs-theme="dark"] .rt-link {
       </a>
 
       <a class="rt-link"
-         href="https://superminch1995.github.io/assets/pdfs/NR1D1-article.pdf"
+         href="/assets/pdfs/NR1D1-article.pdf"
          target="_blank"
          rel="noopener">
         PDF
@@ -332,7 +332,7 @@ html[data-bs-theme="dark"] .rt-link {
       </a>
 
       <a class="rt-link"
-         href="https://superminch1995.github.io/assets/pdfs/PFMG-2025.pdf"
+         href="/assets/pdfs/PFMG-2025.pdf"
          target="_blank"
          rel="noopener">
         PDF
@@ -423,7 +423,7 @@ html[data-bs-theme="dark"] .rt-link {
       </a>
 
       <a class="rt-link"
-         href="https://superminch1995.github.io/assets/pdfs/SOCS1-2023.pdf"
+         href="/assets/pdfs/SOCS1-2023.pdf"
          target="_blank"
          rel="noopener">
         PDF
