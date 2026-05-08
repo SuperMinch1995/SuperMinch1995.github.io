@@ -81,7 +81,7 @@ wide_content: true
     font-size: 11px;
     font-weight: 400;
     color: var(--color-base-text, #111111);
-    margin-bottom: 7px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
@@ -260,15 +260,14 @@ wide_content: true
           <textarea class="field-input" id="message" name="message" placeholder="Go straight to the point"></textarea>
         </div>
 
-        <div class="field-row">
-          <div class="field-group" style="margin-bottom: 0;">
+        <div class="field-group">
             <label class="field-label" for="email">E-mail</label>
             <input class="field-input" type="email" id="email" name="email">
           </div>
-          <div class="field-group" style="margin-bottom: 0;">
+
+        <div class="field-group">
             <label class="field-label" for="cell-phone">Cell phone</label>
             <input class="field-input" type="text" id="cell-phone" name="phone">
-          </div>
         </div>
 
         <div class="field-group">

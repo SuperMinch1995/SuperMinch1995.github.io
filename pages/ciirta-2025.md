@@ -87,7 +87,7 @@ permalink: /conferences/ciirta-2025/
   <div class="conf-body">
 
     <p>
-      CIIRTA 2025 brought together a selected group of international clinicians and researchers working in intestinal failure and transplantation, with a strong emphasis on in-depth scientific exchange and clinical decision-making.
+      Organized by the International Intestinal Rehabilitation & Transplant Association, CIIRTA brings together a group of international clinicians and researchers working in intestinal failure and transplantation, with a strong emphasis on in-depth scientific exchange and clinical decision-making.
     </p>
 
     <p>
@@ -99,7 +99,7 @@ permalink: /conferences/ciirta-2025/
     </p>
 
     <p>
-      My presentation reported outcomes from a cohort of patients undergoing multivisceral transplantation for severe multi-organ failure. Long-term follow-up revealed markedly heterogeneous trajectories, ranging from early mortality to sustained recovery in selected cases.
+      My presentation reported outcomes from a cohort of patients undergoing multivisceral transplantation for severe multi-organ failure. Long-term follow-up revealed heterogeneous trajectories, ranging from early mortality to sustained recovery in selected cases.
     </p>
 <div style="
   margin:2.4rem 0;

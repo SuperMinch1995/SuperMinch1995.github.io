@@ -87,7 +87,7 @@ permalink: /conferences/espghan-2025/
     </h1>
 
     <p class="hero-sub">
-      International experts. Cutting-edge pediatric research. A highly selective scientific program bringing together the forefront of gastroenterology, hepatology, and nutrition.
+      International experts. Cutting-edge pediatric research.
     </p>
 
     <div class="conf-meta">Helsinki</div>
@@ -99,7 +99,7 @@ permalink: /conferences/espghan-2025/
 
   <div class="conf-body">
     <p>
-      The work was presented at the 57th annual meeting of ESPGHAN — a major European conference gathering leading clinicians and researchers dedicated to pediatric digestive diseases.
+      The work was presented at the 57th annual meeting of ESPGHAN, a major European conference gathering leading clinicians and researchers dedicated to pediatric digestive diseases.
     </p>
 
     <p>
@@ -107,11 +107,11 @@ permalink: /conferences/espghan-2025/
     </p>
 
     <p>
-      Beyond the presentation itself, the conference offered a unique opportunity to engage with global experts, sharing perspectives and existing approaches in a rapidly evolving field.
+      Beyond the presentation itself, the conference offered an opportunity to engage with global experts and sponsors; sharing perspectives and existing approaches in a rapidly evolving field.
     </p>
 
     <p>
-      And somewhere between scientific sessions and conversations, one word captured my attention: <strong>Sisu</strong> — the Finnish concept of resilience, determination, and quiet strength.
+      Lastly, one word captured my attention between scientific sessions: <strong>Sisu</strong> — the Finnish concept of resilience and determination.
     </p>
   </div>
 
