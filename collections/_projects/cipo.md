@@ -4,20 +4,29 @@ title: "This is an interactive scientific journey built from my research project
 description: ""
 date: 2024-01-01
 weight: 1
-thumbnail: "/assets/images/cipo_distension.jpg"
-client: "Greater Paris University Hospitals"
+thumbnail: ""
+client: ""
 categories: ["Neurogastroenterology"]
-role: "Physician-Researcher"
+role: "Physician-scientist"
 ---
 
-<style>
-h1 { text-align: center; }
+<!-- ══════════════════════════════════════════════════
+     NARRATION STYLE
+═══════════════════════════════════════════════════ -->
 
-/* Narration bridges between acts. Three variants:
-   - default: standard transition phrase between acts
-   - --first: opening hook at top of page
-   - --caption: small italic subtitle under a figure
-   - --closing: emotional landing at end of page */
+<style>
+h1 {
+  text-align: center;
+  animation: titleSettle 0.7s ease-out 0.15s both;
+}
+@keyframes titleSettle {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.opening-section {
+  margin-top: 3.5rem;
+}
+
 .act-bridge {
   font-size: 0.98em;
   color: var(--color-base-text);
@@ -46,6 +55,40 @@ h1 { text-align: center; }
 </style>
 
 <!-- ══════════════════════════════════════════════════
+     OPENING — SILENCE TO MOTION
+═══════════════════════════════════════════════════ -->
+<style>
+.opening-section {
+  margin: 2.5rem auto 4rem;
+}
+.opening-frame {
+  width: 100%;
+  background: transparent;
+}
+.opening-frame iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: none;
+  background: transparent;
+}
+@media (max-width: 768px) {
+  .opening-frame iframe { height: 280px; }
+}
+</style>
+
+<div class="opening-section">
+  <div class="opening-frame">
+    <iframe src="/assets/figures/cipo-opening.html"
+            title="Opening — silence to motion"
+            loading="eager"
+            scrolling="no"
+            allowtransparency="true">
+    </iframe>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
      ACT 1 — 3D PROTEIN VIEWER
 ═══════════════════════════════════════════════════ -->
 <style>
@@ -71,8 +114,6 @@ h1 { text-align: center; }
   .act1-frame iframe { height: 460px; }
 }
 </style>
-
-<p class="act-bridge act-bridge--first">Your gut never stops moving.<br><br>It needs a protein called γ-2 actin.</p>
 
 <div class="act1-section">
   <div class="act1-frame">
