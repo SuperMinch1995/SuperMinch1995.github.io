@@ -91,11 +91,11 @@ permalink: /conferences/ciirta-2025/
     </p>
 
     <p>
-      CIIRTA is designed to foster detailed discussions on complex cases, systemic complications of intestinal failure, mechanisms of transplant rejection, emerging therapeutic strategies, and evolving transplantation paradigms.
+      CIIRTA is designed to foster detailed discussions on systemic complications of intestinal failure, mechanisms of transplant rejection, emerging therapeutic strategies, and evolving transplantation paradigms.
     </p>
 
     <p>
-      I found the discussions on preemptive transplantation especially insightful.
+      I found the discussions on complex cases and preemptive transplantation especially insightful.
     </p>
 
     <p>
@@ -127,14 +127,14 @@ permalink: /conferences/ciirta-2025/
     line-height:1.7;
     margin-bottom:1.2rem;
   ">
-    Two patients with a specific mutated gene achieved <strong>5- and 23-year survival without parenteral nutrition</strong>, with complete resolution of digestive and urinary symptoms following multivisceral transplantation.
+    Two patients with a specific mutated gene achieved <strong>5- and 23-year survival</strong> without parenteral nutrition, with complete resolution of digestive and urinary symptoms following multivisceral transplantation.
   </div>
 
 </div>
 
 
     <p>
-      These findings highlight both the complexity of patient selection and the potential benefits of transplantation in carefully selected cases.
+      These findings highlight the potential benefits of transplantation in carefully selected cases.
     </p>
 
   </div>

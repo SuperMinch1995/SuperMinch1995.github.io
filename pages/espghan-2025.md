@@ -1,6 +1,6 @@
 ---
 layout: basic
-title: "European Society for Paediatric Gastroenterology, Hepatology and Nutrition 2025"
+title: "European Society for Pediatric Gastroenterology, Hepatology and Nutrition 2025"
 permalink: /conferences/espghan-2025/
 ---
 
@@ -90,7 +90,7 @@ permalink: /conferences/espghan-2025/
       International experts. Cutting-edge pediatric research.
     </p>
 
-    <div class="conf-meta">Helsinki</div>
+    <div class="conf-meta">Helsinki, Finland</div>
     <span class="conf-role">Speaker</span>
   </section>
 
@@ -99,11 +99,11 @@ permalink: /conferences/espghan-2025/
 
   <div class="conf-body">
     <p>
-      The work was presented at the 57th annual meeting of ESPGHAN, a major European conference gathering leading clinicians and researchers dedicated to pediatric digestive diseases.
+      The work was presented at the annual meeting of ESPGHAN, a major European conference gathering leading clinicians and researchers dedicated to pediatric digestive diseases.
     </p>
 
     <p>
-      The research contributed to ongoing discussions on rare and complex gastrointestinal disorders, with a strong focus on translational impact, from mechanistic understanding to patient care.
+      My research contributed to ongoing discussions on rare and complex gastrointestinal disorders, with a strong focus on translational impact, from mechanistic understanding to patient care.
     </p>
 
     <p>
