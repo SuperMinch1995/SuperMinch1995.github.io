@@ -189,7 +189,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/conferences/eortc-cltg-2025/">
-        Oral presentation · EORTC
+        Presented at EORTC
       </a>
     </div>
 
@@ -222,7 +222,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/projects/cipo/">
-        Interact with the data
+        Behind the Research
       </a>
 
       <a class="rt-link" href="/publications/cipo-2026/">
@@ -230,7 +230,7 @@ html[data-bs-theme="dark"] .rt-link {
       </a>
 
       <a class="rt-link" href="/conferences/ddw-2025/">
-        Oral presentation · DDW
+        Presented at DDW
       </a>
 
       <a class="rt-link"
