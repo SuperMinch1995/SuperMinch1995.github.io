@@ -216,8 +216,6 @@ h1 {
 
 <p class="act-bridge">At first glance, the mutation looks subtle.
 
-<br><br>The mutation did not simply change an amino acid.
-
 <br><br>One amino acid.
 
 <br><br>One surface residue.
@@ -278,7 +276,13 @@ h1 {
 })();
 </script>
 
-<p class="act-bridge">This is what happens in real patients.</p>
+<p class="act-bridge" style="font-style: italic; color: var(--color-base-text-2); margin-bottom: 1rem;">
+  A single residue. A single bond. A single change.
+</p>
+
+<p class="act-bridge" style="margin-top: 0;">
+  This is what happens in real patients.
+</p>
 
 <!-- ══════════════════════════════════════════════════
      ACT 3 — CIPO STORY
