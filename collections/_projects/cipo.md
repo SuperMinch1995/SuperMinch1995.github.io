@@ -43,12 +43,6 @@ h1 {
   margin: 4rem auto 4.5rem;
 }
 
-.act-rule {
-  border: none;
-  border-top: 0.5px solid rgba(58, 46, 42, 0.12);
-  width: 80px;
-  margin: 4rem auto;
-}
 
 /* ── Opening ── */
 .opening-section {
@@ -185,36 +179,7 @@ h1 {
 }
 
 /* ── ACT 3 — CIPO story ── */
-.cipo-section {
-  margin: 60px 0 3rem;
-  font-size: 0.85em;
-  text-align: center;
-}
-.cipo-subline {
-  font-size: 1.15em;
-  color: var(--color-base-text);
-  line-height: 1.6;
-  text-align: center;
-  margin: 0.8rem auto 3.75rem;
-  max-width: 620px;
-  font-weight: 400;
-}
-.pencil-mark {
-  position: relative;
-  display: inline;
-  white-space: nowrap;
-  padding-bottom: 4px;
-}
-.pencil-mark img.pencil-underline {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 8px;
-  pointer-events: none;
-  object-fit: fill;
-}
+
 .brain-gut-img-wrap {
   margin: -1.5rem auto 2rem;
   max-width: 200px;
@@ -262,6 +227,7 @@ h1 {
   font-weight: 700;
   color: #C2510A;
   line-height: 1;
+  text-align: center;
 }
 .cipo-stat-label {
   font-size: 0.88em;
@@ -336,7 +302,6 @@ h1 {
 </div>
 
 <p class="act-bridge">At first glance, the mutation looks subtle.<br><br>
-One amino acid.<br><br>
 One surface residue.<br><br>
 But proteins are mechanical systems.<br><br>
 To understand why Q247P matters, we need to zoom in further.</p>
@@ -368,29 +333,11 @@ To understand why Q247P matters, we need to zoom in further.</p>
 })();
 </script>
 
-<p class="act-bridge" style="font-style: italic; color: var(--color-base-text-2); margin-bottom: 1rem;">
-  A single residue. A single bond. A single change.
-</p>
+<p class="act-bridge">This is what happens in real patients.</p>
 
-<p class="act-bridge" style="margin-top: 0;">
-  This is what happens in real patients.
-</p>
+<p class="act-bridge">CIPO is a disorder where the bowels fail to move food despite no physical blockage.</p>
 
-
-<!-- ── ACT 3 — CIPO STORY ────────────────────────── -->
-
-<hr class="act-rule">
-
-<div class="cipo-section">
-  <p class="cipo-subline">CIPO is a disorder where the
-    <span class="pencil-mark">bowels fail to move food<img src="/assets/images/underlines/underline-bowels.svg"
-      class="pencil-underline" aria-hidden="true" alt=""></span>
-    despite
-    <span class="pencil-mark">no physical blockage<img src="/assets/images/underlines/underline-blockage.svg"
-      class="pencil-underline" aria-hidden="true" alt=""></span>.
-  </p>
-
-  <p class="cipo-subline">Dysfunction may emerge from any point along the brain–gut axis</p>
+<p class="act-bridge">Dysfunction may emerge from any point along the brain–gut axis.</p>
 
   <div class="brain-gut-img-wrap">
     <img src="/assets/images/brain-gut.png"
@@ -398,16 +345,9 @@ To understand why Q247P matters, we need to zoom in further.</p>
          class="brain-gut-img">
   </div>
 
-  <p class="cipo-subline">But where?</p>
-</div>
-
-
-<!-- ── ACT 4 — GENETIC INQUIRY ───────────────────── -->
+<p class="act-bridge">But where?</p>
 
 <p class="act-bridge">We turned to the genome.</p>
-
-<p class="act-bridge">ACTG2 is the gene behind γ-2 actin.<br>
-But ACTG2 wasn't the only suspect.</p>
 
 <p class="act-bridge">We genotyped hundreds of unsolved cases.</p>
 
@@ -439,6 +379,8 @@ But ACTG2 wasn't the only suspect.</p>
 <!-- ── ACT 5 — PATIENTS ───────────────────────────── -->
 
 <hr class="act-rule">
+
+<p class="act-bridge">ACTG2 is the gene behind γ-2 actin.<br><br>ACTG2 wasn't the only suspect.</p>
 
 <p class="act-bridge">Behind every mutation is a person waiting.</p>
 

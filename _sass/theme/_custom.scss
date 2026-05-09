@@ -149,9 +149,14 @@ a:hover {
 .menu-main-mobile-center {
   background: linear-gradient(
     180deg,
-    #f7ece8 0%,
-    #e8d4b8 100%
+    #f8f0e8 0%,
+    #f0d8c8 45%,
+    #e8c89a 100%
   ) !important;
+}
+
+.menu-main-mobile-top {
+  background: #f8f0e8 !important;
 }
 
 // 2. Masquer les icônes sociales en bas du menu overlay
