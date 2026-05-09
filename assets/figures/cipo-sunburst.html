@@ -103,6 +103,28 @@ path.arc:hover{filter:brightness(1.18);}
   padding-top:4px;
   pointer-events:none;
 }
+
+/* Pulsing halo CTA — guides the user's eye to the next click target */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245,200,66,0),
+                         0 0 0 0 rgba(245,200,66,0); }
+  50%      { box-shadow: 0 0 0 6px rgba(245,200,66,.7),
+                         0 0 24px 4px rgba(245,200,66,.55),
+                         0 0 48px 8px rgba(245,200,66,.3); }
+}
+.cta-halo { animation: ctaPulse 1.4s ease-in-out infinite; border-radius:7px; }
+/* Pill version for the inline instruction text */
+.idle-hint-pill.cta-halo {
+  display:inline-block;
+  padding:4px 12px;
+  border-radius:999px;
+  background:rgba(245,200,66,0.10);
+}
+/* Lift the gene-row halo above its siblings so it isn't clipped */
+.gene-row.cta-halo { position:relative; z-index:2; }
+@media (prefers-reduced-motion: reduce) {
+  .cta-halo { animation:none; }
+}
 </style>
 </head>
 <body>
@@ -130,7 +152,7 @@ path.arc:hover{filter:brightness(1.18);}
       <svg id="sbsvg" width="380" height="380" viewBox="0 0 380 380" preserveAspectRatio="xMidYMid meet" style="overflow:visible;display:block;"></svg>
     </div>
     <div class="sb-panel">
-      <p class="idle-hint">Click a segment to explore · Click again to reset.</p>
+      <p class="idle-hint"><span class="idle-hint-pill cta-halo">Click a segment to explore · Click again to reset.</span></p>
 
       <div class="detail-area">
         <div class="detail-content" id="detail-content">
@@ -530,6 +552,8 @@ const legendEl = document.getElementById('sb-legend');
 function toggleCat(name) {
   const arrow = document.getElementById('crayonArrow');
   if (arrow) { arrow.style.transition = 'opacity 0.3s'; arrow.style.opacity = '0'; setTimeout(() => arrow.remove(), 350); }
+  const hintPill = document.querySelector('.idle-hint-pill.cta-halo');
+  if (hintPill) hintPill.classList.remove('cta-halo');
   if (selected === name) {
     selected = null;
     allArcs.forEach(p => p.attr('opacity', 1));
@@ -610,6 +634,7 @@ function toggleCat(name) {
 
       row.addEventListener('click', e => {
         e.stopPropagation();
+        gGrid.querySelectorAll('.gene-row.cta-halo').forEach(r => r.classList.remove('cta-halo'));
         const geneHint = document.getElementById('geneHint');
         if (geneHint && geneHint.style.opacity !== '0') {
           geneHint.style.transition = 'opacity 0.3s';
@@ -624,6 +649,9 @@ function toggleCat(name) {
       gGrid.appendChild(row);
       gGrid.appendChild(detailEl);
     });
+
+    const firstGeneRow = gGrid.querySelector('.gene-row');
+    if (firstGeneRow) firstGeneRow.classList.add('cta-halo');
 
     document.querySelectorAll('.leg-item').forEach(el => {
       el.classList.toggle('dim', el.dataset.cat !== name);
