@@ -214,7 +214,9 @@ h1 {
   </div>
 </div>
 
-<p class="act-bridge">In this example,<br>the Glutamine (Q) at the position 247 is replaced by a Proline (P).</p>
+<p class="act-bridge">The mutation did not simply change an amino acid.
+
+<br>It changed the mechanical behavior of the protein.</p>
 
 <!-- ══════════════════════════════════════════════════
      ACT 2 — WILD-TYPE → MUTANT TRANSITION

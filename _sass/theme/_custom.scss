@@ -142,3 +142,24 @@ a:hover {
   font-family: "DM Sans", sans-serif;
   color: var(--color-base-text);
 }
+
+// ── Menu overlay mobile ─────────────────────────────────────────────
+// Gradient aube (Option B — rose poudré → beige doré)
+// Remplace la couleur orange du thème Curate
+.nav-overlay,
+.nav-overlay.is-open,
+[class*="nav-overlay"] {
+  background: linear-gradient(
+    180deg,
+    #f7ece8 0%,
+    #e8d4b8 100%
+  ) !important;
+}
+
+// Supprimer les icônes sociales en bas du menu overlay mobile
+.nav-overlay .social-icons,
+.nav-overlay .social-links,
+.nav-overlay .menu-social,
+.nav-overlay [class*="social"] {
+  display: none !important;
+}
