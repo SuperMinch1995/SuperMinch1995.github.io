@@ -378,11 +378,10 @@
     <div id="mut-label">
       <div class="label-pill">
         <div class="label-gene">ACTG2 · Q247P</div>
-        <div class="label-desc">Severe CIPO phenotype</div>
       </div>
     </div>
 
-    <!-- Unified toolbar: pan arrows + replay + surface -->
+    <!-- Unified toolbar: pan arrows + recenter + replay -->
     <div class="toolbar" id="toolbar">
       <button class="tb-btn tb-arrow" id="pan-up" aria-label="Pan up">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
@@ -400,7 +399,6 @@
       <button class="tb-btn tb-text" id="btn-recenter">⌂ Recenter</button>
       <div class="tb-divider"></div>
       <button class="tb-btn tb-text" id="btn-replay">↻ Replay</button>
-      <button class="tb-btn tb-text" id="btn-surface">◈ Surface</button>
     </div>
 
   </div>
@@ -408,7 +406,6 @@
   <div class="meta">
     <span class="meta-gene">ACTG2 · Q247P</span>
     <span class="meta-desc">γ-2 actin · smooth muscle isoform</span>
-    <span class="meta-tag">AlphaFold · Chain A</span>
   </div>
 
 </div>
@@ -435,8 +432,6 @@
   });
 
   let spinning = false;
-  let surfaceOn = false;
-  let surfaceId = null;
   let timers = [];
 
   function applyBaseStyle() {
@@ -552,25 +547,10 @@
   document.getElementById('btn-replay').addEventListener('click', startNarrative);
   document.getElementById('btn-recenter').addEventListener('click', recenter);
 
-  document.getElementById('btn-surface').addEventListener('click', function () {
-    surfaceOn = !surfaceOn;
-    if (surfaceOn) {
-      surfaceId = viewer.addSurface($3Dmol.SurfaceType.MS, {
-        opacity: 0.18, color: '#D9785A'
-      }, { chain: MUT_CHAIN });
-      viewer.render();
-      this.classList.add('active');
-    } else {
-      if (surfaceId !== null) viewer.removeSurface(surfaceId);
-      viewer.render();
-      this.classList.remove('active');
-    }
-  });
-
   document.getElementById('pan-up').addEventListener('click',    () => panView(0, -PAN_STEP));
   document.getElementById('pan-down').addEventListener('click',  () => panView(0,  PAN_STEP));
-  document.getElementById('pan-left').addEventListener('click',  () => panView(-PAN_STEP, 0));
-  document.getElementById('pan-right').addEventListener('click', () => panView( PAN_STEP, 0));
+  document.getElementById('pan-left').addEventListener('click',  () => panView( PAN_STEP, 0));
+  document.getElementById('pan-right').addEventListener('click', () => panView(-PAN_STEP, 0));
 
   el.addEventListener('mousedown', stopSpin);
   el.addEventListener('touchstart', stopSpin, { passive: true });

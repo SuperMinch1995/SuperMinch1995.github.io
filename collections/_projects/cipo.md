@@ -214,10 +214,6 @@ h1 {
   </div>
 </div>
 
-<p class="act-bridge">γ-2 actin is made of 376 amino acids.</p>
-
-<p class="act-bridge">What if one amino acid was wrong?</p>
-
 <p class="act-bridge">In this example,<br>the Glutamine (Q) at the position 247 is replaced by a Proline (P).</p>
 
 <!-- ══════════════════════════════════════════════════
