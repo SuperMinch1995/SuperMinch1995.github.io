@@ -161,7 +161,7 @@ permalink: /conferences/ciirta-2025/
 
     <a href="/projects/cipo/"
        style="font-size:0.8rem;display:block;">
-       An interactive research story
+       Interact with the data
     </a>
 
     <a href="/assets/pdfs/cipo-article.pdf"

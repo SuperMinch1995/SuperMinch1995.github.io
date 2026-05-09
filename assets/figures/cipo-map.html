@@ -1,107 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style id="antifouc">html,body{background:transparent;}</style>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CIPO Patient Map</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-    background: transparent;
+:root {
+  --accent: #E07B40;
+  --dark:   #3A2E2A;
+  --muted:  rgba(58, 46, 42, 0.52);
+  --cream:  #FAF7F2;
+  --beige:  #F5EFE7;
+}
+
+body {
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  background: transparent;
+}
+
+#map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+#map-header {
+  padding: 18px 18px 14px;
+}
+
+.map-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a4540;
+  letter-spacing: 0.005em;
+  line-height: 1.3;
+}
+
+.map-citation {
+  font-size: 13px;
+  color: #4a4540;
+  font-weight: 400;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.map-subtitle {
+  font-size: 12px;
+  color: rgba(74, 69, 64, 0.7);
+  font-weight: 400;
+  margin-top: 8px;
+  letter-spacing: 0.01em;
+}
+
+#map {
+  width: 100%;
+  height: 490px;
+  background: #e8e3db;
+}
+
+.map-note {
+  font-size: 10px;
+  color: rgba(58, 46, 42, 0.45);
+  font-style: italic;
+  text-align: center;
+  padding: 11px 18px 14px;
+  background: transparent;
+  letter-spacing: 0.015em;
+  line-height: 1.5;
+}
+
+.leaflet-container {
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  background: #e8e3db !important;
+}
+
+.leaflet-control-zoom a {
+  border-color: #ddd !important;
+  color: #666 !important;
+  background: #FAF7F2 !important;
+}
+
+.count-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  line-height: 1;
+}
+
+.story-halo-icon {
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+}
+.halo-dot {
+  border-radius: 50%;
+  background: transparent;
+  animation: storyPulse 1.6s ease-in-out infinite;
+}
+@keyframes storyPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 200, 66, 0),
+                0 0 0 0 rgba(245, 200, 66, 0),
+                0 0 0 0 rgba(245, 200, 66, 0);
   }
-
-  #map-wrapper {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    background: transparent;
+  50% {
+    box-shadow: 0 0 0 6px rgba(245, 200, 66, 0.7),
+                0 0 24px 4px rgba(245, 200, 66, 0.55),
+                0 0 48px 8px rgba(245, 200, 66, 0.3);
   }
+}
 
-  #map-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 16px 18px 14px;
-    flex-wrap: wrap;
-  }
+#story-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--cream);
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -2px 18px rgba(58, 46, 42, 0.13);
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 60%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#story-sheet.open { transform: translateY(0); }
 
-  .map-title {
-    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: #4a4540;
-    letter-spacing: 0.01em;
-    white-space: nowrap;
-  }
+.sheet-handle {
+  width: 36px;
+  height: 3px;
+  background: rgba(58, 46, 42, 0.18);
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
 
-  .map-subtitle {
-    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 10px;
-    color: #4a4540;
-    font-weight: 400;
-  }
+.sheet-inner { padding: 12px 22px 30px; }
 
-  .map-count {
-    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 11px;
-    color: #4a4540;
-    white-space: nowrap;
-    margin-left: auto;
-  }
+.sheet-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 8px;
+}
 
-  #map {
-    width: 100%;
-    height: 490px;
-    background: #e8e3db;
-  }
+.sheet-location {
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.4;
+  padding-top: 2px;
+}
 
-  .leaflet-container {
-    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-    background: #e8e3db !important;
-  }
+.sheet-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1;
+  padding: 3px 5px;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+.sheet-close:hover { color: var(--dark); }
 
-  .leaflet-tile-pane {
-    filter: saturate(0.07) brightness(1.07) sepia(0.10);
-  }
+.sheet-story {
+  font-size: 13.5px;
+  line-height: 1.78;
+  color: var(--dark);
+  font-weight: 400;
+}
+.sheet-story p { margin: 0 0 0.75em; }
+.sheet-story p:last-child { margin-bottom: 0; }
+.sheet-story blockquote {
+  margin: 0.5em 0 0;
+  padding: 0 0 0 14px;
+  font-style: italic;
+  color: var(--dark);
+  border-left: 2px solid var(--accent);
+}
 
-  .leaflet-control-zoom a {
-    border-color: #ddd !important;
-    color: #666 !important;
-    background: #FAF7F2 !important;
-  }
+#sheet-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 999;
+  display: none;
+}
+#sheet-overlay.active { display: block; }
 
-  .count-label {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 700;
-    color: #fff;
-    pointer-events: none;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
-    line-height: 1;
-  }
-
+@media (max-width: 480px) {
+  #map { height: 420px; }
+  .map-title { font-size: 15px; }
+  .map-citation { font-size: 12px; }
+  .sheet-inner { padding: 10px 16px 26px; }
+  .sheet-story { font-size: 13px; }
+}
 </style>
 </head>
 <body>
 
 <div id="map-wrapper">
+
   <div id="map-header">
-    <div style="display:flex;flex-direction:column;gap:2px;">
-      <span class="map-title">Where Patients Were Born <span style="font-weight:400;">— Cohort of</span> Ta et al., <em style="font-weight:400;">Am J Gastroenterol</em> 2026</span>
-      <span class="map-subtitle">Zoom in to reveal patient counts</span>
+    <div class="map-title">Birthplace of patients</div>
+    <div class="map-citation">Ta et al., <em style="font-weight:400;">Am J Gastroenterol</em> 2026</div>
+    <div class="map-subtitle">Tap pulsing circles to read a patient story</div>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="map-note">
+    Composite vignettes drawn from clinical interviews. Identifying details have been removed.
+  </div>
+
+  <div id="sheet-overlay"></div>
+
+  <div id="story-sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-inner">
+      <div class="sheet-header">
+        <div class="sheet-location" id="sheet-loc-text"></div>
+        <button class="sheet-close" id="sheet-close-btn" aria-label="Close">✕</button>
+      </div>
+      <div class="sheet-story" id="sheet-story-text"></div>
     </div>
   </div>
-  <div id="map"></div>
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -112,137 +253,226 @@ const PATIENTS = [
   ["Reunion Island",55.53,-21.14],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
-  ["79140",-0.65,46.85],
+  ["Vienne",-0.65,46.85],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
   ["Mayotte",45.15,-12.82],
-  ["81000",2.14,43.92],
+  ["Tarn",2.14,43.92],
   ["Comoros",44.28,-12.20],
   ["Ile-de-France",2.33,48.86],
-  ["26000",4.90,44.92],
-  ["18700",2.39,47.46],
-  ["90000",6.85,47.64],
-  ["51140",3.84,49.31],
+  ["Drôme",4.90,44.92],
+  ["Cher",2.39,47.46],
+  ["Territoire de Belfort",6.85,47.64],
+  ["Marne",3.84,49.31],
   ["Mayotte",45.15,-12.82],
-  ["76400",0.40,49.73],
+  ["Seine-Maritime",0.40,49.73],
   ["Ile-de-France",2.33,48.86],
-  ["44000",-1.55,47.22],
+  ["Loire-Atlantique",-1.55,47.22],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
   ["Algeria",2.99,28.00],
   ["Ile-de-France",2.33,48.86],
-  ["54000",6.17,48.69],
-  ["91600",2.34,48.68],
-  ["44000",-1.55,47.22],
-  ["41100",1.09,47.79],
+  ["Meurthe-et-Moselle",6.17,48.69],
+  ["Essonne",2.34,48.68],
+  ["Loire-Atlantique",-1.55,47.22],
+  ["Loir-et-Cher",1.09,47.79],
   ["French Guiana",-52.99,4.00],
-  ["44230",-1.50,47.20],
-  ["49000",-0.51,47.52],
-  ["44800",-1.63,47.22],
+  ["Loire-Atlantique",-1.50,47.20],
+  ["Maine-et-Loire",-0.51,47.52],
+  ["Loire-Atlantique",-1.63,47.22],
   ["Algeria",2.99,28.00],
   ["Algeria",2.99,28.00],
   ["Ile-de-France",2.33,48.86],
-  ["13080",5.42,43.49],
+  ["Bouches-du-Rhône",5.42,43.49],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
   ["Bolivia",-64.99,-17.05],
   ["Bolivia",-64.99,-17.05],
   ["Ile-de-France",2.33,48.86],
-  ["76400",0.40,49.73],
+  ["Seine-Maritime",0.40,49.73],
   ["Ile-de-France",2.33,48.86],
-  ["51000",4.37,48.96],
-  ["41200",1.79,47.39],
+  ["Marne",4.37,48.96],
+  ["Loir-et-Cher",1.79,47.39],
   ["Martinique",-61.01,14.63],
-  ["76700",0.23,49.50],
+  ["Seine-Maritime",0.23,49.50],
   ["Lebanon",35.84,33.87],
   ["Ile-de-France",2.33,48.86],
-  ["23000",1.87,46.17],
-  ["95100",2.24,48.95],
-  ["13208",5.36,43.29],
-  ["62310",2.09,50.50],
-  ["76310",0.07,49.50],
-  ["97110",-61.53,16.24],
+  ["Creuse",1.87,46.17],
+  ["Val-d'Oise",2.24,48.95],
+  ["Bouches-du-Rhône",5.36,43.29],
+  ["Pas-de-Calais",2.09,50.50],
+  ["Seine-Maritime",0.07,49.50],
+  ["Guadeloupe",-61.53,16.24],
   ["Cameroon",13.15,4.61],
   ["Chile",-71.31,-31.76],
   ["Portugal",-8.13,39.66],
-  ["57000",6.17,49.10],
-  ["29600",-3.85,48.55],
+  ["Moselle",6.17,49.10],
+  ["Finistère",-3.85,48.55],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
-  ["59100",3.18,50.68],
-  ["77000",2.68,48.52],
-  ["50800",-1.25,48.82],
-  ["68000",7.36,48.11],
+  ["Nord",3.18,50.68],
+  ["Seine-et-Marne",2.68,48.52],
+  ["Manche",-1.25,48.82],
+  ["Haut-Rhin",7.36,48.11],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
-  ["82000",1.36,44.02],
-  ["35000",-1.68,48.10],
+  ["Tarn-et-Garonne",1.36,44.02],
+  ["Ille-et-Vilaine",-1.68,48.10],
   ["Ile-de-France",2.33,48.86],
-  ["77177",2.64,48.88],
-  ["64500",-1.63,43.38],
+  ["Seine-et-Marne",2.64,48.88],
+  ["Pyrénées-Atlantiques",-1.63,43.38],
   ["Germany",10.44,51.16],
   ["Mayotte",45.15,-12.82],
   ["Ile-de-France",2.33,48.86],
-  ["49330",-0.61,47.72],
+  ["Maine-et-Loire",-0.61,47.72],
   ["Ile-de-France",2.33,48.86],
   ["Reunion Island",55.52,-21.13],
   ["Cambodia",104.81,12.54],
-  ["76600",0.12,49.49],
+  ["Seine-Maritime",0.12,49.49],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
   ["Cameroon",13.15,4.61],
-  ["29000",-4.11,47.99],
+  ["Finistère",-4.11,47.99],
   ["Ile-de-France",2.33,48.86],
-  ["34000",3.87,43.61],
-  ["34000",3.87,43.61],
-  ["25200",6.80,47.52],
+  ["Hérault",3.87,43.61],
+  ["Hérault",3.87,43.61],
+  ["Doubs",6.80,47.52],
   ["Mayotte",45.15,-12.82],
-  ["18270",2.31,46.54],
-  ["69004",4.82,45.78],
+  ["Cher",2.31,46.54],
+  ["Rhône",4.82,45.78],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
-  ["49000",-0.51,47.52],
+  ["Maine-et-Loire",-0.51,47.52],
   ["Algeria",2.99,28.00],
-  ["50800",-1.25,48.82],
+  ["Manche",-1.25,48.82],
   ["Ile-de-France",2.33,48.86],
   ["Italy",12.67,42.63],
-  ["69560",4.83,45.53],
+  ["Rhône",4.83,45.53],
   ["Ile-de-France",2.33,48.86],
-  ["67150",7.66,48.41],
+  ["Bas-Rhin",7.66,48.41],
   ["Congo",23.82,-2.98],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
-  ["77000",2.68,48.52],
-  ["69004",4.82,45.78],
-  ["45000",1.91,47.91],
-  ["37600",1.03,47.05],
+  ["Seine-et-Marne",2.68,48.52],
+  ["Rhône",4.82,45.78],
+  ["Loiret",1.91,47.91],
+  ["Indre-et-Loire",1.03,47.05],
   ["Ile-de-France",2.33,48.86],
-  ["57200",7.10,49.10],
-  ["80000",2.27,49.89],
+  ["Moselle",7.10,49.10],
+  ["Somme",2.27,49.89],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
   ["Belgium",4.66,50.64],
-  ["28100",1.35,48.74],
+  ["Eure-et-Loir",1.35,48.74],
   ["Burgundy",5.07,47.05],
   ["Ile-de-France",2.33,48.86],
   ["Ile-de-France",2.33,48.86],
-  ["85000",-1.42,46.67],
+  ["Vendée",-1.42,46.67],
   ["Ile-de-France",2.33,48.86],
   ["Serbia",20.55,44.15],
   ["Luxembourg",6.12,49.81],
   ["Algeria",2.99,28.00],
   ["New Caledonia",166.45,-22.26],
-  ["54000",6.17,48.69],
-  ["14000",-0.37,49.18],
+  ["Meurthe-et-Moselle",6.17,48.69],
+  ["Calvados",-0.37,49.18],
   ["Ile-de-France",2.33,48.86]
 ];
 
-const ACCENT = '#C2510A';
+/*
+  STORIES — 10 representative patients
+  Grammar:
+    Born in [place].
+    [Diagnosis context — age or decade of life, symptom duration].
+    [First-person quote — anecdote about living with the disease].
+*/
+const STORIES = [
+  {
+    lat: 48.86, lng: 2.33,
+    location: "Île-de-France · Metropolitan France",
+    story: `<p>Born in the Paris region.</p>
+            <p>Years of unexplained crises before any diagnosis. Magnetisers, healers, teas, herbs, homeopathy, even cannabis — all tried, none worked.</p>
+            <blockquote>"I tried everything. Nothing worked. But you keep trying, what else are you supposed to do?"</blockquote>`
+  },
+  {
+    lat: -21.13, lng: 55.52,
+    location: "Réunion Island · Indian Ocean",
+    story: `<p>Born in Réunion Island.</p>
+            <p>Onset was abrupt and pan-digestive. From the first hospitalisation, dependence on parenteral nutrition was immediate.</p>
+            <blockquote>"From one week to the next, I couldn't eat. The bag arrived, and it never left. I just want one more chance to eat, to taste food again."</blockquote>`
+  },
+  {
+    lat: -12.82, lng: 45.15,
+    location: "Mayotte · Indian Ocean",
+    story: `<p>Born in Mayotte.</p>
+            <p>First diagnosed with Crohn's disease in childhood. The correct diagnosis came years later, after repeated obstructive episodes that no anti-inflammatory treatment could prevent.</p>
+            <blockquote>"For years they told me it was Crohn's disease. I was on treatments that did nothing. The day someone finally said the right name, it was a relief."</blockquote>`
+  },
+  {
+    lat: 28.00, lng: 2.99,
+    location: "Algeria · North Africa",
+    story: `<p>Born in Algeria.</p>
+            <p>Reflux at age three. Growth failure at eight. Severe weight loss and recurrent vomiting by puberty. Twelve years from the first symptom to the correct diagnosis.</p>
+            <blockquote>"I spent my whole childhood in hospitals. So many doctors. Nobody knew what I had."</blockquote>`
+  },
+  {
+    lat: -17.05, lng: -64.99,
+    location: "Bolivia · South America",
+    story: `<p>Born in Bolivia.</p>
+            <p>Necrotising enterocolitis at birth. Twenty years of relative quiet. Then the bowel obstructed again, this time without an obvious cause.</p>
+            <blockquote>"I was a sick newborn, then I was fine. For twenty years, I was just like everyone else. Then one day my belly stopped working again. I had forgotten this could happen to me."</blockquote>`
+  },
+  {
+    lat: 12.54, lng: 104.81,
+    location: "Cambodia · Southeast Asia",
+    story: `<p>Born in Cambodia.</p>
+            <p>Symptoms began in high school: abdominal pain every Thursday morning, slow digestion, persistent drowsiness. Years passed before the right diagnosis was made.</p>
+            <blockquote>"They told me it was stress."</blockquote>`
+  },
+  {
+    lat: 4.61, lng: 13.15,
+    location: "Cameroon · Central Africa",
+    story: `<p>Born in Cameroon.</p>
+            <p>Roughly one emergency-room visit per year for as long as memory served — sharp abdominal pain, severe distension, no cause found. Years before a name was finally put on it.</p>
+            <blockquote>"Once a year, every year — the pain would come, the swelling, the ambulance. They'd run tests. They'd find nothing. They'd send me home. And I'd wait for the next one."</blockquote>`
+  },
+  {
+    lat: -22.26, lng: 166.45,
+    location: "New Caledonia · Pacific Ocean",
+    story: `<p>Born in New Caledonia.</p>
+            <p>The first signs appeared during a first pregnancy. The second made everything worse. Diagnosis came after the obstruction that followed.</p>
+            <blockquote>"My body gave me my children, it took my gut in return."</blockquote>`
+  },
+  {
+    lat: 33.87, lng: 35.84,
+    location: "Lebanon · Middle East",
+    story: `<p>Born in Lebanon.</p>
+            <p>First told it was irritable bowel syndrome. The obstructions came later — more frequent each time, with distension, hot flushes, vagal episodes.</p>
+            <blockquote>"The only times I haven't been in pain are when I'm in a woman's arms."</blockquote>`
+  },
+  {
+    lat: 14.63, lng: -61.01,
+    location: "Martinique · Caribbean",
+    story: `<p>Born in Martinique.</p>
+            <p>Abdominal distension, and vomiting from the first weeks of life. Home parenteral nutrition began at six months of life.</p>
+            <blockquote>"I have no memory of eating. The bag has been with me since before I could walk. Other children learned to chew. I learned to live with a tube."</blockquote>`
+  }
+];
 
-// ── Clustering ───────────────────────────────────────────────────────────────
+const map = L.map('map', {
+  center: [25, 15],
+  zoom: 2,
+  zoomControl: true,
+  attributionControl: false
+});
+
+L.tileLayer(
+  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+  { maxZoom: 19, subdomains: 'abcd' }
+).addTo(map);
+
 function haversine(lat1, lng1, lat2, lng2) {
   const R = 6371;
   const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -254,76 +484,118 @@ function haversine(lat1, lng1, lat2, lng2) {
 }
 
 const MERGE_KM = 50;
-const points = PATIENTS.map(([label, lng, lat]) => ({ label, lng, lat }));
+const points   = PATIENTS.map(([label, lng, lat]) => ({ label, lng, lat }));
 const assigned = new Array(points.length).fill(-1);
 const clusters = [];
 
 points.forEach((pt, i) => {
   if (assigned[i] !== -1) return;
-  const clusterIdx = clusters.length;
+  const ci = clusters.length;
   clusters.push({ members: [i], lat: pt.lat, lng: pt.lng, label: pt.label });
-  assigned[i] = clusterIdx;
+  assigned[i] = ci;
   points.forEach((other, j) => {
     if (assigned[j] !== -1) return;
     if (haversine(pt.lat, pt.lng, other.lat, other.lng) <= MERGE_KM) {
-      clusters[clusterIdx].members.push(j);
-      assigned[j] = clusterIdx;
-      if (isNaN(parseInt(other.label.charAt(0)))) clusters[clusterIdx].label = other.label;
+      clusters[ci].members.push(j);
+      assigned[j] = ci;
+      if (isNaN(parseInt(other.label.charAt(0)))) clusters[ci].label = other.label;
     }
   });
-  const c = clusters[clusterIdx];
+  const c = clusters[ci];
   c.lat = c.members.reduce((s, idx) => s + points[idx].lat, 0) / c.members.length;
   c.lng = c.members.reduce((s, idx) => s + points[idx].lng, 0) / c.members.length;
 });
 
-function r(n) { return 5 + 5.5 * Math.sqrt(n); }
+function dotRadius(n) { return 5 + 5.5 * Math.sqrt(n); }
 
-// ── Carte ────────────────────────────────────────────────────────────────────
-const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 19 });
+const circleLayer    = L.layerGroup().addTo(map);
+const storyHaloLayer = L.layerGroup().addTo(map);
+const labelLayer     = L.layerGroup().addTo(map);
+const LABEL_ZOOM     = 4;
 
-const map = L.map('map', {
-  center: [25, 15], zoom: 2,
-  zoomControl: true,
-  attributionControl: false
-});
-
-let tileLayer = lightTiles;
-tileLayer.addTo(map);
-
-map.getPane('tilePane').style.filter = 'saturate(0.07) brightness(1.07) sepia(0.10)';
-
-const LABEL_ZOOM = 4;
-const circleLayer = L.layerGroup().addTo(map);
-const labelLayer  = L.layerGroup().addTo(map);
+function findStoryForCluster(c) {
+  return STORIES.find(s =>
+    Math.abs(c.lat - s.lat) < 0.5 && Math.abs(c.lng - s.lng) < 0.5
+  );
+}
 
 function buildMarkers() {
   circleLayer.clearLayers();
+  storyHaloLayer.clearLayers();
   labelLayer.clearLayers();
   const showLabels = map.getZoom() >= LABEL_ZOOM;
+
   clusters.forEach(c => {
-    const n = c.members.length;
-    const radius = r(n);
-    const fontSize = Math.max(9, Math.min(14, radius * 0.7));
+    const n      = c.members.length;
+    const radius = dotRadius(n);
+    const fsize  = Math.max(9, Math.min(14, radius * 0.7));
+    const story  = findStoryForCluster(c);
+
     L.circleMarker([c.lat, c.lng], {
       radius,
-      fillColor: ACCENT,
+      fillColor: '#E07B40',
       color: '#EDE8DF',
       weight: 0.6,
-      fillOpacity: 0.75,
+      fillOpacity: 0.62,
       interactive: false
     }).addTo(circleLayer);
+
+    if (story) {
+      const size = radius * 2;
+      const halo = L.marker([c.lat, c.lng], {
+        icon: L.divIcon({
+          className: 'story-halo-icon',
+          html: `<div class="halo-dot" style="width:${size}px;height:${size}px"></div>`,
+          iconSize: [size, size],
+          iconAnchor: [radius, radius]
+        }),
+        interactive: true,
+        bubblingMouseEvents: false,
+        keyboard: false
+      });
+      halo.on('click', function(e) {
+        L.DomEvent.stopPropagation(e);
+        openSheet(story);
+      });
+      halo.addTo(storyHaloLayer);
+    }
+
     if (showLabels) {
       const size = radius * 2;
-      const icon = L.divIcon({
-        className: 'count-label',
-        html: `<div style="width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;font-size:${fontSize}px;">${n}</div>`,
-        iconSize: [size, size],
-        iconAnchor: [radius, radius]
-      });
-      L.marker([c.lat, c.lng], { icon, interactive: false }).addTo(labelLayer);
+      L.marker([c.lat, c.lng], {
+        icon: L.divIcon({
+          className: 'count-label',
+          html: `<div style="width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;font-size:${fsize}px;">${n}</div>`,
+          iconSize: [size, size],
+          iconAnchor: [radius, radius]
+        }),
+        interactive: false
+      }).addTo(labelLayer);
     }
   });
 }
+
+const sheet    = document.getElementById('story-sheet');
+const overlay  = document.getElementById('sheet-overlay');
+const closeBtn = document.getElementById('sheet-close-btn');
+const locEl    = document.getElementById('sheet-loc-text');
+const storyEl  = document.getElementById('sheet-story-text');
+
+function openSheet(s) {
+  locEl.textContent = s.location;
+  storyEl.innerHTML = s.story;
+  sheet.classList.add('open');
+  overlay.classList.add('active');
+}
+
+function closeSheet() {
+  sheet.classList.remove('open');
+  overlay.classList.remove('active');
+}
+
+closeBtn.addEventListener('click', closeSheet);
+overlay.addEventListener('click', closeSheet);
+map.on('click', closeSheet);
 
 buildMarkers();
 map.on('zoomend', buildMarkers);

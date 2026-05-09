@@ -222,7 +222,7 @@ html[data-bs-theme="dark"] .rt-link {
 
     <div class="rt-links">
       <a class="rt-link" href="/projects/cipo/">
-        An interactive research story →
+        Interact with the data →
       </a>
 
       <a class="rt-link" href="/publications/cipo-2026/">

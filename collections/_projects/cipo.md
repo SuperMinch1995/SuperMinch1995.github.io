@@ -350,6 +350,7 @@ To understand why Q247P matters, we need to zoom in further.</p>
 <p class="act-bridge">We turned to the genome.</p>
 
 <p class="act-bridge">We genotyped hundreds of unsolved cases.</p>
+<br>
 
 <div class="sunburst-section">
   <div class="sunburst-frame">
@@ -377,10 +378,6 @@ To understand why Q247P matters, we need to zoom in further.</p>
 
 
 <!-- ── ACT 5 — PATIENTS ───────────────────────────── -->
-
-<hr class="act-rule">
-
-<p class="act-bridge">ACTG2 is the gene behind γ-2 actin.<br><br>ACTG2 wasn't the only suspect.</p>
 
 <p class="act-bridge">Behind every mutation is a person waiting.</p>
 

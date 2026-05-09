@@ -204,7 +204,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','DM Sans',sans-seri
 .score-fill{height:100%;border-radius:2px;background:var(--text-tertiary);opacity:.7}
 
 /* ────────────────────────────────────────────────────────
-   SECTION 4 — Polymerization
+   SECTION 5 — Polymerization
 ──────────────────────────────────────────────────────── */
 .poly-body{
   display:flex;
@@ -591,25 +591,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','DM Sans',sans-seri
 </section>
 
 <!-- ════════════════════════════════════════════════════
-     SECTION 4 — Actin polymerization
-══════════════════════════════════════════════════════ -->
-<section class="story-section" id="sec-poly" data-section="poly" data-mode="wt">
-  <div class="section-header">
-    <h2 class="section-title">④ actin polymerization</h2>
-    <div class="mini-toggle" role="group" aria-label="Mode toggle">
-      <button class="mt-btn is-active" data-mode="wt" type="button">Q247 wild-type</button>
-      <button class="mt-btn" data-mode="mut" type="button">P247 mutant</button>
-    </div>
-  </div>
-  <div class="section-body">
-    <div class="poly-body" id="poly-body">
-      <!-- rendered by JS -->
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════
-     SECTION 5 — In summary (accordions)
+     SECTION 4 — In summary (accordions)
 ══════════════════════════════════════════════════════ -->
 <section class="story-section accordion-section" id="sec-acc">
   <div class="section-header">
@@ -631,6 +613,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','DM Sans',sans-seri
         <span class="acc-arr">▾</span>
       </div>
       <div class="acc-body">Q247 sits in the <strong>subdomain 3 loop</strong> of actin, mediating inter-subunit contacts in the filament. Three direct structural consequences:<br><br><strong>1. Loss of H-bond.</strong> The backbone NH of Q247 stabilizes the loop. Proline's tertiary N cannot donate this bond, destabilizing the loop conformation.<br><br><strong>2. Backbone rigidification.</strong> The pyrrolidine ring locks φ ≈ −60°, reducing conformational freedom from 35% to 8% of Ramachandran space.<br><br><strong>3. Reduced surface exposure.</strong> Solvent Accessible Surface Area (SASA) drops 40% (−45.4 Å²), burying surface previously available for actin–actin contacts.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 5 — Actin polymerization
+══════════════════════════════════════════════════════ -->
+<section class="story-section" id="sec-poly" data-section="poly" data-mode="wt">
+  <div class="section-header">
+    <h2 class="section-title">④ actin polymerization</h2>
+    <div class="mini-toggle" role="group" aria-label="Mode toggle">
+      <button class="mt-btn is-active" data-mode="wt" type="button">Q247 wild-type</button>
+      <button class="mt-btn" data-mode="mut" type="button">P247 mutant</button>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="poly-body" id="poly-body">
+      <!-- rendered by JS -->
     </div>
   </div>
 </section>
