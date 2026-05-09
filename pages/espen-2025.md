@@ -186,7 +186,7 @@ permalink: /conferences/espen-2025/
 
     <a href="/projects/cipo/"
        style="font-size:0.8rem;display:block;">
-       Behind the Research
+       An interactive research story
     </a>
 
     <a href="/assets/pdfs/cipo-article.pdf"

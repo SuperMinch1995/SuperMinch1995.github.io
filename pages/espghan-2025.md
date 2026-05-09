@@ -107,11 +107,7 @@ permalink: /conferences/espghan-2025/
     </p>
 
     <p>
-      Beyond the presentation itself, the conference offered an opportunity to engage with global experts and sponsors; sharing perspectives and existing approaches in a rapidly evolving field.
-    </p>
-
-    <p>
-      Lastly, one word captured my attention between scientific sessions: <strong>Sisu</strong> — the Finnish concept of resilience and determination.
+      One word captured my attention between scientific sessions: <strong>Sisu</strong> — the Finnish concept of resilience and determination.
     </p>
   </div>
 
@@ -150,7 +146,7 @@ permalink: /conferences/espghan-2025/
 
   <a href="/projects/cipo/"
      style="font-size:0.8rem;display:block;">
-     Behind the Research
+     An interactive research story
   </a>
 
 <a href="/assets/pdfs/cipo-article.pdf"
