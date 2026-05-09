@@ -214,9 +214,17 @@ h1 {
   </div>
 </div>
 
-<p class="act-bridge">The mutation did not simply change an amino acid.
+<p class="act-bridge">At first glance, the mutation looks subtle.
 
-<br>It changed the mechanical behavior of the protein.</p>
+<br><br>The mutation did not simply change an amino acid.
+
+<br><br>One amino acid.
+
+<br><br>One surface residue.
+
+<br><br>But proteins are mechanical systems.
+
+<br><br>To understand why Q247P matters, we need to zoom in further.</p>
 
 <!-- ══════════════════════════════════════════════════
      ACT 2 — WILD-TYPE → MUTANT TRANSITION
