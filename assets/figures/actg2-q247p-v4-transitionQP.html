@@ -9,18 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --orange:        #D9785A;   /* dusty coral */
-    --orange-deep:   #B85738;
-    --orange-soft:   #EAA88C;
-    --residue:       #C2510A;   /* the residue keeps its punch */
-    --residue-deep:  #9E4218;
-    --cream:         #FCF9F1;
-    --beige:         #F6F0E2;
-    --beige-2:       #EFE7D6;
-    --dark:          #4D4238;
-    --muted:         rgba(77, 66, 56, 0.52);
-    --muted-2:       rgba(77, 66, 56, 0.32);
-    --line:          rgba(77, 66, 56, 0.08);
+    --cartoon:    #E8D2B0;
+    --q-teal:     #1AAB8E;
+    --p-orange:   #FF6B1A;
+    --residue:    #FF6B1A;
+    --cream:      #FCF9F1;
+    --beige:      #F6F0E2;
+    --beige-2:    #EFE7D6;
+    --dark:       #4D4238;
+    --muted:      rgba(77, 66, 56, 0.52);
+    --muted-2:    rgba(77, 66, 56, 0.32);
+    --line:       rgba(77, 66, 56, 0.08);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,7 +44,6 @@
       inset 0 0 0 1px var(--line);
   }
 
-  /* ─── Top help row ─── */
   .help-row {
     display: flex;
     align-items: stretch;
@@ -60,14 +58,12 @@
     padding: 10px 14px;
     color: var(--muted);
   }
-  .help-item + .help-item {
-    border-left: 1px solid var(--line);
-  }
+  .help-item + .help-item { border-left: 1px solid var(--line); }
   .help-icon-wrap {
     width: 24px;
     height: 24px;
     border-radius: 6px;
-    background: rgba(217, 120, 90, 0.10);
+    background: rgba(255, 107, 26, 0.10);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,7 +72,7 @@
   .help-icon-wrap svg {
     width: 13px;
     height: 13px;
-    color: var(--orange);
+    color: var(--p-orange);
   }
   .help-text {
     display: flex;
@@ -96,7 +92,6 @@
     letter-spacing: 0.02em;
   }
 
-  /* ─── Viewer ─── */
   #viewer-wrap {
     position: relative;
     width: 100%;
@@ -104,16 +99,15 @@
   }
   #mol-viewer { width: 100%; height: 100%; }
 
-  /* ─── Phase 1: intro ─── */
   #intro {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(239, 231, 214, 0.62);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(239, 231, 214, 0.95);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     z-index: 20;
     transition: opacity 1s ease;
     padding: 0 2rem;
@@ -128,11 +122,10 @@
   }
   .intro-text em {
     font-style: normal;
-    color: var(--residue);
+    color: var(--p-orange);
     font-weight: 500;
   }
 
-  /* ─── Phase 2: mutation label ─── */
   #mut-label {
     position: absolute;
     top: 28%;
@@ -150,7 +143,7 @@
     border-radius: 8px;
     box-shadow:
       0 2px 12px rgba(77, 66, 56, 0.12),
-      inset 0 0 0 1px rgba(194, 81, 10, 0.18);
+      inset 0 0 0 1px rgba(255, 107, 26, 0.20);
     text-align: left;
     min-width: 180px;
   }
@@ -158,7 +151,7 @@
     font-family: 'DM Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 0.06em;
-    color: var(--residue);
+    color: var(--p-orange);
     margin-bottom: 2px;
     font-weight: 500;
   }
@@ -168,7 +161,6 @@
     line-height: 1.4;
   }
 
-  /* ─── Toolbar (controls + pan, integrated bottom bar) ─── */
   .toolbar {
     position: absolute;
     bottom: 14px;
@@ -208,11 +200,11 @@
     letter-spacing: 0.04em;
   }
   .tb-btn:hover {
-    background: var(--orange);
+    background: var(--p-orange);
     color: #fff;
   }
   .tb-btn.active {
-    background: var(--orange);
+    background: var(--p-orange);
     color: #fff;
   }
   .tb-btn svg { width: 12px; height: 12px; }
@@ -225,7 +217,6 @@
     margin: 0 3px;
   }
 
-  /* ─── Meta ─── */
   .meta {
     display: flex;
     align-items: center;
@@ -238,7 +229,7 @@
   .meta-gene {
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem;
-    color: var(--residue);
+    color: var(--p-orange);
     letter-spacing: 0.06em;
     font-weight: 500;
   }
@@ -254,7 +245,6 @@
     white-space: nowrap;
   }
 
-  /* ─── Loader ─── */
   #loader {
     position: absolute;
     inset: 0;
@@ -271,7 +261,7 @@
   .dot {
     width: 5px; height: 5px;
     border-radius: 50%;
-    background: var(--orange);
+    background: var(--p-orange);
     display: inline-block;
     margin: 0 3px;
     animation: bounce 1.2s infinite ease-in-out both;
@@ -288,7 +278,6 @@
     letter-spacing: 0.12em;
   }
 
-  /* ─── Mobile ─── */
   @media (max-width: 640px) {
     #viewer-wrap { height: 360px; }
     .intro-text { font-size: 1.05rem; }
@@ -310,7 +299,6 @@
 
 <div class="hero">
 
-  <!-- Persistent help row at top -->
   <div class="help-row">
     <div class="help-item">
       <div class="help-icon-wrap">
@@ -367,21 +355,18 @@
 
     <div id="mol-viewer"></div>
 
-    <!-- Intro -->
     <div id="intro">
       <p class="intro-text">
         A <em>single mutation</em> can reshape a protein.
       </p>
     </div>
 
-    <!-- Mutation label -->
     <div id="mut-label">
       <div class="label-pill">
         <div class="label-gene">ACTG2 · Q247P</div>
       </div>
     </div>
 
-    <!-- Unified toolbar: pan arrows + recenter + replay -->
     <div class="toolbar" id="toolbar">
       <button class="tb-btn tb-arrow" id="pan-up" aria-label="Pan up">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
@@ -413,16 +398,16 @@
 <script>
 (function () {
 
-  const PDB_PATH    = '/assets/structures/Q247P.txt';
+  const PDB_NORMAL  = '/assets/structures/Normal.pdb';
+  const PDB_MUTANT  = '/assets/structures/Q247P.pdb';
   const MUT_RESI    = 245;
   const MUT_CHAIN   = 'A';
   const PAN_STEP    = 28;
 
-  const COLOR_BG     = 0xEFE7D6;
-  const COLOR_MAIN   = '#7A6856';
-  const COLOR_NEAR   = '#A87B58';
-  const COLOR_SPHERE = '#C2510A';
-  const COLOR_STICK  = '#9E4218';
+  const COLOR_BG       = 0xEFE7D6;
+  const COLOR_CARTOON  = '#E8D2B0';
+  const COLOR_Q_TEAL   = '#1AAB8E';
+  const COLOR_P_ORANGE = '#FF6B1A';
 
   const el = document.getElementById('mol-viewer');
   const viewer = $3Dmol.createViewer(el, {
@@ -432,118 +417,300 @@
   });
 
   let spinning = false;
+  let wobbling = false;
+  let wobbleAnimId = null;
+  let wobbleStart = 0;
+  let wobbleLastAngle = 0;
   let timers = [];
+  let modelsReady = false;
 
-  function applyBaseStyle() {
-    viewer.setStyle({}, {
-      cartoon: { color: COLOR_MAIN, opacity: 0.65, thickness: 0.30 }
+  // ── Style helpers ──
+
+  function showWildType(opacity) {
+    const op = (typeof opacity === 'number') ? opacity : 0.85;
+    viewer.setStyle({ model: 0 }, {
+      cartoon: { color: COLOR_CARTOON, opacity: op, thickness: 0.30 }
     });
     viewer.setStyle(
-      { chain: MUT_CHAIN, resi: (MUT_RESI - 4) + '-' + (MUT_RESI + 4) },
-      { cartoon: { color: COLOR_NEAR, opacity: 0.84, thickness: 0.34 } }
-    );
-    viewer.setStyle(
-      { chain: MUT_CHAIN, resi: MUT_RESI },
+      { model: 0, chain: MUT_CHAIN, resi: MUT_RESI },
       {
-        sphere: { color: COLOR_SPHERE, radius: 0.65, opacity: 0.95 },
-        stick:  { color: COLOR_STICK,  radius: 0.18, opacity: 1.0  }
+        cartoon: { color: COLOR_Q_TEAL, opacity: 1.0, thickness: 0.40 },
+        stick:   { color: COLOR_Q_TEAL, radius: 0.22, opacity: 1.0 },
+        sphere:  { color: COLOR_Q_TEAL, radius: 0.55, opacity: 0.95 }
       }
     );
   }
 
-  function pulseResidue() {
+  function showMutant(opacity) {
+    const op = (typeof opacity === 'number') ? opacity : 0.85;
+    viewer.setStyle({ model: 1 }, {
+      cartoon: { color: COLOR_CARTOON, opacity: op, thickness: 0.30 }
+    });
     viewer.setStyle(
-      { chain: MUT_CHAIN, resi: MUT_RESI },
+      { model: 1, chain: MUT_CHAIN, resi: MUT_RESI },
       {
-        sphere: { color: COLOR_SPHERE, radius: 0.95, opacity: 1.0 },
-        stick:  { color: COLOR_STICK,  radius: 0.22, opacity: 1.0 }
+        cartoon: { color: COLOR_P_ORANGE, opacity: 1.0, thickness: 0.40 },
+        stick:   { color: COLOR_P_ORANGE, radius: 0.22, opacity: 1.0 },
+        sphere:  { color: COLOR_P_ORANGE, radius: 0.55, opacity: 0.95 }
+      }
+    );
+  }
+
+  function showWildTypeCloseup() {
+    viewer.setStyle({ model: 0 }, {
+      cartoon: { color: COLOR_CARTOON, opacity: 0.10, thickness: 0.20 }
+    });
+    viewer.setStyle(
+      { model: 0, chain: MUT_CHAIN, resi: MUT_RESI },
+      {
+        stick:  { color: COLOR_Q_TEAL, radius: 0.42, opacity: 1.0 },
+        sphere: { color: COLOR_Q_TEAL, radius: 0.32, opacity: 0.85 }
+      }
+    );
+  }
+
+  function showMutantCloseup() {
+    viewer.setStyle({ model: 1 }, {
+      cartoon: { color: COLOR_CARTOON, opacity: 0.10, thickness: 0.20 }
+    });
+    viewer.setStyle(
+      { model: 1, chain: MUT_CHAIN, resi: MUT_RESI },
+      {
+        stick:  { color: COLOR_P_ORANGE, radius: 0.42, opacity: 1.0 },
+        sphere: { color: COLOR_P_ORANGE, radius: 0.32, opacity: 0.85 }
+      }
+    );
+  }
+
+  function hideModel(idx) {
+    viewer.setStyle({ model: idx }, {});
+  }
+
+  function pulseQ247() {
+    viewer.setStyle(
+      { model: 0, chain: MUT_CHAIN, resi: MUT_RESI },
+      {
+        cartoon: { color: COLOR_Q_TEAL, opacity: 1.0, thickness: 0.45 },
+        stick:   { color: COLOR_Q_TEAL, radius: 0.26, opacity: 1.0 },
+        sphere:  { color: COLOR_Q_TEAL, radius: 0.78, opacity: 1.0 }
       }
     );
     viewer.render();
-    setTimeout(() => {
+    timers.push(setTimeout(() => {
       viewer.setStyle(
-        { chain: MUT_CHAIN, resi: MUT_RESI },
+        { model: 0, chain: MUT_CHAIN, resi: MUT_RESI },
         {
-          sphere: { color: COLOR_SPHERE, radius: 0.65, opacity: 0.95 },
-          stick:  { color: COLOR_STICK,  radius: 0.18, opacity: 1.0  }
+          cartoon: { color: COLOR_Q_TEAL, opacity: 1.0, thickness: 0.40 },
+          stick:   { color: COLOR_Q_TEAL, radius: 0.22, opacity: 1.0 },
+          sphere:  { color: COLOR_Q_TEAL, radius: 0.55, opacity: 0.95 }
         }
       );
       viewer.render();
-    }, 700);
+    }, 700));
   }
 
+  // ── Wobble (Phase 3) ──
+  function startWobble() {
+    if (wobbling) return;
+    wobbling = true;
+    wobbleStart = performance.now();
+    wobbleLastAngle = 0;
+    function step(now) {
+      if (!wobbling) return;
+      const t = (now - wobbleStart) / 1000;
+      const targetAngle = Math.sin(t * 1.3) * 1.8;
+      const delta = targetAngle - wobbleLastAngle;
+      viewer.rotate(delta, 'y');
+      wobbleLastAngle = targetAngle;
+      viewer.render();
+      wobbleAnimId = requestAnimationFrame(step);
+    }
+    wobbleAnimId = requestAnimationFrame(step);
+  }
+
+  function stopWobble() {
+    wobbling = false;
+    if (wobbleAnimId) {
+      cancelAnimationFrame(wobbleAnimId);
+      wobbleAnimId = null;
+    }
+    if (wobbleLastAngle !== 0) {
+      viewer.rotate(-wobbleLastAngle, 'y');
+      wobbleLastAngle = 0;
+      viewer.render();
+    }
+  }
+
+  // ── Crossfade Q → P (Phase 4) ──
+  function crossfadeToMutant() {
+    stopWobble();
+
+    viewer.setStyle(
+      { model: 0, chain: MUT_CHAIN, resi: MUT_RESI },
+      {
+        stick:  { color: '#FFFFFF', radius: 0.55, opacity: 1.0 },
+        sphere: { color: '#FFFFFF', radius: 0.45, opacity: 1.0 }
+      }
+    );
+    viewer.render();
+
+    timers.push(setTimeout(() => {
+      hideModel(0);
+
+      viewer.setStyle({ model: 1 }, {
+        cartoon: { color: COLOR_CARTOON, opacity: 0.10, thickness: 0.20 }
+      });
+      viewer.setStyle(
+        { model: 1, chain: MUT_CHAIN, resi: MUT_RESI },
+        {
+          stick:  { color: COLOR_P_ORANGE, radius: 0.58, opacity: 1.0 },
+          sphere: { color: COLOR_P_ORANGE, radius: 0.45, opacity: 1.0 }
+        }
+      );
+      viewer.render();
+
+      timers.push(setTimeout(() => {
+        viewer.setStyle(
+          { model: 1, chain: MUT_CHAIN, resi: MUT_RESI },
+          {
+            stick:  { color: COLOR_P_ORANGE, radius: 0.42, opacity: 1.0 },
+            sphere: { color: COLOR_P_ORANGE, radius: 0.32, opacity: 0.85 }
+          }
+        );
+        viewer.render();
+      }, 350));
+    }, 250));
+  }
+
+  // ── Phase 5: Free exploration ──
+  function enterFreeExploration() {
+    showMutant();
+    viewer.zoomTo({ model: 1, chain: MUT_CHAIN, resi: MUT_RESI }, 1200);
+    viewer.zoom(0.6, 1200);
+
+    document.getElementById('toolbar').classList.add('visible');
+    document.getElementById('mut-label').classList.add('visible');
+  }
+
+  // ── Toolbar actions ──
   function clearTimers() {
     timers.forEach(t => clearTimeout(t));
     timers = [];
   }
 
   function stopSpin() {
-    if (spinning) { viewer.spin(false); spinning = false; }
+    if (spinning) {
+      viewer.spin(false);
+      spinning = false;
+    }
   }
 
   function panView(dx, dy) {
     stopSpin();
+    stopWobble();
     viewer.translate(dx, dy, 200);
   }
 
   function recenter() {
     stopSpin();
-    viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI }, 600);
+    stopWobble();
+    const visibleModel = modelsReady ? (viewer.getModel(1) ? 1 : 0) : 0;
+    viewer.zoomTo({ model: visibleModel, chain: MUT_CHAIN, resi: MUT_RESI }, 600);
     viewer.zoom(0.6, 600);
   }
 
+  // ── Main narrative ──
   function startNarrative() {
+    if (!modelsReady) return;
     clearTimers();
+    stopSpin();
+    stopWobble();
 
     document.getElementById('intro').classList.remove('hidden');
     document.getElementById('mut-label').classList.remove('visible');
     document.getElementById('toolbar').classList.remove('visible');
 
-    applyBaseStyle();
-    viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI });
+    showWildType();
+    hideModel(1);
+    viewer.zoomTo({ model: 0, chain: MUT_CHAIN, resi: MUT_RESI });
     viewer.zoom(0.6);
-    viewer.spin(false);
-    spinning = false;
     viewer.render();
 
+    // Phase 0 → 1 (t=2s): hide intro, slow rotation, discreet pulses
     timers.push(setTimeout(() => {
       document.getElementById('intro').classList.add('hidden');
       viewer.spin('y', 0.4);
       spinning = true;
+      timers.push(setTimeout(pulseQ247, 800));
+      timers.push(setTimeout(pulseQ247, 2200));
     }, 2000));
 
-    timers.push(setTimeout(() => {
-      pulseResidue();
-      document.getElementById('mut-label').classList.add('visible');
-    }, 4000));
-
+    // Phase 2 (t=5s): cartoon dims, gradual zoom
     timers.push(setTimeout(() => {
       stopSpin();
-      viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI }, 1000);
-    }, 6500));
+      viewer.setStyle({ model: 0 }, {
+        cartoon: { color: COLOR_CARTOON, opacity: 0.25, thickness: 0.28 }
+      });
+      viewer.setStyle(
+        { model: 0, chain: MUT_CHAIN, resi: MUT_RESI },
+        {
+          cartoon: { color: COLOR_Q_TEAL, opacity: 1.0, thickness: 0.40 },
+          stick:   { color: COLOR_Q_TEAL, radius: 0.22, opacity: 1.0 },
+          sphere:  { color: COLOR_Q_TEAL, radius: 0.55, opacity: 0.95 }
+        }
+      );
+      viewer.zoomTo({ model: 0, chain: MUT_CHAIN, resi: MUT_RESI }, 1500);
+      viewer.zoom(1.4, 1500);
+      viewer.render();
+    }, 5000));
 
+    // Phase 3 (t=7s): close-up, then wobble starts
     timers.push(setTimeout(() => {
-      document.getElementById('toolbar').classList.add('visible');
-    }, 8000));
+      showWildTypeCloseup();
+      viewer.zoom(1.5, 1000);
+      viewer.render();
+      timers.push(setTimeout(startWobble, 1100));
+    }, 7000));
+
+    // Phase 4 (t=10s): crossfade Q → P
+    timers.push(setTimeout(crossfadeToMutant, 10000));
+
+    // Phase 5 (t=11.5s): free exploration
+    timers.push(setTimeout(enterFreeExploration, 11500));
   }
 
-  fetch(PDB_PATH)
-    .then(r => { if (!r.ok) throw new Error('PDB not found'); return r.text(); })
-    .then(pdb => {
-      viewer.addModel(pdb, 'pdb');
-      applyBaseStyle();
-      viewer.zoomTo({ chain: MUT_CHAIN, resi: MUT_RESI });
+  // ── Load both PDBs in parallel ──
+  Promise.all([
+    fetch(PDB_NORMAL).then(r => {
+      if (!r.ok) throw new Error('Normal.pdb not found at ' + PDB_NORMAL);
+      return r.text();
+    }),
+    fetch(PDB_MUTANT).then(r => {
+      if (!r.ok) throw new Error('Q247P.pdb not found at ' + PDB_MUTANT);
+      return r.text();
+    })
+  ])
+    .then(([normalPdb, mutantPdb]) => {
+      viewer.addModel(normalPdb, 'pdb');   // model 0 = wild-type
+      viewer.addModel(mutantPdb, 'pdb');   // model 1 = mutant
+      modelsReady = true;
+
+      showWildType();
+      hideModel(1);
+      viewer.zoomTo({ model: 0, chain: MUT_CHAIN, resi: MUT_RESI });
       viewer.zoom(0.6);
       viewer.render();
+
       document.getElementById('loader').classList.add('hidden');
       startNarrative();
     })
     .catch(err => {
       console.error('PDB load failed:', err);
       document.getElementById('loader').innerHTML =
-        '<div style="color:#D9785A;font-size:0.7rem;letter-spacing:0.1em">STRUCTURE UNAVAILABLE</div>';
+        '<div style="color:#FF6B1A;font-size:0.7rem;letter-spacing:0.1em">STRUCTURE UNAVAILABLE</div>';
     });
 
+  // ── Event listeners ──
   document.getElementById('btn-replay').addEventListener('click', startNarrative);
   document.getElementById('btn-recenter').addEventListener('click', recenter);
 
@@ -552,8 +719,8 @@
   document.getElementById('pan-left').addEventListener('click',  () => panView( PAN_STEP, 0));
   document.getElementById('pan-right').addEventListener('click', () => panView(-PAN_STEP, 0));
 
-  el.addEventListener('mousedown', stopSpin);
-  el.addEventListener('touchstart', stopSpin, { passive: true });
+  el.addEventListener('mousedown', () => { stopSpin(); stopWobble(); });
+  el.addEventListener('touchstart', () => { stopSpin(); stopWobble(); }, { passive: true });
 
 })();
 </script>
