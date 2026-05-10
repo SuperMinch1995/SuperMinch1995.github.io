@@ -132,17 +132,19 @@ body {
 }
 
 #story-sheet {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background: var(--cream);
   border-radius: 12px 12px 0 0;
-  box-shadow: 0 -2px 18px rgba(58, 46, 42, 0.13);
+  box-shadow: 0 -2px 24px rgba(58, 46, 42, 0.18);
   z-index: 1000;
   transform: translateY(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  max-height: 80%;
+  max-width: 900px;
+  max-height: 70vh;
+  margin: 0 auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -199,12 +201,10 @@ body {
 .sheet-story p { margin: 0 0 0.85em; }
 .sheet-story p:last-child { margin-bottom: 0; }
 
-/* V1 — Drop mark quote style: opening mark absolute (top-left),
-   closing mark inline (follows end of phrase) */
+/* V1 — Inline opening + closing marks that follow the text rhythm */
 .sheet-story blockquote {
-  position: relative;
   margin: 1.1em 4px 0 4px;
-  padding: 4px 4px 4px 28px;
+  padding: 4px;
   font-family: Georgia, 'Times New Roman', serif;
   font-style: italic;
   font-size: 14.5px;
@@ -212,18 +212,7 @@ body {
   color: var(--dark);
   border: none;
 }
-.sheet-story blockquote::before {
-  content: '\201C';
-  position: absolute;
-  left: 0;
-  top: -2px;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 30px;
-  font-style: normal;
-  color: var(--accent);
-  line-height: 1;
-  font-weight: 400;
-}
+.sheet-story blockquote .open-mark,
 .sheet-story blockquote .close-mark {
   display: inline;
   font-family: Georgia, 'Times New Roman', serif;
@@ -232,13 +221,18 @@ body {
   color: var(--accent);
   line-height: 0;
   font-weight: 400;
-  margin-left: 3px;
   position: relative;
   top: 6px;
 }
+.sheet-story blockquote .open-mark {
+  margin-right: 3px;
+}
+.sheet-story blockquote .close-mark {
+  margin-left: 3px;
+}
 
 #sheet-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 999;
   display: none;
@@ -249,17 +243,13 @@ body {
   #map { height: 420px; }
   .map-title { font-size: 15px; }
   .map-citation { font-size: 12px; }
-  #story-sheet { max-height: 60%; }
   .sheet-inner { padding: 10px 16px 26px; }
   .sheet-story { font-size: 13px; }
   .sheet-story blockquote {
     font-size: 13.5px;
-    padding-left: 24px;
-    padding-right: 4px;
+    padding: 4px;
   }
-  .sheet-story blockquote::before {
-    font-size: 26px;
-  }
+  .sheet-story blockquote .open-mark,
   .sheet-story blockquote .close-mark {
     font-size: 26px;
     top: 5px;
@@ -444,70 +434,70 @@ const STORIES = [
     location: "Île-de-France · Metropolitan France",
     story: `<p>Born in the Paris region.</p>
             <p>Years of unexplained crises before any diagnosis. Magnetisers, healers, teas, herbs, cannabis, homeopathy. All tried, none worked.</p>
-            <blockquote>I tried everything. Nothing worked. But you keep trying, what else are you supposed to do?<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>I tried everything. Nothing worked. But you keep trying, what else are you supposed to do?<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: -21.13, lng: 55.52,
     location: "Réunion Island · Indian Ocean",
     story: `<p>Born in Réunion Island.</p>
             <p>Onset was abrupt and pan-digestive. From the first hospitalisation, dependence on parenteral nutrition was immediate.</p>
-            <blockquote>From one week to the next, I couldn't eat. I just want one more chance to eat, to taste food again.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>From one week to the next, I couldn't eat. I just want one more chance to eat, to taste food again.<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: -12.82, lng: 45.15,
     location: "Mayotte · Indian Ocean",
     story: `<p>Born in Mayotte.</p>
             <p>First diagnosed with Crohn's disease in childhood. The correct diagnosis came years later, after repeated obstructive episodes that no anti-inflammatory treatment could prevent.</p>
-            <blockquote>For years they told me it was Crohn's disease. I was on treatments that did nothing. The day someone finally said the right name, it was a relief.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>For years they told me it was Crohn's disease. I was on treatments that did nothing. The day someone finally said the right name, it was a relief.<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: 28.00, lng: 2.99,
     location: "Algeria · North Africa",
     story: `<p>Born in Algeria.</p>
             <p>Reflux at age three. Growth failure at eight. Severe weight loss and recurrent vomiting by puberty. Twelve years from the first symptom to the correct diagnosis.</p>
-            <blockquote>I spent my whole childhood in hospitals. So many doctors. Nobody knew what I had.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>I spent my whole childhood in hospitals. So many doctors. Nobody knew what I had.<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: -17.05, lng: -64.99,
     location: "Bolivia · South America",
     story: `<p>Born in Bolivia.</p>
             <p>Necrotising enterocolitis at birth. Twenty years of relative quiet. Then the bowel obstructed again, this time without an obvious cause.</p>
-            <blockquote>I was a sick newborn, then I was fine. For twenty years, I was just like everyone else. Then one day my belly stopped working again. I had forgotten this could happen to me.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>I was a sick newborn, then I was fine. For twenty years, I was just like everyone else. Then one day my belly stopped working again. I had forgotten this could happen to me.<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: 12.54, lng: 104.81,
     location: "Cambodia · Southeast Asia",
     story: `<p>Born in Cambodia.</p>
             <p>Symptoms began in high school: abdominal pain every Thursday morning, slow digestion, persistent drowsiness. Years passed before the right diagnosis was made.</p>
-            <blockquote>They told me it was stress.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>They told me it was stress.<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: 4.61, lng: 13.15,
     location: "Cameroon · Central Africa",
     story: `<p>Born in Cameroon.</p>
             <p>Roughly one emergency-room visit per year for as long as memory served. Sharp abdominal pain, severe distension, no cause found. Years before a name was finally put on it.</p>
-            <blockquote>Once a year, every year, the pain would come, the swelling, the ambulance. They'd run tests. They'd find nothing. They'd send me home. And I'd wait for the next one.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>Once a year, every year, the pain would come, the swelling, the ambulance. They'd run tests. They'd find nothing. They'd send me home. And I'd wait for the next one.<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: -22.26, lng: 166.45,
     location: "New Caledonia · Pacific Ocean",
     story: `<p>Born in New Caledonia.</p>
             <p>The first signs appeared during a first pregnancy. The second made everything worse. Diagnosis came after the obstruction that followed.</p>
-            <blockquote>My body gave me my children, it took my gut in return.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>My body gave me my children, it took my gut in return.<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: 33.87, lng: 35.84,
     location: "Lebanon · Middle East",
     story: `<p>Born in Lebanon.</p>
             <p>First told it was irritable bowel syndrome. The obstructions came later. More frequent each time, with distension, hot flushes, vagal episodes.</p>
-            <blockquote>The pain is so intense and relentless now that the only times I haven't been in pain are when I'm in a woman's arms.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>The pain is so intense and relentless now that the only times I haven't been in pain are when I'm in a woman's arms.<span class="close-mark">”</span></blockquote>`
   },
   {
     lat: 14.63, lng: -61.01,
     location: "Martinique · Caribbean",
     story: `<p>Born in Martinique.</p>
             <p>Abdominal distension and vomiting appeared within the first weeks of life. Home parenteral nutrition was initiated at six months of age.</p>
-            <blockquote>I have no memory of eating. Other children learned to chew. I learned to live with a tube.<span class="close-mark">”</span></blockquote>`
+            <blockquote><span class="open-mark">“</span>I have no memory of eating. Other children learned to chew. I learned to live with a tube.<span class="close-mark">”</span></blockquote>`
   }
 ];
 
