@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CIPO Patient Map</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -63,6 +64,11 @@ body {
   background: #e8e3db;
 }
 
+/* Restore the original gray-beige look on the tiles */
+.leaflet-tile-pane {
+  filter: saturate(0.07) brightness(1.07) sepia(0.10);
+}
+
 .map-note {
   font-size: 10px;
   color: rgba(58, 46, 42, 0.45);
@@ -71,7 +77,10 @@ body {
   padding: 11px 18px 14px;
   background: transparent;
   letter-spacing: 0.015em;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+.map-note span {
+  display: block;
 }
 
 .leaflet-container {
@@ -153,7 +162,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   gap: 8px;
 }
 
@@ -187,14 +196,40 @@ body {
   color: var(--dark);
   font-weight: 400;
 }
-.sheet-story p { margin: 0 0 0.75em; }
+.sheet-story p { margin: 0 0 0.85em; }
 .sheet-story p:last-child { margin-bottom: 0; }
+
+/* V1 — Drop mark quote style with both opening and closing marks */
 .sheet-story blockquote {
-  margin: 0.5em 0 0;
-  padding: 0 0 0 14px;
+  position: relative;
+  margin: 1.1em 4px 0 4px;
+  padding: 4px 26px 4px 28px;
+  font-family: Georgia, 'Times New Roman', serif;
   font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.65;
   color: var(--dark);
-  border-left: 2px solid var(--accent);
+  border: none;
+}
+.sheet-story blockquote::before,
+.sheet-story blockquote::after {
+  position: absolute;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 30px;
+  font-style: normal;
+  color: var(--accent);
+  line-height: 1;
+  font-weight: 400;
+}
+.sheet-story blockquote::before {
+  content: '\201C';
+  left: 0;
+  top: -2px;
+}
+.sheet-story blockquote::after {
+  content: '\201D';
+  right: 0;
+  bottom: -14px;
 }
 
 #sheet-overlay {
@@ -211,6 +246,15 @@ body {
   .map-citation { font-size: 12px; }
   .sheet-inner { padding: 10px 16px 26px; }
   .sheet-story { font-size: 13px; }
+  .sheet-story blockquote {
+    font-size: 13.5px;
+    padding-left: 24px;
+    padding-right: 22px;
+  }
+  .sheet-story blockquote::before,
+  .sheet-story blockquote::after {
+    font-size: 26px;
+  }
 }
 </style>
 </head>
@@ -227,7 +271,8 @@ body {
   <div id="map"></div>
 
   <div class="map-note">
-    Composite vignettes drawn from clinical interviews. Identifying details have been removed.
+    <span>Composite vignettes drawn from clinical interviews.</span>
+    <span>Identifying details have been removed.</span>
   </div>
 
   <div id="sheet-overlay"></div>
@@ -383,10 +428,6 @@ const PATIENTS = [
 
 /*
   STORIES — 10 representative patients
-  Grammar:
-    Born in [place].
-    [Diagnosis context — age or decade of life, symptom duration].
-    [First-person quote — anecdote about living with the disease].
 */
 const STORIES = [
   {
@@ -394,70 +435,70 @@ const STORIES = [
     location: "Île-de-France · Metropolitan France",
     story: `<p>Born in the Paris region.</p>
             <p>Years of unexplained crises before any diagnosis. Magnetisers, healers, teas, herbs, homeopathy, even cannabis — all tried, none worked.</p>
-            <blockquote>"I tried everything. Nothing worked. But you keep trying, what else are you supposed to do?"</blockquote>`
+            <blockquote>I tried everything. Nothing worked. But you keep trying, what else are you supposed to do?</blockquote>`
   },
   {
     lat: -21.13, lng: 55.52,
     location: "Réunion Island · Indian Ocean",
     story: `<p>Born in Réunion Island.</p>
             <p>Onset was abrupt and pan-digestive. From the first hospitalisation, dependence on parenteral nutrition was immediate.</p>
-            <blockquote>"From one week to the next, I couldn't eat. The bag arrived, and it never left. I just want one more chance to eat, to taste food again."</blockquote>`
+            <blockquote>From one week to the next, I couldn't eat. The bag arrived, and it never left. I just want one more chance to eat, to taste food again.</blockquote>`
   },
   {
     lat: -12.82, lng: 45.15,
     location: "Mayotte · Indian Ocean",
     story: `<p>Born in Mayotte.</p>
             <p>First diagnosed with Crohn's disease in childhood. The correct diagnosis came years later, after repeated obstructive episodes that no anti-inflammatory treatment could prevent.</p>
-            <blockquote>"For years they told me it was Crohn's disease. I was on treatments that did nothing. The day someone finally said the right name, it was a relief."</blockquote>`
+            <blockquote>For years they told me it was Crohn's disease. I was on treatments that did nothing. The day someone finally said the right name, it was a relief.</blockquote>`
   },
   {
     lat: 28.00, lng: 2.99,
     location: "Algeria · North Africa",
     story: `<p>Born in Algeria.</p>
             <p>Reflux at age three. Growth failure at eight. Severe weight loss and recurrent vomiting by puberty. Twelve years from the first symptom to the correct diagnosis.</p>
-            <blockquote>"I spent my whole childhood in hospitals. So many doctors. Nobody knew what I had."</blockquote>`
+            <blockquote>I spent my whole childhood in hospitals. So many doctors. Nobody knew what I had.</blockquote>`
   },
   {
     lat: -17.05, lng: -64.99,
     location: "Bolivia · South America",
     story: `<p>Born in Bolivia.</p>
             <p>Necrotising enterocolitis at birth. Twenty years of relative quiet. Then the bowel obstructed again, this time without an obvious cause.</p>
-            <blockquote>"I was a sick newborn, then I was fine. For twenty years, I was just like everyone else. Then one day my belly stopped working again. I had forgotten this could happen to me."</blockquote>`
+            <blockquote>I was a sick newborn, then I was fine. For twenty years, I was just like everyone else. Then one day my belly stopped working again. I had forgotten this could happen to me.</blockquote>`
   },
   {
     lat: 12.54, lng: 104.81,
     location: "Cambodia · Southeast Asia",
     story: `<p>Born in Cambodia.</p>
             <p>Symptoms began in high school: abdominal pain every Thursday morning, slow digestion, persistent drowsiness. Years passed before the right diagnosis was made.</p>
-            <blockquote>"They told me it was stress."</blockquote>`
+            <blockquote>They told me it was stress.</blockquote>`
   },
   {
     lat: 4.61, lng: 13.15,
     location: "Cameroon · Central Africa",
     story: `<p>Born in Cameroon.</p>
             <p>Roughly one emergency-room visit per year for as long as memory served — sharp abdominal pain, severe distension, no cause found. Years before a name was finally put on it.</p>
-            <blockquote>"Once a year, every year — the pain would come, the swelling, the ambulance. They'd run tests. They'd find nothing. They'd send me home. And I'd wait for the next one."</blockquote>`
+            <blockquote>Once a year, every year — the pain would come, the swelling, the ambulance. They'd run tests. They'd find nothing. They'd send me home. And I'd wait for the next one.</blockquote>`
   },
   {
     lat: -22.26, lng: 166.45,
     location: "New Caledonia · Pacific Ocean",
     story: `<p>Born in New Caledonia.</p>
             <p>The first signs appeared during a first pregnancy. The second made everything worse. Diagnosis came after the obstruction that followed.</p>
-            <blockquote>"My body gave me my children, it took my gut in return."</blockquote>`
+            <blockquote>My body gave me my children, it took my gut in return.</blockquote>`
   },
   {
     lat: 33.87, lng: 35.84,
     location: "Lebanon · Middle East",
     story: `<p>Born in Lebanon.</p>
             <p>First told it was irritable bowel syndrome. The obstructions came later — more frequent each time, with distension, hot flushes, vagal episodes.</p>
-            <blockquote>"The only times I haven't been in pain are when I'm in a woman's arms."</blockquote>`
+            <blockquote>The only times I haven't been in pain are when I'm in a woman's arms.</blockquote>`
   },
   {
     lat: 14.63, lng: -61.01,
     location: "Martinique · Caribbean",
     story: `<p>Born in Martinique.</p>
             <p>Abdominal distension, and vomiting from the first weeks of life. Home parenteral nutrition began at six months of life.</p>
-            <blockquote>"I have no memory of eating. The bag has been with me since before I could walk. Other children learned to chew. I learned to live with a tube."</blockquote>`
+            <blockquote>I have no memory of eating. The bag has been with me since before I could walk. Other children learned to chew. I learned to live with a tube.</blockquote>`
   }
 ];
 
@@ -468,8 +509,10 @@ const map = L.map('map', {
   attributionControl: false
 });
 
+/* CartoDB Positron WITHOUT labels — pure geography, no language issues at all.
+   The CSS filter on .leaflet-tile-pane desaturates everything to gray-beige. */
 L.tileLayer(
-  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+  'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
   { maxZoom: 19, subdomains: 'abcd' }
 ).addTo(map);
 
