@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "This is an interactive scientific journey built from my research project"
+title: "This is an interactive narrative built from my research project"
 description: ""
 date: 2024-01-01
 weight: 1
@@ -345,11 +345,11 @@ To understand why Q247P matters, we need to zoom in further.</p>
          class="brain-gut-img">
   </div>
 
-<p class="act-bridge">But where?</p>
+<p class="act-bridge">But where was the defect?</p>
 
 <p class="act-bridge">We turned to the genome.</p>
 
-<p class="act-bridge">We genotyped hundreds of unsolved cases.</p>
+<p class="act-bridge">Unsolved cases were analyzed.</p>
 <br>
 
 <div class="sunburst-section">
@@ -379,9 +379,15 @@ To understand why Q247P matters, we need to zoom in further.</p>
 
 <!-- ── ACT 5 — PATIENTS ───────────────────────────── -->
 
+<p class="act-bridge"><i>ACTG2</i> is the gene behind γ-2 actin.</p>
+
+<p class="act-bridge"><i>ACTG2</i> was not the only suspect.</p>
+
+<p class="act-bridge">It was not just about genes and proteins.</p>
+
 <p class="act-bridge">Behind every mutation is a person waiting.</p>
 
-<p class="act-bridge act-bridge--closing">Discover our patients' stories.</p>
+<p class="act-bridge act-bridge--closing">Discover patients' stories.</p>
 
 <div class="cipo-stats-row">
   <div class="cipo-stat">

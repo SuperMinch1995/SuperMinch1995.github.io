@@ -612,13 +612,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','DM Sans',sans-seri
         <span class="acc-q">What is the structural consequence for γ-2 actin?</span>
         <span class="acc-arr">▾</span>
       </div>
-      <div class="acc-body">Q247 sits in the <strong>subdomain 3 loop</strong> of actin, mediating inter-subunit contacts in the filament. Three direct structural consequences:<br><br><strong>1. Loss of H-bond.</strong> The backbone NH of Q247 stabilizes the loop. Proline's tertiary N cannot donate this bond, destabilizing the loop conformation.<br><br><strong>2. Backbone rigidification.</strong> The pyrrolidine ring locks φ ≈ −60°, reducing conformational freedom from 35% to 8% of Ramachandran space.<br><br><strong>3. Reduced surface exposure.</strong> Solvent Accessible Surface Area (SASA) drops 40% (−45.4 Å²), burying surface previously available for actin–actin contacts.</div>
+      <div class="acc-body"><strong>1. Loss of H-bond.</strong> The backbone NH of Q247 stabilizes the loop. Proline's tertiary N cannot donate this bond, destabilizing the loop conformation.<br><br><strong>2. Backbone rigidification.</strong> The pyrrolidine ring locks φ ≈ −60°, reducing conformational freedom from 35% to 8% of Ramachandran space.<br><br><strong>3. Reduced surface exposure.</strong> Solvent Accessible Surface Area drops 40% (−45.4 Å²), burying surface previously available for actin–actin contacts.</div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════
-     SECTION 5 — Actin polymerization
+     SECTION 4 — Actin polymerization
 ══════════════════════════════════════════════════════ -->
 <section class="story-section" id="sec-poly" data-section="poly" data-mode="wt">
   <div class="section-header">
@@ -657,12 +657,12 @@ const PARAMS={
   wt:[
     {nm:'Backbone NH donor',vl:'Present',pct:100,exp:'The backbone NH of Q247 donates a hydrogen bond to a nearby carbonyl oxygen, stabilizing the polyproline-II (PPII) loop and positioning subdomain 3 for actin–actin contacts during filament assembly.'},
     {nm:'Dihedral angles · φ / ψ',vl:'φ −60.8° / ψ +144.0°',pct:50,exp:'These angles place Q247 in a polyproline-II (PPII) loop — a left-handed helical conformation common at actin surface loops, intrinsically dynamic and accessible to protein–protein interactions.'},
-    {nm:'SASA',vl:'113.8 Å²',pct:100,exp:'Solvent Accessible Surface Area (SASA) measures the surface area in contact with solvent (water). A high value means the residue is exposed and available for molecular interactions.'},
+    {nm:'Solvent Accessible Surface Area',vl:'113.8 Å²',pct:100,exp:'Solvent Accessible Surface Area (SASA) measures the surface area in contact with solvent (water). A high value means the residue is exposed and available for molecular interactions.'},
   ],
   mut:[
     {nm:'Backbone NH donor',vl:'Absent',pct:0,exp:'Proline is the only amino acid with a tertiary nitrogen — its pyrrolidine ring bonds back to backbone N, leaving no NH group. The H-bond stabilizing the loop is abolished, directly disrupting the actin–actin interface.'},
     {nm:'Dihedral angles · φ / ψ',vl:'φ −60.7° / ψ +145.7°',pct:50,exp:'φ is nearly identical to wild-type (Δφ = 0.07°), but the pyrrolidine ring mechanically locks this angle. The polyproline-II (PPII) loop can no longer explore other conformations, impairing the adaptability required for filament assembly.'},
-    {nm:'SASA',vl:'68.4 Å² (Δ −45.4 Å²)',pct:60,exp:'Solvent Accessible Surface Area (SASA): the mutant proline is 40% less solvent-exposed than wild-type Gln. The pyrrolidine ring buries surface previously available for molecular contacts.'},
+    {nm:'Solvent Accessible Surface Area',vl:'68.4 Å² (Δ −45.4 Å²)',pct:60,exp:'Solvent Accessible Surface Area (SASA): the mutant proline is 40% less solvent-exposed than wild-type Gln. The pyrrolidine ring buries surface previously available for molecular contacts.'},
   ]
 };
 

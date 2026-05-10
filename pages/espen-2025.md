@@ -84,7 +84,7 @@ permalink: /conferences/espen-2025/
   <!-- HERO -->
   <section>
     <h1 class="hero-title">
-      Presenting at one of the world-leading conference in clinical nutrition
+      Presenting at one of the world-leading conferences in clinical nutrition
     </h1>
 
     <p class="hero-sub">
