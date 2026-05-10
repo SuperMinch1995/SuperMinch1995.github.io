@@ -337,7 +337,7 @@ To understand why Q247P matters, we need to zoom in further.</p>
 
 <p class="act-bridge">CIPO is a disorder where the bowels fail to move food despite no physical blockage.</p>
 
-<p class="act-bridge">Dysfunction may emerge from any point along the brain–gut axis.</p>
+<p class="act-bridge">Dysfunction may emerge from any point along the brain–gut axis.</p><br>
 
   <div class="brain-gut-img-wrap">
     <img src="/assets/images/brain-gut.png"
@@ -345,11 +345,7 @@ To understand why Q247P matters, we need to zoom in further.</p>
          class="brain-gut-img">
   </div>
 
-<p class="act-bridge">Where is the system failing?</p>
-
-<p class="act-bridge">We turned to genomic analysis.</p>
-
-<p class="act-bridge">100+ unsolved cases were analyzed.</p>
+<p class="act-bridge">100+ unsolved cases were deeply analyzed.</p>
 <br>
 
 <div class="sunburst-section">
@@ -379,7 +375,7 @@ To understand why Q247P matters, we need to zoom in further.</p>
 
 <!-- ── ACT 5 — PATIENTS ───────────────────────────── -->
 
-<p class="act-bridge">But it was not just about genes and proteins.</p>
+<p class="act-bridge">The study was not just about genes and proteins.</p>
 
 <p class="act-bridge">Behind every mutation is a person waiting.</p>
 
