@@ -345,11 +345,11 @@ To understand why Q247P matters, we need to zoom in further.</p>
          class="brain-gut-img">
   </div>
 
-<p class="act-bridge">But where was the system failing?</p>
+<p class="act-bridge">Where is the system failing?</p>
 
 <p class="act-bridge">We turned to genomic analysis.</p>
 
-<p class="act-bridge">We genotyped 100+ unsolved cases.</p>
+<p class="act-bridge">100+ unsolved cases were analyzed.</p>
 <br>
 
 <div class="sunburst-section">
@@ -379,7 +379,7 @@ To understand why Q247P matters, we need to zoom in further.</p>
 
 <!-- ── ACT 5 — PATIENTS ───────────────────────────── -->
 
-<p class="act-bridge">The research was not just about genes and proteins.</p>
+<p class="act-bridge">But it was not just about genes and proteins.</p>
 
 <p class="act-bridge">Behind every mutation is a person waiting.</p>
 
