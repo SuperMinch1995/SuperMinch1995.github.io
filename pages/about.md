@@ -393,7 +393,6 @@ permalink: "/about/"
 
 
 <br>
-<p>Having lived and worked across diverse international environments, I see adaptability and intellectual flexibility as essential to innovation.</p>
 
 <p>I currently live in San Diego with my husband and family.</p>
 
