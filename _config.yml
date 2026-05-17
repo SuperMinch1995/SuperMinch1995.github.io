@@ -51,6 +51,10 @@ defaults:
       path: "pages"
     values:
       permalink: /:basename/
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
 
 # SCSS
 sass:
