@@ -107,8 +107,10 @@ logo:
   show_logo_text_on_mobile: false
   show_logo_text_on_desktop: false
 
-header: 
+header:
   fixed: false
+  header_height: "60px"
+  header_menu_font_size: "16px"
 
 open_graph:
   meta_opengraph_type: "website"
