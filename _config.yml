@@ -2,7 +2,7 @@
 # Jekyll Config
 # --------------------
 baseurl: ""
-url: "https://minhchau-ta.github.io"
+url: "https://www.minh-thom.com"
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
@@ -129,7 +129,7 @@ cookie_banner:
   show_manage_cookies_at_bottom: true
 
 analytics:
-  disable_analytics_on_localhost: false
+  disable_analytics_on_localhost: true
   google_analytics_id: "G-6K472YEHYE"
   gtm_id: ""
   plausible_data_domain: ""
