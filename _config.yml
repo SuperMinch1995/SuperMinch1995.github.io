@@ -128,7 +128,7 @@ cookie_banner:
 
 analytics:
   disable_analytics_on_localhost: false
-  google_analytics_id: ""
+  google_analytics_id: "G-6K472YEHYE"
   gtm_id: ""
   plausible_data_domain: ""
   umami_data_website_id: ""
