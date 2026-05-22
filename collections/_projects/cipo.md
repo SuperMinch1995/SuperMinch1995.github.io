@@ -340,7 +340,7 @@ To understand why Q247P matters, we need to zoom in further.</p>
 <p class="act-bridge">Dysfunction may emerge from any point along the brain–gut axis.</p><br>
 
   <div class="brain-gut-img-wrap">
-    <img src="/assets/images/brain-gut.png"
+    <img src="/assets/images/brain-gut.webp"
          alt="Brain-gut axis — bidirectional communication diagram"
          class="brain-gut-img">
   </div>
