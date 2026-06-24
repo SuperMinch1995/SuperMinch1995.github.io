@@ -1,0 +1,380 @@
+{
+  "_meta": {
+    "source": "MedlinePlus Genetics + NCBI Gene (U.S. National Library of Medicine)",
+    "api": "https://medlineplus.gov/about/developers/geneticsdatafilesapi/",
+    "generated": "2026-06-23"
+  },
+  "CFTR": {
+    "found": true,
+    "symbol": "CF transmembrane conductance regulator",
+    "full_name": "",
+    "function_html": "<p>The CFTR gene provides instructions for making a protein called the CF transmembrane conductance regulator (CFTR). This protein functions as a channel across the membrane of cells that produce mucus, sweat, saliva, tears, and digestive enzymes. The channel transports negatively charged particles called chloride ions into and out of cells. The transport of chloride ions helps control the movement of water in tissues, which is necessary for the production of thin, freely flowing mucus. Mucus is a slippery substance that lubricates and protects the lining of the airways, digestive system, reproductive system, and other organs and tissues.</p><p>The CFTR protein also regulates the function of other channels, such as those that transport positively charged particles called sodium ions across cell membranes. These channels are necessary for the normal function of organs such as the lungs and pancreas.</p>",
+    "conditions": [
+      {
+        "name": "Cystic fibrosis",
+        "html": "",
+        "url": "https://medlineplus.gov/genetics/condition/cystic-fibrosis"
+      },
+      {
+        "name": "Congenital bilateral absence of the vas deferens",
+        "html": "",
+        "url": "https://medlineplus.gov/genetics/condition/congenital-bilateral-absence-of-the-vas-deferens"
+      },
+      {
+        "name": "Hereditary pancreatitis",
+        "html": "",
+        "url": "https://medlineplus.gov/genetics/condition/hereditary-pancreatitis"
+      }
+    ],
+    "synonyms": [
+      "ABC35",
+      "ABCC7",
+      "cAMP-dependent chloride channel",
+      "CF",
+      "CFTR_HUMAN",
+      "cystic fibrosis transmembrane conductance regulator (ATP-binding cassette sub-family C, member 7)",
+      "cystic fibrosis transmembrane conductance regulator, ATP-binding cassette (sub-family C, member 7)",
+      "MRP7"
+    ],
+    "url": "https://medlineplus.gov/genetics/gene/cftr",
+    "reviewed": "2008-01",
+    "source": "medlineplus",
+    "source_name": "MedlinePlus Genetics"
+  },
+  "CPA2": {
+    "found": true,
+    "symbol": "CPA2",
+    "full_name": "carboxypeptidase A2",
+    "function_html": "<p>Three different forms of human pancreatic procarboxypeptidase A have been isolated. The encoded protein represents the A2 form, which is a monomeric protein with different biochemical properties from the A1 and A3 forms. The A2 form of pancreatic procarboxypeptidase acts on aromatic C-terminal residues and is a secreted protein. [provided by RefSeq, Dec 2008]</p>",
+    "conditions": [],
+    "synonyms": [],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/1358",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=CPA2%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/600688"
+  },
+  "ADGRG4": {
+    "found": true,
+    "symbol": "ADGRG4",
+    "full_name": "adhesion G protein-coupled receptor G4",
+    "function_html": "<p>This gene encodes a G-protein coupled receptor belonging to a large family of diverse integral membrane proteins that participate in various physiological functions. Members of this superfamily are characterized by a signature 7-transmembrane domain motif. The ligand for this family member is unknown, and it is therefore an orphan receptor. This receptor is known to be expressed in normal enterochromaffin cells and in gastrointestinal neuroendocrine carcinoma cells, and it is therefore considered to be a novel biomarker or target for immunotherapy. [provided by RefSeq, May 2010]</p>",
+    "conditions": [],
+    "synonyms": [
+      "GPR112",
+      "PGR17",
+      "RP1-299I16"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/139378",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=ADGRG4%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/301085"
+  },
+  "ALDOB": {
+    "found": true,
+    "symbol": "aldolase, fructose-bisphosphate B",
+    "full_name": "",
+    "function_html": "<p>The <i>ALDOB</i> gene provides instructions for making the aldolase B enzyme. This enzyme is one of a group of three aldolase enzymes that are responsible for breaking down certain molecules in cells throughout the body. Four identical aldolase B enzymes need to be attached (bound) to each other in a four-enzyme unit called a tetramer to work.</p><p>Aldolase B is found primarily in the liver, but it is also present at lower levels in kidney and intestinal cells. Aldolase B is involved in the breakdown (metabolism) of the simple sugar fructose, which is found mostly in fruits and is used in the body for energy. Aldolase B is responsible for the second step in the metabolism of fructose, which breaks down the molecule fructose-1-phosphate into glyceraldehyde and dihydroxyacetone phosphate. To a lesser degree, aldolase B is also involved in the breakdown of the simple sugar glucose.</p>",
+    "conditions": [
+      {
+        "name": "Hereditary fructose intolerance",
+        "html": "",
+        "url": "https://medlineplus.gov/genetics/condition/hereditary-fructose-intolerance"
+      }
+    ],
+    "synonyms": [
+      "ALDB",
+      "ALDO2",
+      "ALDOB_HUMAN",
+      "aldolase 2",
+      "aldolase B, fructose-bisphosphatase",
+      "aldolase B, fructose-bisphosphate",
+      "fructose-bisphosphate aldolase B",
+      "liver-type aldolase"
+    ],
+    "url": "https://medlineplus.gov/genetics/gene/aldob",
+    "reviewed": "2011-06",
+    "source": "medlineplus",
+    "source_name": "MedlinePlus Genetics"
+  },
+  "KRT73": {
+    "found": true,
+    "symbol": "KRT73",
+    "full_name": "keratin 73",
+    "function_html": "<p>Keratins are intermediate filament proteins responsible for the structural integrity of epithelial cells and are subdivided into epithelial keratins and hair keratins. This gene encodes a protein that is expressed in the inner root sheath of hair follicles. The type II keratins are clustered in a region of chromosome 12q13.[provided by RefSeq, Jun 2009]</p>",
+    "conditions": [],
+    "synonyms": [
+      "CK-73",
+      "IRT6IRS3",
+      "K6IRS3",
+      "K73",
+      "KRT6IRS3"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/319101",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=KRT73%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/608247"
+  },
+  "CLDN15": {
+    "found": true,
+    "symbol": "CLDN15",
+    "full_name": "claudin 15",
+    "function_html": "<p>This gene encodes a member of the claudin family. Claudins are integral membrane proteins and components of tight junction strands. Tight junction strands serve as a physical barrier to prevent solutes and water from passing freely through the paracellular space between epithelial or endothelial cell sheets, and also play critical roles in maintaining cell polarity and signal transductions. Alternatively spliced transcript variants encoding the same protein have been found for this gene. [provided by RefSeq, Jun 2010]</p>",
+    "conditions": [],
+    "synonyms": [],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/24146",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=CLDN15%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/615778"
+  },
+  "SI": {
+    "found": true,
+    "symbol": "sucrase-isomaltase",
+    "full_name": "",
+    "function_html": "<p>The SI gene provides instructions for producing the enzyme sucrase-isomaltase. This enzyme is made in the cells that line the small intestine, where it is involved in breaking down the sugars sucrose (a sugar found in fruits, and also known as table sugar) and maltose (the sugar found in grains). This enzyme is also important for digesting starches, which are first broken down into sucrose and maltose. Sucrose and maltose are called disaccharides because they are each made up of two simple sugar molecules. Disaccharides must be broken down into simple sugar molecules to be used by the body. </p><p>The sucrase-isomaltase enzyme is found on the surface of the intestinal epithelial cells, which are cells that line the walls of the intestine. These cells have fingerlike projections called microvilli that absorb nutrients from food as it passes through the intestine. Based on their appearance, groups of these microvilli are known collectively as the brush border. The role of the sucrase-isomaltase enzyme is to break down sucrose and maltose into simple sugars so that they can be absorbed by microvilli into intestinal epithelial cells.</p>",
+    "conditions": [
+      {
+        "name": "Congenital sucrase-isomaltase deficiency",
+        "html": "",
+        "url": "https://medlineplus.gov/genetics/condition/congenital-sucrase-isomaltase-deficiency"
+      }
+    ],
+    "synonyms": [
+      "MGC131621",
+      "MGC131622",
+      "sucrase-isomaltase (alpha-glucosidase)",
+      "SUIS_HUMAN"
+    ],
+    "url": "https://medlineplus.gov/genetics/gene/si",
+    "reviewed": "2023-02",
+    "source": "medlineplus",
+    "source_name": "MedlinePlus Genetics"
+  },
+  "CTSE": {
+    "found": true,
+    "symbol": "CTSE",
+    "full_name": "cathepsin E",
+    "function_html": "<p>This gene encodes a member of the A1 family of peptidases. Alternative splicing of this gene results in multiple transcript variants. At least one of these variants encodes a preproprotein that is proteolytically processed to generate the mature enzyme. This enzyme, an aspartic endopeptidase, may be involved in antigen processing and the maturation of secretory proteins. Elevated expression of this gene has been observed in neurodegeneration. [provided by RefSeq, Nov 2015]</p>",
+    "conditions": [],
+    "synonyms": [
+      "CATE"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/1510",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=CTSE%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/116890"
+  },
+  "SCT": {
+    "found": true,
+    "symbol": "SCT",
+    "full_name": "secretin",
+    "function_html": "<p>This gene encodes a member of the glucagon family of peptides. The encoded preproprotein is secreted by endocrine S cells in the proximal small intestinal mucosa as a prohormone, then proteolytically processed to generate the mature peptide hormone. The release of this active peptide hormone is stimulated by either fatty acids or acidic pH in the duodenum. This hormone stimulates the secretion of bile and bicarbonate in the duodenum, pancreatic and biliary ducts. [provided by RefSeq, Feb 2016]</p>",
+    "conditions": [],
+    "synonyms": [],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/6343",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=SCT%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/182099"
+  },
+  "PLA2G4A": {
+    "found": true,
+    "symbol": "PLA2G4A",
+    "full_name": "phospholipase A2 group IVA",
+    "function_html": "<p>This gene encodes a member of the cytosolic phospholipase A2 group IV family. The enzyme catalyzes the hydrolysis of membrane phospholipids to release arachidonic acid which is subsequently metabolized into eicosanoids. Eicosanoids, including prostaglandins and leukotrienes, are lipid-based cellular hormones that regulate hemodynamics, inflammatory responses, and other intracellular pathways. The hydrolysis reaction also produces lysophospholipids that are converted into platelet-activating factor. The enzyme is activated by increased intracellular Ca(2+) levels and phosphorylation, resulting in its translocation from the cytosol and nucleus to perinuclear membrane vesicles. Alternative splicing results in multiple transcript variants. [provided by RefSeq, Jul 2015]</p>",
+    "conditions": [],
+    "synonyms": [
+      "GURDP",
+      "PLA2G4",
+      "cPLA2",
+      "cPLA2-alpha"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/5321",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=PLA2G4A%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/600522"
+  },
+  "CA1": {
+    "found": true,
+    "symbol": "CA1",
+    "full_name": "carbonic anhydrase 1",
+    "function_html": "<p>Carbonic anhydrases (CAs) are a large family of zinc metalloenzymes that catalyze the reversible hydration of carbon dioxide. They participate in a variety of biological processes, including respiration, calcification, acid-base balance, bone resorption, and the formation of aqueous humor, cerebrospinal fluid, saliva and gastric acid. They show extensive diversity in tissue distribution and in their subcellular localization. This CA1 gene is closely linked to the CA2 and CA3 genes on chromosome 8. It encodes a cytosolic protein that is found at the highest level in erythrocytes. Allelic variants of this gene have been described in some populations. Alternative splicing and the use of alternative promoters results in multiple transcript variants. [provided by RefSeq, Nov 2016]</p>",
+    "conditions": [],
+    "synonyms": [
+      "CA-I",
+      "CAB",
+      "Car1",
+      "HEL-S-11"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/759",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=CA1%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/114800"
+  },
+  "CA4": {
+    "found": true,
+    "symbol": "CA4",
+    "full_name": "carbonic anhydrase 4",
+    "function_html": "<p>Carbonic anhydrases (CAs) are a large family of zinc metalloenzymes that catalyze the reversible hydration of carbon dioxide. They participate in a variety of biological processes, including respiration, calcification, acid-base balance, bone resorption, and the formation of aqueous humor, cerebrospinal fluid, saliva, and gastric acid. They show extensive diversity in tissue distribution and in their subcellular localization. This gene encodes a glycosylphosphatidyl-inositol-anchored membrane isozyme expressed on the luminal surfaces of pulmonary (and certain other) capillaries and proximal renal tubules. Its exact function is not known; however, it may have a role in inherited renal abnormalities of bicarbonate transport. [provided by RefSeq, Jul 2008]</p>",
+    "conditions": [],
+    "synonyms": [
+      "CAIV",
+      "Car4",
+      "RP17"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/762",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=CA4%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/114760"
+  },
+  "CA7": {
+    "found": true,
+    "symbol": "CA7",
+    "full_name": "carbonic anhydrase 7",
+    "function_html": "<p>Carbonic anhydrases are a large family of zinc metalloenzymes that catalyze the reversible hydration of carbon dioxide. They participate in a variety of biological processes, including respiration, calcification, acid-base balance, bone resorption, and the formation of aqueous humor, cerebrospinal fluid, saliva, and gastric acid. They show extensive diversity in tissue distribution and in their subcellular localization. The cytosolic protein encoded by this gene is predominantly expressed in the brain and contributes to bicarbonate driven GABAergic neuron excitation. Alternative splicing in the coding region results in multiple transcript variants encoding different isoforms. [provided by RefSeq, Aug 2018]</p>",
+    "conditions": [],
+    "synonyms": [
+      "CA-VII",
+      "CAVII"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/766",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=CA7%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/114770"
+  },
+  "AQP8": {
+    "found": true,
+    "symbol": "AQP8",
+    "full_name": "aquaporin 8",
+    "function_html": "<p>Aquaporin 8 (AQP8) is a water channel protein. Aquaporins are a family of small integral membrane proteins related to the major intrinsic protein (MIP or AQP0).  Aquaporin 8 mRNA is found in pancreas and colon but not other tissues. [provided by RefSeq, Jul 2008]</p>",
+    "conditions": [],
+    "synonyms": [
+      "AQP-8"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/343",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=AQP8%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/603750"
+  },
+  "GPX2": {
+    "found": true,
+    "symbol": "GPX2",
+    "full_name": "glutathione peroxidase 2",
+    "function_html": "<p>The protein encoded by this gene belongs to the glutathione peroxidase family, members of which catalyze the reduction of organic hydroperoxides and hydrogen peroxide (H2O2) by glutathione, and thereby protect cells against oxidative damage. Several isozymes of this gene family exist in vertebrates, which vary in cellular location and substrate specificity. This isozyme is predominantly expressed in the gastrointestinal tract (also in liver in human), is localized in the cytoplasm, and whose preferred substrate is hydrogen peroxide. Overexpression of this gene is associated with increased differentiation and proliferation in colorectal cancer. This isozyme is also a selenoprotein, containing the rare amino acid selenocysteine (Sec) at its active site. Sec is encoded by the UGA codon, which normally signals translation termination. The 3&#x27; UTRs of selenoprotein mRNAs contain a conserved stem-loop structure, designated the Sec insertion sequence (SECIS) element, that is necessary for the recognition of UGA as a Sec codon, rather than as a stop signal. Alternatively spliced transcript variants have been found for this gene. [provided by RefSeq, Jul 2016]</p>",
+    "conditions": [],
+    "synonyms": [
+      "GI-GPx",
+      "GPRP",
+      "GPRP-2",
+      "GPx-2",
+      "GPx-GI",
+      "GSHPX-GI",
+      "GSHPx-2"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/2877",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=GPX2%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/138319"
+  },
+  "TMEM26": {
+    "found": true,
+    "symbol": "TMEM26",
+    "full_name": "transmembrane protein 26",
+    "function_html": "<p>This gene encodes a protein containing multiple transmembrane helices. It is a selective surface protein marker of brite/beige adipocytes, which may coexist with classical brown adipocytes in brown adipose tissue. Alternative splicing of this gene results in multiple transcript variants. [provided by RefSeq, Dec 2015]</p>",
+    "conditions": [],
+    "synonyms": [],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/219623",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=TMEM26%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/617803"
+  },
+  "MT1G": {
+    "found": true,
+    "symbol": "MT1G",
+    "full_name": "metallothionein 1G",
+    "function_html": "<p>Enables zinc ion binding activity. Involved in several processes, including cellular response to cadmium ion; cellular response to copper ion; and cellular response to zinc ion. Located in cytoplasm and nucleus. [provided by Alliance of Genome Resources, Jul 2025]</p>",
+    "conditions": [],
+    "synonyms": [
+      "MT1",
+      "MT1K"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/4495",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=MT1G%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/156353"
+  },
+  "MT2A": {
+    "found": true,
+    "symbol": "MT2A",
+    "full_name": "metallothionein 2A",
+    "function_html": "<p>This gene is a member of the metallothionein family of genes. Proteins encoded by this gene family are low in molecular weight, are cysteine-rich, lack aromatic residues, and bind divalent heavy metal ions, altering the intracellular concentration of heavy metals in the cell. These proteins act as anti-oxidants, protect against hydroxyl free radicals, are important in homeostatic control of metal in the cell, and play a role in detoxification of heavy metals. The encoded protein interacts with the protein encoded by the homeobox containing 1 gene in some cell types, controlling intracellular zinc levels, affecting apoptotic and autophagy pathways. Some polymorphisms in this gene are associated with an increased risk of cancer. [provided by RefSeq, Sep 2017]</p>",
+    "conditions": [],
+    "synonyms": [
+      "MT-2",
+      "MT-II",
+      "MT2"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/4502",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=MT2A%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/156360"
+  },
+  "OTOP2": {
+    "found": true,
+    "symbol": "OTOP2",
+    "full_name": "otopetrin 2",
+    "function_html": "<p>Predicted to enable proton channel activity. Predicted to be involved in proton transmembrane transport. Predicted to be located in plasma membrane. Predicted to be active in membrane. [provided by Alliance of Genome Resources, Jul 2025]</p>",
+    "conditions": [],
+    "synonyms": [],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/92736",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=OTOP2%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/607827"
+  },
+  "HES4": {
+    "found": true,
+    "symbol": "HES4",
+    "full_name": "hes family bHLH transcription factor 4",
+    "function_html": "<p>Predicted to enable DNA-binding transcription factor activity, RNA polymerase II-specific and RNA polymerase II cis-regulatory region sequence-specific DNA binding activity. Predicted to be involved in cell differentiation; nervous system development; and regulation of transcription by RNA polymerase II. Predicted to be located in chromatin. Predicted to be active in nucleus. [provided by Alliance of Genome Resources, Jul 2025]</p>",
+    "conditions": [],
+    "synonyms": [
+      "bHLHb42"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/gene/57801",
+    "reviewed": "",
+    "source": "ncbi",
+    "source_name": "NCBI Gene",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/?term=HES4%5Btiab%5D%20AND%20%28disease%5Btiab%5D%20OR%20disorder%5Btiab%5D%20OR%20deficiency%5Btiab%5D%20OR%20mutation%5Btiab%5D%29",
+    "omim_url": "https://omim.org/entry/608060"
+  }
+}
