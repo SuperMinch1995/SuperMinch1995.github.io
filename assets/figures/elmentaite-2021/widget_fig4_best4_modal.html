@@ -1,5 +1,5 @@
 <!--
-  Figure 4 — BEST4 regional signature comparator
+  Figure 2 — BEST4 regional signature comparator
   Data     : assets/figures/elmentaite-2021/fig4_best4_marker_expression.json
   Gene info : assets/figures/elmentaite-2021/fig4_best4_gene_info.json  (built by build_gene_info.py)
 
@@ -13,10 +13,11 @@
 .g4-overlay.open{opacity:1;}
 .g4-modal{background:#fff;border:1px solid #e8e4d8;border-radius:10px;width:100%;max-width:560px;max-height:85vh;display:flex;flex-direction:column;overflow:hidden;color:#3a3028;box-shadow:0 14px 44px rgba(40,33,27,0.24);transform:translateY(10px) scale(.985);transition:transform .18s ease;}
 .g4-overlay.open .g4-modal{transform:none;}
-.g4-head{position:relative;flex:0 0 auto;padding:1.2rem 1.5rem 0.9rem;border-bottom:1px solid #f0ebe0;border-left:3px solid var(--g4-accent,#8a7f72);}
+.g4-head{position:relative;flex:0 0 auto;padding:1.2rem 1.5rem 0.9rem;border-bottom:1px solid #f0ebe0;}
 .g4-symbol{font-size:1.2rem;font-weight:500;line-height:1.2;}
 .g4-fullname{font-size:0.85rem;color:#5F5E5A;margin-top:0.15rem;}
-.g4-region{display:inline-block;margin-top:0.55rem;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;padding:0.15rem 0.55rem;border-radius:10px;}
+.g4-region{display:flex;align-items:center;gap:7px;margin-top:0.6rem;font-size:0.8rem;color:#5F5E5A;}
+.g4-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .g4-close{position:absolute;top:0.7rem;right:0.85rem;background:none;border:none;font-size:1.7rem;line-height:1;color:#b8b0a3;cursor:pointer;padding:0 0.2rem;border-radius:6px;}
 .g4-close:hover{color:#6b5f52;}
 .g4-close:focus-visible{outline:2px solid var(--g4-accent,#8a7f72);outline-offset:2px;}
@@ -25,31 +26,32 @@
 .g4-sec{margin-top:1rem;}
 .g4-sec-h{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;color:#a89e8d;font-weight:600;margin-bottom:0.35rem;}
 .g4-sec-h a{color:inherit;text-decoration:none;}
-.g4-cond{margin-bottom:0.7rem;padding-left:0.7rem;border-left:2px solid #ece6d8;}
-.g4-cond-name{font-weight:600;margin-bottom:0.15rem;}
+.g4-cond{position:relative;padding-left:17px;margin-bottom:0.7rem;}
+.g4-cond::before{content:'';position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--g4-accent,#8a7f72);}
+.g4-cond-name{font-weight:500;color:#3a3028;margin-bottom:0.2rem;}
 .g4-chips{display:flex;flex-wrap:wrap;gap:0.35rem;}
-.g4-chip{display:inline-block;background:#f5f1e8;color:#5F5E5A;font-size:0.75rem;padding:0.2rem 0.55rem;border-radius:4px;}
+.g4-chip{display:inline-block;background:#EEE8E0;color:#5F5E5A;font-size:0.75rem;padding:0.2rem 0.55rem;border-radius:4px;}
 .g4-link{display:inline-block;font-size:0.78rem;border:1px solid;border-radius:5px;padding:0.25rem 0.6rem;text-decoration:none;}
 .g4-foot{margin-top:1.1rem;padding-top:0.7rem;border-top:1px solid #f0ebe0;font-size:0.72rem;color:#888780;}
 @media (max-width:520px){.g4-overlay{padding:0;align-items:flex-end;}.g4-modal{max-width:none;max-height:92vh;border-radius:14px 14px 0 0;}}
 @media (prefers-reduced-motion:reduce){.g4-overlay,.g4-modal{transition:none;}}
 </style>
 
-<div id="fig4-best4-widget" style="background:#faf9f7;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+<div id="fig4-best4-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
 <div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
-<span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 4 · Interactive</span>
+<span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 2</span>
 </div>
 <h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">BEST4 enterocytes — small intestine vs colon</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Each dot's <strong>size</strong> shows the % of cells expressing the gene; its <strong>opacity</strong> shows mean expression. Genes are sorted by which region they favour. <span style="color:#888780;">Click a gene name to read about it.</span></p>
+<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Each dot's <strong>size</strong> shows the % of cells expressing the gene; its <strong>opacity</strong> shows mean expression.</p>
 <div id="fig4-content" style="min-height:400px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
-<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.5rem;line-height:1.4;">Computed from the epithelium lineage object (4,555 BEST4+ cells: 1,176 small intestine, 3,379 large intestine). Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>. Gene summaries: <a href="https://medlineplus.gov/genetics/" style="color:#AF3A3A;">MedlinePlus Genetics</a>, U.S. National Library of Medicine.</p>
+<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.5rem;line-height:1.4;">Computed from the epithelium lineage object (4,555 BEST4+ cells: 1,176 small intestine, 3,379 large intestine). Data: Elmentaite et al., <em>Nature</em> 2021, used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
 </div>
 
 <script>
 (function(){
 const DATA_URL = '{{ site.baseurl }}/assets/figures/elmentaite-2021/fig4_best4_marker_expression.json';
 const INFO_URL = '{{ site.baseurl }}/assets/figures/elmentaite-2021/fig4_best4_gene_info.json';
-const SMALL_COLOR='#AF3A3A', LARGE_COLOR='#0F6E56', NEUTRAL='#8a7f72', NEUTRAL_BG='#f5f1e8';
+const SMALL_COLOR='#D8472F', LARGE_COLOR='#1E8FA0', NEUTRAL='#8a7f72', NEUTRAL_BG='#EEE8E0';
 
 const content = document.getElementById('fig4-content');
 let GENE_INFO = {};
@@ -65,7 +67,7 @@ Promise.all([
   for(const k in info){ if(k!=='_meta') GENE_INFO[k.toUpperCase()] = info[k]; }
   render(data);
 }).catch(err=>{
-  content.innerHTML='<p style="text-align:center;color:#AF3A3A;padding:2rem;">Could not load: '+err.message+'</p>';
+  content.innerHTML='<p style="text-align:center;color:#D8472F;padding:2rem;">Could not load: '+err.message+'</p>';
 });
 
 /* ---------------------------------------------------------------- render */
@@ -81,20 +83,40 @@ function render(data){
   const totalH=headerH+genes.length*rowH+padding.top+padding.bottom;
   const totalW=padding.left+2*colW+padding.right;
 
+  // Genes that have Health Conditions get a pulsing halo; the halos light up in
+  // sequence (top -> bottom) so the glow appears to travel between them.
+  const condCount=genes.filter(g=>{const gi=GENE_INFO[g.name.toUpperCase()];return gi&&gi.conditions&&gi.conditions.length;}).length;
+  const PER_GENE=1.8;                 // seconds each gene stays lit (slower = larger)
+  const haloDur=Math.max(condCount,1)*PER_GENE;
+  let condSeen=0;                     // running index among condition-genes
+  let haloCSS='';
+  if(condCount>0){
+    const slot=100/condCount;         // each gene owns one slot of the cycle
+    haloCSS=`
+    @keyframes g4HaloPulse{0%{opacity:0;transform:scale(.82);}${(slot*0.5).toFixed(2)}%{opacity:.9;transform:scale(1.18);}${slot.toFixed(2)}%{opacity:0;transform:scale(.82);}100%{opacity:0;transform:scale(.82);}}
+    .gene-halo{pointer-events:none;transform-box:fill-box;transform-origin:center;animation:g4HaloPulse ${haloDur.toFixed(1)}s ease-in-out infinite;}
+    @media (prefers-reduced-motion:reduce){.gene-halo{animation:none;opacity:.5;transform:none;}}`;
+  }
+
   let svg=`<svg viewBox="0 0 ${totalW} ${totalH}" style="width:100%;max-width:580px;display:block;margin:0 auto;" role="img">`;
   svg+=`<style>
     .gene-row .gene-label{transition:fill .12s;}
-    .gene-row:hover .gene-label,.gene-row:focus .gene-label{fill:#1a1410;text-decoration:underline;}
-    .gene-row .gene-ic{transition:fill .12s;}
-    .gene-row:hover .gene-ic,.gene-row:focus .gene-ic{fill:#6b5f52;}
-    .gene-row:focus{outline:none;}
+    .gene-row .gene-hl{fill:transparent;transition:fill .12s;}
+    .gene-row:hover .gene-hl,.gene-row:focus .gene-hl{fill:rgba(58,48,40,0.07);}
+    .gene-row:hover .gene-label,.gene-row:focus .gene-label{fill:#1a1410;}
+    .gene-row:focus{outline:none;}${haloCSS}
   </style>`;
+  svg+=`<defs><filter id="g4halo" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5"/></filter></defs>`;
   svg+=`<rect x="${padding.left}" y="${padding.top}" width="${colW}" height="${headerH-10}" rx="6" fill="${SMALL_COLOR}" opacity="0.1"/>`;
   svg+=`<rect x="${padding.left+colW}" y="${padding.top}" width="${colW}" height="${headerH-10}" rx="6" fill="${LARGE_COLOR}" opacity="0.1"/>`;
   svg+=`<text x="${padding.left+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="12" font-weight="600" fill="${SMALL_COLOR}">Small intestine</text>`;
   svg+=`<text x="${padding.left+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="10" fill="${SMALL_COLOR}" opacity="0.8">n = ${genes[0].small.n_cells} cells</text>`;
   svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="12" font-weight="600" fill="${LARGE_COLOR}">Large intestine</text>`;
   svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="10" fill="${LARGE_COLOR}" opacity="0.8">n = ${genes[0].large.n_cells} cells</text>`;
+
+  let _mctx=null;
+  try{ _mctx=document.createElement('canvas').getContext('2d'); if(_mctx) _mctx.font="italic 12px 'DM Sans', system-ui, sans-serif"; }catch(e){ _mctx=null; }
+  const labelW=s=> _mctx ? _mctx.measureText(s).width : s.length*6.6;
 
   genes.forEach((g,i)=>{
     const y=padding.top+headerH+i*rowH+rowH/2;
@@ -105,7 +127,15 @@ function render(data){
 
     svg+=`<g class="gene-row" data-gene="${g.name}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Show information for ${g.name}">`;
     svg+=`<rect x="0" y="${y-rowH/2}" width="${padding.left-2}" height="${rowH}" fill="transparent"/>`;
-    svg+=`<text class="gene-ic" x="6" y="${y+4}" font-size="11" fill="#c9c1b3">&#9432;</text>`;
+    const _tw=labelW(g.name);
+    const _gi=GENE_INFO[g.name.toUpperCase()];
+    if(_gi && _gi.conditions && _gi.conditions.length){
+      const _haloH=22,_haloPadX=11,_haloW=_tw+2*_haloPadX,_haloX=((padding.left-12)-_tw/2)-_haloW/2;
+      svg+=`<rect class="gene-halo" x="${_haloX.toFixed(1)}" y="${(y-_haloH/2).toFixed(1)}" width="${_haloW.toFixed(1)}" height="${_haloH}" rx="${_haloH/2}" fill="rgba(245,200,66,0.7)" filter="url(#g4halo)" style="animation-delay:${(-condSeen*PER_GENE).toFixed(2)}s"/>`;
+      condSeen++;
+    }
+    const _hlH=20,_padX=8,_hlW=_tw+2*_padX,_hlR=(padding.left-8)-_hlW;
+    svg+=`<rect class="gene-hl" x="${_hlR.toFixed(1)}" y="${(y-_hlH/2).toFixed(1)}" width="${_hlW.toFixed(1)}" height="${_hlH}" rx="5"/>`;
     svg+=`<text class="gene-label" x="${padding.left-12}" y="${y+4}" text-anchor="end" font-size="12" font-style="italic" fill="#3a3028">${g.name}</text>`;
     svg+=`</g>`;
 
@@ -122,11 +152,11 @@ function render(data){
     const lOp=0.15+(g.large.mean_expression/maxExpr)*0.85;
     svg+=`<circle cx="${lX}" cy="${y}" r="${lR.toFixed(1)}" fill="${LARGE_COLOR}" opacity="${lOp.toFixed(2)}" style="pointer-events:none;"><title>${g.name} (large): mean ${g.large.mean_expression.toFixed(2)}, ${(g.large.fraction_expressing*100).toFixed(1)}% cells</title></circle>`;
   });
-  svg+=`<g font-size="9" fill="#888780"><text x="${padding.left}" y="${totalH-8}">Dot size: % cells expressing</text><text x="${padding.left+200}" y="${totalH-8}">Dot opacity: mean expression</text></g></svg>`;
+  svg+=`</svg>`;
 
   const topSmall=genes.slice(0,3).map(g=>g.name).join(', ');
   const topLarge=genes.slice(-3).reverse().map(g=>g.name).join(', ');
-  const summary=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;padding:0.8rem 1rem;background:${NEUTRAL_BG};border-radius:6px;font-size:0.78rem;"><div><div style="color:${SMALL_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in small intestine</div><div><em>${topSmall}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:0.72rem;">Lipid metabolism, digestion, chloride transport (CFTR)</div></div><div><div style="color:${LARGE_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in large intestine</div><div><em>${topLarge}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:0.72rem;">Carbonic anhydrases, ion / water transport</div></div></div>`;
+  const summary=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;padding:0.8rem 1rem;background:${NEUTRAL_BG};border-radius:6px;font-size:12px;"><div><div style="color:${SMALL_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in small intestine</div><div><em>${topSmall}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:12px;">Lipid metabolism, digestion, chloride transport (CFTR)</div></div><div><div style="color:${LARGE_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in large intestine</div><div><em>${topLarge}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:12px;">Carbonic anhydrases, ion / water transport</div></div></div>`;
 
   content.innerHTML=svg+summary;
   content.querySelectorAll('.gene-row').forEach(row=>{
@@ -217,7 +247,7 @@ function buildModal(gene,accent){
   let head=`<div class="g4-head">${closeBtn}
     <div class="g4-symbol" id="g4-modal-title"><em>${esc(info.symbol||gene)}</em> gene</div>
     ${info.full_name?`<div class="g4-fullname">${esc(info.full_name)}</div>`:''}
-    <span class="g4-region" style="color:${accent};background:${accent}1a;">${regionLabel}</span>
+    <div class="g4-region"><span class="g4-dot" style="background:${accent};"></span><span>${regionLabel}</span></div>
   </div>`;
 
   let body=`<div class="g4-body">`;
@@ -228,36 +258,23 @@ function buildModal(gene,accent){
   if(info.conditions && info.conditions.length){
     const isNcbi=info.source==='ncbi';
     const condTitle=isNcbi?'Associated conditions (NCBI MedGen)':'Health Conditions Related to Genetic Changes';
-    const moreLabel=isNcbi?'View in MedGen':'More about this condition';
     let inner='';
     info.conditions.forEach(c=>{
       inner+=`<div class="g4-cond">
-        <div class="g4-cond-name" style="color:${accent};">${esc(c.name)}</div>
+        <div class="g4-cond-name">${esc(c.name)}</div>
         ${c.html?`<div>${c.html}</div>`:''}
-        ${c.url?`<a href="${esc(c.url)}" style="color:${accent};font-size:0.8rem;">${moreLabel} &#8599;</a>`:''}
       </div>`;
     });
     body+=section(condTitle, inner);
   }
-  if(info.source==='ncbi'){
-    const links=[];
-    if(info.omim_url) links.push(link('OMIM entry &#8599;',info.omim_url,accent));
-    if(info.pubmed_url) links.push(link('Search PubMed &#8599;',info.pubmed_url,accent));
-    if(links.length){
-      const note=info.conditions&&info.conditions.length?'Further reading:':'No curated Mendelian condition on record — explore the literature:';
-      body+=section('From the literature',
-        `<p style="color:#5F5E5A;font-size:0.82rem;margin:0 0 0.5rem 0;">${note}</p>`
-        +`<div class="g4-chips" style="gap:0.5rem;">${links.join('')}</div>`);
-    }
+  if(info.source==='ncbi' && !(info.conditions&&info.conditions.length)){
+    body+=section('No disease associations have been reported','');
   }
   if(info.synonyms && info.synonyms.length){
     const chips=info.synonyms.map(s=>`<span class="g4-chip">${esc(s)}</span>`).join('');
     const anchor=info.source==='ncbi' ? (info.url||'') : (info.url||'')+'#synonyms';
     body+=section(`<a href="${esc(anchor)}">Other Names for This Gene</a>`, `<div class="g4-chips">${chips}</div>`);
   }
-  const srcName=info.source_name || 'MedlinePlus Genetics';
-  const rev=info.reviewed?` &middot; last reviewed ${esc(info.reviewed)}`:'';
-  body+=`<div class="g4-foot">Source: <a href="${esc(info.url||'https://medlineplus.gov/genetics/')}" style="color:${accent};">${esc(srcName)} &#8599;</a>, U.S. National Library of Medicine${rev}.</div>`;
   body+=`</div>`;
 
   return `<div class="g4-modal" role="dialog" aria-modal="true" aria-labelledby="g4-modal-title">${head}${body}</div>`;

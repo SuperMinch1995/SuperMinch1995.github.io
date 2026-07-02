@@ -473,7 +473,7 @@ posts:
 <div class="pub-section">
  <div class="pub-card">
    <a href="/projects/cipo/" class="pub-link-wrap">
-   <img class="pub-image" src="/assets/images/ACTG2.jpeg" alt="ACTG2 immunohistochemistry panel" loading="lazy" decoding="async">
+   <img class="pub-image" src="/assets/images/ACTG2.webp" alt="ACTG2 immunohistochemistry panel" loading="lazy" decoding="async">
    <span class="pub-pill">Latest publication</span>
    
 <p class="pub-card-title" style="text-align:center;margin:0;">

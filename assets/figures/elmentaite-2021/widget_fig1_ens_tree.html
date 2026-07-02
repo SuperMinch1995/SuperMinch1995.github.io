@@ -1,0 +1,145 @@
+<!--
+  Figure 1 — ENS differentiation tree
+  Data: assets/figures/elmentaite-2021/fig1_ens_cell_counts.json
+-->
+<div id="fig1-ens-widget" style="background:#faf9f7;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+<div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
+<span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 1 · Interactive</span>
+</div>
+<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Enteric nervous system — from progenitor to mature neurons</h4>
+<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Click any cell type to see its abundance by developmental stage and intestinal region.</p>
+
+<div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+<button onclick="fig1Filter('all')" id="fig1-btn-all" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:#3a3028;color:#faf9f7;font-size:12px;cursor:pointer;font-family:inherit;">All stages</button>
+<button onclick="fig1Filter('W6-11')" id="fig1-btn-W6-11" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">6–11 PCW</button>
+<button onclick="fig1Filter('W12-17')" id="fig1-btn-W12-17" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">12–17 PCW</button>
+</div>
+
+<div id="fig1-content" style="min-height:500px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+
+<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.5rem;line-height:1.4;">Computed from the ENS lineage object (16,870 fetal enteric neural cells, 6–17 PCW). Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
+</div>
+
+<script>
+let fig1Data = null;
+let fig1Stage = 'all';
+
+(function(){
+const DATA_URL = '{{ site.baseurl }}/assets/figures/elmentaite-2021/fig1_ens_cell_counts.json';
+fetch(DATA_URL).then(r=>{if(!r.ok)throw new Error('JSON not found');return r.json();}).then(data=>{
+  fig1Data = data;
+  renderFig1();
+}).catch(err=>{
+  document.getElementById('fig1-content').innerHTML='<p style="text-align:center;color:#AF3A3A;padding:2rem;">Could not load: '+err.message+'</p>';
+});
+})();
+
+function fig1Filter(stage){
+  fig1Stage = stage;
+  ['all','W6-11','W12-17'].forEach(s=>{
+    const btn=document.getElementById('fig1-btn-'+s);
+    if(s===stage){btn.style.background='#3a3028';btn.style.color='#faf9f7';}
+    else{btn.style.background='transparent';btn.style.color='#3a3028';}
+  });
+  renderFig1();
+}
+
+function getFig1Count(cellType){
+  if(!fig1Data[cellType])return 0;
+  let total=0;
+  for(const stage in fig1Data[cellType]){
+    if(fig1Stage!=='all' && stage!==fig1Stage)continue;
+    for(const region in fig1Data[cellType][stage]){
+      total+=fig1Data[cellType][stage][region];
+    }
+  }
+  return total;
+}
+
+function renderFig1(){
+  // Hierarchical layout of the differentiation tree
+  const ENCC_COLOR='#888780';
+  const NEURO_COLOR='#534AB7';
+  const BRANCH_A='#AF3A3A';
+  const BRANCH_B='#C2510A';
+  const GLIA_COLOR='#3DAEA3';
+
+  const nodes = [
+    // Progenitors (top)
+    {id:'ENCC/glia Progenitor', x:300, y:50, color:ENCC_COLOR, label:'ENCC/glia Progenitor'},
+    {id:'cycling ENCC/glia', x:480, y:50, color:ENCC_COLOR, label:'Cycling ENCC/glia'},
+    // Neuroblasts (middle)
+    {id:'Neuroblast', x:300, y:150, color:NEURO_COLOR, label:'Neuroblast'},
+    {id:'cycling neuroblast', x:480, y:150, color:NEURO_COLOR, label:'Cycling neuroblast'},
+    // Branch A — left
+    {id:'Branch A1 (iMN)', x:80, y:280, color:BRANCH_A, label:'A1 — iMN'},
+    {id:'Branch A2 (IPAN/IN)', x:80, y:340, color:BRANCH_A, label:'A2 — IPAN/IN'},
+    {id:'Branch A3 (IPAN/IN)', x:80, y:400, color:BRANCH_A, label:'A3 — IPAN/IN'},
+    {id:'Branch A4 (IN)', x:80, y:460, color:BRANCH_A, label:'A4 — IN'},
+    // Branch B — right
+    {id:'Branch B1 (eMN)', x:520, y:280, color:BRANCH_B, label:'B1 — eMN'},
+    {id:'Branch B2 (eMN)', x:520, y:340, color:BRANCH_B, label:'B2 — eMN'},
+    {id:'Branch B3 (IPAN)', x:520, y:400, color:BRANCH_B, label:'B3 — IPAN'},
+    // Glia — bottom centre
+    {id:'Glia 1 (DHH+)', x:230, y:540, color:GLIA_COLOR, label:'Glia 1 (DHH+)'},
+    {id:'Glia 2 (ELN+)', x:330, y:540, color:GLIA_COLOR, label:'Glia 2 (ELN+)'},
+    {id:'Glia 3 (BCAN+)', x:430, y:540, color:GLIA_COLOR, label:'Glia 3 (BCAN+)'},
+    {id:'Differentiating glia', x:330, y:600, color:GLIA_COLOR, label:'Differentiating glia'}
+  ];
+
+  // Compute counts and total
+  let totalCells = 0;
+  nodes.forEach(n=>{n.count=getFig1Count(n.id);totalCells+=n.count;});
+  const maxCount = Math.max(...nodes.map(n=>n.count),1);
+
+  // Edges
+  const edges = [
+    {from:'ENCC/glia Progenitor', to:'Neuroblast'},
+    {from:'ENCC/glia Progenitor', to:'cycling ENCC/glia'},
+    {from:'cycling ENCC/glia', to:'cycling neuroblast'},
+    {from:'Neuroblast', to:'Branch A1 (iMN)'},
+    {from:'Neuroblast', to:'Branch A2 (IPAN/IN)'},
+    {from:'Neuroblast', to:'Branch A3 (IPAN/IN)'},
+    {from:'Neuroblast', to:'Branch A4 (IN)'},
+    {from:'Neuroblast', to:'Branch B1 (eMN)'},
+    {from:'Neuroblast', to:'Branch B2 (eMN)'},
+    {from:'Neuroblast', to:'Branch B3 (IPAN)'},
+    {from:'ENCC/glia Progenitor', to:'Glia 1 (DHH+)'},
+    {from:'ENCC/glia Progenitor', to:'Glia 2 (ELN+)'},
+    {from:'ENCC/glia Progenitor', to:'Glia 3 (BCAN+)'},
+    {from:'Glia 1 (DHH+)', to:'Differentiating glia'},
+    {from:'Glia 2 (ELN+)', to:'Differentiating glia'},
+    {from:'Glia 3 (BCAN+)', to:'Differentiating glia'}
+  ];
+
+  const nodeMap = Object.fromEntries(nodes.map(n=>[n.id,n]));
+
+  let svg=`<svg viewBox="0 0 600 680" style="width:100%;max-width:600px;display:block;margin:0 auto;" role="img">`;
+  // Edges first
+  edges.forEach(e=>{
+    const f=nodeMap[e.from], t=nodeMap[e.to];
+    svg+=`<path d="M ${f.x} ${f.y+15} Q ${f.x} ${(f.y+t.y)/2}, ${t.x} ${t.y-15}" fill="none" stroke="#888780" stroke-width="0.8" opacity="0.4"/>`;
+  });
+  // Section labels
+  svg+=`<text x="80" y="240" text-anchor="middle" font-size="11" fill="${BRANCH_A}" font-weight="600">BRANCH A (ETV1+)</text>`;
+  svg+=`<text x="80" y="254" text-anchor="middle" font-size="9" fill="${BRANCH_A}" opacity="0.7">Inhibitory + IPAN/IN</text>`;
+  svg+=`<text x="520" y="240" text-anchor="middle" font-size="11" fill="${BRANCH_B}" font-weight="600">BRANCH B (BNC2+)</text>`;
+  svg+=`<text x="520" y="254" text-anchor="middle" font-size="9" fill="${BRANCH_B}" opacity="0.7">Excitatory + IPAN</text>`;
+  svg+=`<text x="330" y="510" text-anchor="middle" font-size="11" fill="${GLIA_COLOR}" font-weight="600">GLIA</text>`;
+
+  // Nodes
+  nodes.forEach(n=>{
+    const radius = n.count>0 ? 18 + (n.count/maxCount)*22 : 16;
+    const opacity = n.count>0 ? 0.4 + (n.count/maxCount)*0.6 : 0.2;
+    svg+=`<g style="cursor:pointer;" onclick="alert('${n.label}: ${n.count} cells')">`;
+    svg+=`<circle cx="${n.x}" cy="${n.y}" r="${radius}" fill="${n.color}" opacity="${opacity.toFixed(2)}" stroke="${n.color}" stroke-width="1"/>`;
+    svg+=`<text x="${n.x}" y="${n.y-3}" text-anchor="middle" font-size="9" font-weight="600" fill="#FFFFFF">${n.label.split(' ')[0]}</text>`;
+    svg+=`<text x="${n.x}" y="${n.y+8}" text-anchor="middle" font-size="9" fill="#FFFFFF" opacity="0.9">${n.count}</text>`;
+    svg+=`<title>${n.label} — ${n.count} cells</title></g>`;
+  });
+  svg+=`<text x="300" y="660" text-anchor="middle" font-size="10" fill="#888780" font-style="italic">Node size = cell count · Total: ${totalCells.toLocaleString()} cells</text>`;
+  svg+=`</svg>`;
+
+  document.getElementById('fig1-content').innerHTML=svg;
+}
+</script>

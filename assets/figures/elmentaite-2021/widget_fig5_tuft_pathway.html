@@ -1,0 +1,108 @@
+<!--
+  Figure 3 — Tuft cell FCGR2A/PLCG2 signalling pathway (signaling cascade layout)
+  Data: assets/figures/elmentaite-2021/fig5_tuft_pathway_expression.json
+-->
+<div id="fig5-tuft-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+<div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
+<span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 3</span>
+</div>
+<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Tuft cells express the full IgG-sensing pathway</h4>
+<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">The signalling cascade flows top to bottom, from <em>FCGR2A</em> at the membrane down to <em>TRPM5</em> ion channels. Node size shows the % of tuft cells expressing each gene; the teal dots compare the other epithelial populations.</p>
+
+<div id="fig5-content" style="min-height:500px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+
+<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.5rem;line-height:1.4;">Computed from the epithelium lineage object (737 tuft cells, 101,617 absorptive cells, 11,904 secretory cells). Data: Elmentaite et al., <em>Nature</em> 2021, used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
+</div>
+
+<script>
+(function(){
+const DATA_URL = '{{ site.baseurl }}/assets/figures/elmentaite-2021/fig5_tuft_pathway_expression.json';
+fetch(DATA_URL).then(r=>{if(!r.ok)throw new Error('JSON not found');return r.json();}).then(render).catch(err=>{
+  document.getElementById('fig5-content').innerHTML='<p style="text-align:center;color:#A83D3A;padding:2rem;">Could not load: '+err.message+'</p>';
+});
+
+function render(data){
+  const TUFT='#A83D3A', ABS='#3796AC', SEC='#1B7092', SPINE='#A8C5CE';
+
+  const PATHWAY_ORDER = [
+    {gene:'FCGR2A', layer:'Receptor (membrane)', desc:'IgG Fc receptor'},
+    {gene:'FCGR2B', layer:'Receptor (membrane)', desc:'IgG Fc inhibitory receptor'},
+    {gene:'CD300LF', layer:'Co-receptor', desc:'Co-receptor'},
+    {gene:'SYK', layer:'Kinase', desc:'Activates PLCG2'},
+    {gene:'PLCG2', layer:'Phospholipase', desc:'Generates IP\u2083 + DAG'},
+    {gene:'RAC2', layer:'GTPase', desc:'Cytoskeletal remodelling'},
+    {gene:'ITPR2', layer:'Ca\u00B2\u207A channel (ER)', desc:'Releases intracellular Ca\u00B2\u207A'},
+    {gene:'PRKCA', layer:'Kinase (PKC)', desc:'Activated by DAG'},
+    {gene:'TRPM5', layer:'Ion channel', desc:'Na\u207A influx \u2192 response'}
+  ];
+
+  let maxMean=0;
+  PATHWAY_ORDER.forEach(p=>{ if(!data[p.gene])return; ['tuft','absorptive','secretory'].forEach(grp=>{ const e=data[p.gene][grp]; if(e&&e.mean_expression>maxMean)maxMean=e.mean_expression; }); });
+  if(maxMean<=0)maxMean=1;
+
+  const n=PATHWAY_ORDER.length;
+  const rowH=46, padding={top:58,left:140,right:20,bottom:60};
+  const cx=168, xAbs=258, xSec=320;
+  const totalH=padding.top+n*rowH+padding.bottom;
+  const totalW=360;
+
+  let svg=`<svg viewBox="0 0 ${totalW} ${totalH}" style="width:100%;max-width:560px;display:block;margin:0 auto;" role="img">`;
+  svg+=`<style>.path-row .row-hl{fill:transparent;transition:fill .12s;}.path-row:hover .row-hl{fill:rgba(58,48,40,0.05);}</style>`;
+
+  // column headers
+  svg+=`<text x="${cx}" y="${padding.top-30}" text-anchor="middle" font-size="12" font-weight="600" fill="${TUFT}">Tuft cells</text>`;
+  svg+=`<text x="${cx}" y="${padding.top-17}" text-anchor="middle" font-size="9" fill="${TUFT}" opacity="0.75">n = 737</text>`;
+  svg+=`<text x="${xAbs}" y="${padding.top-30}" text-anchor="middle" font-size="11" font-weight="600" fill="${ABS}">Absorptive</text>`;
+  svg+=`<text x="${xAbs}" y="${padding.top-17}" text-anchor="middle" font-size="9" fill="${ABS}" opacity="0.75">n = 101,617</text>`;
+  svg+=`<text x="${xSec}" y="${padding.top-30}" text-anchor="middle" font-size="11" font-weight="600" fill="${SEC}">Secretory</text>`;
+  svg+=`<text x="${xSec}" y="${padding.top-17}" text-anchor="middle" font-size="9" fill="${SEC}" opacity="0.75">n = 11,904</text>`;
+
+  // apical membrane band + pathway spine
+  svg+=`<rect x="${cx-42}" y="${padding.top-4}" width="84" height="7" rx="3.5" fill="${SPINE}" opacity="0.6"/>`;
+  svg+=`<text x="${cx+50}" y="${padding.top+2}" font-size="8" fill="#888780">apical membrane</text>`;
+  const yFirst=padding.top+rowH/2, yLast=padding.top+(n-1)*rowH+rowH/2;
+  svg+=`<line x1="${cx}" y1="${yFirst}" x2="${yLast?yLast:yLast}" y2="${yLast}" stroke="${SPINE}" stroke-width="0" opacity="0"/>`;
+  svg+=`<line x1="${cx}" y1="${yFirst}" x2="${cx}" y2="${yLast}" stroke="${SPINE}" stroke-width="2" opacity="0.45"/>`;
+
+  PATHWAY_ORDER.forEach((p,i)=>{
+    const y=padding.top+i*rowH+rowH/2;
+    const t=data[p.gene]&&data[p.gene].tuft, ab=data[p.gene]&&data[p.gene].absorptive, se=data[p.gene]&&data[p.gene].secretory;
+
+    svg+=`<g class="path-row">`;
+    svg+=`<rect class="row-hl" x="0" y="${y-rowH/2}" width="${totalW}" height="${rowH}"><title>${p.gene} — ${p.desc}</title></rect>`;
+
+    // gene name + layer (left)
+    svg+=`<text x="${padding.left-14}" y="${y-2}" text-anchor="end" font-size="12" font-style="italic" font-weight="500" fill="#3a3028">${p.gene}</text>`;
+    svg+=`<text x="${padding.left-14}" y="${y+11}" text-anchor="end" font-size="9" fill="#888780">${p.layer}</text>`;
+
+    // flow arrow on the spine to the next node
+    if(i<n-1){ const ny=padding.top+(i+1)*rowH+rowH/2; const my=(y+ny)/2;
+      svg+=`<polygon points="${cx-3.5},${my-3} ${cx+3.5},${my-3} ${cx},${my+3.5}" fill="${SPINE}" opacity="0.8"/>`;
+    }
+
+    // tuft node
+    if(t){ const r=4+t.fraction_expressing*14; const op=(0.25+(t.mean_expression/maxMean)*0.75).toFixed(2);
+      svg+=`<circle cx="${cx}" cy="${y}" r="${r.toFixed(1)}" fill="${TUFT}" opacity="${op}"><title>${p.gene} — Tuft cells: mean ${t.mean_expression.toFixed(2)}, ${(t.fraction_expressing*100).toFixed(1)}% of cells</title></circle>`;
+    } else { svg+=`<text x="${cx}" y="${y+3}" text-anchor="middle" font-size="9" fill="#cccccc">—</text>`; }
+
+    // comparators (absorptive, secretory)
+    [[xAbs,ab,ABS,'Absorptive'],[xSec,se,SEC,'Secretory']].forEach(function(arr){
+      const xx=arr[0], e=arr[1], col=arr[2], lbl=arr[3];
+      if(e){ const r=2.5+e.fraction_expressing*9; const op=(0.2+(e.mean_expression/maxMean)*0.8).toFixed(2);
+        svg+=`<circle cx="${xx}" cy="${y}" r="${r.toFixed(1)}" fill="${col}" opacity="${op}"><title>${p.gene} — ${lbl}: mean ${e.mean_expression.toFixed(2)}, ${(e.fraction_expressing*100).toFixed(1)}% of cells</title></circle>`;
+      } else { svg+=`<text x="${xx}" y="${y+3}" text-anchor="middle" font-size="9" fill="#cccccc">—</text>`; }
+    });
+
+    svg+=`</g>`;
+  });
+
+  // legend
+  const legY=totalH-32;
+  svg+=`<text x="20" y="${legY}" font-size="10" fill="#888780">Node size: % cells expressing &middot; opacity: mean expression</text>`;
+  svg+=`<text x="${totalW/2}" y="${legY+16}" text-anchor="middle" font-size="10" font-style="italic" fill="#888780">Pathway flow: receptor \u2192 kinase \u2192 second messenger \u2192 effector</text>`;
+
+  svg+=`</svg>`;
+  document.getElementById('fig5-content').innerHTML=svg;
+}
+})();
+</script>

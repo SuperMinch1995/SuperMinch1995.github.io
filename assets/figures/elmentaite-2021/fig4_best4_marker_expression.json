@@ -1,0 +1,242 @@
+{
+  "CFTR": {
+    "small_intestine": {
+      "mean_expression": 1.4095642566680908,
+      "fraction_expressing": 0.689625850340136,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.07001759856939316,
+      "fraction_expressing": 0.08552826279964487,
+      "n_cells": 3379
+    }
+  },
+  "CPA2": {
+    "small_intestine": {
+      "mean_expression": 1.1137259006500244,
+      "fraction_expressing": 0.5994897959183674,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.11883179098367691,
+      "fraction_expressing": 0.10387688665285587,
+      "n_cells": 3379
+    }
+  },
+  "ADGRG4": {
+    "small_intestine": {
+      "mean_expression": 0.8770974278450012,
+      "fraction_expressing": 0.5297619047619048,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.010007314383983612,
+      "fraction_expressing": 0.00739863865048831,
+      "n_cells": 3379
+    }
+  },
+  "ALDOB": {
+    "small_intestine": {
+      "mean_expression": 1.4479621648788452,
+      "fraction_expressing": 0.6352040816326531,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.020642559975385666,
+      "fraction_expressing": 0.015685113939035218,
+      "n_cells": 3379
+    }
+  },
+  "KRT73": {
+    "small_intestine": {
+      "mean_expression": 0.14972755312919617,
+      "fraction_expressing": 0.12670068027210885,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 3379
+    }
+  },
+  "CLDN15": {
+    "small_intestine": {
+      "mean_expression": 0.7885973453521729,
+      "fraction_expressing": 0.560374149659864,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.04902566224336624,
+      "fraction_expressing": 0.063924237940219,
+      "n_cells": 3379
+    }
+  },
+  "SI": {
+    "small_intestine": {
+      "mean_expression": 0.9702227115631104,
+      "fraction_expressing": 0.6437074829931972,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.10671740025281906,
+      "fraction_expressing": 0.11097957975732466,
+      "n_cells": 3379
+    }
+  },
+  "CTSE": {
+    "small_intestine": {
+      "mean_expression": 0.9801139831542969,
+      "fraction_expressing": 0.5620748299319728,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.6281507611274719,
+      "fraction_expressing": 0.4720331459011542,
+      "n_cells": 3379
+    }
+  },
+  "SCT": {
+    "small_intestine": {
+      "mean_expression": 0.49195972084999084,
+      "fraction_expressing": 0.31037414965986393,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.028923215344548225,
+      "fraction_expressing": 0.02219591595146493,
+      "n_cells": 3379
+    }
+  },
+  "PLA2G4A": {
+    "small_intestine": {
+      "mean_expression": 0.26850464940071106,
+      "fraction_expressing": 0.2227891156462585,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.010203887708485126,
+      "fraction_expressing": 0.014205386208937555,
+      "n_cells": 3379
+    }
+  },
+  "CA1": {
+    "small_intestine": {
+      "mean_expression": 0.0019170879386365414,
+      "fraction_expressing": 0.0017006802721088435,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.7787986993789673,
+      "fraction_expressing": 0.39715892275821246,
+      "n_cells": 3379
+    }
+  },
+  "CA4": {
+    "small_intestine": {
+      "mean_expression": 0.6455432772636414,
+      "fraction_expressing": 0.33163265306122447,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 2.9861528873443604,
+      "fraction_expressing": 0.9313406333234685,
+      "n_cells": 3379
+    }
+  },
+  "CA7": {
+    "small_intestine": {
+      "mean_expression": 2.883880853652954,
+      "fraction_expressing": 0.9328231292517006,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 2.9820680618286133,
+      "fraction_expressing": 0.9541284403669725,
+      "n_cells": 3379
+    }
+  },
+  "AQP8": {
+    "small_intestine": {
+      "mean_expression": 0.014432581141591072,
+      "fraction_expressing": 0.01445578231292517,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.34811633825302124,
+      "fraction_expressing": 0.19650784255696951,
+      "n_cells": 3379
+    }
+  },
+  "GPX2": {
+    "small_intestine": {
+      "mean_expression": 0.3022817075252533,
+      "fraction_expressing": 0.2389455782312925,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.5506047606468201,
+      "fraction_expressing": 0.3533589819473217,
+      "n_cells": 3379
+    }
+  },
+  "TMEM26": {
+    "small_intestine": {
+      "mean_expression": 0.0656210333108902,
+      "fraction_expressing": 0.05782312925170068,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 3379
+    }
+  },
+  "MT1G": {
+    "small_intestine": {
+      "mean_expression": 4.04572057723999,
+      "fraction_expressing": 0.9166666666666666,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 2.2964277267456055,
+      "fraction_expressing": 0.7875110979579757,
+      "n_cells": 3379
+    }
+  },
+  "MT2A": {
+    "small_intestine": {
+      "mean_expression": 3.387650966644287,
+      "fraction_expressing": 0.9064625850340136,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 2.2898364067077637,
+      "fraction_expressing": 0.8484758804379994,
+      "n_cells": 3379
+    }
+  },
+  "OTOP2": {
+    "small_intestine": {
+      "mean_expression": 0.7925075888633728,
+      "fraction_expressing": 0.4906462585034014,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 2.225555658340454,
+      "fraction_expressing": 0.836046167505179,
+      "n_cells": 3379
+    }
+  },
+  "HES4": {
+    "small_intestine": {
+      "mean_expression": 1.1050602197647095,
+      "fraction_expressing": 0.6768707482993197,
+      "n_cells": 1176
+    },
+    "large_intestine": {
+      "mean_expression": 0.9626579880714417,
+      "fraction_expressing": 0.6496004735128736,
+      "n_cells": 3379
+    }
+  }
+}

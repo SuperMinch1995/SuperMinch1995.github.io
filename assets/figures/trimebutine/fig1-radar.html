@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Receptor-affinity profile — trimebutine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --color-text-primary:#2b2b28; --color-text-secondary:#6b675e; --color-text-tertiary:#8a857a;
+ --color-background-primary:#ffffff; --color-background-secondary:#f2efe9; --color-background-tertiary:#faf9f7;
+ --color-border-primary:rgba(60,55,45,0.34); --color-border-secondary:#d9d5cc; --color-border-tertiary:#e7e3da;
+ --border-radius-md:8px; --border-radius-lg:12px; --border-radius-xl:16px;
+ --font-sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --font-serif:Georgia,'Times New Roman',serif;
+ --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+html,body{margin:0;padding:0;background:transparent;}
+body{font-family:var(--font-sans);color:var(--color-text-primary);line-height:1.5;padding:4px 2px 8px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+a{color:#1f6e5e;text-decoration:none;border-bottom:1px solid rgba(31,110,94,0.35);}
+a:hover{border-bottom-color:#1f6e5e;}
+.mt-src{margin-top:14px;padding-top:9px;border-top:1px solid var(--color-border-secondary);font-size:11px;line-height:1.55;color:var(--color-text-secondary);}
+.mt-src b{font-weight:600;color:var(--color-text-primary);}
+</style>
+</head>
+<body>
+<h2 class="sr-only">Prototype 4 : radar comparant l'affinité de quatre agonistes opioïdes pour les récepteurs mu, kappa et delta.</h2>
+
+<div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:12px;font-size:12px;color:var(--color-text-secondary);">
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:2px;background:#534AB7;"></span>Trimébutine</span>
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:2px;background:#D85A30;"></span>Morphine</span>
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:2px;background:#1D9E75;"></span>Lopéramide</span>
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:2px;background:#BA7517;"></span>Fédotozine</span>
+</div>
+
+<div style="position:relative;width:100%;height:380px;">
+  <canvas id="radar" role="img" aria-label="Radar d'affinité aux récepteurs mu, kappa, delta pour quatre opioïdes. La trimébutine montre un profil équilibré.">
+    Trimébutine: μ 0.5, κ 0.5, δ 0.5. Morphine: μ 0.95, κ 0.2, δ 0.15. Lopéramide: μ 0.9, κ 0.1, δ 0.1. Fédotozine: μ 0.1, κ 0.9, δ 0.1.
+  </canvas>
+</div>
+
+<div style="margin-top:12px;font-size:12px;color:var(--color-text-secondary);text-align:center;font-style:italic;">
+  Affinité relative pour chaque sous-type (échelle qualitative)
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('radar'), {
+  type: 'radar',
+  data: {
+    labels: ['μ (mu)', 'κ (kappa)', 'δ (delta)'],
+    datasets: [
+      { label: 'Trimébutine', data: [0.5, 0.5, 0.5], borderColor: '#534AB7', backgroundColor: 'rgba(83,74,183,0.15)', borderWidth: 2, pointRadius: 4, pointBackgroundColor: '#534AB7' },
+      { label: 'Morphine', data: [0.95, 0.2, 0.15], borderColor: '#D85A30', backgroundColor: 'rgba(216,90,48,0.12)', borderWidth: 2, borderDash: [5,3], pointRadius: 4, pointStyle: 'triangle', pointBackgroundColor: '#D85A30' },
+      { label: 'Lopéramide', data: [0.9, 0.1, 0.1], borderColor: '#1D9E75', backgroundColor: 'rgba(29,158,117,0.12)', borderWidth: 2, borderDash: [2,3], pointRadius: 4, pointStyle: 'rect', pointBackgroundColor: '#1D9E75' },
+      { label: 'Fédotozine', data: [0.1, 0.9, 0.1], borderColor: '#BA7517', backgroundColor: 'rgba(186,117,23,0.12)', borderWidth: 2, borderDash: [8,2], pointRadius: 4, pointStyle: 'rectRot', pointBackgroundColor: '#BA7517' }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      r: {
+        min: 0, max: 1,
+        ticks: { display: false, stepSize: 0.25 },
+        pointLabels: { font: { size: 14, weight: '500' } },
+        grid: { color: 'rgba(128,128,128,0.2)' },
+        angleLines: { color: 'rgba(128,128,128,0.2)' }
+      }
+    }
+  }
+});
+</script>
+<div class="mt-src">Affinities are schematic — relative, qualitative; no binding constants (Ki) are reported in the source. <b>Source:</b> Delvaux M, Wingate D. Trimebutine: mechanism of action, effects on gastrointestinal function and clinical results. J Int Med Res 1997;25:225–246 (<a href='https://pubmed.ncbi.nlm.nih.gov/9364286/' target='_blank' rel='noopener'>PMID 9364286</a>).</div>
+<script>
+(function(){
+ function postH(){ try{ var h=Math.ceil(document.documentElement.getBoundingClientRect().height); parent.postMessage({type:'mtFigHeight',h:h},'*'); }catch(e){} }
+ window.addEventListener('load',postH);
+ if(window.ResizeObserver){ new ResizeObserver(postH).observe(document.body); }
+ [200,700,1500].forEach(function(d){ setTimeout(postH,d); });
+})();
+</script>
+</body>
+</html>

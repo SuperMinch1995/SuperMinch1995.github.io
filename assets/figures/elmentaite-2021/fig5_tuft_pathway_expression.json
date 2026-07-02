@@ -1,0 +1,128 @@
+{
+  "FCGR2A": {
+    "tuft": {
+      "mean_expression": 0.0412692055106163,
+      "fraction_expressing": 0.024423337856173677
+    },
+    "absorptive": {
+      "mean_expression": 0.0009234281606040895,
+      "fraction_expressing": 0.0017221527893954752
+    },
+    "secretory": {
+      "mean_expression": 0.0034640892408788204,
+      "fraction_expressing": 0.003864247311827957
+    }
+  },
+  "FCGR2B": {
+    "tuft": {
+      "mean_expression": 0.07716956734657288,
+      "fraction_expressing": 0.04206241519674356
+    },
+    "absorptive": {
+      "mean_expression": 0.0006474272813647985,
+      "fraction_expressing": 0.0012596317545292618
+    },
+    "secretory": {
+      "mean_expression": 0.0007425530347973108,
+      "fraction_expressing": 0.0007560483870967742
+    }
+  },
+  "SYK": {
+    "tuft": {
+      "mean_expression": 0.09471447020769119,
+      "fraction_expressing": 0.08276797829036635
+    },
+    "absorptive": {
+      "mean_expression": 0.09163962304592133,
+      "fraction_expressing": 0.11805111349478926
+    },
+    "secretory": {
+      "mean_expression": 0.11569029092788696,
+      "fraction_expressing": 0.14650537634408603
+    }
+  },
+  "CD300LF": {
+    "tuft": {
+      "mean_expression": 0.4891589283943176,
+      "fraction_expressing": 0.2645861601085482
+    },
+    "absorptive": {
+      "mean_expression": 0.0003298150550108403,
+      "fraction_expressing": 0.00046252103486621335
+    },
+    "secretory": {
+      "mean_expression": 0.0013606310822069645,
+      "fraction_expressing": 0.0010080645161290322
+    }
+  },
+  "PLCG2": {
+    "tuft": {
+      "mean_expression": 2.9437942504882812,
+      "fraction_expressing": 0.8887381275440976
+    },
+    "absorptive": {
+      "mean_expression": 0.0989583283662796,
+      "fraction_expressing": 0.08584193589655274
+    },
+    "secretory": {
+      "mean_expression": 0.15747441351413727,
+      "fraction_expressing": 0.11819556451612903
+    }
+  },
+  "RAC2": {
+    "tuft": {
+      "mean_expression": 0.24500717222690582,
+      "fraction_expressing": 0.15739484396200815
+    },
+    "absorptive": {
+      "mean_expression": 0.021491793915629387,
+      "fraction_expressing": 0.03580109627326136
+    },
+    "secretory": {
+      "mean_expression": 0.037286918610334396,
+      "fraction_expressing": 0.06165994623655914
+    }
+  },
+  "ITPR2": {
+    "tuft": {
+      "mean_expression": 1.4555410146713257,
+      "fraction_expressing": 0.6377204884667571
+    },
+    "absorptive": {
+      "mean_expression": 0.0695587694644928,
+      "fraction_expressing": 0.07642422035683005
+    },
+    "secretory": {
+      "mean_expression": 0.13434141874313354,
+      "fraction_expressing": 0.13692876344086022
+    }
+  },
+  "PRKCA": {
+    "tuft": {
+      "mean_expression": 0.27359113097190857,
+      "fraction_expressing": 0.1723202170963365
+    },
+    "absorptive": {
+      "mean_expression": 0.11077795922756195,
+      "fraction_expressing": 0.1291024139661671
+    },
+    "secretory": {
+      "mean_expression": 0.17406202852725983,
+      "fraction_expressing": 0.17867943548387097
+    }
+  },
+  "TRPM5": {
+    "tuft": {
+      "mean_expression": 1.7959256172180176,
+      "fraction_expressing": 0.762550881953867
+    },
+    "absorptive": {
+      "mean_expression": 0.0036578034050762653,
+      "fraction_expressing": 0.004654732967908913
+    },
+    "secretory": {
+      "mean_expression": 0.00881261844187975,
+      "fraction_expressing": 0.00949260752688172
+    }
+  }
+}

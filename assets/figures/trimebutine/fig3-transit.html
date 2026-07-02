@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direction of effect — who speeds, who slows, who normalises</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --color-text-primary:#2b2b28; --color-text-secondary:#6b675e; --color-text-tertiary:#8a857a;
+ --color-background-primary:#ffffff; --color-background-secondary:#f2efe9; --color-background-tertiary:#faf9f7;
+ --color-border-primary:rgba(60,55,45,0.34); --color-border-secondary:#d9d5cc; --color-border-tertiary:#e7e3da;
+ --border-radius-md:8px; --border-radius-lg:12px; --border-radius-xl:16px;
+ --font-sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --font-serif:Georgia,'Times New Roman',serif;
+ --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+html,body{margin:0;padding:0;background:transparent;}
+body{font-family:var(--font-sans);color:var(--color-text-primary);line-height:1.5;padding:4px 2px 8px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+a{color:#1f6e5e;text-decoration:none;border-bottom:1px solid rgba(31,110,94,0.35);}
+a:hover{border-bottom-color:#1f6e5e;}
+.mt-src{margin-top:14px;padding-top:9px;border-top:1px solid var(--color-border-secondary);font-size:11px;line-height:1.55;color:var(--color-text-secondary);}
+.mt-src b{font-weight:600;color:var(--color-text-primary);}
+</style>
+</head>
+<body>
+<h2 class="sr-only">Drugs arranged by their effect on intestinal transit. Loperamide slows transit; laxatives and prokinetics speed it; trimebutine is bidirectional. Tap a drug for mechanism, a schematic, and a referenced source.</h2>
+
+<style>
+.drow{cursor:pointer;}
+.drow rect.hit{fill:transparent;}
+.drow:hover rect.hit{fill:var(--color-background-secondary);}
+.s3panel{margin-top:.6rem;padding:.85rem 1rem;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);min-height:150px;}
+.s3panel .head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+.s3panel .nm{font-size:14px;font-weight:500;color:var(--color-text-primary);}
+.s3panel .dir{font-size:11px;font-weight:500;padding:2px 9px;border-radius:var(--border-radius-md);}
+.s3panel .body{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;}
+.s3panel .fig{flex:0 0 auto;}
+.s3panel .txt{flex:1;min-width:230px;font-size:12.5px;line-height:1.55;color:var(--color-text-primary);}
+.s3panel h4{font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:7px 0 1px;}
+.s3panel p{margin:0;}
+.s3panel .ref{font-size:11px;color:var(--color-text-secondary);}
+.s3panel .hint{color:var(--color-text-secondary);font-style:italic;font-size:12.5px;}
+</style>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;">
+  <span style="font-size:12px;color:var(--color-text-secondary);">how each drug moves transit</span>
+  <span style="font-size:12px;color:var(--color-text-secondary);">tap a drug</span>
+</div>
+
+<div style="display:flex;gap:16px;font-size:11px;color:var(--color-text-secondary);margin-bottom:6px;">
+  <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4A7FB5;vertical-align:middle;margin-right:4px;"></span>slows</span>
+  <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#3E9B72;vertical-align:middle;margin-right:4px;"></span>speeds</span>
+  <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,#3E9B72 50%,#4A7FB5 50%);vertical-align:middle;margin-right:4px;"></span>both — toward normal</span>
+</div>
+
+<svg viewBox="0 0 680 300" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+<title>Drugs by direction of effect on intestinal transit</title>
+<defs>
+<marker id="bh" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M2 2 L10 6 L2 10 Z" fill="#4A7FB5"/></marker>
+<marker id="gh" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M2 2 L10 6 L2 10 Z" fill="#3E9B72"/></marker>
+</defs>
+
+<line x1="140" y1="48" x2="650" y2="48" stroke="var(--color-border-secondary)" stroke-width="1"/>
+<line x1="395" y1="40" x2="395" y2="276" stroke="var(--color-border-tertiary)" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="146" y="34" text-anchor="start" font-size="11" fill="#2C5689" font-weight="500">← slower transit</text>
+<text x="395" y="34" text-anchor="middle" font-size="11" fill="var(--color-text-secondary)">normal</text>
+<text x="648" y="34" text-anchor="end" font-size="11" fill="#1F6E4A" font-weight="500">faster transit →</text>
+
+<g class="drow" onclick="showS3('loperamide')">
+  <rect class="hit" x="6" y="72" width="668" height="44" rx="8"/>
+  <text x="16" y="90" font-size="13" font-weight="500" fill="var(--color-text-primary)">Loperamide</text>
+  <text x="16" y="104" font-size="10.5" fill="var(--color-text-secondary)">μ-opioid agonist</text>
+  <line x1="380" y1="94" x2="210" y2="94" stroke="#4A7FB5" stroke-width="4" marker-end="url(#bh)"/>
+</g>
+
+<g class="drow" onclick="showS3('laxatives')">
+  <rect class="hit" x="6" y="118" width="668" height="44" rx="8"/>
+  <text x="16" y="136" font-size="13" font-weight="500" fill="var(--color-text-primary)">Laxatives</text>
+  <text x="16" y="150" font-size="10.5" fill="var(--color-text-secondary)">osmotic · stimulant</text>
+  <line x1="410" y1="140" x2="600" y2="140" stroke="#3E9B72" stroke-width="4" marker-end="url(#gh)"/>
+</g>
+
+<g class="drow" onclick="showS3('prokinetics')">
+  <rect class="hit" x="6" y="164" width="668" height="44" rx="8"/>
+  <text x="16" y="182" font-size="13" font-weight="500" fill="var(--color-text-primary)">Prokinetics</text>
+  <text x="16" y="196" font-size="10.5" fill="var(--color-text-secondary)">5-HT₄ · D₂ · motilin</text>
+  <line x1="410" y1="186" x2="600" y2="186" stroke="#3E9B72" stroke-width="4" marker-end="url(#gh)"/>
+</g>
+
+<g class="drow" onclick="showS3('trimebutine')">
+  <rect class="hit" x="6" y="210" width="668" height="52" rx="8" fill="rgba(126,63,88,0.06)"/>
+  <text x="16" y="232" font-size="13" font-weight="600" fill="var(--color-text-primary)">Trimebutine</text>
+  <text x="16" y="246" font-size="10.5" fill="var(--color-text-secondary)">non-selective opioid modulator</text>
+  <line x1="240" y1="236" x2="378" y2="236" stroke="#3E9B72" stroke-width="4" marker-end="url(#gh)"/>
+  <line x1="552" y1="236" x2="414" y2="236" stroke="#4A7FB5" stroke-width="4" marker-end="url(#bh)"/>
+  <circle cx="396" cy="236" r="4" fill="var(--color-text-secondary)"/>
+</g>
+</svg>
+
+<div id="s3panel" class="s3panel">
+  <p class="hint">Three of these drugs push transit one way only. Trimebutine is the exception — it converges on normal from either side, which is exactly why it doesn't fit a single category. Tap any drug.</p>
+</div>
+
+<script>
+const tube='<rect x="18" y="42" width="224" height="26" rx="13" fill="#EFEAE0" stroke="#B8AE9C" stroke-width="1"/>';
+function arrowR(x1,x2,y,c){return '<line x1="'+x1+'" y1="'+y+'" x2="'+x2+'" y2="'+y+'" stroke="'+c+'" stroke-width="4"/><path d="M'+x2+' '+(y-5)+' L'+(x2+9)+' '+y+' L'+x2+' '+(y+5)+' Z" fill="'+c+'"/>';}
+function arrowL(x1,x2,y,c){return '<line x1="'+x1+'" y1="'+y+'" x2="'+x2+'" y2="'+y+'" stroke="'+c+'" stroke-width="4"/><path d="M'+x2+' '+(y-5)+' L'+(x2-9)+' '+y+' L'+x2+' '+(y+5)+' Z" fill="'+c+'"/>';}
+const FIG={
+  loperamide:'<svg viewBox="0 0 260 90" width="240" xmlns="http://www.w3.org/2000/svg">'+tube+'<circle cx="46" cy="55" r="6" fill="#C7A36B"/><circle cx="62" cy="55" r="6" fill="#C7A36B"/><circle cx="78" cy="55" r="6" fill="#C7A36B"/><circle cx="94" cy="55" r="6" fill="#C7A36B"/>'+arrowL(170,90,22,'#4A7FB5')+'<text x="130" y="86" text-anchor="middle" font-size="11" fill="#2C5689">transit slowed</text></svg>',
+  laxatives:'<svg viewBox="0 0 260 90" width="240" xmlns="http://www.w3.org/2000/svg">'+tube+'<circle cx="70" cy="55" r="5" fill="#C7A36B"/><circle cx="120" cy="55" r="5" fill="#C7A36B"/><circle cx="60" cy="48" r="3" fill="#7FB5DE"/><circle cx="95" cy="60" r="3" fill="#7FB5DE"/><circle cx="135" cy="49" r="3" fill="#7FB5DE"/><circle cx="165" cy="58" r="3" fill="#7FB5DE"/>'+arrowR(90,180,22,'#3E9B72')+'<text x="135" y="86" text-anchor="middle" font-size="11" fill="#1F6E4A">transit accelerated</text></svg>',
+  prokinetics:'<svg viewBox="0 0 260 90" width="240" xmlns="http://www.w3.org/2000/svg">'+tube+'<path d="M40 55 q12 -12 24 0 q12 -12 24 0 q12 -12 24 0" fill="none" stroke="#1F6E4A" stroke-width="1.5"/><circle cx="150" cy="55" r="6" fill="#C7A36B"/><circle cx="166" cy="55" r="6" fill="#C7A36B"/>'+arrowR(90,180,22,'#3E9B72')+'<text x="135" y="86" text-anchor="middle" font-size="11" fill="#1F6E4A">coordinated push</text></svg>',
+  trimebutine:'<svg viewBox="0 0 260 90" width="240" xmlns="http://www.w3.org/2000/svg">'+tube+'<circle cx="120" cy="55" r="6" fill="#C7A36B"/><circle cx="136" cy="55" r="6" fill="#C7A36B"/>'+arrowR(40,118,22,'#3E9B72')+'<line x1="220" y1="22" x2="142" y2="22" stroke="#4A7FB5" stroke-width="4"/><path d="M142 17 L133 22 L142 27 Z" fill="#4A7FB5"/><circle cx="130" cy="22" r="3" fill="var(--color-text-secondary)"/><text x="130" y="86" text-anchor="middle" font-size="11" fill="var(--color-text-secondary)">toward normal — either way</text></svg>'
+};
+const S3={
+  loperamide:{nm:"Loperamide",dir:"slows ←",dc:"#4A7FB5",dbg:"rgba(74,127,181,0.12)",
+    mech:"A peripherally-restricted μ-opioid receptor agonist. By suppressing enteric cholinergic neurotransmission, it reduces propulsive peristalsis of circular and longitudinal smooth muscle, lengthening transit time and allowing more water/electrolyte absorption — the basis of its antidiarrheal use. It does not cross the blood–brain barrier at therapeutic doses.",
+    ref:"Heel RC et al., Drugs 1978;15(1):33–52 (doi:<a href='https://doi.org/10.2165/00003495-197815010-00003' target='_blank' rel='noopener'>10.2165/00003495-197815010-00003</a>). Parkar N et al., Front Neurosci 2024;18:1424936 (<a href='https://pubmed.ncbi.nlm.nih.gov/39268036/' target='_blank' rel='noopener'>PMID 39268036</a>)."},
+  laxatives:{nm:"Laxatives",dir:"speeds →",dc:"#3E9B72",dbg:"rgba(62,155,114,0.12)",
+    mech:"Two transit-accelerating subtypes. Osmotic agents (macrogol/PEG, lactulose, magnesium salts) are poorly absorbed and hold or draw water into the lumen, increasing volume and stimulating propulsion. Stimulant agents (senna, bisacodyl, sodium picosulfate) stimulate enteric nerves and colonic motility while reducing net water absorption / increasing secretion.",
+    ref:"Lembo A, Camilleri M. Chronic constipation. N Engl J Med 2003;349:1360–8 (<a href='https://pubmed.ncbi.nlm.nih.gov/14523145/' target='_blank' rel='noopener'>PMID 14523145</a>)."},
+  prokinetics:{nm:"Prokinetics",dir:"speeds →",dc:"#3E9B72",dbg:"rgba(62,155,114,0.12)",
+    mech:"Drugs that enhance coordinated propulsive contractions. 5-HT₄ agonists (cisapride, prucalopride) facilitate acetylcholine release in the myenteric plexus; D₂ antagonists (metoclopramide, domperidone) remove dopaminergic inhibition of motility; motilin agonists (erythromycin) trigger phase-III–like contractions.",
+    note:"Cisapride was withdrawn from most markets (US and UK, July 2000): it blocks the cardiac hERG (I_Kr) potassium channel — independently of its prokinetic action — prolonging the QT interval and causing torsades de pointes. The FDA logged 341 serious cardiac events (107 torsades, 80 deaths) over 1993–1999, often when CYP3A4 inhibitors raised cisapride levels.",
+    ref:"De Maeyer JH et al., Neurogastroenterol Motil 2008;20:99–112 (doi:<a href='https://doi.org/10.1111/j.1365-2982.2007.01059.x' target='_blank' rel='noopener'>10.1111/j.1365-2982.2007.01059.x</a>). Erythromycin/motilin: Weber FH et al., Am J Gastroenterol 1993;88:485–490 (<a href='https://pubmed.ncbi.nlm.nih.gov/8470625/' target='_blank' rel='noopener'>PMID 8470625</a>). Cisapride withdrawal: Layton D et al., Pharmacoepidemiol Drug Saf 2003 (<a href='https://pubmed.ncbi.nlm.nih.gov/12616845/' target='_blank' rel='noopener'>PMID 12616845</a>)."},
+  trimebutine:{nm:"Trimebutine",dir:"both — toward normal",dc:"#7E3F58",dbg:"rgba(126,63,88,0.10)",
+    mech:"A weak, non-selective agonist at μ, κ and δ opioid receptors. It modulates rather than blocks — and the net effect depends on the starting state of the gut.",
+    dirtext:"Both directions: in randomized IBS studies it accelerated colonic transit in constipated patients and slowed it in diarrhea-predominant patients — toward normal in each case. This is why it fits none of the single-direction categories above.",
+    ref:"Delvaux M, Wingate D, J Int Med Res 1997;25:225–246 (<a href='https://pubmed.ncbi.nlm.nih.gov/9364286/' target='_blank' rel='noopener'>PMID 9364286</a>). Schang JC, Devroede G, Pilote M — colonic transit shortened only when delayed: <a href='https://pubmed.ncbi.nlm.nih.gov/8458257/' target='_blank' rel='noopener'>PMID 8458257</a>."}
+};
+function showS3(k){
+  const d=S3[k];
+  let body='<div class="body"><div class="fig">'+FIG[k]+'</div><div class="txt">'+
+    '<h4>Mechanism</h4><p>'+d.mech+'</p>';
+  if(d.dirtext) body+='<h4>Direction</h4><p>'+d.dirtext+'</p>';
+  if(d.note) body+='<h4>Cisapride withdrawal</h4><p>'+d.note+'</p>';
+  body+='<h4>Reference</h4><p class="ref">'+d.ref+'</p></div></div>';
+  document.getElementById('s3panel').innerHTML=
+    '<div class="head"><span class="nm">'+d.nm+'</span><span class="dir" style="color:'+d.dc+';background:'+d.dbg+';">'+d.dir+'</span></div>'+body;
+}
+</script>
+<script>
+(function(){
+ function postH(){ try{ var h=Math.ceil(document.documentElement.getBoundingClientRect().height); parent.postMessage({type:'mtFigHeight',h:h},'*'); }catch(e){} }
+ window.addEventListener('load',postH);
+ if(window.ResizeObserver){ new ResizeObserver(postH).observe(document.body); }
+ [200,700,1500].forEach(function(d){ setTimeout(postH,d); });
+})();
+</script>
+
+<style id="mtHaloStyle">
+@keyframes mtHalo{0%,100%{filter:drop-shadow(0 0 0 rgba(248,200,38,0));}50%{filter:drop-shadow(0 0 5px rgba(248,200,38,.95));}}
+.drow{animation:mtHalo 1.55s ease-in-out infinite;cursor:pointer;}
+body.mt-stop .drow{animation:none;}
+@media(prefers-reduced-motion:reduce){.drow{animation:none;}}
+</style>
+<script>(function(){function s(){document.body.classList.add('mt-stop');document.removeEventListener('pointerdown',s,true);}document.addEventListener('pointerdown',s,true);setTimeout(function(){if(!document.body.classList.contains('mt-stop'))document.body.classList.add('mt-stop');},9000);})();</script>
+</body>
+</html>

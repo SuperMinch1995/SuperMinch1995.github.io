@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>United States (FDA) vs Europe — two systems, one drug</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --color-text-primary:#2b2b28; --color-text-secondary:#6b675e; --color-text-tertiary:#8a857a;
+ --color-background-primary:#ffffff; --color-background-secondary:#f2efe9; --color-background-tertiary:#faf9f7;
+ --color-border-primary:rgba(60,55,45,0.34); --color-border-secondary:#d9d5cc; --color-border-tertiary:#e7e3da;
+ --border-radius-md:8px; --border-radius-lg:12px; --border-radius-xl:16px;
+ --font-sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --font-serif:Georgia,'Times New Roman',serif;
+ --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+html,body{margin:0;padding:0;background:transparent;}
+body{font-family:var(--font-sans);color:var(--color-text-primary);line-height:1.5;padding:4px 2px 8px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+a{color:#1f6e5e;text-decoration:none;border-bottom:1px solid rgba(31,110,94,0.35);}
+a:hover{border-bottom-color:#1f6e5e;}
+.mt-src{margin-top:14px;padding-top:9px;border-top:1px solid var(--color-border-secondary);font-size:11px;line-height:1.55;color:var(--color-text-secondary);}
+.mt-src b{font-weight:600;color:var(--color-text-primary);}
+</style>
+</head>
+<body>
+<h2 class="sr-only">Editorial broadsheet comparison of the US (FDA) and European (national agencies + EMA) drug-authorisation systems, with line icons per row, procedure schematics for who decides and the route to market, and detailed US legacy-drug definitions.</h2>
+
+<style>
+.bs{--us:#52677D;--eu:#9A8453;--pay:#7E3F58;font-family:var(--font-sans);color:var(--color-text-primary);}
+.bs .kick{font-family:var(--font-serif);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--color-text-secondary);}
+.bs .lede{font-family:var(--font-serif);font-size:21px;font-weight:600;line-height:1.2;margin:.15rem 0 .1rem;}
+.bs .rule{height:2px;background:var(--color-text-primary);opacity:.85;margin:.5rem 0 0;}
+.bs .colhead{display:grid;grid-template-columns:46px 1fr 1fr;border-bottom:1px solid var(--color-border-secondary);}
+.bs .colhead .c{padding:8px 12px 7px;}
+.bs .colhead .c.e{border-left:1px solid var(--color-border-secondary);}
+.bs .colhead .lab{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;}
+.bs .colhead .c.us{background:#45586c;} .bs .colhead .c.eu{background:#7c6a42;} .bs .colhead .c.us .lab,.bs .colhead .c.eu .lab{color:#fff;} .bs .colhead .c.us .sub,.bs .colhead .c.eu .sub{color:rgba(255,255,255,.82);} .bs .colhead .flag{display:inline-block;vertical-align:-2px;margin-right:7px;border-radius:2px;box-shadow:0 0 0 .5px rgba(255,255,255,.45);}
+.bs .colhead .sub{font-size:11px;color:var(--color-text-secondary);}
+.bs .row{display:grid;grid-template-columns:46px 1fr;border-bottom:1px solid var(--color-border-secondary);cursor:pointer;transition:background .12s;}
+.bs .row:hover{background:var(--color-background-secondary);}
+.bs .row.on{background:var(--color-background-secondary);}
+.bs .ic{display:flex;justify-content:center;padding-top:11px;color:var(--color-text-secondary);}
+.bs .ic svg{display:block;}
+.bs .body{padding:8px 0 11px;}
+.bs .dim{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--color-text-secondary);padding:0 12px 5px;}
+.bs .pair{display:grid;grid-template-columns:1fr 1fr;}
+.bs .pair .x{padding:0 12px;font-size:13.5px;line-height:1.35;}
+.bs .pair .x.e{border-left:1px solid var(--color-border-secondary);}
+.bs .row.pay .ic{color:var(--pay);} .bs .row.pay .dim{color:var(--pay);font-weight:600;}
+.bs .row.pay{border-top:2px solid var(--pay);}
+.bs .panel{margin-top:.9rem;}
+.bs .dt{font-family:var(--font-serif);font-size:17px;font-weight:600;border-bottom:1px solid var(--color-border-secondary);padding-bottom:5px;margin-bottom:10px;}
+.bs .g2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.bs .blk .bl{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:6px;}
+.bs .blk.us .bl{color:var(--us);} .bs .blk.eu .bl{color:var(--eu);}
+.bs .sch{margin:2px 0 8px;}
+.bs .bx{font-size:12.5px;line-height:1.5;color:var(--color-text-primary);}
+.bs .bx b{font-weight:600;}
+.bs .src{margin-top:10px;font-size:11px;color:var(--color-text-secondary);}
+.bs .hint{font-size:12.5px;font-style:italic;color:var(--color-text-secondary);}
+@media(max-width:520px){.bs .g2{grid-template-columns:1fr;}}
+</style>
+
+<div class="bs">
+  <div class="kick">Regulatory dossier</div>
+  <div class="lede">Two systems, one drug</div>
+  <div class="rule"></div>
+
+  <div class="colhead">
+    <div class="c"></div>
+    <div class="c us"><svg class="flag" width="21" height="14" viewBox="0 0 26 18" aria-hidden="true"><rect width="26" height="18" fill="#fff"/><rect y="0.000" width="26" height="1.385" fill="#B22234"/><rect y="2.769" width="26" height="1.385" fill="#B22234"/><rect y="5.538" width="26" height="1.385" fill="#B22234"/><rect y="8.307" width="26" height="1.385" fill="#B22234"/><rect y="11.076" width="26" height="1.385" fill="#B22234"/><rect y="13.845" width="26" height="1.385" fill="#B22234"/><rect y="16.614" width="26" height="1.385" fill="#B22234"/><rect width="11" height="9.69" fill="#3C3B6E"/><circle cx="1.40" cy="1.50" r="0.5" fill="#fff"/><circle cx="3.50" cy="1.50" r="0.5" fill="#fff"/><circle cx="5.60" cy="1.50" r="0.5" fill="#fff"/><circle cx="7.70" cy="1.50" r="0.5" fill="#fff"/><circle cx="9.80" cy="1.50" r="0.5" fill="#fff"/><circle cx="1.40" cy="3.70" r="0.5" fill="#fff"/><circle cx="3.50" cy="3.70" r="0.5" fill="#fff"/><circle cx="5.60" cy="3.70" r="0.5" fill="#fff"/><circle cx="7.70" cy="3.70" r="0.5" fill="#fff"/><circle cx="9.80" cy="3.70" r="0.5" fill="#fff"/><circle cx="1.40" cy="5.90" r="0.5" fill="#fff"/><circle cx="3.50" cy="5.90" r="0.5" fill="#fff"/><circle cx="5.60" cy="5.90" r="0.5" fill="#fff"/><circle cx="7.70" cy="5.90" r="0.5" fill="#fff"/><circle cx="9.80" cy="5.90" r="0.5" fill="#fff"/><circle cx="1.40" cy="8.10" r="0.5" fill="#fff"/><circle cx="3.50" cy="8.10" r="0.5" fill="#fff"/><circle cx="5.60" cy="8.10" r="0.5" fill="#fff"/><circle cx="7.70" cy="8.10" r="0.5" fill="#fff"/><circle cx="9.80" cy="8.10" r="0.5" fill="#fff"/></svg><span class="lab">United States</span><div class="sub">FDA — one federal agency</div></div>
+    <div class="c eu e"><svg class="flag" width="21" height="14" viewBox="0 0 27 18" aria-hidden="true"><rect width="27" height="18" fill="#003399"/><circle cx="13.50" cy="4.00" r="0.95" fill="#FFCC00"/><circle cx="16.00" cy="4.67" r="0.95" fill="#FFCC00"/><circle cx="17.83" cy="6.50" r="0.95" fill="#FFCC00"/><circle cx="18.50" cy="9.00" r="0.95" fill="#FFCC00"/><circle cx="17.83" cy="11.50" r="0.95" fill="#FFCC00"/><circle cx="16.00" cy="13.33" r="0.95" fill="#FFCC00"/><circle cx="13.50" cy="14.00" r="0.95" fill="#FFCC00"/><circle cx="11.00" cy="13.33" r="0.95" fill="#FFCC00"/><circle cx="9.17" cy="11.50" r="0.95" fill="#FFCC00"/><circle cx="8.50" cy="9.00" r="0.95" fill="#FFCC00"/><circle cx="9.17" cy="6.50" r="0.95" fill="#FFCC00"/><circle cx="11.00" cy="4.67" r="0.95" fill="#FFCC00"/></svg><span class="lab">Europe</span><div class="sub">national agencies + EMA</div></div>
+  </div>
+
+  <div class="row" onclick="s5('who',this)">
+    <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 L12 4 L21 9.5"/><line x1="4" y1="10.2" x2="20" y2="10.2"/><line x1="6" y1="10.5" x2="6" y2="18.5"/><line x1="10" y1="10.5" x2="10" y2="18.5"/><line x1="14" y1="10.5" x2="14" y2="18.5"/><line x1="18" y1="10.5" x2="18" y2="18.5"/><line x1="3.5" y1="19" x2="20.5" y2="19"/></svg></div>
+    <div class="body"><div class="dim">Who decides</div><div class="pair"><div class="x">One federal agency (FDA)</div><div class="x e">27 member states + EMA</div></div></div>
+  </div>
+
+  <div class="row" onclick="s5('route',this)">
+    <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21 L12 12"/><path d="M12 12 L6 6"/><path d="M6 9.2 L6 6 L9.2 6"/><path d="M12 12 L18 6"/><path d="M14.8 6 L18 6 L18 9.2"/></svg></div>
+    <div class="body"><div class="dim">Route to market</div><div class="pair"><div class="x">A single approval (NDA)</div><div class="x e">Several parallel routes</div></div></div>
+  </div>
+
+  <div class="row" onclick="s5('legacy',this)">
+    <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="4" x2="18" y2="4"/><line x1="6" y1="20" x2="18" y2="20"/><path d="M7.5 4 C7.5 10 12 11 12 12 C12 13 7.5 14 7.5 20"/><path d="M16.5 4 C16.5 10 12 11 12 12 C12 13 16.5 14 16.5 20"/></svg></div>
+    <div class="body"><div class="dim">Old / legacy drugs</div><div class="pair"><div class="x">Must still file an NDA</div><div class="x e">Old national authorisations</div></div></div>
+  </div>
+
+  <div class="row pay" onclick="s5('trim',this)">
+    <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="6" rx="3"/><line x1="12" y1="9.4" x2="12" y2="14.6"/></svg></div>
+    <div class="body"><div class="dim">Trimebutine</div><div class="pair"><div class="x">Never approved · no NDA on record</div><div class="x e">Authorised nationally since ~1970</div></div></div>
+  </div>
+
+  <div class="panel" id="p5"><p class="hint">A drug sold across Europe, Latin America and Asia is absent from the US — and the reason is structural, not a safety verdict. Tap a row.</p></div>
+</div>
+
+<script>
+var SCH={
+ whoFDA:'<svg viewBox="0 0 220 112" width="100%" style="max-width:210px;display:block"><rect x="72" y="12" width="76" height="28" rx="3" fill="none" stroke="#52677D" stroke-width="1.5"/><text x="110" y="31" text-anchor="middle" font-size="12" font-weight="700" fill="#3f5266">FDA</text><line x1="110" y1="40" x2="110" y2="64" stroke="#52677D" stroke-width="1.3"/><polygon points="105,62 115,62 110,70" fill="#52677D"/><rect x="28" y="74" width="164" height="26" rx="3" fill="#52677D" fill-opacity="0.10" stroke="#52677D" stroke-width="1"/><text x="110" y="91" text-anchor="middle" font-size="11" fill="#3f5266">one U.S. market</text></svg>',
+ whoEU:'<svg viewBox="0 0 220 112" width="100%" style="max-width:210px;display:block"><line x1="45" y1="18" x2="110" y2="46" stroke="#9A8453" stroke-width="0.8"/><line x1="78" y1="14" x2="110" y2="46" stroke="#9A8453" stroke-width="0.8"/><line x1="110" y1="13" x2="110" y2="46" stroke="#9A8453" stroke-width="0.8"/><line x1="142" y1="14" x2="110" y2="46" stroke="#9A8453" stroke-width="0.8"/><line x1="175" y1="18" x2="110" y2="46" stroke="#9A8453" stroke-width="0.8"/><circle cx="45" cy="18" r="3" fill="#9A8453"/><circle cx="78" cy="14" r="3" fill="#9A8453"/><circle cx="110" cy="13" r="3" fill="#9A8453"/><circle cx="142" cy="14" r="3" fill="#9A8453"/><circle cx="175" cy="18" r="3" fill="#9A8453"/><circle cx="110" cy="50" r="15" fill="none" stroke="#9A8453" stroke-width="1.5"/><text x="110" y="54" text-anchor="middle" font-size="10" font-weight="700" fill="#705f3c">EMA</text><line x1="110" y1="65" x2="110" y2="74" stroke="#9A8453" stroke-width="1.1"/><polygon points="105,72 115,72 110,80" fill="#9A8453"/><rect x="28" y="82" width="164" height="24" rx="3" fill="#9A8453" fill-opacity="0.12" stroke="#9A8453" stroke-width="1"/><text x="110" y="98" text-anchor="middle" font-size="11" fill="#705f3c">27 national markets</text></svg>',
+ routeFDA:'<svg viewBox="0 0 250 88" width="100%" style="max-width:250px;display:block"><line x1="20" y1="46" x2="232" y2="46" stroke="#52677D" stroke-width="1.3"/><polygon points="228,42 236,46 228,50" fill="#52677D"/><circle cx="28" cy="46" r="3.2" fill="#52677D"/><text x="28" y="34" text-anchor="middle" font-size="9.5" fill="#3f5266">IND</text><circle cx="83" cy="46" r="3.2" fill="#52677D"/><text x="83" y="64" text-anchor="middle" font-size="9.5" fill="#3f5266">trials</text><circle cx="138" cy="46" r="3.2" fill="#52677D"/><text x="138" y="34" text-anchor="middle" font-size="9.5" fill="#3f5266">NDA</text><circle cx="186" cy="46" r="3.2" fill="#52677D"/><text x="186" y="64" text-anchor="middle" font-size="9.5" fill="#3f5266">FDA review</text><circle cx="224" cy="46" r="4.2" fill="#3f5266"/><text x="222" y="34" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3f5266">approved</text></svg>',
+ routeEU:'<svg viewBox="0 0 250 150" width="100%" style="max-width:250px;display:block"><circle cx="24" cy="75" r="6" fill="#9A8453"/><text x="24" y="95" text-anchor="middle" font-size="9.5" fill="#705f3c">applicant</text><line x1="31" y1="75" x2="120" y2="22" stroke="#9A8453" stroke-width="1"/><line x1="31" y1="75" x2="120" y2="57" stroke="#9A8453" stroke-width="1"/><line x1="31" y1="75" x2="120" y2="93" stroke="#9A8453" stroke-width="1"/><line x1="31" y1="75" x2="120" y2="128" stroke="#9A8453" stroke-width="1"/><circle cx="120" cy="22" r="3" fill="#9A8453"/><text x="128" y="25" font-size="10" fill="#705f3c">Centralised (EMA) &#8594; all EU</text><circle cx="120" cy="57" r="3" fill="#9A8453"/><text x="128" y="60" font-size="10" fill="#705f3c">National &#8594; one country</text><circle cx="120" cy="93" r="3" fill="#9A8453"/><text x="128" y="96" font-size="10" fill="#705f3c">Mutual recognition</text><circle cx="120" cy="128" r="3" fill="#9A8453"/><text x="128" y="131" font-size="10" fill="#705f3c">Decentralised</text></svg>'
+};
+var DET={
+ who:{t:"Who decides",sU:'whoFDA',sE:'whoEU',
+   us:"One federal regulator decides for the whole country. A single yes covers the entire US market.",
+   eu:"Each of 27 national agencies can authorise for its own territory; the EMA coordinates and runs the EU-wide route. Many decisions, many markets.",
+   src:"Structure of the FDA (<a href='https://www.fda.gov/drugs/enforcement-activities-fda/unapproved-drugs' target='_blank' rel='noopener'>fda.gov</a>); EU medicines regulatory network via the <a href='https://www.ema.europa.eu/en/about-us/what-we-do/authorisation-medicines' target='_blank' rel='noopener'>EMA</a>."},
+ route:{t:"Route to market",sU:'routeFDA',sE:'routeEU',
+   us:"One straight path: a sponsor files an IND, runs trials, then submits an NDA; the FDA reviews and approves or not. No approval, no marketing.",
+   eu:"Four routes coexist — Centralised (one EU-wide authorisation via the EMA), National, Mutual Recognition (others recognise a first national approval) and Decentralised (several countries assess together).",
+   src:"<a href='https://www.fda.gov/drugs/enforcement-activities-fda/unapproved-drugs' target='_blank' rel='noopener'>FDA, Unapproved Drugs</a>; <a href='https://www.ema.europa.eu/en/about-us/what-we-do/authorisation-medicines' target='_blank' rel='noopener'>EMA authorisation procedures</a>."},
+ legacy:{t:"Old / legacy drugs",
+   us:"<b>Grandfathered</b> — drugs already sold in the US before the 1938 (and 1962) laws were in principle exempt from the new approval rules; in practice the FDA reads this so narrowly that almost nothing qualifies today.<br><br><b>GRASE</b> (generally recognised as safe and effective) — a drug escapes the NDA requirement only if qualified experts generally recognise it as safe and effective for its labelled use, on the same weight of published evidence an NDA would demand — rarely met.<br><br><b>DESI</b> (Drug Efficacy Study Implementation) — the post-1962 programme that re-reviewed 1938–1962 drugs for efficacy; a product under an open DESI proceeding may be sold pending the verdict.",
+   eu:"Europe needs none of this for old drugs: many simply hold national marketing authorisations granted before EU centralisation and remain validly authorised under them, subject to renewal and pharmacovigilance.",
+   src:"<a href='https://www.fda.gov/drugs/enforcement-activities-fda/unapproved-drugs' target='_blank' rel='noopener'>FDA, Unapproved Drugs (fda.gov)</a>."},
+ trim:{t:"Trimebutine",
+   us:"Not FDA-approved and not available in the US; no extensive North-American trials and no NDA on record — even after it entered Pfizer's portfolio (Jouveinal → Warner-Lambert, 1993 → Pfizer, 2000).",
+   eu:"Authorised by national procedures from the early 1970s (France, as Débridat), then licensed across Europe, Latin America and Asia — outside, and predating, the EMA's centralised route.",
+   src:"<a href='https://www.drugs.com/medical-answers/trimebutine-3571789/' target='_blank' rel='noopener'>Drugs.com</a>; <a href='https://go.drugbank.com/drugs/DB09089' target='_blank' rel='noopener'>DrugBank</a>; <a href='https://www.sciencedirect.com/topics/pharmacology-toxicology-and-pharmaceutical-science/trimebutine' target='_blank' rel='noopener'>ScienceDirect</a>; <a href='https://insights.citeline.com/PS022109/' target='_blank' rel='noopener'>Warner-Lambert / Jouveinal 1993</a>; <a href='https://en.wikipedia.org/wiki/Warner%E2%80%93Lambert' target='_blank' rel='noopener'>Pfizer 2000</a>."}
+};
+function s5(k,el){
+ var d=DET[k];
+ document.querySelectorAll('.bs .row').forEach(function(r){r.classList.remove('on');});
+ if(el) el.classList.add('on');
+ var h='<div class="dt">'+d.t+'</div><div class="g2">';
+ h+='<div class="blk us"><span class="bl">United States</span>'+(d.sU?'<div class="sch">'+SCH[d.sU]+'</div>':'')+'<div class="bx">'+d.us+'</div></div>';
+ h+='<div class="blk eu"><span class="bl">Europe</span>'+(d.sE?'<div class="sch">'+SCH[d.sE]+'</div>':'')+'<div class="bx">'+d.eu+'</div></div>';
+ h+='</div>';
+ if(d.note) h+='<div class="note">'+d.note+'</div>';
+ h+='<div class="src">Source: '+d.src+'</div>';
+ document.getElementById('p5').innerHTML=h;
+}
+</script>
+
+<script>
+(function(){
+ function postH(){ try{ var h=Math.ceil(document.documentElement.getBoundingClientRect().height); parent.postMessage({type:'mtFigHeight',h:h},'*'); }catch(e){} }
+ window.addEventListener('load',postH);
+ if(window.ResizeObserver){ new ResizeObserver(postH).observe(document.body); }
+ [200,700,1500].forEach(function(d){ setTimeout(postH,d); });
+})();
+</script>
+
+<style id="mtHaloStyle">
+@keyframes mtHalo{0%,100%{filter:drop-shadow(0 0 0 rgba(248,200,38,0));}50%{filter:drop-shadow(0 0 5px rgba(248,200,38,.95));}}
+.bs .row{animation:mtHalo 1.55s ease-in-out infinite;cursor:pointer;}
+body.mt-stop .bs .row{animation:none;}
+@media(prefers-reduced-motion:reduce){.bs .row{animation:none;}}
+</style>
+<script>(function(){function s(){document.body.classList.add('mt-stop');document.removeEventListener('pointerdown',s,true);}document.addEventListener('pointerdown',s,true);setTimeout(function(){if(!document.body.classList.contains('mt-stop'))document.body.classList.add('mt-stop');},9000);})();</script>
+</body>
+</html>
