@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What remains unknown — the evidence, to scale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --color-text-primary:#2b2b28; --color-text-secondary:#6b675e; --color-text-tertiary:#8a857a;
+ --color-background-primary:#ffffff; --color-background-secondary:#f2efe9; --color-background-tertiary:#faf9f7;
+ --color-border-primary:rgba(60,55,45,0.34); --color-border-secondary:#d9d5cc; --color-border-tertiary:#e7e3da;
+ --border-radius-md:8px; --border-radius-lg:12px; --border-radius-xl:16px;
+ --font-sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --font-serif:Georgia,'Times New Roman',serif;
+ --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+html,body{margin:0;padding:0;background:transparent;}
+body{font-family:var(--font-sans);color:var(--color-text-primary);line-height:1.5;padding:4px 2px 8px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+a{color:#1f6e5e;text-decoration:none;border-bottom:1px solid rgba(31,110,94,0.35);}
+a:hover{border-bottom-color:#1f6e5e;}
+.mt-src{margin-top:14px;padding-top:9px;border-top:1px solid var(--color-border-secondary);font-size:11px;line-height:1.55;color:var(--color-text-secondary);}
+.mt-src b{font-weight:600;color:var(--color-text-primary);}
+</style>
+</head>
+<body>
+<h2 class="sr-only">The verified human evidence for trimebutine, to scale. A single IBS circle holds five randomized trials and a meta-analysis; the pseudo-obstruction side shows Boige 1987 and the author's cohort beside the controlled CIPO trial that has never been run.</h2>
+
+<style>
+.absbox{margin-top:.5rem;padding:.85rem 1rem;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);font-size:13px;line-height:1.55;color:var(--color-text-primary);min-height:150px;}
+.absbox .ttl{font-size:13px;font-weight:500;margin-bottom:2px;}
+.absbox .meta{font-size:11px;color:var(--color-text-secondary);margin-bottom:9px;}
+.absbox h4{font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:8px 0 1px;}
+.absbox p{margin:0;font-size:12.5px;}
+.absbox .hint{color:var(--color-text-secondary);font-style:italic;}
+.absbox .nav{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;}
+.absbox .nav button{font-size:11px;padding:3px 9px;border-radius:var(--border-radius-md);border:1px solid var(--color-border-secondary);background:var(--color-background-primary,#fff);color:var(--color-text-primary);cursor:pointer;}
+</style>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;">
+  <span style="font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-secondary);">Unknown</span>
+  <span style="font-size:12px;color:var(--color-text-secondary);">circle area ∝ patients studied · tap a circle or dot</span>
+</div>
+
+<svg viewBox="0 0 680 320" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+<title>Verified trimebutine evidence base, to scale</title>
+
+<text x="160" y="24" text-anchor="middle" font-size="12" font-weight="500" fill="var(--color-text-secondary)">studied in IBS</text>
+<circle cx="160" cy="160" r="64" fill="#5E83A6" fill-opacity="0.8" stroke="#3C5A78" stroke-width="1" style="cursor:pointer;" onclick="showU('ibs')"/>
+
+<g style="cursor:pointer;" onclick="showU('luttecke')"><circle cx="128" cy="142" r="9" fill="#2E4D6B"/><text x="128" y="146" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">1</text></g>
+<g style="cursor:pointer;" onclick="showU('rahman')"><circle cx="186" cy="138" r="9" fill="#2E4D6B"/><text x="186" y="142" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">2</text></g>
+<g style="cursor:pointer;" onclick="showU('dumitrascu')"><circle cx="202" cy="174" r="9" fill="#2E4D6B"/><text x="202" y="178" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">3</text></g>
+<g style="cursor:pointer;" onclick="showU('zhong')"><circle cx="130" cy="188" r="9" fill="#2E4D6B"/><text x="130" y="192" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">4</text></g>
+<g style="cursor:pointer;" onclick="showU('kang')"><circle cx="165" cy="198" r="9" fill="#2E4D6B"/><text x="165" y="202" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">5</text></g>
+<g style="cursor:pointer;" onclick="showU('yu')"><circle cx="214" cy="112" r="11" fill="none" stroke="#3C5A78" stroke-width="1.5"/><circle cx="214" cy="112" r="6" fill="none" stroke="#3C5A78" stroke-width="1.5"/><text x="214" y="92" text-anchor="middle" font-size="10" fill="var(--color-text-secondary)">meta</text></g>
+
+<text x="160" y="248" text-anchor="middle" font-size="11" font-weight="500" fill="var(--color-text-secondary)">≈ 516 patients · 5 trials</text>
+<text x="160" y="262" text-anchor="middle" font-size="10" fill="var(--color-text-tertiary,#8a8a8a)">(1 trial: n not reported)</text>
+
+<line x1="320" y1="44" x2="320" y2="276" stroke="var(--color-border-tertiary)" stroke-width="1" stroke-dasharray="3 4"/>
+
+<text x="500" y="24" text-anchor="middle" font-size="12" font-weight="500" fill="var(--color-text-secondary)">studied in pseudo-obstruction</text>
+<circle cx="505" cy="158" r="84" fill="none" stroke="var(--color-border-secondary)" stroke-width="1.5" stroke-dasharray="6 5" style="cursor:pointer;" onclick="showU('ghost')"/>
+<text x="505" y="262" text-anchor="middle" font-size="11" fill="var(--color-text-secondary)" font-style="italic">controlled trial — never run</text>
+
+<g style="cursor:pointer;" onclick="showU('ta')">
+  <circle cx="500" cy="150" r="12" fill="#5E83A6" fill-opacity="0.9" stroke="#3C5A78" stroke-width="1"/>
+</g>
+<g style="cursor:pointer;" onclick="showU('boige')">
+  <circle cx="462" cy="196" r="6" fill="#5E83A6" stroke="#3C5A78" stroke-width="0.5"/>
+</g>
+<text x="520" y="128" text-anchor="start" font-size="10" fill="#7E3F58" font-weight="500">↖ my cohort</text>
+</svg>
+
+<div id="uAbs" class="absbox">
+  <div class="ttl">Tap a circle or dot to read its abstract</div>
+  <p class="hint">Everything ever recorded in pseudo-obstruction fits inside the dashed circle — the controlled trial that would settle the question, never run. The IBS circle holds five randomized trials (≈516 patients with reported n) plus a meta-analysis.</p>
+</div>
+
+<script>
+const U={
+  ibs:{ttl:"Trimebutine in IBS — the established indication",z:1,
+    aim:"Whether trimebutine relieves symptoms in irritable bowel syndrome.",
+    meth:"Five verified randomized trials (1980–2013). Four report a sample size summing to ≈516 patients. Lüttecke 1980 reports three controlled trials without a stated n. A 2025 meta-analysis sits at a higher evidence tier.",
+    res:"Repeated benefit over placebo and broad comparability with mebeverine and fenoverine across trials.",
+    con:"In IBS the evidence is randomized and substantial — a different, established indication. Tap a dot (1–5) for each trial, or 'meta'.",nav:1},
+  luttecke:{ttl:"Lüttecke K — three-part controlled study",meta:"Curr Med Res Opin 1980;6:437–443 · <a href='https://pubmed.ncbi.nlm.nih.gov/6988171/' target='_blank' rel='noopener'>PMID 6988171</a> · n not reported",
+    aim:"To assess trimebutine for abdominal distension, pain, flatulence, constipation, diarrhoea and dyspepsia in irritable colon.",
+    meth:"Three controlled trials. Trimebutine 200 mg ×3/day. Comparison with placebo and with mebeverine 100 mg ×4/day. Sample size not reported in the abstract.",
+    res:"200 mg ×3/day for 3 days significantly more effective than placebo (p&lt;0.001); halved dose not significant vs placebo. Over 2 weeks, as effective as mebeverine.",
+    con:"Effective for IBS symptoms; no serious side-effects. n not reported in abstract."},
+  rahman:{ttl:"Rahman MZ et al. — trimebutine vs mebeverine",meta:"Mymensingh Med J 2014;23(1):105–113 · <a href='https://pubmed.ncbi.nlm.nih.gov/24584382/' target='_blank' rel='noopener'>PMID 24584382</a> · n=140",
+    aim:"To compare efficacy and safety of trimebutine 100 mg BID with mebeverine 135 mg BID in IBS.",
+    meth:"Prospective randomized parallel trial (BSMMU, 2010–2011); IBS-QOL (34 items). 140 enrolled, 18 dropped out, 122 completed.",
+    res:"Symptoms improved significantly in both groups at 6 weeks; between-group differences not significant for most symptoms. QOL improved in both (trimebutine 103→82; mebeverine 106→95); between-group QOL difference significant. No side effects reported.",
+    con:"Both drugs effective; trimebutine comparable to mebeverine for IBS symptom relief and QOL."},
+  dumitrascu:{ttl:"Dumitraşcu DL, Stănculete M — trimebutine and psychosocial adjustment",meta:"2006 · <a href='https://pubmed.ncbi.nlm.nih.gov/18386606/' target='_blank' rel='noopener'>PMID 18386606</a> · RCT · n=50",
+    aim:"IBS impairs quality of life; psychosocial adjustment is a personality factor influencing outcome. Study investigated psychological adjustment in IBS and the effect of trimebutine on symptoms and adjustment.",
+    meth:"Prospective RCT; 50 consecutive IBS patients — trimebutine 100 mg t.i.d (n=25, 11M/14F, age 44±12 yr) vs placebo t.i.d (n=25, 12M/13F, age 48±10 yr) for 2 weeks. Seven digestive symptoms scored 0–16; patient satisfaction 1–10; physician satisfaction 0–4. Psychosocial adjustment by PAIS-SR scale.",
+    res:"Trimebutine significantly improved PAIS-SR domains: vocational environment, domestic environment, sexual relationships, extended family relationships, social environment (not health care orientation or psychological distress). Pain score: 13.1±4.0→2.7±1.1 (p&lt;0.0001) with trimebutine vs 12.5±3.6→7.7±2.5 (p&lt;0.05) with placebo. Bloating: 10.3±3.6→2.6±1.2 (p&lt;0.0001) with trimebutine; no significant change with placebo. Nausea, emesis, anorexia, diarrhoea and constipation also improved with trimebutine. Patient satisfaction: 8.1±1.1 vs 5.2±3.5 (p&lt;0.01). Physician satisfaction: 3.0±0.7 vs 2.2±1.1 (p&lt;0.02).",
+    con:"Trimebutine improved IBS symptoms and psychological adjustment to illness in comparison with placebo."},
+  zhong:{ttl:"Zhong YQ et al. — trimebutine in FD coexisting with IBS-D",meta:"2007 · <a href='https://pubmed.ncbi.nlm.nih.gov/18261269/' target='_blank' rel='noopener'>PMID 18261269</a> · n=129 · Article in Chinese",
+    aim:"To observe the efficacy and adverse reactions of trimebutine maleate in patients with functional dyspepsia (FD) coexisting with diarrhea-dominant IBS (IBS-D).",
+    meth:"129 patients randomized into 3 groups: A (trimebutine + Bacillus licheniformis), B (trimebutine alone), C (Bacillus licheniformis alone). Symptom grading score used for assessment.",
+    res:"Groups A and B showed significant decreases in postprandial fullness (A: 4.55±0.85→1.26±0.52; B: 4.36±0.66→1.48±0.61), early satiation, abdominal pain (A: 9.26±0.68→0.68±0.43), and total symptom score (p&lt;0.05); Group C showed no significant change (p&gt;0.05). Diarrhoea scores decreased significantly in all three groups (p&lt;0.05). Cost-effect ratio: 4.07 (A), 1.19 (B), 6.65 (C) — Group B best. Adverse reactions 22.9% (A) and 23.7% (B): mainly mild thirst and constipation.",
+    con:"Trimebutine maleate has the advantage of high efficacy, low cost and few adverse reactions in FD coexisting with IBS-D. Trimebutine alone (Group B) had the best cost-effect ratio."},
+  kang:{ttl:"Kang SH et al. — fenoverine vs trimebutine",meta:"Korean J Gastroenterol 2013;62(5):278–287 · <a href='https://pubmed.ncbi.nlm.nih.gov/24262593/' target='_blank' rel='noopener'>PMID 24262593</a> · n=197 (ITT)",
+    aim:"To test whether fenoverine is non-inferior to trimebutine for IBS management.",
+    meth:"Multicenter, randomized, double-blind, non-inferiority trial; fenoverine 100 mg t.i.d vs trimebutine 150 mg t.i.d for 8 weeks; 197 patients (ITT).",
+    res:"At week 8, fenoverine non-inferior to trimebutine (difference 1.76%, 90% CI −10.30–13.82, p=0.81); 30% pain reduction in 69.23% (54/78) on fenoverine vs 67.47% (56/83) on trimebutine. Secondary endpoints comparable.",
+    con:"Fenoverine non-inferior to trimebutine in efficacy and tolerability for IBS."},
+  yu:{ttl:"Yu QX, Wang DD, Dong PJ, Zheng LH — meta-analysis",meta:"J Gastroenterol Hepatol 2025;40(3):677–691 · <a href='https://pubmed.ncbi.nlm.nih.gov/39780334/' target='_blank' rel='noopener'>PMID 39780334</a> · synthesis tier",
+    aim:"To assess efficacy and safety of probiotics combined with trimebutine versus trimebutine alone in IBS.",
+    meth:"Systematic review and meta-analysis of RCTs; Cochrane quality appraisal; RevMan 5.3.",
+    res:"37 RCTs, 4,360 participants (2,177 treatment, 2,183 control). Combined therapy significantly more effective than trimebutine alone.",
+    con:"Probiotics combined with trimebutine superior to trimebutine alone for IBS. Synthesis tier — not added to the 516-patient primary-trial sum to avoid double-counting."},
+  ta:{ttl:"Ta et al. — CIPO cohort",meta:"Am J Gastroenterol 2026 · doi:<a href='https://doi.org/10.14309/ajg.0000000000003980' target='_blank' rel='noopener'>10.14309/ajg.0000000000003980</a> · observational cohort · my cohort",
+    aim:"To characterize a CIPO cohort and explore factors associated with survival.",
+    meth:"Observational cohort of 130 CIPO patients; 40 received trimebutine (26 for >1 year); univariable and multivariable Cox proportional-hazards analyses, exploratory.",
+    res:"Trimebutine use independently associated with better survival (multivariable HR 0.15, 95% CI 0.03–0.72, p=0.018).",
+    con:"Hypothesis-generating. Observational design, small exposed group and wide CI — cannot establish that trimebutine changes the course of CIPO."},
+  boige:{ttl:"Boige N, Cargill G, Mashako L et al.",meta:"J Pediatr Gastroenterol Nutr 1987;6:548–553 · <a href='https://pubmed.ncbi.nlm.nih.gov/3430262/' target='_blank' rel='noopener'>PMID 3430262</a> · uncontrolled series · n=5 (2 pseudo-obstruction)",
+    aim:"Whether IV trimebutine restores motor activity in infants with severe dysmotility and absent MMC.",
+    meth:"5 infants (mean 11.7 mo): 2 pseudo-obstruction, 2 protracted diarrhea, 1 short bowel. Duodenal manometry before and after trimebutine 3 mg/kg IV.",
+    res:"Baseline: absent MMC, marked hypomotility. Phase III–like activity in 4 of 5 (onset 88±121 s, duration 236±105 s, ~12.75 cycles/min).",
+    con:"Striking acute signal — but n=5, uncontrolled, mostly not CIPO. Hypothesis-generating only."},
+  ghost:{ttl:"The controlled CIPO trial — what does not exist",meta:"randomized controlled trial · never run",
+    aim:"Whether trimebutine actually changes outcomes in chronic intestinal pseudo-obstruction.",
+    meth:"A prospective, randomized, controlled trial — the only design that removes healthy-adherer and indication bias.",
+    res:"No data. This study has never been conducted in CIPO.",
+    con:"Until it exists, the survival signal stays a hypothesis. Everything to its left fits inside this empty circle."}
+};
+function showU(k){
+  const d=U[k];
+  let html='<div class="ttl">'+d.ttl+'</div>';
+  if(d.meta) html+='<div class="meta">'+d.meta+'</div>';
+  html+='<h4>Aims &amp; background</h4><p>'+d.aim+'</p>'+
+    '<h4>Methods</h4><p>'+d.meth+'</p>'+
+    '<h4>Results</h4><p>'+d.res+'</p>'+
+    '<h4>Conclusion</h4><p>'+d.con+'</p>';
+  if(d.nav) html+='<div class="nav">'+
+    '<button onclick="showU(\'luttecke\')">1 · Lüttecke 1980</button>'+
+    '<button onclick="showU(\'rahman\')">2 · Rahman 2014</button>'+
+    '<button onclick="showU(\'dumitrascu\')">3 · Dumitraşcu 2006</button>'+
+    '<button onclick="showU(\'zhong\')">4 · Zhong 2007</button>'+
+    '<button onclick="showU(\'kang\')">5 · Kang 2013</button>'+
+    '<button onclick="showU(\'yu\')">meta · Yu 2025</button></div>';
+  document.getElementById('uAbs').innerHTML=html;
+}
+</script>
+<script>
+(function(){
+ function postH(){ try{ var h=Math.ceil(document.documentElement.getBoundingClientRect().height); parent.postMessage({type:'mtFigHeight',h:h},'*'); }catch(e){} }
+ window.addEventListener('load',postH);
+ if(window.ResizeObserver){ new ResizeObserver(postH).observe(document.body); }
+ [200,700,1500].forEach(function(d){ setTimeout(postH,d); });
+})();
+</script>
+
+<style id="mtHaloStyle">
+@keyframes mtHalo{0%,100%{filter:drop-shadow(0 0 0 rgba(248,200,38,0));}50%{filter:drop-shadow(0 0 5px rgba(248,200,38,.95));}}
+[onclick*='showU']{animation:mtHalo 1.55s ease-in-out infinite;cursor:pointer;}
+body.mt-stop [onclick*='showU']{animation:none;}
+@media(prefers-reduced-motion:reduce){[onclick*='showU']{animation:none;}}
+</style>
+<script>(function(){function s(){document.body.classList.add('mt-stop');document.removeEventListener('pointerdown',s,true);}document.addEventListener('pointerdown',s,true);setTimeout(function(){if(!document.body.classList.contains('mt-stop'))document.body.classList.add('mt-stop');},9000);})();</script>
+</body>
+</html>

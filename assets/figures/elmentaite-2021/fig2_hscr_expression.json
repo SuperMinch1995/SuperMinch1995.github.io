@@ -1,0 +1,3018 @@
+{
+  "RET": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.24184541404247284,
+      "fraction_expressing": 0.2051792828685259,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.05563077703118324,
+      "fraction_expressing": 0.021739130434782608,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.17251868546009064,
+      "fraction_expressing": 0.1569767441860465,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.01964261382818222,
+      "fraction_expressing": 0.013986013986013986,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.22863227128982544,
+      "fraction_expressing": 0.23890063424947147,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 0.03257889673113823,
+      "fraction_expressing": 0.045454545454545456,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.15284432470798492,
+      "fraction_expressing": 0.16683884297520662,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.013917764648795128,
+      "fraction_expressing": 0.015384615384615385,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.4991796910762787,
+      "fraction_expressing": 0.36363636363636365,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.29143020510673523,
+      "fraction_expressing": 0.19230769230769232,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.34680214524269104,
+      "fraction_expressing": 0.2663101604278075,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.21791619062423706,
+      "fraction_expressing": 0.13559322033898305,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.2752155661582947,
+      "fraction_expressing": 0.30303030303030304,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.17815469205379486,
+      "fraction_expressing": 0.183206106870229,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 1.0712430477142334,
+      "fraction_expressing": 0.6916666666666667,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.8697230219841003,
+      "fraction_expressing": 0.6,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.8646795153617859,
+      "fraction_expressing": 0.57405614714424,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.7905664443969727,
+      "fraction_expressing": 0.5555555555555556,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.8353381156921387,
+      "fraction_expressing": 0.6150627615062761,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.7939710021018982,
+      "fraction_expressing": 0.5804347826086956,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.9263648390769958,
+      "fraction_expressing": 0.6781609195402298,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.9407709836959839,
+      "fraction_expressing": 0.7081081081081081,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 1.0705254077911377,
+      "fraction_expressing": 0.875,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 1.1823805570602417,
+      "fraction_expressing": 0.78125,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.15808947384357452,
+      "fraction_expressing": 0.13377926421404682,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.18801294267177582,
+      "fraction_expressing": 0.17142857142857143,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.05955372750759125,
+      "fraction_expressing": 0.05057096247960848,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.1191876158118248,
+      "fraction_expressing": 0.09329446064139942,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.27849557995796204,
+      "fraction_expressing": 0.2571428571428571,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.1792595088481903,
+      "fraction_expressing": 0.2222222222222222,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.18715155124664307,
+      "fraction_expressing": 0.17050691244239632,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.3694307506084442,
+      "fraction_expressing": 0.3225806451612903,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.04485780745744705,
+      "fraction_expressing": 0.14285714285714285,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.2034744918346405,
+      "fraction_expressing": 0.2692307692307692,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.06728238612413406,
+      "fraction_expressing": 0.0625,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.0842476338148117,
+      "fraction_expressing": 0.06569343065693431,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.003665982047095895,
+      "fraction_expressing": 0.006230529595015576,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.007035312708467245,
+      "fraction_expressing": 0.006024096385542169,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.0382254533469677,
+      "fraction_expressing": 0.037037037037037035,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.013120870105922222,
+      "fraction_expressing": 0.01059322033898305,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.0023270687088370323,
+      "fraction_expressing": 0.002932551319648094,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.009107033722102642,
+      "fraction_expressing": 0.009009009009009009,
+      "n_cells": 1110
+    }
+  },
+  "EDNRB": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 1.474690318107605,
+      "fraction_expressing": 0.8416334661354582,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.6776735186576843,
+      "fraction_expressing": 0.32608695652173914,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 1.266481637954712,
+      "fraction_expressing": 0.7616279069767442,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.61069655418396,
+      "fraction_expressing": 0.3146853146853147,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 1.4791576862335205,
+      "fraction_expressing": 0.8890063424947146,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 1.3152146339416504,
+      "fraction_expressing": 0.8636363636363636,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 1.2698205709457397,
+      "fraction_expressing": 0.8057851239669421,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 1.2302266359329224,
+      "fraction_expressing": 0.8307692307692308,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 1.3638672828674316,
+      "fraction_expressing": 0.7700534759358288,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.7107746601104736,
+      "fraction_expressing": 0.5,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 1.0365679264068604,
+      "fraction_expressing": 0.6406417112299465,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.5426018238067627,
+      "fraction_expressing": 0.3220338983050847,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 1.247511863708496,
+      "fraction_expressing": 0.8484848484848485,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.8368672728538513,
+      "fraction_expressing": 0.6412213740458015,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.39149755239486694,
+      "fraction_expressing": 0.29583333333333334,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.44457659125328064,
+      "fraction_expressing": 0.325,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.24184733629226685,
+      "fraction_expressing": 0.19264278799612777,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.2614578902721405,
+      "fraction_expressing": 0.2222222222222222,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.06347823888063431,
+      "fraction_expressing": 0.06694560669456066,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.07399915903806686,
+      "fraction_expressing": 0.07608695652173914,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.0973133072257042,
+      "fraction_expressing": 0.12643678160919541,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.07748487591743469,
+      "fraction_expressing": 0.08648648648648649,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.5223231315612793,
+      "fraction_expressing": 0.5,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.36370158195495605,
+      "fraction_expressing": 0.3671875,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.5618800520896912,
+      "fraction_expressing": 0.38461538461538464,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.10950849950313568,
+      "fraction_expressing": 0.1,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.32024434208869934,
+      "fraction_expressing": 0.2300163132137031,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.17999131977558136,
+      "fraction_expressing": 0.13994169096209913,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.19578753411769867,
+      "fraction_expressing": 0.11428571428571428,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.11715909093618393,
+      "fraction_expressing": 0.10368663594470046,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.17581023275852203,
+      "fraction_expressing": 0.12903225806451613,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.11580009013414383,
+      "fraction_expressing": 0.3333333333333333,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.2852104604244232,
+      "fraction_expressing": 0.2857142857142857,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.18972374498844147,
+      "fraction_expressing": 0.23076923076923078,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.9804320335388184,
+      "fraction_expressing": 0.6875,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.7874676585197449,
+      "fraction_expressing": 0.5036496350364964,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 1.3551338911056519,
+      "fraction_expressing": 0.8376068376068376,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.7670245170593262,
+      "fraction_expressing": 0.5129533678756477,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 1.1632275581359863,
+      "fraction_expressing": 0.719626168224299,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.6097934246063232,
+      "fraction_expressing": 0.4186746987951807,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.5934516191482544,
+      "fraction_expressing": 0.5128205128205128,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 1.0700604915618896,
+      "fraction_expressing": 0.6790123456790124,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.7634657621383667,
+      "fraction_expressing": 0.4639830508474576,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 1.1951661109924316,
+      "fraction_expressing": 0.7448680351906158,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 1.0307443141937256,
+      "fraction_expressing": 0.6306306306306306,
+      "n_cells": 1110
+    }
+  },
+  "ZEB2": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 1.123686671257019,
+      "fraction_expressing": 0.7589641434262948,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.8201083540916443,
+      "fraction_expressing": 0.391304347826087,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 1.035719394683838,
+      "fraction_expressing": 0.6705426356589147,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.6663941740989685,
+      "fraction_expressing": 0.3356643356643357,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 1.0473893880844116,
+      "fraction_expressing": 0.7695560253699789,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 1.093714714050293,
+      "fraction_expressing": 0.7272727272727273,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.9690601825714111,
+      "fraction_expressing": 0.6973140495867769,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.8671372532844543,
+      "fraction_expressing": 0.676923076923077,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.721240222454071,
+      "fraction_expressing": 0.5401069518716578,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.8602709174156189,
+      "fraction_expressing": 0.5576923076923077,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.65226149559021,
+      "fraction_expressing": 0.4577540106951872,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.6667793989181519,
+      "fraction_expressing": 0.4067796610169492,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.47127842903137207,
+      "fraction_expressing": 0.48484848484848486,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.6343206167221069,
+      "fraction_expressing": 0.5725190839694656,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.3623213469982147,
+      "fraction_expressing": 0.31875,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.5821194648742676,
+      "fraction_expressing": 0.5,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.4421449601650238,
+      "fraction_expressing": 0.36205227492739595,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.6693830490112305,
+      "fraction_expressing": 0.5132275132275133,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.08841776847839355,
+      "fraction_expressing": 0.09623430962343096,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.148988276720047,
+      "fraction_expressing": 0.14565217391304347,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.13692285120487213,
+      "fraction_expressing": 0.14942528735632185,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.19097347557544708,
+      "fraction_expressing": 0.22702702702702704,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.6449766159057617,
+      "fraction_expressing": 0.625,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.6854425072669983,
+      "fraction_expressing": 0.5546875,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.40241125226020813,
+      "fraction_expressing": 0.3210702341137124,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.7601261138916016,
+      "fraction_expressing": 0.5142857142857142,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.43016329407691956,
+      "fraction_expressing": 0.31239804241435565,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.7172694802284241,
+      "fraction_expressing": 0.446064139941691,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.4368043839931488,
+      "fraction_expressing": 0.37142857142857144,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.2047618180513382,
+      "fraction_expressing": 0.2222222222222222,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.29480358958244324,
+      "fraction_expressing": 0.2534562211981567,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.3387371599674225,
+      "fraction_expressing": 0.2903225806451613,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.6747799515724182,
+      "fraction_expressing": 0.6666666666666666,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.42642995715141296,
+      "fraction_expressing": 0.42857142857142855,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.607060432434082,
+      "fraction_expressing": 0.4807692307692308,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 1.1575448513031006,
+      "fraction_expressing": 0.7708333333333334,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 1.054734468460083,
+      "fraction_expressing": 0.6204379562043796,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 1.4876055717468262,
+      "fraction_expressing": 0.8547008547008547,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 1.6967769861221313,
+      "fraction_expressing": 0.8860103626943006,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 1.3446987867355347,
+      "fraction_expressing": 0.7632398753894081,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 1.4465715885162354,
+      "fraction_expressing": 0.7469879518072289,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 1.6879489421844482,
+      "fraction_expressing": 0.8717948717948718,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 1.323241949081421,
+      "fraction_expressing": 0.7777777777777778,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 1.339181900024414,
+      "fraction_expressing": 0.6927966101694916,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 1.0233665704727173,
+      "fraction_expressing": 0.6715542521994134,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.8572108149528503,
+      "fraction_expressing": 0.5378378378378378,
+      "n_cells": 1110
+    }
+  },
+  "GFRA1": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.9440741539001465,
+      "fraction_expressing": 0.6902390438247012,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.6245447993278503,
+      "fraction_expressing": 0.34782608695652173,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.9022260904312134,
+      "fraction_expressing": 0.622093023255814,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.7374752759933472,
+      "fraction_expressing": 0.36363636363636365,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.9157703518867493,
+      "fraction_expressing": 0.7420718816067653,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 0.8451017737388611,
+      "fraction_expressing": 0.6818181818181818,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.8411006331443787,
+      "fraction_expressing": 0.6544421487603306,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 1.0065423250198364,
+      "fraction_expressing": 0.7384615384615385,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.9893024563789368,
+      "fraction_expressing": 0.6764705882352942,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.8622317910194397,
+      "fraction_expressing": 0.5769230769230769,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.8716568350791931,
+      "fraction_expressing": 0.5828877005347594,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.7327293157577515,
+      "fraction_expressing": 0.4406779661016949,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.6417586803436279,
+      "fraction_expressing": 0.5757575757575758,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.8305245637893677,
+      "fraction_expressing": 0.6335877862595419,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.5913233160972595,
+      "fraction_expressing": 0.4791666666666667,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.8093574643135071,
+      "fraction_expressing": 0.625,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.7255722284317017,
+      "fraction_expressing": 0.5237173281703775,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.8726927638053894,
+      "fraction_expressing": 0.6243386243386243,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.0913565531373024,
+      "fraction_expressing": 0.11297071129707113,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.15666423738002777,
+      "fraction_expressing": 0.14130434782608695,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.07857576757669449,
+      "fraction_expressing": 0.10344827586206896,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.08332784473896027,
+      "fraction_expressing": 0.10810810810810811,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.5585492849349976,
+      "fraction_expressing": 0.375,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.8604298830032349,
+      "fraction_expressing": 0.6328125,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.40721583366394043,
+      "fraction_expressing": 0.31438127090301005,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.18316085636615753,
+      "fraction_expressing": 0.12857142857142856,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.2766028642654419,
+      "fraction_expressing": 0.2128874388254486,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.2338830977678299,
+      "fraction_expressing": 0.17784256559766765,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.3571491241455078,
+      "fraction_expressing": 0.3142857142857143,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.2014399915933609,
+      "fraction_expressing": 0.1774193548387097,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.08288249373435974,
+      "fraction_expressing": 0.0967741935483871,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.5183099508285522,
+      "fraction_expressing": 0.42857142857142855,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.24423018097877502,
+      "fraction_expressing": 0.3269230769230769,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 1.107779860496521,
+      "fraction_expressing": 0.75,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.8968998789787292,
+      "fraction_expressing": 0.559610705596107,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.8076372742652893,
+      "fraction_expressing": 0.6153846153846154,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.586824893951416,
+      "fraction_expressing": 0.44041450777202074,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.9449443221092224,
+      "fraction_expressing": 0.5950155763239875,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.5423461198806763,
+      "fraction_expressing": 0.3885542168674699,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.5406737923622131,
+      "fraction_expressing": 0.46153846153846156,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.5307225584983826,
+      "fraction_expressing": 0.43209876543209874,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.5760618448257446,
+      "fraction_expressing": 0.3622881355932203,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.8378986120223999,
+      "fraction_expressing": 0.5718475073313783,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.8434572219848633,
+      "fraction_expressing": 0.5351351351351351,
+      "n_cells": 1110
+    }
+  },
+  "PHOX2B": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.7212715744972229,
+      "fraction_expressing": 0.545816733067729,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.5123783349990845,
+      "fraction_expressing": 0.2826086956521739,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.7763786315917969,
+      "fraction_expressing": 0.5465116279069767,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.7101441621780396,
+      "fraction_expressing": 0.36363636363636365,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.8310789465904236,
+      "fraction_expressing": 0.6649048625792812,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 0.806732177734375,
+      "fraction_expressing": 0.6818181818181818,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.8584544658660889,
+      "fraction_expressing": 0.6384297520661157,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.7880325317382812,
+      "fraction_expressing": 0.6,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.7751908898353577,
+      "fraction_expressing": 0.56951871657754,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 1.145338773727417,
+      "fraction_expressing": 0.6346153846153846,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.7799175381660461,
+      "fraction_expressing": 0.5219251336898396,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 1.0564873218536377,
+      "fraction_expressing": 0.576271186440678,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 1.18829345703125,
+      "fraction_expressing": 0.7878787878787878,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 1.3243470191955566,
+      "fraction_expressing": 0.8015267175572519,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 1.1689465045928955,
+      "fraction_expressing": 0.6958333333333333,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 1.2219083309173584,
+      "fraction_expressing": 0.725,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 1.0700974464416504,
+      "fraction_expressing": 0.6524685382381413,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 1.2448467016220093,
+      "fraction_expressing": 0.7354497354497355,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 1.2696737051010132,
+      "fraction_expressing": 0.7615062761506276,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 1.1229420900344849,
+      "fraction_expressing": 0.691304347826087,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 1.2299588918685913,
+      "fraction_expressing": 0.735632183908046,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 1.0646756887435913,
+      "fraction_expressing": 0.7297297297297297,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.7477872371673584,
+      "fraction_expressing": 0.5,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 1.631697416305542,
+      "fraction_expressing": 0.8828125,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 1.4679901599884033,
+      "fraction_expressing": 0.7324414715719063,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.9761298298835754,
+      "fraction_expressing": 0.5857142857142857,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 1.3091355562210083,
+      "fraction_expressing": 0.6884176182707994,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 1.067737102508545,
+      "fraction_expressing": 0.5918367346938775,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 1.464795470237732,
+      "fraction_expressing": 0.8,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.3569890260696411,
+      "fraction_expressing": 0.4444444444444444,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 1.4195936918258667,
+      "fraction_expressing": 0.7327188940092166,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.7886960506439209,
+      "fraction_expressing": 0.5161290322580645,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.7081153988838196,
+      "fraction_expressing": 0.6666666666666666,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.6156026721000671,
+      "fraction_expressing": 0.42857142857142855,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 1.3438187837600708,
+      "fraction_expressing": 0.7115384615384616,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.5627699494361877,
+      "fraction_expressing": 0.4166666666666667,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.8607295155525208,
+      "fraction_expressing": 0.5231143552311436,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.3440878987312317,
+      "fraction_expressing": 0.3247863247863248,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.2313128113746643,
+      "fraction_expressing": 0.17098445595854922,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.3090079128742218,
+      "fraction_expressing": 0.2398753894080997,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.2918477952480316,
+      "fraction_expressing": 0.20783132530120482,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.09645696729421616,
+      "fraction_expressing": 0.10256410256410256,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.6721606850624084,
+      "fraction_expressing": 0.49382716049382713,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.7336921095848083,
+      "fraction_expressing": 0.4279661016949153,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.6619779467582703,
+      "fraction_expressing": 0.4662756598240469,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.62424236536026,
+      "fraction_expressing": 0.4126126126126126,
+      "n_cells": 1110
+    }
+  },
+  "NRG1": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.002866123104467988,
+      "fraction_expressing": 0.00298804780876494,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.025238439440727234,
+      "fraction_expressing": 0.021739130434782608,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.003661497263237834,
+      "fraction_expressing": 0.0048449612403100775,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.005558055359870195,
+      "fraction_expressing": 0.007399577167019027,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.0037733735516667366,
+      "fraction_expressing": 0.007231404958677686,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.000561569060664624,
+      "fraction_expressing": 0.00267379679144385,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.004151254426687956,
+      "fraction_expressing": 0.0042780748663101605,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.005040289834141731,
+      "fraction_expressing": 0.003389830508474576,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.02348761446774006,
+      "fraction_expressing": 0.06060606060606061,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.015083099715411663,
+      "fraction_expressing": 0.030534351145038167,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.16975359618663788,
+      "fraction_expressing": 0.17083333333333334,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.07629038393497467,
+      "fraction_expressing": 0.075,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.1654084324836731,
+      "fraction_expressing": 0.1510164569215876,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.11348012089729309,
+      "fraction_expressing": 0.1164021164021164,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.2844044864177704,
+      "fraction_expressing": 0.2928870292887029,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.39219939708709717,
+      "fraction_expressing": 0.3391304347826087,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.3175719678401947,
+      "fraction_expressing": 0.3448275862068966,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.48888862133026123,
+      "fraction_expressing": 0.4702702702702703,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.24914339184761047,
+      "fraction_expressing": 0.125,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.15462177991867065,
+      "fraction_expressing": 0.1640625,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.04865540936589241,
+      "fraction_expressing": 0.05016722408026756,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.022568663582205772,
+      "fraction_expressing": 0.020391517128874388,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.008884988725185394,
+      "fraction_expressing": 0.008746355685131196,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.20243412256240845,
+      "fraction_expressing": 0.22857142857142856,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.2114674299955368,
+      "fraction_expressing": 0.18202764976958524,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.08747362345457077,
+      "fraction_expressing": 0.12903225806451613,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.8604423403739929,
+      "fraction_expressing": 1.0,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.3023100197315216,
+      "fraction_expressing": 0.14285714285714285,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.15902860462665558,
+      "fraction_expressing": 0.15384615384615385,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.003894346533343196,
+      "fraction_expressing": 0.004866180048661801,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.004039038438349962,
+      "fraction_expressing": 0.0051813471502590676,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.00702966284006834,
+      "fraction_expressing": 0.006230529595015576,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.007128170691430569,
+      "fraction_expressing": 0.006355932203389831,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.004749308805912733,
+      "fraction_expressing": 0.0045045045045045045,
+      "n_cells": 1110
+    }
+  },
+  "ECE1": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.03342564404010773,
+      "fraction_expressing": 0.04083665338645418,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.0672227293252945,
+      "fraction_expressing": 0.021739130434782608,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.03211657330393791,
+      "fraction_expressing": 0.03294573643410853,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.028433429077267647,
+      "fraction_expressing": 0.013986013986013986,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.03395729511976242,
+      "fraction_expressing": 0.05813953488372093,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.05117486044764519,
+      "fraction_expressing": 0.06456611570247933,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.04524526000022888,
+      "fraction_expressing": 0.046153846153846156,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.0436868779361248,
+      "fraction_expressing": 0.058823529411764705,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.033599916845560074,
+      "fraction_expressing": 0.038461538461538464,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.05935138836503029,
+      "fraction_expressing": 0.052406417112299465,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.057119738310575485,
+      "fraction_expressing": 0.04067796610169491,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.08365883678197861,
+      "fraction_expressing": 0.12121212121212122,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.061071038246154785,
+      "fraction_expressing": 0.0916030534351145,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.09273818880319595,
+      "fraction_expressing": 0.10625,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.14025530219078064,
+      "fraction_expressing": 0.175,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.08688528835773468,
+      "fraction_expressing": 0.08615682478218781,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.25932776927948,
+      "fraction_expressing": 0.21693121693121692,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.052927978336811066,
+      "fraction_expressing": 0.06694560669456066,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.04413899779319763,
+      "fraction_expressing": 0.05434782608695652,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.05637136101722717,
+      "fraction_expressing": 0.08045977011494253,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.10306704044342041,
+      "fraction_expressing": 0.12972972972972974,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.09381014108657837,
+      "fraction_expressing": 0.125,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.27238360047340393,
+      "fraction_expressing": 0.3125,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.041766755282878876,
+      "fraction_expressing": 0.043478260869565216,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.14194251596927643,
+      "fraction_expressing": 0.14285714285714285,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.05646049976348877,
+      "fraction_expressing": 0.05057096247960848,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.20238681137561798,
+      "fraction_expressing": 0.14285714285714285,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.2268083691596985,
+      "fraction_expressing": 0.2222222222222222,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.08834406733512878,
+      "fraction_expressing": 0.08525345622119816,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.07435692846775055,
+      "fraction_expressing": 0.0967741935483871,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.9063166975975037,
+      "fraction_expressing": 1.0,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.039089832454919815,
+      "fraction_expressing": 0.14285714285714285,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.1198754608631134,
+      "fraction_expressing": 0.25,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.02367362380027771,
+      "fraction_expressing": 0.020833333333333332,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.04937216639518738,
+      "fraction_expressing": 0.0364963503649635,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.05023926496505737,
+      "fraction_expressing": 0.05128205128205128,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.13288868963718414,
+      "fraction_expressing": 0.10880829015544041,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.055359847843647,
+      "fraction_expressing": 0.056074766355140186,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.09270802140235901,
+      "fraction_expressing": 0.08734939759036145,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.16732211410999298,
+      "fraction_expressing": 0.1794871794871795,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.1102960854768753,
+      "fraction_expressing": 0.09876543209876543,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.08247634023427963,
+      "fraction_expressing": 0.057203389830508475,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.022118626162409782,
+      "fraction_expressing": 0.01466275659824047,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.01509329117834568,
+      "fraction_expressing": 0.012612612612612612,
+      "n_cells": 1110
+    }
+  },
+  "BACE2": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.09048908948898315,
+      "fraction_expressing": 0.0946215139442231,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.10326971113681793,
+      "fraction_expressing": 0.043478260869565216,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.11790519207715988,
+      "fraction_expressing": 0.11434108527131782,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.08787805587053299,
+      "fraction_expressing": 0.055944055944055944,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.08258728682994843,
+      "fraction_expressing": 0.12050739957716702,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 0.16990333795547485,
+      "fraction_expressing": 0.18181818181818182,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.12930572032928467,
+      "fraction_expressing": 0.1441115702479339,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.1231333538889885,
+      "fraction_expressing": 0.12307692307692308,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.0647306889295578,
+      "fraction_expressing": 0.06684491978609626,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.09668610990047455,
+      "fraction_expressing": 0.09615384615384616,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.06776902824640274,
+      "fraction_expressing": 0.05454545454545454,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.07835739105939865,
+      "fraction_expressing": 0.0576271186440678,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.025955328717827797,
+      "fraction_expressing": 0.06060606060606061,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.04261643439531326,
+      "fraction_expressing": 0.05343511450381679,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.02322087436914444,
+      "fraction_expressing": 0.03125,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.07913385331630707,
+      "fraction_expressing": 0.075,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.022012658417224884,
+      "fraction_expressing": 0.026137463697967087,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.04619477689266205,
+      "fraction_expressing": 0.047619047619047616,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.01167279202491045,
+      "fraction_expressing": 0.016736401673640166,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.013071808032691479,
+      "fraction_expressing": 0.015217391304347827,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.015135996975004673,
+      "fraction_expressing": 0.04597701149425287,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.020184427499771118,
+      "fraction_expressing": 0.02702702702702703,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.061455510556697845,
+      "fraction_expressing": 0.0859375,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.02086840756237507,
+      "fraction_expressing": 0.023411371237458192,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.012169957160949707,
+      "fraction_expressing": 0.013866231647634585,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.015006150119006634,
+      "fraction_expressing": 0.02040816326530612,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.0517893023788929,
+      "fraction_expressing": 0.05714285714285714,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.016409894451498985,
+      "fraction_expressing": 0.020737327188940093,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.06354334205389023,
+      "fraction_expressing": 0.06451612903225806,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.04449250549077988,
+      "fraction_expressing": 0.09615384615384616,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.18116463720798492,
+      "fraction_expressing": 0.16666666666666666,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.1675257682800293,
+      "fraction_expressing": 0.12165450121654502,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.40045490860939026,
+      "fraction_expressing": 0.37606837606837606,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.38144782185554504,
+      "fraction_expressing": 0.31088082901554404,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.4556156396865845,
+      "fraction_expressing": 0.38006230529595014,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.48592495918273926,
+      "fraction_expressing": 0.3313253012048193,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.2034931182861328,
+      "fraction_expressing": 0.20512820512820512,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.42845436930656433,
+      "fraction_expressing": 0.30864197530864196,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.2912865877151489,
+      "fraction_expressing": 0.1906779661016949,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.1814628392457962,
+      "fraction_expressing": 0.15249266862170088,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.14203421771526337,
+      "fraction_expressing": 0.11351351351351352,
+      "n_cells": 1110
+    }
+  },
+  "KIF1BP": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.08485741168260574,
+      "fraction_expressing": 0.09063745019920319,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.07419437170028687,
+      "fraction_expressing": 0.043478260869565216,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.07536976784467697,
+      "fraction_expressing": 0.0755813953488372,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.05998150631785393,
+      "fraction_expressing": 0.03496503496503497,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.1029210165143013,
+      "fraction_expressing": 0.14482029598308668,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 0.14020822942256927,
+      "fraction_expressing": 0.18181818181818182,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.13430781662464142,
+      "fraction_expressing": 0.1559917355371901,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.1553923785686493,
+      "fraction_expressing": 0.16923076923076924,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.0622270405292511,
+      "fraction_expressing": 0.07219251336898395,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.043610259890556335,
+      "fraction_expressing": 0.038461538461538464,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.05473177880048752,
+      "fraction_expressing": 0.057754010695187166,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.071761354804039,
+      "fraction_expressing": 0.05084745762711865,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.12116407603025436,
+      "fraction_expressing": 0.18181818181818182,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.14914493262767792,
+      "fraction_expressing": 0.16793893129770993,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.17018365859985352,
+      "fraction_expressing": 0.18333333333333332,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.16816698014736176,
+      "fraction_expressing": 0.2,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.14537830650806427,
+      "fraction_expressing": 0.14133591481122942,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.16146020591259003,
+      "fraction_expressing": 0.14814814814814814,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.2512669563293457,
+      "fraction_expressing": 0.2594142259414226,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.251792311668396,
+      "fraction_expressing": 0.26956521739130435,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.19218844175338745,
+      "fraction_expressing": 0.27586206896551724,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.2783450484275818,
+      "fraction_expressing": 0.33513513513513515,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.2891716957092285,
+      "fraction_expressing": 0.25,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.11673203855752945,
+      "fraction_expressing": 0.15625,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.13489075005054474,
+      "fraction_expressing": 0.12709030100334448,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.2593153715133667,
+      "fraction_expressing": 0.21428571428571427,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.13712391257286072,
+      "fraction_expressing": 0.11256117455138662,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.17671379446983337,
+      "fraction_expressing": 0.14285714285714285,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.23421277105808258,
+      "fraction_expressing": 0.2571428571428571,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.5452543497085571,
+      "fraction_expressing": 0.5555555555555556,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.18984781205654144,
+      "fraction_expressing": 0.17050691244239632,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.182928204536438,
+      "fraction_expressing": 0.16129032258064516,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.12900979816913605,
+      "fraction_expressing": 0.3333333333333333,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.04450104758143425,
+      "fraction_expressing": 0.14285714285714285,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.2804173231124878,
+      "fraction_expressing": 0.34615384615384615,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.05465732142329216,
+      "fraction_expressing": 0.041666666666666664,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.07270209491252899,
+      "fraction_expressing": 0.0535279805352798,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.10327552258968353,
+      "fraction_expressing": 0.10256410256410256,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.126951202750206,
+      "fraction_expressing": 0.13471502590673576,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.11056078970432281,
+      "fraction_expressing": 0.10903426791277258,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.08692260831594467,
+      "fraction_expressing": 0.08433734939759036,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.09958609193563461,
+      "fraction_expressing": 0.1282051282051282,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.14644278585910797,
+      "fraction_expressing": 0.13580246913580246,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.06898250430822372,
+      "fraction_expressing": 0.05296610169491525,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.11833982914686203,
+      "fraction_expressing": 0.10850439882697947,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.13253189623355865,
+      "fraction_expressing": 0.1036036036036036,
+      "n_cells": 1110
+    }
+  },
+  "TCF4": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 1.3665210008621216,
+      "fraction_expressing": 0.8386454183266933,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 1.2697420120239258,
+      "fraction_expressing": 0.5652173913043478,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 1.3097761869430542,
+      "fraction_expressing": 0.7790697674418605,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 1.1269780397415161,
+      "fraction_expressing": 0.5384615384615384,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 1.3597930669784546,
+      "fraction_expressing": 0.8699788583509513,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 1.966092586517334,
+      "fraction_expressing": 0.9545454545454546,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 1.1994140148162842,
+      "fraction_expressing": 0.7882231404958677,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 1.6819947957992554,
+      "fraction_expressing": 0.9384615384615385,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 1.3793576955795288,
+      "fraction_expressing": 0.786096256684492,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 1.6303869485855103,
+      "fraction_expressing": 0.8461538461538461,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 1.2768058776855469,
+      "fraction_expressing": 0.7411764705882353,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 1.7020642757415771,
+      "fraction_expressing": 0.8305084745762712,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 1.8598616123199463,
+      "fraction_expressing": 0.9696969696969697,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 1.7979395389556885,
+      "fraction_expressing": 0.9236641221374046,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 1.470452904701233,
+      "fraction_expressing": 0.7895833333333333,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 1.7932846546173096,
+      "fraction_expressing": 0.925,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 1.4330066442489624,
+      "fraction_expressing": 0.7734753146176185,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 1.8274567127227783,
+      "fraction_expressing": 0.9206349206349206,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.8301523923873901,
+      "fraction_expressing": 0.6108786610878661,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.7371258735656738,
+      "fraction_expressing": 0.5260869565217391,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.7938148379325867,
+      "fraction_expressing": 0.5632183908045977,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.7157648801803589,
+      "fraction_expressing": 0.5945945945945946,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 1.7751662731170654,
+      "fraction_expressing": 1.0,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 1.8726491928100586,
+      "fraction_expressing": 0.9296875,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 1.5660498142242432,
+      "fraction_expressing": 0.822742474916388,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 1.7253165245056152,
+      "fraction_expressing": 0.9142857142857143,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 1.341536045074463,
+      "fraction_expressing": 0.7169657422512234,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 1.6548823118209839,
+      "fraction_expressing": 0.8163265306122449,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.9715732932090759,
+      "fraction_expressing": 0.6857142857142857,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 1.3677023649215698,
+      "fraction_expressing": 0.8888888888888888,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.728448212146759,
+      "fraction_expressing": 0.49078341013824883,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 1.3385878801345825,
+      "fraction_expressing": 0.8387096774193549,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 1.764449119567871,
+      "fraction_expressing": 1.0,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.6446240544319153,
+      "fraction_expressing": 0.2857142857142857,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.8936014771461487,
+      "fraction_expressing": 0.5384615384615384,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 1.6466889381408691,
+      "fraction_expressing": 0.8958333333333334,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 1.4512945413589478,
+      "fraction_expressing": 0.7445255474452555,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.6861438155174255,
+      "fraction_expressing": 0.49572649572649574,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.4973682165145874,
+      "fraction_expressing": 0.38341968911917096,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.7652416825294495,
+      "fraction_expressing": 0.5202492211838006,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.5840081572532654,
+      "fraction_expressing": 0.39156626506024095,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.3500233590602875,
+      "fraction_expressing": 0.3333333333333333,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.9821881055831909,
+      "fraction_expressing": 0.654320987654321,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 1.1125956773757935,
+      "fraction_expressing": 0.6038135593220338,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 1.8246042728424072,
+      "fraction_expressing": 0.9120234604105572,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 1.7274726629257202,
+      "fraction_expressing": 0.8504504504504504,
+      "n_cells": 1110
+    }
+  },
+  "MAPK10": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.22028137743473053,
+      "fraction_expressing": 0.20816733067729085,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.1904027760028839,
+      "fraction_expressing": 0.10869565217391304,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.13758257031440735,
+      "fraction_expressing": 0.12257751937984496,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.20665012300014496,
+      "fraction_expressing": 0.11188811188811189,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.21654605865478516,
+      "fraction_expressing": 0.24101479915433405,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 0.05464038625359535,
+      "fraction_expressing": 0.045454545454545456,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.16326525807380676,
+      "fraction_expressing": 0.16683884297520662,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.08177153766155243,
+      "fraction_expressing": 0.09230769230769231,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.381909042596817,
+      "fraction_expressing": 0.31283422459893045,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.6353133320808411,
+      "fraction_expressing": 0.40384615384615385,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.3467743992805481,
+      "fraction_expressing": 0.2641711229946524,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.6555864214897156,
+      "fraction_expressing": 0.4067796610169492,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.6917219758033752,
+      "fraction_expressing": 0.5757575757575758,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.9894297122955322,
+      "fraction_expressing": 0.7251908396946565,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 1.394514799118042,
+      "fraction_expressing": 0.7708333333333334,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 1.3447215557098389,
+      "fraction_expressing": 0.775,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 1.3853998184204102,
+      "fraction_expressing": 0.7676669893514037,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 1.2147221565246582,
+      "fraction_expressing": 0.6984126984126984,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 1.8029258251190186,
+      "fraction_expressing": 0.8786610878661087,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 1.7044764757156372,
+      "fraction_expressing": 0.8739130434782608,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 1.6084015369415283,
+      "fraction_expressing": 0.8275862068965517,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 1.5477259159088135,
+      "fraction_expressing": 0.8378378378378378,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 1.3144700527191162,
+      "fraction_expressing": 0.875,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 1.0804342031478882,
+      "fraction_expressing": 0.7421875,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 1.4428092241287231,
+      "fraction_expressing": 0.7658862876254181,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 1.2502126693725586,
+      "fraction_expressing": 0.7,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 1.4013785123825073,
+      "fraction_expressing": 0.7153344208809136,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 1.103014588356018,
+      "fraction_expressing": 0.6180758017492711,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 1.5247758626937866,
+      "fraction_expressing": 0.8571428571428571,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 1.2179527282714844,
+      "fraction_expressing": 0.6666666666666666,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 1.41519296169281,
+      "fraction_expressing": 0.7557603686635944,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 1.2290743589401245,
+      "fraction_expressing": 0.7419354838709677,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 1.1396301984786987,
+      "fraction_expressing": 1.0,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.45391926169395447,
+      "fraction_expressing": 0.2857142857142857,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 1.0490816831588745,
+      "fraction_expressing": 0.7115384615384616,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.06315378099679947,
+      "fraction_expressing": 0.0625,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.15877409279346466,
+      "fraction_expressing": 0.11678832116788321,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.08419689536094666,
+      "fraction_expressing": 0.07692307692307693,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.07140066474676132,
+      "fraction_expressing": 0.05181347150259067,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.08617506921291351,
+      "fraction_expressing": 0.0778816199376947,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.055516988039016724,
+      "fraction_expressing": 0.04819277108433735,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.0656966045498848,
+      "fraction_expressing": 0.05128205128205128,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.04214971885085106,
+      "fraction_expressing": 0.04938271604938271,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.04687896743416786,
+      "fraction_expressing": 0.03177966101694915,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.17894281446933746,
+      "fraction_expressing": 0.15249266862170088,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.2184111773967743,
+      "fraction_expressing": 0.16486486486486487,
+      "n_cells": 1110
+    }
+  },
+  "SOX2": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.8375449776649475,
+      "fraction_expressing": 0.6254980079681275,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.41826164722442627,
+      "fraction_expressing": 0.2391304347826087,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.6978277564048767,
+      "fraction_expressing": 0.5082364341085271,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.45680204033851624,
+      "fraction_expressing": 0.25874125874125875,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.9944139719009399,
+      "fraction_expressing": 0.7610993657505285,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 1.0243741273880005,
+      "fraction_expressing": 0.6363636363636364,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.9317308068275452,
+      "fraction_expressing": 0.65599173553719,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 1.0828909873962402,
+      "fraction_expressing": 0.7384615384615385,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.7342827916145325,
+      "fraction_expressing": 0.5374331550802139,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.3653162717819214,
+      "fraction_expressing": 0.25,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.6402052640914917,
+      "fraction_expressing": 0.453475935828877,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.46990761160850525,
+      "fraction_expressing": 0.29152542372881357,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.5188800096511841,
+      "fraction_expressing": 0.45454545454545453,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.5840045213699341,
+      "fraction_expressing": 0.5190839694656488,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.15251323580741882,
+      "fraction_expressing": 0.15208333333333332,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.22022947669029236,
+      "fraction_expressing": 0.25,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.11865874379873276,
+      "fraction_expressing": 0.1132623426911907,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.22853679955005646,
+      "fraction_expressing": 0.17989417989417988,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.020854651927947998,
+      "fraction_expressing": 0.02510460251046025,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.04234427586197853,
+      "fraction_expressing": 0.04782608695652174,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.032823577523231506,
+      "fraction_expressing": 0.04597701149425287,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.03452440723776817,
+      "fraction_expressing": 0.05945945945945946,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.17350493371486664,
+      "fraction_expressing": 0.25,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.2185242474079132,
+      "fraction_expressing": 0.2578125,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.20076322555541992,
+      "fraction_expressing": 0.1605351170568562,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.07504735887050629,
+      "fraction_expressing": 0.07142857142857142,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.12255281955003738,
+      "fraction_expressing": 0.09869494290375204,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.1043829545378685,
+      "fraction_expressing": 0.09329446064139942,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.12210290133953094,
+      "fraction_expressing": 0.11428571428571428,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.05575557425618172,
+      "fraction_expressing": 0.059907834101382486,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.10939528048038483,
+      "fraction_expressing": 0.0967741935483871,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.11565044522285461,
+      "fraction_expressing": 0.3333333333333333,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.16836215555667877,
+      "fraction_expressing": 0.14285714285714285,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.16289427876472473,
+      "fraction_expressing": 0.17307692307692307,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.5845233798027039,
+      "fraction_expressing": 0.3958333333333333,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.6366702914237976,
+      "fraction_expressing": 0.39902676399026765,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.4254099726676941,
+      "fraction_expressing": 0.38461538461538464,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 0.44877544045448303,
+      "fraction_expressing": 0.3626943005181347,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.4440532922744751,
+      "fraction_expressing": 0.3426791277258567,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 0.4044676721096039,
+      "fraction_expressing": 0.28313253012048195,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 0.7725781202316284,
+      "fraction_expressing": 0.5384615384615384,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 0.5460361838340759,
+      "fraction_expressing": 0.43209876543209874,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.5540443658828735,
+      "fraction_expressing": 0.3389830508474576,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.6985092163085938,
+      "fraction_expressing": 0.4868035190615836,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.6574225425720215,
+      "fraction_expressing": 0.42702702702702705,
+      "n_cells": 1110
+    }
+  },
+  "SOX10": {
+    "ENCC/glia Progenitor__LargeInt__W6-11": {
+      "mean_expression": 0.6126347780227661,
+      "fraction_expressing": 0.5109561752988048,
+      "n_cells": 1004
+    },
+    "ENCC/glia Progenitor__LargeInt__W12-17": {
+      "mean_expression": 0.6886710524559021,
+      "fraction_expressing": 0.34782608695652173,
+      "n_cells": 46
+    },
+    "ENCC/glia Progenitor__SmallInt__W6-11": {
+      "mean_expression": 0.6708638072013855,
+      "fraction_expressing": 0.501937984496124,
+      "n_cells": 2064
+    },
+    "ENCC/glia Progenitor__SmallInt__W12-17": {
+      "mean_expression": 0.636551022529602,
+      "fraction_expressing": 0.32167832167832167,
+      "n_cells": 143
+    },
+    "cycling ENCC/glia__LargeInt__W6-11": {
+      "mean_expression": 0.6500003933906555,
+      "fraction_expressing": 0.5983086680761099,
+      "n_cells": 946
+    },
+    "cycling ENCC/glia__LargeInt__W12-17": {
+      "mean_expression": 1.0094895362854004,
+      "fraction_expressing": 0.8636363636363636,
+      "n_cells": 22
+    },
+    "cycling ENCC/glia__SmallInt__W6-11": {
+      "mean_expression": 0.659233033657074,
+      "fraction_expressing": 0.5511363636363636,
+      "n_cells": 1936
+    },
+    "cycling ENCC/glia__SmallInt__W12-17": {
+      "mean_expression": 0.5023396611213684,
+      "fraction_expressing": 0.4461538461538462,
+      "n_cells": 65
+    },
+    "Neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.2496718317270279,
+      "fraction_expressing": 0.23796791443850268,
+      "n_cells": 374
+    },
+    "Neuroblast__LargeInt__W12-17": {
+      "mean_expression": 0.46564996242523193,
+      "fraction_expressing": 0.3076923076923077,
+      "n_cells": 52
+    },
+    "Neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.29328885674476624,
+      "fraction_expressing": 0.23422459893048128,
+      "n_cells": 935
+    },
+    "Neuroblast__SmallInt__W12-17": {
+      "mean_expression": 0.37451666593551636,
+      "fraction_expressing": 0.23389830508474577,
+      "n_cells": 295
+    },
+    "cycling neuroblast__LargeInt__W6-11": {
+      "mean_expression": 0.16264690458774567,
+      "fraction_expressing": 0.21212121212121213,
+      "n_cells": 33
+    },
+    "cycling neuroblast__SmallInt__W6-11": {
+      "mean_expression": 0.18150126934051514,
+      "fraction_expressing": 0.183206106870229,
+      "n_cells": 131
+    },
+    "Branch A1 (iMN)__LargeInt__W6-11": {
+      "mean_expression": 0.0640321597456932,
+      "fraction_expressing": 0.075,
+      "n_cells": 480
+    },
+    "Branch A1 (iMN)__LargeInt__W12-17": {
+      "mean_expression": 0.26289936900138855,
+      "fraction_expressing": 0.225,
+      "n_cells": 40
+    },
+    "Branch A1 (iMN)__SmallInt__W6-11": {
+      "mean_expression": 0.06051541119813919,
+      "fraction_expressing": 0.06776379477250725,
+      "n_cells": 1033
+    },
+    "Branch A1 (iMN)__SmallInt__W12-17": {
+      "mean_expression": 0.19076389074325562,
+      "fraction_expressing": 0.1693121693121693,
+      "n_cells": 189
+    },
+    "Branch A2 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.016479220241308212,
+      "fraction_expressing": 0.02510460251046025,
+      "n_cells": 239
+    },
+    "Branch A2 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.02990533411502838,
+      "fraction_expressing": 0.0391304347826087,
+      "n_cells": 460
+    },
+    "Branch A3 (IPAN/IN)__LargeInt__W6-11": {
+      "mean_expression": 0.04090910404920578,
+      "fraction_expressing": 0.06896551724137931,
+      "n_cells": 87
+    },
+    "Branch A3 (IPAN/IN)__SmallInt__W6-11": {
+      "mean_expression": 0.030338307842612267,
+      "fraction_expressing": 0.043243243243243246,
+      "n_cells": 185
+    },
+    "Branch A4 (IN)__LargeInt__W12-17": {
+      "mean_expression": 0.23676049709320068,
+      "fraction_expressing": 0.25,
+      "n_cells": 8
+    },
+    "Branch A4 (IN)__SmallInt__W12-17": {
+      "mean_expression": 0.39362022280693054,
+      "fraction_expressing": 0.390625,
+      "n_cells": 128
+    },
+    "Branch B1 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.06275511533021927,
+      "fraction_expressing": 0.07357859531772576,
+      "n_cells": 299
+    },
+    "Branch B1 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.10403874516487122,
+      "fraction_expressing": 0.1,
+      "n_cells": 70
+    },
+    "Branch B1 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.03488660603761673,
+      "fraction_expressing": 0.03507340946166395,
+      "n_cells": 1226
+    },
+    "Branch B1 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.07773233950138092,
+      "fraction_expressing": 0.07580174927113703,
+      "n_cells": 343
+    },
+    "Branch B2 (eMN)__LargeInt__W6-11": {
+      "mean_expression": 0.059076812118291855,
+      "fraction_expressing": 0.08571428571428572,
+      "n_cells": 35
+    },
+    "Branch B2 (eMN)__LargeInt__W12-17": {
+      "mean_expression": 0.0,
+      "fraction_expressing": 0.0,
+      "n_cells": 9
+    },
+    "Branch B2 (eMN)__SmallInt__W6-11": {
+      "mean_expression": 0.05042210593819618,
+      "fraction_expressing": 0.055299539170506916,
+      "n_cells": 434
+    },
+    "Branch B2 (eMN)__SmallInt__W12-17": {
+      "mean_expression": 0.14653979241847992,
+      "fraction_expressing": 0.16129032258064516,
+      "n_cells": 31
+    },
+    "Branch B2 (eMN)__lymph node__W12-17": {
+      "mean_expression": 0.06297034025192261,
+      "fraction_expressing": 0.3333333333333333,
+      "n_cells": 3
+    },
+    "Branch B3 (IPAN)__LargeInt__W12-17": {
+      "mean_expression": 0.43945786356925964,
+      "fraction_expressing": 0.42857142857142855,
+      "n_cells": 7
+    },
+    "Branch B3 (IPAN)__SmallInt__W12-17": {
+      "mean_expression": 0.1539430022239685,
+      "fraction_expressing": 0.21153846153846154,
+      "n_cells": 52
+    },
+    "Differentiating glia__LargeInt__W12-17": {
+      "mean_expression": 0.9614088535308838,
+      "fraction_expressing": 0.6458333333333334,
+      "n_cells": 48
+    },
+    "Differentiating glia__SmallInt__W12-17": {
+      "mean_expression": 0.8474738001823425,
+      "fraction_expressing": 0.5109489051094891,
+      "n_cells": 411
+    },
+    "Glia 1 (DHH+)__LargeInt__W6-11": {
+      "mean_expression": 0.8184278011322021,
+      "fraction_expressing": 0.6068376068376068,
+      "n_cells": 117
+    },
+    "Glia 1 (DHH+)__LargeInt__W12-17": {
+      "mean_expression": 1.1049691438674927,
+      "fraction_expressing": 0.694300518134715,
+      "n_cells": 193
+    },
+    "Glia 1 (DHH+)__SmallInt__W6-11": {
+      "mean_expression": 0.8378574252128601,
+      "fraction_expressing": 0.5794392523364486,
+      "n_cells": 321
+    },
+    "Glia 1 (DHH+)__SmallInt__W12-17": {
+      "mean_expression": 1.1302499771118164,
+      "fraction_expressing": 0.6475903614457831,
+      "n_cells": 332
+    },
+    "Glia 1 (DHH+)__lymph node__W12-17": {
+      "mean_expression": 1.149212121963501,
+      "fraction_expressing": 0.717948717948718,
+      "n_cells": 39
+    },
+    "Glia 2 (ELN+)__LargeInt__W12-17": {
+      "mean_expression": 1.076906681060791,
+      "fraction_expressing": 0.7037037037037037,
+      "n_cells": 81
+    },
+    "Glia 2 (ELN+)__SmallInt__W12-17": {
+      "mean_expression": 0.9946062564849854,
+      "fraction_expressing": 0.5529661016949152,
+      "n_cells": 472
+    },
+    "Glia 3 (BCAN+)__LargeInt__W12-17": {
+      "mean_expression": 0.814763605594635,
+      "fraction_expressing": 0.5630498533724341,
+      "n_cells": 341
+    },
+    "Glia 3 (BCAN+)__SmallInt__W12-17": {
+      "mean_expression": 0.7823078036308289,
+      "fraction_expressing": 0.5054054054054054,
+      "n_cells": 1110
+    }
+  }
+}

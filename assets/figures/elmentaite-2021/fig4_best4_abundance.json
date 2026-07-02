@@ -1,0 +1,124 @@
+{
+  "ACL": {
+    "Adult": {
+      "n_best4": 448,
+      "percent_of_epi": 7.35
+    }
+  },
+  "APD": {
+    "Adult": {
+      "n_best4": 12,
+      "percent_of_epi": 0.26
+    }
+  },
+  "CAE": {
+    "Adult": {
+      "n_best4": 209,
+      "percent_of_epi": 1.25
+    }
+  },
+  "DCL": {
+    "Adult": {
+      "n_best4": 244,
+      "percent_of_epi": 14.19
+    }
+  },
+  "DUO": {
+    "Adult": {
+      "n_best4": 31,
+      "percent_of_epi": 0.5
+    }
+  },
+  "FLI": {
+    "First trim": {
+      "n_best4": 28,
+      "percent_of_epi": 0.57
+    },
+    "Second trim": {
+      "n_best4": 139,
+      "percent_of_epi": 3.99
+    }
+  },
+  "FMIL": {
+    "First trim": {
+      "n_best4": 9,
+      "percent_of_epi": 0.82
+    },
+    "Second trim": {
+      "n_best4": 95,
+      "percent_of_epi": 1.61
+    }
+  },
+  "FPIL": {
+    "First trim": {
+      "n_best4": 111,
+      "percent_of_epi": 0.81
+    },
+    "Second trim": {
+      "n_best4": 77,
+      "percent_of_epi": 1.33
+    }
+  },
+  "FTIL": {
+    "First trim": {
+      "n_best4": 48,
+      "percent_of_epi": 0.4
+    },
+    "Second trim": {
+      "n_best4": 105,
+      "percent_of_epi": 1.97
+    }
+  },
+  "ILE": {
+    "Adult": {
+      "n_best4": 276,
+      "percent_of_epi": 5.12
+    }
+  },
+  "ILE1": {
+    "Adult": {
+      "n_best4": 12,
+      "percent_of_epi": 2.56
+    }
+  },
+  "ILE2": {
+    "Adult": {
+      "n_best4": 51,
+      "percent_of_epi": 2.78
+    }
+  },
+  "JEJ": {
+    "Adult": {
+      "n_best4": 240,
+      "percent_of_epi": 8.49
+    }
+  },
+  "REC": {
+    "Adult": {
+      "n_best4": 190,
+      "percent_of_epi": 1.1
+    }
+  },
+  "SCL": {
+    "Adult": {
+      "n_best4": 1220,
+      "percent_of_epi": 16.18
+    }
+  },
+  "TCL": {
+    "Adult": {
+      "n_best4": 889,
+      "percent_of_epi": 13.6
+    }
+  },
+  "TIL": {
+    "Pediatric": {
+      "n_best4": 64,
+      "percent_of_epi": 0.78
+    },
+    "Pediatric_IBD": {
+      "n_best4": 57,
+      "percent_of_epi": 1.3
+    }
+  }
+}

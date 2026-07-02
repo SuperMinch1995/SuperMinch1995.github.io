@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is known — opioid modulation of the phase III rhythm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --color-text-primary:#2b2b28; --color-text-secondary:#6b675e; --color-text-tertiary:#8a857a;
+ --color-background-primary:#ffffff; --color-background-secondary:#f2efe9; --color-background-tertiary:#faf9f7;
+ --color-border-primary:rgba(60,55,45,0.34); --color-border-secondary:#d9d5cc; --color-border-tertiary:#e7e3da;
+ --border-radius-md:8px; --border-radius-lg:12px; --border-radius-xl:16px;
+ --font-sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+ --font-serif:Georgia,'Times New Roman',serif;
+ --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+html,body{margin:0;padding:0;background:transparent;}
+body{font-family:var(--font-sans);color:var(--color-text-primary);line-height:1.5;padding:4px 2px 8px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+a{color:#1f6e5e;text-decoration:none;border-bottom:1px solid rgba(31,110,94,0.35);}
+a:hover{border-bottom-color:#1f6e5e;}
+.mt-src{margin-top:14px;padding-top:9px;border-top:1px solid var(--color-border-secondary);font-size:11px;line-height:1.55;color:var(--color-text-secondary);}
+.mt-src b{font-weight:600;color:var(--color-text-primary);}
+</style>
+</head>
+<body>
+<h2 class="sr-only">Figure 1 option B2: control diagram with a slider in the opioid-receptor box. The smooth-muscle contraction trace becomes a regular phase III–like rhythm when opioid activation is low and acetylcholine release is maximal, and flattens when activation is high.</h2>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;">
+  <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1D9E75;">Known</span>
+  <span style="font-size:12px;color:var(--color-text-secondary);">Established physiology · drag the slider in the box</span>
+</div>
+
+<svg id="svgB2" viewBox="0 0 680 350" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+<title>Control diagram with embedded slider and activity-dependent contraction trace</title>
+<desc>Cholinergic drive excites acetylcholine release; opioid receptors dampen it; a slider in the receptor box sets activation. At low activation the muscle shows a regular phase III–like rhythm; at high activation it flattens.</desc>
+<defs>
+<marker id="ph2" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M2 2 L10 6 L2 10 Z" fill="#C8902F"/></marker>
+<marker id="oh2" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M2 2 L10 6 L2 10 Z" fill="#8F3E2F"/></marker>
+</defs>
+
+<rect x="275" y="18" width="160" height="44" rx="10" fill="#ECC06A" stroke="#9A6B12" stroke-width="1.5"/>
+<text x="355" y="37" text-anchor="middle" font-size="12" font-weight="600" fill="#6B4A0C">Cholinergic drive</text>
+<text x="355" y="52" text-anchor="middle" font-size="11" fill="#6B4A0C">(neuron firing)</text>
+<line x1="355" y1="62" x2="355" y2="118" stroke="#C8902F" stroke-width="3" marker-end="url(#ph2)"/>
+<circle cx="378" cy="90" r="9" fill="#ECC06A" stroke="#9A6B12" stroke-width="0.5"/><text x="378" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#6B4A0C">+</text>
+<text x="398" y="94" text-anchor="start" font-size="11" fill="#9A6B12">excites</text>
+
+<rect x="275" y="120" width="160" height="72" rx="12" fill="var(--color-background-secondary)" stroke="var(--color-text-secondary)" stroke-width="1.5"/>
+<text x="355" y="143" text-anchor="middle" font-size="12" font-weight="600" fill="var(--color-text-primary)">Acetylcholine</text>
+<text x="355" y="158" text-anchor="middle" font-size="12" font-weight="600" fill="var(--color-text-primary)">release</text>
+<rect x="295" y="170" width="120" height="12" rx="6" fill="var(--color-border-secondary)"/>
+<rect id="gaugeB2" x="295" y="170" width="60" height="12" rx="6" fill="#E0A93D" style="transition:width .1s;"/>
+
+<line x1="355" y1="192" x2="355" y2="246" stroke="#8F3E2F" stroke-width="3" marker-end="url(#oh2)"/>
+<rect x="275" y="248" width="160" height="64" rx="12" fill="#CC7A6B" stroke="#8F3E2F" stroke-width="1.5"/>
+<text x="355" y="264" text-anchor="middle" font-size="11" font-weight="600" fill="#5A241A">Smooth-muscle contraction</text>
+<path id="muscleB2" d="" fill="none" stroke="#5A241A" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" opacity="0.8"/>
+
+<line x1="185" y1="156" x2="268" y2="156" stroke="#3A6EA5" stroke-width="3"/>
+<line x1="268" y1="145" x2="268" y2="167" stroke="#3A6EA5" stroke-width="3"/>
+<circle cx="222" cy="138" r="9" fill="#9DBFE2" stroke="#3A6EA5" stroke-width="0.5"/><text x="222" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#2C5689">−</text>
+<text x="222" y="180" text-anchor="middle" font-size="11" fill="#2C5689">dampens</text>
+
+<ellipse cx="95" cy="58" rx="46" ry="22" fill="#9DBFE2" stroke="#3A6EA5" stroke-width="1.5"/>
+<text x="95" y="56" text-anchor="middle" font-size="11" font-weight="500" fill="#2C5689">Enkephalin</text>
+<text x="95" y="68" text-anchor="middle" font-size="10" fill="#2C5689" font-style="italic">endogenous</text>
+<line x1="98" y1="80" x2="104" y2="116" stroke="#3A6EA5" stroke-width="2"/>
+
+<ellipse cx="95" cy="300" rx="46" ry="22" fill="#D98BC4" stroke="#9A3A7E" stroke-width="1.5"/>
+<text x="95" y="298" text-anchor="middle" font-size="11" font-weight="500" fill="#7E2E66">Trimebutine</text>
+<text x="95" y="310" text-anchor="middle" font-size="10" fill="#7E2E66" font-style="italic">exogenous · in vitro</text>
+<line x1="98" y1="278" x2="104" y2="244" stroke="#9A3A7E" stroke-width="2" stroke-dasharray="4 3"/>
+
+<rect x="35" y="118" width="150" height="124" rx="12" fill="#7B6FA0" stroke="#4E4470" stroke-width="1.5"/>
+<text x="110" y="140" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Opioid receptors</text>
+<text x="110" y="162" text-anchor="middle" font-size="11" fill="#E6E1F2">activation</text>
+<line x1="55" y1="192" x2="165" y2="192" stroke="rgba(255,255,255,0.35)" stroke-width="5" stroke-linecap="round"/>
+<line id="fillB2" x1="55" y1="192" x2="110" y2="192" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<circle id="knobB2" cx="110" cy="192" r="10" fill="#fff" stroke="#4E4470" stroke-width="1.5" style="cursor:grab;"/>
+<text x="55" y="222" text-anchor="middle" font-size="10" fill="#E6E1F2">low</text>
+<text x="165" y="222" text-anchor="middle" font-size="10" fill="#E6E1F2">high</text>
+</svg>
+
+<script>
+(function(){
+  const x0=55,x1=165;
+  const knob=document.getElementById('knobB2'), fill=document.getElementById('fillB2'),
+        muscle=document.getElementById('muscleB2');
+  const trackEl=document.querySelector('#svgB2 line[stroke="rgba(255,255,255,0.35)"]');
+  const mx0=292, mx1=420, my=290;
+  function musclePath(ach){
+    const amp=(ach/100)*13, cycles=5;
+    let pts=[];
+    for(let x=mx0;x<=mx1;x+=2.5){
+      const u=(x-mx0)/(mx1-mx0);
+      const y=my - Math.sin(u*cycles*2*Math.PI)*amp;
+      pts.push(x.toFixed(1)+','+y.toFixed(1));
+    }
+    return 'M'+pts.join(' L');
+  }
+  function setVal(act){
+    act=Math.max(0,Math.min(100,act));
+    const kx=x0+(x1-x0)*act/100;
+    knob.setAttribute('cx',kx.toFixed(1));
+    fill.setAttribute('x2',kx.toFixed(1));
+    const ach=100-act;
+    document.getElementById('gaugeB2').setAttribute('width',(120*ach/100).toFixed(0));
+    muscle.setAttribute('d',musclePath(ach));
+  }
+  function fromClientX(cx){
+    const r=trackEl.getBoundingClientRect();
+    let t=(cx-r.left)/r.width; setVal(t*100);
+  }
+  let drag=false;
+  function down(e){drag=true; knob.style.cursor='grabbing'; if(e.pointerId!=null){try{knob.setPointerCapture(e.pointerId);}catch(_){}} fromClientX((e.touches?e.touches[0]:e).clientX); e.preventDefault();}
+  function move(e){ if(drag) fromClientX((e.touches?e.touches[0]:e).clientX); }
+  function up(){drag=false; knob.style.cursor='grab';}
+  knob.addEventListener('pointerdown',down);
+  trackEl.addEventListener('pointerdown',down);
+  window.addEventListener('pointermove',move);
+  window.addEventListener('pointerup',up);
+  setVal(50);
+})();
+</script>
+<div class="mt-src">Schematic of the cholinergic drive / opioid-brake balance governing the migrating motor complex; trimebutine shown as an exogenous, in-vitro modulator. <b>Mechanism after:</b> Delvaux M, Wingate D. J Int Med Res 1997;25:225–246 (<a href='https://pubmed.ncbi.nlm.nih.gov/9364286/' target='_blank' rel='noopener'>PMID 9364286</a>).</div>
+<script>
+(function(){
+ function postH(){ try{ var h=Math.ceil(document.documentElement.getBoundingClientRect().height); parent.postMessage({type:'mtFigHeight',h:h},'*'); }catch(e){} }
+ window.addEventListener('load',postH);
+ if(window.ResizeObserver){ new ResizeObserver(postH).observe(document.body); }
+ [200,700,1500].forEach(function(d){ setTimeout(postH,d); });
+})();
+</script>
+
+<style id="mtHaloStyle">
+@keyframes mtHalo{0%,100%{filter:drop-shadow(0 0 0 rgba(248,200,38,0));}50%{filter:drop-shadow(0 0 5px rgba(248,200,38,.95));}}
+#knobB2{animation:mtHalo 1.55s ease-in-out infinite;cursor:pointer;}
+body.mt-stop #knobB2{animation:none;}
+@media(prefers-reduced-motion:reduce){#knobB2{animation:none;}}
+</style>
+<script>(function(){function s(){document.body.classList.add('mt-stop');document.removeEventListener('pointerdown',s,true);}document.addEventListener('pointerdown',s,true);setTimeout(function(){if(!document.body.classList.contains('mt-stop'))document.body.classList.add('mt-stop');},9000);})();</script>
+</body>
+</html>

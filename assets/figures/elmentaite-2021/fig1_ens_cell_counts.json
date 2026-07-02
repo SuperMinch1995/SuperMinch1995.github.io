@@ -1,0 +1,123 @@
+{
+  "ENCC/glia Progenitor": {
+    "W6-11": {
+      "LargeInt": 1004,
+      "SmallInt": 2064
+    },
+    "W12-17": {
+      "LargeInt": 46,
+      "SmallInt": 143
+    }
+  },
+  "cycling ENCC/glia": {
+    "W6-11": {
+      "LargeInt": 946,
+      "SmallInt": 1936
+    },
+    "W12-17": {
+      "LargeInt": 22,
+      "SmallInt": 65
+    }
+  },
+  "Neuroblast": {
+    "W6-11": {
+      "LargeInt": 374,
+      "SmallInt": 935
+    },
+    "W12-17": {
+      "LargeInt": 52,
+      "SmallInt": 295
+    }
+  },
+  "cycling neuroblast": {
+    "W6-11": {
+      "LargeInt": 33,
+      "SmallInt": 131
+    }
+  },
+  "Branch A1 (iMN)": {
+    "W6-11": {
+      "LargeInt": 480,
+      "SmallInt": 1033
+    },
+    "W12-17": {
+      "LargeInt": 40,
+      "SmallInt": 189
+    }
+  },
+  "Branch A2 (IPAN/IN)": {
+    "W6-11": {
+      "LargeInt": 239,
+      "SmallInt": 460
+    }
+  },
+  "Branch A3 (IPAN/IN)": {
+    "W6-11": {
+      "LargeInt": 87,
+      "SmallInt": 185
+    }
+  },
+  "Branch A4 (IN)": {
+    "W12-17": {
+      "LargeInt": 8,
+      "SmallInt": 128
+    }
+  },
+  "Branch B1 (eMN)": {
+    "W6-11": {
+      "LargeInt": 299,
+      "SmallInt": 1226
+    },
+    "W12-17": {
+      "LargeInt": 70,
+      "SmallInt": 343
+    }
+  },
+  "Branch B2 (eMN)": {
+    "W6-11": {
+      "LargeInt": 35,
+      "SmallInt": 434
+    },
+    "W12-17": {
+      "LargeInt": 9,
+      "SmallInt": 31,
+      "lymph node": 3
+    }
+  },
+  "Branch B3 (IPAN)": {
+    "W12-17": {
+      "LargeInt": 7,
+      "SmallInt": 52
+    }
+  },
+  "Differentiating glia": {
+    "W12-17": {
+      "LargeInt": 48,
+      "SmallInt": 411
+    }
+  },
+  "Glia 1 (DHH+)": {
+    "W6-11": {
+      "LargeInt": 117,
+      "SmallInt": 321
+    },
+    "W12-17": {
+      "LargeInt": 193,
+      "SmallInt": 332,
+      "lymph node": 39
+    }
+  },
+  "Glia 2 (ELN+)": {
+    "W12-17": {
+      "LargeInt": 81,
+      "SmallInt": 472,
+      "lymph node": 1
+    }
+  },
+  "Glia 3 (BCAN+)": {
+    "W12-17": {
+      "LargeInt": 341,
+      "SmallInt": 1110
+    }
+  }
+}

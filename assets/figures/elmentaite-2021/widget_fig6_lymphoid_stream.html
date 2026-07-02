@@ -1,0 +1,163 @@
+<!--
+  Figure 6 — Lymphoid organogenesis stream (centered ThemeRiver)
+  Data: assets/figures/elmentaite-2021/fig6_lymphoid_timeline.json
+  Replaces: widget_fig6_lymphoid_timeline.html
+-->
+<div id="fig6-lymphoid-widget" style="background:#FAF7F1;border:1px solid #ece6da;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+<div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
+<span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 6 · Interactive</span>
+</div>
+<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Building a lymphoid organ — from innate pioneers to T cells</h4>
+<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Innate lineages (ILCP, LTi-like ILC3s) lead the way early; the adaptive wave of T cells swells toward adulthood, and the LTi-like programs re-surge in inflammatory bowel disease. Hover a lineage to read its count at each stage.</p>
+
+<div id="fig6-content" style="min-height:400px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+<p id="fig6-caption" style="font-size:0.78rem;color:#5F5E5A;text-align:center;margin:0.4rem 0 0 0;">Innate pioneers lead early; adaptive T cells accumulate by adulthood.</p>
+
+<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.4;">Band thickness ∝ cell count. Computed from the T/innate lineage object (38,633 cells, fetal to adult); fetal cells are predominantly second trimester. Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
+</div>
+
+<script>
+let fig6Data = null;
+
+(function(){
+  const DATA_URL = '{{ site.baseurl }}/assets/figures/elmentaite-2021/fig6_lymphoid_timeline.json';
+
+  const STAGES = [
+    { key:'Second trim',   label:'2nd trim.' },
+    { key:'Pediatric',     label:'Paediatric' },
+    { key:'Pediatric_IBD', label:'Paed. IBD' },
+    { key:'Adult',         label:'Adult' }
+  ];
+  const BANDS = [
+    { id:'ILCP', label:'ILCP',          color:'#D449AA', cells:['ILCP'] },
+    { id:'LTI',  label:'LTi-like ILC3', color:'#AF3A3A', cells:['LTi-like NCR+ ILC3','LTi-like NCR- ILC3'] },
+    { id:'ILC3', label:'ILC3',          color:'#C2510A', cells:['ILC3'] },
+    { id:'NK',   label:'NK',            color:'#534AB7', cells:['NK cell'] },
+    { id:'T',    label:'Lymphocytes T', color:'#3DAEA3', cells:['SELL+ CD4 T','SELL+ CD8 T','Treg','fetal T cell'] }
+  ];
+  const X  = [85, 270, 455, 610];
+  const MX = [177.5, 362.5, 532.5];
+  const CY = 235, TARGET = 250;
+  const DEFAULT_CAP = 'Innate pioneers lead early; adaptive T cells accumulate by adulthood.';
+
+  function count(band, sKey){
+    let t = 0;
+    band.cells.forEach(function(c){
+      const node = fig6Data[c];
+      if(!node || !node[sKey]) return;
+      for(const r in node[sKey]) t += node[sKey][r];
+    });
+    return t;
+  }
+  function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+  function r1(n){ return n.toFixed(1); }
+
+  let bandEls = null;
+
+  function setBands(activeBi){
+    if(!bandEls) return;
+    bandEls.forEach(function(el){
+      const bi = parseInt(el.dataset.bi, 10);
+      if(activeBi === null) el.setAttribute('opacity', '0.9');
+      else el.setAttribute('opacity', bi === activeBi ? '0.98' : '0.28');
+    });
+  }
+
+  function build(){
+    const counts = BANDS.map(function(b){ return STAGES.map(function(s){ return count(b, s.key); }); });
+    const totals = STAGES.map(function(s, si){ return BANDS.reduce(function(a, _, bi){ return a + counts[bi][si]; }, 0); });
+    const maxTotal = Math.max.apply(null, totals.concat([1]));
+    const scale = TARGET / maxTotal;
+
+    const edges = BANDS.map(function(){ return { top:[], bot:[] }; });
+    STAGES.forEach(function(s, si){
+      let cum = -totals[si] / 2;
+      BANDS.forEach(function(b, bi){
+        const c = counts[bi][si];
+        edges[bi].top[si] = cum;
+        edges[bi].bot[si] = cum + c;
+        cum += c;
+      });
+    });
+    const yPix = function(v){ return CY + v * scale; };
+
+    function bandPath(bi){
+      const t = edges[bi].top.map(yPix), b = edges[bi].bot.map(yPix);
+      return 'M' + r1(X[0]) + ',' + r1(t[0])
+        + ' C' + r1(MX[0]) + ',' + r1(t[0]) + ' ' + r1(MX[0]) + ',' + r1(t[1]) + ' ' + r1(X[1]) + ',' + r1(t[1])
+        + ' C' + r1(MX[1]) + ',' + r1(t[1]) + ' ' + r1(MX[1]) + ',' + r1(t[2]) + ' ' + r1(X[2]) + ',' + r1(t[2])
+        + ' C' + r1(MX[2]) + ',' + r1(t[2]) + ' ' + r1(MX[2]) + ',' + r1(t[3]) + ' ' + r1(X[3]) + ',' + r1(t[3])
+        + ' L' + r1(X[3]) + ',' + r1(b[3])
+        + ' C' + r1(MX[2]) + ',' + r1(b[3]) + ' ' + r1(MX[2]) + ',' + r1(b[2]) + ' ' + r1(X[2]) + ',' + r1(b[2])
+        + ' C' + r1(MX[1]) + ',' + r1(b[2]) + ' ' + r1(MX[1]) + ',' + r1(b[1]) + ' ' + r1(X[1]) + ',' + r1(b[1])
+        + ' C' + r1(MX[0]) + ',' + r1(b[1]) + ' ' + r1(MX[0]) + ',' + r1(b[0]) + ' ' + r1(X[0]) + ',' + r1(b[0]) + ' Z';
+    }
+
+    const ilcpTopY = yPix(edges[0].top[0]);
+    const tBi = BANDS.length - 1;
+    const tMidY = (yPix(edges[tBi].top[3]) + yPix(edges[tBi].bot[3])) / 2;
+    const ltiMidY = (yPix(edges[1].top[2]) + yPix(edges[1].bot[2])) / 2;
+    const ltiThick = yPix(edges[1].bot[2]) - yPix(edges[1].top[2]);
+
+    let s = '<svg width="100%" viewBox="0 0 680 480" role="img" style="max-width:680px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">'
+      + '<title>Lymphoid organogenesis as a centered stream from second trimester to adult</title>'
+      + '<desc>Innate ILCP and ILC3 lineages dominate early; T cells accumulate into a wide band by adulthood; LTi-like ILC3s re-surge in IBD.</desc>';
+
+    BANDS.forEach(function(b, bi){
+      s += '<path class="fig6-band" data-bi="' + bi + '" d="' + bandPath(bi) + '" fill="' + b.color
+        + '" opacity="0.9" style="cursor:pointer;transition:opacity .25s ease;"><title>' + b.label + '</title></path>';
+    });
+
+    s += '<text x="' + r1(X[0] + 4) + '" y="' + r1(ilcpTopY - 7) + '" font-size="11.5" font-weight="600" fill="#A02E78">ILCP — innate pioneers</text>';
+    s += '<text x="468" y="' + r1(tMidY - 3) + '" font-size="13" font-weight="600" fill="#FFFFFF">Lymphocytes T</text>';
+    s += '<text x="468" y="' + r1(tMidY + 13) + '" font-size="11" fill="#FFFFFF">the adaptive wave</text>';
+    if(ltiThick > 16){
+      s += '<text x="' + r1(X[2]) + '" y="' + r1(ltiMidY + 3) + '" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">↑ re-engaged in IBD</text>';
+    }
+
+    STAGES.forEach(function(st, si){
+      s += '<text x="' + r1(X[si]) + '" y="392" text-anchor="middle" font-size="12" font-weight="600" fill="#3a3028">' + st.label + '</text>';
+    });
+
+    let lx = 70;
+    BANDS.forEach(function(b, bi){
+      s += '<g class="fig6-leg" data-bi="' + bi + '" style="cursor:pointer;">'
+        + '<circle cx="' + lx + '" cy="430" r="5" fill="' + b.color + '"/>'
+        + '<text x="' + (lx + 9) + '" y="434" font-size="11" fill="#5F5E5A">' + b.label + '</text></g>';
+      lx += 14 + b.label.length * 6.6 + 18;
+    });
+
+    s += '</svg>';
+
+    const container = document.getElementById('fig6-content');
+    container.innerHTML = s;
+    bandEls = container.querySelectorAll('.fig6-band');
+
+    const caption = document.getElementById('fig6-caption');
+    function hover(bi){
+      setBands(bi);
+      const c = counts[bi];
+      caption.textContent = BANDS[bi].label + ' — '
+        + STAGES.map(function(st, si){ return st.label + ' ' + fmt(c[si]); }).join(' · ') + ' cells';
+    }
+    function leave(){ setBands(null); caption.textContent = DEFAULT_CAP; }
+
+    container.querySelectorAll('.fig6-band').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ hover(parseInt(el.dataset.bi, 10)); });
+      el.addEventListener('mouseleave', leave);
+    });
+    container.querySelectorAll('.fig6-leg').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ hover(parseInt(el.dataset.bi, 10)); });
+      el.addEventListener('mouseleave', leave);
+    });
+  }
+
+  fetch(DATA_URL)
+    .then(function(r){ if(!r.ok) throw new Error('JSON not found'); return r.json(); })
+    .then(function(d){ fig6Data = d; build(); })
+    .catch(function(e){
+      document.getElementById('fig6-content').innerHTML =
+        '<p style="text-align:center;color:#AF3A3A;padding:2rem;">Could not load: ' + e.message + '</p>';
+    });
+})();
+</script>

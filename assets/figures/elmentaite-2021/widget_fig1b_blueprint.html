@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figure 1 — Shifting cell composition over development</title>
+<style>
+  html,body { margin:0; padding:0; background:transparent; }
+  body { font-family:'DM Sans',system-ui,sans-serif; }
+</style>
+</head>
+<body>
+<!--
+  Figure 1 — Blueprint ribbon view
+  © Minh C. Thom — original representation
+  Data inlined (INLINE_DATA) — no external JSON fetch.
+-->
+<div id="fig1b-bp-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+
+<div style="margin-bottom:0.35rem;">
+  <span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 1</span>
+</div>
+<h4 style="font-size:1.4rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">Shifting cell composition over development</h4>
+<p style="font-size:15px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">
+  Each ribbon represents a cell lineage; thickness indicates its proportion (%).
+</p>
+
+<div id="fig1b-bp-content" style="min-height:360px;"></div>
+
+<p style="font-size:13px;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.6;border-top:1px solid #ddd6cc;padding-top:0.75rem;margin-bottom:0.6rem;">
+  Computed from the full integrated atlas (<em>n</em>&thinsp;=&thinsp;428,469 cells).
+  Data: Elmentaite <em>et al.</em>, <em>Nature</em> 597, 250&ndash;255 (2021), used under CC BY 4.0.
+  Figure &copy; Minh Chau Thom.
+</p>
+
+<details style="border:1px solid #ddd6cc;border-radius:6px;background:#EEE8E0;">
+  <summary style="font-size:13px;font-weight:400;color:#3a3028;padding:0.55rem 0.85rem;cursor:pointer;list-style:none;display:flex;align-items:center;gap:0.5rem;">
+    <span style="display:inline-block;width:15px;height:15px;border-radius:3px;background:#dcd0b6;text-align:center;line-height:15px;font-size:0.7rem;color:#888780;flex-shrink:0;">&darr;</span>
+    How to download raw data?
+  </summary>
+  <div style="font-size:13px;color:#4A3F2F;line-height:1.56;padding:0 0.85rem 0.9rem 0.85rem;border-top:1px solid #ddd6cc;">
+    <p style="margin:0.6rem 0 0;">Processed h5ad objects at
+      <a href="https://www.gutcellatlas.org/" style="color:#3f4a5a;">gutcellatlas.org</a>
+      (interactive browser + download); raw FASTQ/count matrices at ArrayExpress:
+      <a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-9543" style="color:#3f4a5a;">E-MTAB-9543</a>,
+      <a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-9536" style="color:#3f4a5a;">E-MTAB-9536</a>,
+      <a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-9532" style="color:#3f4a5a;">E-MTAB-9532</a>,
+      <a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-9533" style="color:#3f4a5a;">E-MTAB-9533</a>,
+      <a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-10386" style="color:#3f4a5a;">E-MTAB-10386</a>
+      (adults + fetal 2nd trim); pediatric data:
+      <a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8901" style="color:#3f4a5a;">E-MTAB-8901</a>.</p>
+    <p style="margin:0.7rem 0 0;color:#3a3028;">Command line (curl):</p>
+    <p style="margin:0.35rem 0 0;"><code style="display:block;font-family:ui-monospace,monospace;font-size:0.88em;background:#e6e0d8;padding:0.5em 0.6em;border-radius:4px;white-space:pre-wrap;word-break:break-all;line-height:1.5;">curl -L -o Full_obj_raw_counts_nosoupx.h5ad https://cellgeni.cog.sanger.ac.uk/gutcellatlas/Full_obj_raw_counts_nosoupx.h5ad</code></p>
+  </div>
+</details>
+
+<div style="margin-top:2rem;">
+  <p style="font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:#888780;margin:0 0 0.4rem 0;">Personal notes</p>
+  <p style="font-size:15px;color:#4A3F2F;line-height:1.56;margin:0 0 0.8rem 0;">The proportions shown here and in Figure 1b (see <a href="https://doi.org/10.1038/s41586-021-03852-1" style="color:#3f4a5a;">doi:10.1038/s41586-021-03852-1</a>) should not be interpreted as the intestine&rsquo;s exact cellular composition.</p>
+
+  <details style="border:1px solid #ddd6cc;border-radius:6px;margin-bottom:0.45rem;background:#EEE8E0;">
+    <summary style="font-size:13px;font-weight:400;color:#3a3028;padding:0.6rem 0.85rem;cursor:pointer;list-style:none;display:flex;align-items:center;gap:0.5rem;">
+      <span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#dcd0b6;text-align:center;line-height:16px;font-size:0.65rem;font-weight:700;color:#888780;flex-shrink:0;">1</span>
+      Adult samples
+    </summary>
+    <div style="font-size:13px;color:#4A3F2F;line-height:1.56;padding:0 0.85rem 0.9rem 0.85rem;border-top:1px solid #ddd6cc;">
+      <p style="margin:0.6rem 0 0;">Before sequencing, the authors separated immune cells (CD45<sup>+</sup>) from all other cell types (CD45<sup>&minus;</sup>) using magnetic sorting (MACS). The two fractions were sequenced separately and later merged. This strategy ensured that rare immune populations were captured efficiently, but it also increased their representation relative to their abundance in the tissue. As a result, immune cells appear more frequently in the dataset than they would in a histological section of the adult intestine.</p>
+    </div>
+  </details>
+
+  <details style="border:1px solid #ddd6cc;border-radius:6px;margin-bottom:0.45rem;background:#EEE8E0;">
+    <summary style="font-size:13px;font-weight:400;color:#3a3028;padding:0.6rem 0.85rem;cursor:pointer;list-style:none;display:flex;align-items:center;gap:0.5rem;">
+      <span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#dcd0b6;text-align:center;line-height:16px;font-size:0.65rem;font-weight:700;color:#888780;flex-shrink:0;">2</span>
+      Fetal samples
+    </summary>
+    <div style="font-size:13px;color:#4A3F2F;line-height:1.56;padding:0 0.85rem 0.9rem 0.85rem;border-top:1px solid #ddd6cc;">
+      <p style="margin:0.6rem 0 0;">An additional step was performed for fetal tissues. After sorting, the CD45<sup>+</sup> and CD45<sup>&minus;</sup> fractions were recombined at a 1:1 ratio before sequencing, as stated in the Methods section: &ldquo;Fetal CD45<sup>+</sup> and CD45<sup>&minus;</sup> fractions were combined at a 1:1 ratio.&rdquo; Thus, fetal proportions do not directly reflect the native cellular composition of the developing intestine.</p>
+      <p style="margin:0.7rem 0 0;"><em>An analogy may help:</em> imagine a classroom containing 90 girls and 10 boys. If you select 10 girls and 10 boys, the resulting dataset becomes 1:1 even though the classroom itself is not. Similarly, the sequencing dataset was intentionally rebalanced to better capture rare cell populations.</p>
+      <p style="margin:0.7rem 0 0;">A potential misconception is that a 1:1 recombination should produce 50% immune cells in the final dataset. In reality, the observed proportions depend on the cellular makeup of each fraction. During the first trimester (6&ndash;11 weeks), the CD45<sup>+</sup> fraction contains very few mature lymphocytes and is instead enriched in immature immune progenitors. Therefore, even after a 1:1 recombination, mature lymphoid populations remain rare in the final dataset, and mesenchymal cells can still dominate.</p>
+    </div>
+  </details>
+
+  <details style="border:1px solid #ddd6cc;border-radius:6px;background:#EEE8E0;">
+    <summary style="font-size:13px;font-weight:400;color:#3a3028;padding:0.6rem 0.85rem;cursor:pointer;list-style:none;display:flex;align-items:center;gap:0.5rem;">
+      <span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#dcd0b6;text-align:center;line-height:16px;font-size:0.65rem;font-weight:700;color:#888780;flex-shrink:0;">3</span>
+      Pediatric samples
+    </summary>
+    <div style="font-size:13px;color:#4A3F2F;line-height:1.56;padding:0 0.85rem 0.9rem 0.85rem;border-top:1px solid #ddd6cc;">
+      <p style="margin:0.6rem 0 0;">Unlike adult samples (obtained from deceased transplant organ donors), pediatric samples derive from endoscopic biopsies of the terminal ileum (region code <code style="font-family:ui-monospace,monospace;font-size:0.9em;background:#e6e0d8;padding:0.1em 0.3em;border-radius:3px;">TIL</code>) taken during clinically indicated colonoscopies (8 donors, ages 4&ndash;12; see Supplementary Table 2 and Elmentaite <em>et al.</em>, <em>Dev. Cell</em> 55, 771&ndash;783 (2020), <a href="https://doi.org/10.1016/j.devcel.2020.11.010" style="color:#3f4a5a;">doi:10.1016/j.devcel.2020.11.010</a>). Endoscopic biopsies capture the mucosa only; deeper compartments (submucosa, muscularis propria, myenteric plexus) are not represented, which likely explains the near-absence of neural cells in the Pediatric stage. In conclusion, the Pediatric category reflects terminal-ileum mucosal biology specifically and should not be generalized to the entire intestine.</p>
+    </div>
+  </details>
+
+
+</div>
+
+</div>
+
+<script>
+(function(){
+'use strict';
+
+const INLINE_DATA = {
+  "1st trimester":     {"Epithelial":21.23,"Endothelial":2.69,"Mesenchymal":64.8,"Neuronal":8.6,"B cells":0.18,"T/NK cells":0.25,"Myeloid":1.48,"Red blood cells":0.78,"_n_total":149224},
+  "2nd trimester":     {"Epithelial":22.79,"Endothelial":5.32,"Mesenchymal":56.04,"Neuronal":5.03,"B cells":0.86,"T/NK cells":4.2,"Myeloid":5.54,"Red blood cells":0.22,"_n_total":89946},
+  "Pediatric":        {"Epithelial":27.56,"Endothelial":2.2,"Mesenchymal":9.83,"Neuronal":0.56,"B cells":29.17,"Plasma cells":5.19,"T/NK cells":22.54,"Myeloid":2.94,"_n_total":29594},
+  "Adult":             {"Epithelial":68.32,"Endothelial":3.78,"Mesenchymal":5.56,"Neuronal":0.24,"B cells":1.53,"Plasma cells":13.18,"T/NK cells":5.82,"Myeloid":1.57,"_n_total":113203}
+};
+
+const COLORS = {
+  'Epithelial':      '#5BA34E',
+  'Endothelial':     '#2BB4C2',
+  'Mesenchymal':     '#9E4FA0',
+  'Neuronal':        '#7A6520',
+  'B cells':         '#EE9E2E',
+  'Plasma cells':    '#E87E6B',
+  'T/NK cells':      '#2D2D8E',
+  'Myeloid':         '#D8472F',
+  'Red blood cells': '#F1D23E'
+};
+const LINEAGES = Object.keys(COLORS);
+const BP_STAGES = ['1st trimester','2nd trimester','Pediatric','Adult'];
+const BP_LABELS = ['1st trimester','2nd trimester','Pediatric','Adult'];
+
+function pct(v){ return typeof v==='number'?v.toFixed(1)+'%':'0.0%'; }
+function f(x){ return Math.round(x*100)/100; }
+
+function linLum(hex){
+  const r=parseInt(hex.slice(1,3),16)/255,g=parseInt(hex.slice(3,5),16)/255,b=parseInt(hex.slice(5,7),16)/255;
+  const c=x=>x<=0.03928?x/12.92:Math.pow((x+0.055)/1.055,2.4);
+  return 0.2126*c(r)+0.7152*c(g)+0.0722*c(b);
+}
+
+function pathSegs(pts){
+  let d='';
+  for(let i=0;i<pts.length-1;i++){
+    const p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(pts.length-1,i+2)];
+    const c1x=p1.x+(p2.x-p0.x)/6,c1y=p1.y+(p2.y-p0.y)/6;
+    const c2x=p2.x-(p3.x-p1.x)/6,c2y=p2.y-(p3.y-p1.y)/6;
+    d+=`C${f(c1x)} ${f(c1y)} ${f(c2x)} ${f(c2y)} ${f(p2.x)} ${f(p2.y)}`;
+  }
+  return d;
+}
+
+function ribbon(vals, yc, xs, maxT, scale){
+  // Ribbon spans exactly the 4 stage anchors, with a rounded cap on each end.
+  // No taper-to-zero on the left (that produced the spike/hook artefact).
+  const ax=[...xs, xs[xs.length-1]+30];          // 4 stages + short right lead-out
+  const av=[...vals, vals[vals.length-1]];
+  const h=v=>Math.min(maxT, Math.max(1.1, v*scale));
+  const top=[], bot=[];
+  ax.forEach((x,i)=>{ const hh=h(av[i]); top.push({x,y:yc-hh/2}); bot.push({x,y:yc+hh/2}); });
+
+  const capL = h(vals[0])/2;                      // left cap radius (1st-trim thickness)
+  const capR = h(vals[vals.length-1])/2;          // right cap radius (adult thickness)
+  const xL = xs[0], xR = ax[ax.length-1];
+
+  // Start at left cap top, draw top edge L→R, round right cap, bottom edge R→L,
+  // then round the left cap closed.
+  return `M${f(xL)} ${f(yc-capL)}`
+       + pathSegs(top)
+       + `Q${f(xR+capR*0.8)} ${f(yc)} ${f(xR)} ${f(yc+capR)}`
+       + pathSegs([...bot].reverse())
+       + `Q${f(xL-capL*0.8)} ${f(yc)} ${f(xL)} ${f(yc-capL)}`
+       + 'Z';
+}
+
+/* ── silhouette paths: placeholders, to be replaced with your vectors ── */
+function silhouette(cx, kind, baseY){
+  // Uniform gray silhouettes loaded from assets (Jekyll URL) with file:// fallback.
+  const BASE = './';   // standalone: PNGs sit in the same folder as this file
+  const ASSETS = {
+    fetus1: {w:174, h:240, file:'silhouette_1st_trimester.png'},
+    fetus2: {w:146, h:240, file:'silhouette_2nd_trimester.png'},
+    child:  {w:91,  h:239, file:'silhouette_pediatric.png'},
+    adult:  {w:100, h:240, file:'silhouette_adult.png'}
+  };
+  // Per-stage sizing. fetus/child keep their natural ratio at the given height;
+  // adult uses an explicit fixed width x height (no ratio preserved).
+  const SIZE = {
+    fetus1: {h:40},                 // height only -> width from natural ratio
+    fetus2: {h:44},
+    child:  {h:60},
+    adult:  {w:40, h:84}            // explicit box: 75 wide x 84 tall
+  };
+  const a = ASSETS[kind]; if(!a) return '';
+  const sz = SIZE[kind] || {h:56};
+
+  const th = sz.h;
+  const tw = (sz.w != null) ? sz.w : a.w * (th / a.h);
+  const par = (sz.w != null) ? 'none' : 'xMidYMax meet';
+
+  const x = cx - tw/2, y = baseY - th;
+  return `<image href="${BASE}${a.file}" x="${f(x)}" y="${f(y)}" width="${f(tw)}" height="${f(th)}" preserveAspectRatio="${par}"/>`;
+}
+
+function renderBP(data){
+  const W=820, rPad=24;
+  const silH=100, stageLabY=silH+14;
+  const firstY=stageLabY+32, laneH=42, nL=LINEAGES.length;
+  const legH=0;  // legend removed
+  const H=firstY+nL*laneH+legH+20;
+
+  /* Fixed left label gutter — ribbons never enter this zone */
+  const GUTTER=128;            /* label column width */
+  const RIBBON_X0=GUTTER+18;   /* ribbons (and their left taper tip) start here */
+  const innerL=RIBBON_X0, innerR=W-rPad;
+  const nS=BP_STAGES.length;
+  const xs=BP_STAGES.map((_,i)=>innerL+(innerR-innerL)*(i/(nS-1)));
+
+  const maxT=laneH-8, scale=maxT/100;
+
+  let s=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:920px;display:block;margin:0 auto;overflow:visible;" role="img" aria-label="Fig 1b blueprint ribbon chart">`;
+
+  /* stage columns: light guide lines */
+  xs.forEach(cx=>{
+    s+=`<line x1="${f(cx)}" y1="${firstY}" x2="${f(cx)}" y2="${firstY+nL*laneH}" stroke="#e8e4d8" stroke-width="0.6" stroke-dasharray="3 3"/>`;
+  });
+
+  /* silhouettes */
+  const silKinds=['fetus1','fetus2','child','adult'];
+  xs.forEach((cx,i)=>{
+    s+=silhouette(cx, silKinds[i], silH-2);
+    /* stage label — 2 lines for trimester labels */
+    const words=BP_LABELS[i].split(' ');
+    if(words.length===1){
+      s+=`<text x="${f(cx)}" y="${stageLabY+14}" font-size="15" text-anchor="middle" fill="#3a3028" font-family="'DM Sans',system-ui,sans-serif">${words[0]}</text>`;
+    } else {
+      s+=`<text x="${f(cx)}" y="${stageLabY+4}" font-size="15" text-anchor="middle" fill="#3a3028" font-family="'DM Sans',system-ui,sans-serif">${words[0]}</text>`;
+      s+=`<text x="${f(cx)}" y="${stageLabY+20}" font-size="15" text-anchor="middle" fill="#3a3028" font-family="'DM Sans',system-ui,sans-serif">${words[1]}</text>`;
+    }
+  });
+
+  /* ribbons + inline labels on the ribbon itself */
+  LINEAGES.forEach((lin,li)=>{
+    const yc=firstY+li*laneH+laneH/2;
+    const vals=BP_STAGES.map(st=>(data[st]&&data[st][lin])||0);
+    const tip=BP_STAGES.map((st,i)=>`${st}: ${pct(vals[i])}`).join('  \u00b7  ');
+
+    s+=`<path d="${ribbon(vals,yc,xs,maxT,scale)}" fill="${COLORS[lin]}" opacity="0.87"><title>${lin}\n${tip}</title></path>`;
+
+    /* Lineage name ON the ribbon, left anchor */
+    /* Place it at x midpoint between left taper end and first stage */
+    const labelX = xs[0] - 24;  /* just before first stage */
+    const thick0  = Math.min(maxT, Math.max(0.9, vals[0]*scale));
+    const inside  = thick0 > 14;
+    const lfc     = inside ? (linLum(COLORS[lin])>0.38?'#1a1208':'#fff') : '#3a3028';
+    /* fallback: always write label to the left of the ribbon start, anchored right */
+    /* label in fixed left gutter, right-aligned at its inner edge */
+    s+=`<text x="${GUTTER-2}" y="${f(yc+4)}" font-size="15" text-anchor="end"
+          fill="#3a3028" font-family="'DM Sans',system-ui,sans-serif">${lin}</text>`;
+
+    /* value annotations at each stage */
+    BP_STAGES.forEach((st,i)=>{
+      const v=vals[i]; if(v<1) return;
+      const thick=Math.min(maxT,Math.max(1.1,v*scale));
+      const inside2=thick>16;
+      const ay=inside2?yc+4:yc-thick/2-4.5;
+      const fc2=inside2?(linLum(COLORS[lin])>0.38?'#1a1208':'#fff'):'#555';
+      // First stage: nudge the value rightwards so it sits clear of the rounded
+      // left cap and never collides with the lineage label in the gutter.
+      let vx=xs[i], anchor='middle';
+      if(i===0){ vx=xs[0]+(inside2? (thick/2+2) : 6); anchor='start'; }
+      s+=`<text x="${f(vx)}" y="${f(ay)}" font-size="12" text-anchor="${anchor}"
+            fill="${fc2}" pointer-events="none"
+            font-family="'DM Sans',system-ui,sans-serif">${pct(v)}</text>`;
+    });
+  });
+/* discreet authorship mark: faint vertical signature on right margin */
+  s+=`<text x="${W-6}" y="${firstY+nL*laneH/2}" font-size="8" fill="#c4bdb0" text-anchor="middle" transform="rotate(90 ${W-6} ${firstY+nL*laneH/2})" font-family="'DM Sans',system-ui,sans-serif" letter-spacing="0.5">\u00a9 Minh Chau Thom</text>`;
+  s+='</svg>';
+  document.getElementById('fig1b-bp-content').innerHTML=s;
+}
+
+// Data is embedded in INLINE_DATA above (no external JSON fetch -> no 404).
+// To update the figures later, edit the INLINE_DATA object at the top of this script.
+renderBP(INLINE_DATA);
+
+})();
+</script>
+
+
+<script>
+(function(){
+  function postHeight(){
+    var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    if (window.parent) window.parent.postMessage({type:'fig1b-height', height:h}, '*');
+  }
+  window.addEventListener('load', function(){ postHeight(); setTimeout(postHeight, 300); });
+  window.addEventListener('resize', postHeight);
+  // <details> toggle does not bubble -> capture phase
+  document.addEventListener('toggle', postHeight, true);
+})();
+</script>
+
+</body>
+</html>

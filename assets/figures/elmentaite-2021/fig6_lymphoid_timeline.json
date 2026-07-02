@@ -1,0 +1,120 @@
+{
+  "fetal T cell": {
+    "Second trim": {
+      "LargeInt": 6,
+      "SmallInt": 41,
+      "lymph node": 118
+    }
+  },
+  "ILC3": {
+    "Adult": {
+      "APD": 16,
+      "LargeInt": 162,
+      "SmallInt": 30,
+      "lymph node": 99
+    },
+    "Pediatric": {
+      "SmallInt": 70
+    },
+    "Pediatric_IBD": {
+      "SmallInt": 36
+    }
+  },
+  "ILCP": {
+    "Second trim": {
+      "LargeInt": 26,
+      "SmallInt": 240,
+      "lymph node": 145
+    }
+  },
+  "LTi-like NCR+ ILC3": {
+    "Second trim": {
+      "LargeInt": 22,
+      "SmallInt": 599,
+      "lymph node": 5
+    }
+  },
+  "LTi-like NCR- ILC3": {
+    "Second trim": {
+      "LargeInt": 14,
+      "SmallInt": 766,
+      "lymph node": 25
+    }
+  },
+  "NK cell": {
+    "Adult": {
+      "APD": 7,
+      "LargeInt": 62,
+      "SmallInt": 4,
+      "lymph node": 131
+    },
+    "Second trim": {
+      "LargeInt": 60,
+      "SmallInt": 978,
+      "lymph node": 373
+    },
+    "Pediatric": {
+      "SmallInt": 157
+    },
+    "Pediatric_IBD": {
+      "SmallInt": 272
+    }
+  },
+  "SELL+ CD4 T": {
+    "Adult": {
+      "APD": 88,
+      "LargeInt": 211,
+      "SmallInt": 6,
+      "lymph node": 1722
+    },
+    "Second trim": {
+      "LargeInt": 59,
+      "SmallInt": 208,
+      "lymph node": 2973
+    },
+    "Pediatric": {
+      "SmallInt": 653
+    },
+    "Pediatric_IBD": {
+      "SmallInt": 1545
+    }
+  },
+  "SELL+ CD8 T": {
+    "Adult": {
+      "APD": 30,
+      "LargeInt": 43,
+      "SmallInt": 5,
+      "lymph node": 204
+    },
+    "Second trim": {
+      "LargeInt": 67,
+      "SmallInt": 138,
+      "lymph node": 1588
+    },
+    "Pediatric": {
+      "SmallInt": 164
+    },
+    "Pediatric_IBD": {
+      "SmallInt": 287
+    }
+  },
+  "Treg": {
+    "Adult": {
+      "APD": 50,
+      "LargeInt": 137,
+      "SmallInt": 11,
+      "lymph node": 1820
+    },
+    "Second trim": {
+      "LargeInt": 11,
+      "SmallInt": 74,
+      "lymph node": 642
+    },
+    "Pediatric": {
+      "SmallInt": 307
+    },
+    "Pediatric_IBD": {
+      "SmallInt": 874
+    }
+  }
+}

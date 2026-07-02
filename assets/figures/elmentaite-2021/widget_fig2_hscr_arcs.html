@@ -1,0 +1,154 @@
+<!--
+  Figure 2 — HSCR gene spotlight (bipartite arcs)
+  Data: assets/figures/elmentaite-2021/fig2_hscr_expression.json
+  Replaces: widget_fig2_hscr_heatmap.html
+-->
+<div id="fig2-hscr-widget" style="background:#FAF7F1;border:1px solid #ece6da;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+<div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
+<span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 2 · Interactive</span>
+</div>
+<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Two signatures, two territories — Hirschsprung genes</h4>
+<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Arcs link each HSCR-associated gene to the cell groups where it is expressed; thickness tracks mean expression. <em>RET</em> lights up branch A neurons, while <em>ZEB2</em> and <em>EDNRB</em> light up colonic glia. Hover any gene or cell group to spotlight its connections.</p>
+
+<div id="fig2-content" style="min-height:380px;overflow-x:auto;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+
+<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.4;">Arc width ∝ mean log-normalised expression, n-cell weighted across stages. Colonic and small-intestinal glia are shown separately to expose the regional contrast. Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
+</div>
+
+<script>
+let fig2Data = null;
+
+(function(){
+  const DATA_URL = '{{ site.baseurl }}/assets/figures/elmentaite-2021/fig2_hscr_expression.json';
+
+  const GLIA = ['Glia 1 (DHH+)','Glia 2 (ELN+)','Glia 3 (BCAN+)','Differentiating glia'];
+  const NODES = [
+    { id:'NB', label:'Neuroblast',     x:108, hue:'#534AB7', cells:['Neuroblast','cycling neuroblast'], region:null },
+    { id:'A',  label:'Branch A',        x:229, hue:'#AF3A3A', cells:['Branch A1 (iMN)','Branch A2 (IPAN/IN)','Branch A3 (IPAN/IN)','Branch A4 (IN)'], region:null },
+    { id:'B',  label:'Branch B',        x:350, hue:'#C2510A', cells:['Branch B1 (eMN)','Branch B2 (eMN)','Branch B3 (IPAN)'], region:null },
+    { id:'GC', label:'Colonic glia',    x:471, hue:'#2C8C82', cells:GLIA, region:'LargeInt' },
+    { id:'GS', label:'Small-int. glia', x:592, hue:'#4FA89E', cells:GLIA, region:'SmallInt' }
+  ];
+  const STORY = { 'RET|A':1, 'ZEB2|GC':1, 'EDNRB|GC':1 };
+
+  function expr(gene, node){
+    const obj = fig2Data[gene];
+    if(!obj) return 0;
+    let num = 0, den = 0;
+    for(const key in obj){
+      const parts = key.split('__');
+      const cell = parts[0], region = parts[1];
+      if(node.cells.indexOf(cell) === -1) continue;
+      if(node.region && region !== node.region) continue;
+      const e = obj[key];
+      num += e.mean_expression * e.n_cells;
+      den += e.n_cells;
+    }
+    return den > 0 ? num / den : 0;
+  }
+
+  let arcEls = null;
+
+  function reset(){
+    if(!arcEls) return;
+    arcEls.forEach(function(a){
+      if(a.dataset.story === '1'){
+        a.setAttribute('stroke', a.dataset.hue);
+        a.setAttribute('opacity', '0.9');
+        a.setAttribute('stroke-width', (4 + parseFloat(a.dataset.norm) * 4).toFixed(1));
+      } else {
+        a.setAttribute('stroke', '#b9b3a6');
+        a.setAttribute('opacity', '0.16');
+        a.setAttribute('stroke-width', '1.3');
+      }
+    });
+  }
+  function highlight(pred){
+    arcEls.forEach(function(a){
+      if(pred(a)){
+        a.setAttribute('stroke', a.dataset.hue);
+        a.setAttribute('opacity', '0.92');
+        a.setAttribute('stroke-width', (2.5 + parseFloat(a.dataset.norm) * 5).toFixed(1));
+      } else {
+        a.setAttribute('stroke', '#b9b3a6');
+        a.setAttribute('opacity', '0.05');
+        a.setAttribute('stroke-width', '1');
+      }
+    });
+  }
+
+  function build(){
+    const genes = Object.keys(fig2Data);
+    const N = genes.length;
+    const xL = 68, xR = 612;
+    const gx = function(i){ return N > 1 ? xL + i * (xR - xL) / (N - 1) : 340; };
+
+    const arcs = [];
+    genes.forEach(function(g, i){
+      const es = NODES.map(function(n){ return expr(g, n); });
+      const geneMax = Math.max.apply(null, es.concat([0])) || 1;
+      NODES.forEach(function(n, ni){
+        const norm = es[ni] / geneMax;
+        const story = STORY[g + '|' + n.id] ? 1 : 0;
+        if(story || norm >= 0.35){
+          arcs.push({ gene:g, node:n.id, x1:gx(i), x2:n.x, hue:n.hue, norm:norm, story:story });
+        }
+      });
+    });
+
+    const aStyle = 'transition:stroke-width .25s ease, opacity .25s ease;';
+    let s = '<svg width="100%" viewBox="0 0 680 470" role="img" style="max-width:640px;min-width:560px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">'
+      + '<title>Hirschsprung-associated genes connected to enteric neural cell groups</title>'
+      + '<desc>RET connects strongly to branch A neurons; ZEB2 and EDNRB connect strongly to colonic glia; other connections are faint until hovered.</desc>';
+
+    arcs.forEach(function(a){
+      s += '<path class="fig2-arc" data-gene="' + a.gene + '" data-node="' + a.node + '" data-norm="'
+        + a.norm.toFixed(3) + '" data-hue="' + a.hue + '" data-story="' + a.story
+        + '" d="M' + a.x1.toFixed(1) + ',124 C' + a.x1.toFixed(1) + ',215 ' + a.x2 + ',255 ' + a.x2
+        + ',332" fill="none" stroke-linecap="round" style="' + aStyle + '"></path>';
+    });
+
+    s += '<text x="70" y="250" font-size="12" font-weight="600" fill="#AF3A3A">RET ↑↑</text>'
+      + '<text x="70" y="265" font-size="11" fill="#AF3A3A">branch A neurons</text>'
+      + '<text x="612" y="250" text-anchor="end" font-size="12" font-weight="600" fill="#2C8C82">ZEB2 · EDNRB ↑↑</text>'
+      + '<text x="612" y="265" text-anchor="end" font-size="11" fill="#2C8C82">colonic glia</text>';
+
+    genes.forEach(function(g, i){
+      const x = gx(i), ly = (i % 2 === 0) ? 96 : 110;
+      s += '<g class="fig2-gene" data-gene="' + g + '" style="cursor:pointer;">'
+        + '<text x="' + x.toFixed(1) + '" y="' + ly + '" text-anchor="middle" font-size="11.5" font-style="italic" font-weight="600" fill="#3a3028">' + g + '</text>'
+        + '<circle cx="' + x.toFixed(1) + '" cy="120" r="3.4" fill="#3a3028"/></g>';
+    });
+
+    NODES.forEach(function(n){
+      s += '<g class="fig2-node" data-node="' + n.id + '" style="cursor:pointer;">'
+        + '<rect x="' + (n.x - 49) + '" y="334" width="98" height="32" rx="16" fill="#FFFFFF" stroke="' + n.hue + '"/>'
+        + '<text x="' + n.x + '" y="354" text-anchor="middle" font-size="11" font-weight="600" fill="' + n.hue + '">' + n.label + '</text></g>';
+    });
+
+    s += '</svg>';
+
+    const container = document.getElementById('fig2-content');
+    container.innerHTML = s;
+    arcEls = container.querySelectorAll('.fig2-arc');
+
+    container.querySelectorAll('.fig2-gene').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ highlight(function(a){ return a.dataset.gene === el.dataset.gene; }); });
+      el.addEventListener('mouseleave', reset);
+    });
+    container.querySelectorAll('.fig2-node').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ highlight(function(a){ return a.dataset.node === el.dataset.node; }); });
+      el.addEventListener('mouseleave', reset);
+    });
+    reset();
+  }
+
+  fetch(DATA_URL)
+    .then(function(r){ if(!r.ok) throw new Error('JSON not found'); return r.json(); })
+    .then(function(d){ fig2Data = d; build(); })
+    .catch(function(e){
+      document.getElementById('fig2-content').innerHTML =
+        '<p style="text-align:center;color:#AF3A3A;padding:2rem;">Could not load: ' + e.message + '</p>';
+    });
+})();
+</script>
