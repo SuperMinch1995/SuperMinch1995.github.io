@@ -106,7 +106,7 @@ html[data-bs-theme="dark"] .rt-thumb {
   margin: 0 0 0.4rem;
 }
 
-/* Clickable hero image + title — no hover, no underline, no color change */
+/* Clickable hero image + title — no hover, no underline, no color change, no shift */
 a.rt-linkwrap,
 a.rt-linkwrap:hover,
 a.rt-linkwrap:focus {
@@ -115,9 +115,13 @@ a.rt-linkwrap:focus {
   text-decoration: none !important;
   background-image: none !important;
   opacity: 1;
+  transform: none !important;
+  box-shadow: none !important;
+  transition: none !important;
 }
 
 a.rt-linkwrap .rt-title,
+a.rt-linkwrap .rt-thumb,
 a.rt-linkwrap:hover .rt-title,
 a.rt-linkwrap:focus .rt-title,
 a.rt-linkwrap:hover .rt-thumb,
@@ -127,6 +131,9 @@ a.rt-linkwrap:focus .rt-thumb {
   background-image: none !important;
   border-bottom: none !important;
   opacity: 1;
+  transform: none !important;
+  box-shadow: none !important;
+  transition: none !important;
 }
 
 .rt-links {
