@@ -106,6 +106,29 @@ html[data-bs-theme="dark"] .rt-thumb {
   margin: 0 0 0.4rem;
 }
 
+/* Clickable hero image + title — no hover, no underline, no color change */
+a.rt-linkwrap,
+a.rt-linkwrap:hover,
+a.rt-linkwrap:focus {
+  display: block;
+  color: inherit;
+  text-decoration: none !important;
+  background-image: none !important;
+  opacity: 1;
+}
+
+a.rt-linkwrap .rt-title,
+a.rt-linkwrap:hover .rt-title,
+a.rt-linkwrap:focus .rt-title,
+a.rt-linkwrap:hover .rt-thumb,
+a.rt-linkwrap:focus .rt-thumb {
+  color: var(--color-base-text);
+  text-decoration: none !important;
+  background-image: none !important;
+  border-bottom: none !important;
+  opacity: 1;
+}
+
 .rt-links {
   display: flex;
   gap: 0.6rem;
@@ -204,13 +227,15 @@ html[data-bs-theme="dark"] .rt-link {
       <div class="rt-dot-inner"></div>
     </div>
 
-    <img class="rt-thumb"
-         src="/assets/images/AJG-2026-hero.webp"
-         alt="Histogenetic classification predicts outcomes in 130 adults with chronic intestinal pseudo-obstruction">
+    <a class="rt-linkwrap" href="/publications/cipo-2026/">
+      <img class="rt-thumb"
+           src="/assets/images/AJG-2026-hero.webp"
+           alt="Histogenetic classification predicts outcomes in 130 adults with chronic intestinal pseudo-obstruction">
 
-    <p class="rt-title">
-      Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction
-    </p>
+      <p class="rt-title">
+        Histogenetic Classification Predicts Outcomes in 130 Adults With Chronic Intestinal Pseudo-Obstruction
+      </p>
+    </a>
 
     <p class="rt-meta">
       First author · American Journal of Gastroenterology · 2026
@@ -261,13 +286,15 @@ html[data-bs-theme="dark"] .rt-link {
       <div class="rt-dot-inner"></div>
     </div>
 
-    <img class="rt-thumb"
-         src="/assets/images/NR1D1-hero.webp"
-         alt="NR1D1::MAML3 fusion structure with breakpoints in mesenchymal neoplasm">
+    <a class="rt-linkwrap" href="/publications/NR1D1-2025/">
+      <img class="rt-thumb"
+           src="/assets/images/NR1D1-hero.webp"
+           alt="NR1D1::MAML3 fusion structure with breakpoints in mesenchymal neoplasm">
 
-    <p class="rt-title">
-      <i>NR1D1::MAML3</i> Fusion in an Aggressive Mesenchymal Neoplasm
-    </p>
+      <p class="rt-title">
+        <i>NR1D1::MAML3</i> Fusion in an Aggressive Mesenchymal Neoplasm
+      </p>
+    </a>
 
     <p class="rt-meta">
       First author · Genes Chromosomes Cancer · 2025
@@ -310,13 +337,15 @@ html[data-bs-theme="dark"] .rt-link {
       <div class="rt-dot-inner"></div>
     </div>
 
-    <img class="rt-thumb"
-         src="/assets/images/Lancet-hero.webp"
-         alt="National framework for genomic medicine integration in France">
+    <a class="rt-linkwrap" href="/publications/PFMG-2025/">
+      <img class="rt-thumb"
+           src="/assets/images/Lancet-hero.webp"
+           alt="National framework for genomic medicine integration in France">
 
-    <p class="rt-title">
-      PFMG2025 — Integrating Genomic Medicine into the National Healthcare System in France
-    </p>
+      <p class="rt-title">
+        PFMG2025 — Integrating Genomic Medicine into the National Healthcare System in France
+      </p>
+    </a>
 
     <p class="rt-meta">
       Co-author · Lancet Reg Health Eur · 2025
@@ -359,13 +388,15 @@ html[data-bs-theme="dark"] .rt-link {
       <div class="rt-dot-inner"></div>
     </div>
 
-    <img class="rt-thumb"
-         src="/assets/images/neurology-hero.webp"
-         alt="Leptomeningeal angioma with GNA11 pathogenic variation">
+    <a class="rt-linkwrap" href="/publications/neurology-2023/">
+      <img class="rt-thumb"
+           src="/assets/images/neurology-hero.webp"
+           alt="Leptomeningeal angioma with GNA11 pathogenic variation">
 
-    <p class="rt-title">
-      Late-Onset Status Epilepticus Associated With Isolated Leptomeningeal Angioma and Sturge-Weber Syndrome-Related <i>GNA11</i> Pathogenic Variation
-    </p>
+      <p class="rt-title">
+        Late-Onset Status Epilepticus Associated With Isolated Leptomeningeal Angioma and Sturge-Weber Syndrome-Related <i>GNA11</i> Pathogenic Variation
+      </p>
+    </a>
 
     <p class="rt-meta">
       Co-author · Neurology · 2023
@@ -401,13 +432,15 @@ html[data-bs-theme="dark"] .rt-link {
       <div class="rt-dot-inner"></div>
     </div>
 
-    <img class="rt-thumb"
-         src="/assets/images/SOCS1-hero.webp"
-         alt="Intestinal phenotypic spectrum of SOCS1 haploinsufficiency">
+    <a class="rt-linkwrap" href="/publications/SOCS1-2023/">
+      <img class="rt-thumb"
+           src="/assets/images/SOCS1-hero.webp"
+           alt="Intestinal phenotypic spectrum of SOCS1 haploinsufficiency">
 
-    <p class="rt-title">
-      Insights Into the Expanding Intestinal Phenotypic Spectrum of <i>SOCS1</i> Haploinsufficiency and Therapeutic Options
-    </p>
+      <p class="rt-title">
+        Insights Into the Expanding Intestinal Phenotypic Spectrum of <i>SOCS1</i> Haploinsufficiency and Therapeutic Options
+      </p>
+    </a>
 
     <p class="rt-meta">
       Co-author · Journal of Clinical Immunology · 2023
