@@ -1,25 +1,26 @@
 <!--
-  Figure 1 — ENS lineage river (landing medallions)
+  Figure 5 — ENS lineage river (landing medallions)
+  © Minh Chau Thom — original representation
   Data: assets/figures/elmentaite-2021/fig1_ens_cell_counts.json
-  Replaces: widget_fig1_ens_tree.html
 -->
-<div id="fig1-ens-widget" style="background:#FAF7F1;border:1px solid #ece6da;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
-<div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
-<span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 1 · Interactive</span>
+<div id="fig1-ens-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+
+<div style="margin-bottom:0.35rem;">
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 5</span>
 </div>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">One origin, two fates — the enteric nervous system</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">A single ENCC progenitor flows into inhibitory (branch A) and excitatory (branch B) neurons, plus the glial lineage. Ribbon width tracks cell count — switch developmental stage to watch the river re-flow as glia become enriched.</p>
+<h4 style="font-size:1.5rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">One origin, two fates — the enteric nervous system</h4>
+<p style="font-size:16px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">A single ENCC progenitor flows into inhibitory (branch A) and excitatory (branch B) neurons, plus the glial lineage. Ribbon width tracks cell count — switch developmental stage to watch the river re-flow as glia become enriched.</p>
 
 <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
-<button onclick="fig1Filter('all')" id="fig1-btn-all" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:#3a3028;color:#FAF7F1;font-size:12px;cursor:pointer;font-family:inherit;">All stages</button>
-<button onclick="fig1Filter('W6-11')" id="fig1-btn-W6-11" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">6–11 PCW</button>
-<button onclick="fig1Filter('W12-17')" id="fig1-btn-W12-17" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">12–17 PCW</button>
+<button onclick="fig1Filter('all')" id="fig1-btn-all" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:#3a3028;color:#f5f1e8;font-size:13px;cursor:pointer;font-family:inherit;">All stages</button>
+<button onclick="fig1Filter('W6-11')" id="fig1-btn-W6-11" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:13px;cursor:pointer;font-family:inherit;">6–11 PCW</button>
+<button onclick="fig1Filter('W12-17')" id="fig1-btn-W12-17" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:13px;cursor:pointer;font-family:inherit;">12–17 PCW</button>
 </div>
 
 <div id="fig1-content" style="min-height:420px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
-<p id="fig1-caption" style="font-size:0.78rem;color:#5F5E5A;text-align:center;margin:0.4rem 0 0 0;">&nbsp;</p>
+<p id="fig1-caption" style="font-size:14px;color:#5F5E5A;text-align:center;line-height:1.55;margin:0.4rem 0 0 0;">&nbsp;</p>
 
-<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.4;">Ribbon width and medallion size ∝ cell count. Computed from the ENS lineage object (16,870 fetal enteric neural cells, 6–17 PCW). Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
+<p style="font-size:13px;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.6;border-top:1px solid #ddd6cc;padding-top:0.75rem;margin-bottom:0.6rem;">Ribbon width and medallion size &prop; cell count. Computed from the ENS lineage object (16,870 fetal enteric neural cells, 6–17 PCW). Data: Elmentaite <em>et al.</em>, <em>Nature</em> 597, 250–255 (2021), used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
 </div>
 
 <script>
@@ -80,7 +81,7 @@ let fig1Stage = 'all';
     const rib = 'fill:none;stroke-linecap:round;transition:stroke-width .55s cubic-bezier(.4,0,.2,1);';
     const med = 'transition:r .55s cubic-bezier(.4,0,.2,1);';
     return ''
-    + '<svg width="100%" viewBox="0 0 680 510" role="img" style="max-width:640px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">'
+    + '<svg width="100%" viewBox="0 0 680 510" role="img" style="max-width:640px;display:block;margin:0 auto;overflow:visible;" xmlns="http://www.w3.org/2000/svg">'
     + '<title>Enteric nervous system differentiation as a lineage river</title>'
     + '<desc>A single ENCC progenitor splits into branch A inhibitory neurons, branch B excitatory neurons, and glia. Ribbon width and medallion size are proportional to cell count.</desc>'
 
@@ -90,31 +91,31 @@ let fig1Stage = 'all';
     + '<path id="fig1-r-b"     d="M270,248 C300,330 332,390 347,428" style="' + rib + '" stroke="#C2510A" stroke-width="2" opacity="0.82"><title id="fig1-tt-b"></title></path>'
 
     + '<circle cx="340" cy="118" r="22" fill="#3a3028"/>'
-    + '<text x="340" y="122" text-anchor="middle" font-size="11" fill="#FAF7F1" font-weight="600">ENCC</text>'
-    + '<text x="370" y="114" font-size="12.5" fill="#3a3028" font-weight="600">ENCC / glia progenitor</text>'
-    + '<text x="370" y="130" font-size="11" fill="#888780">proliferates · keeps reserve</text>'
+    + '<text x="340" y="122" text-anchor="middle" font-size="11" fill="#f5f1e8" font-weight="600">ENCC</text>'
+    + '<text x="370" y="114" font-size="13" fill="#3a3028" font-weight="600">ENCC / glia progenitor</text>'
+    + '<text x="370" y="131" font-size="12" fill="#888780">proliferates · keeps reserve</text>'
 
     + '<circle cx="270" cy="245" r="16" fill="#534AB7"/>'
-    + '<text x="270" y="249" text-anchor="middle" font-size="11" fill="#FAF7F1" font-weight="600">NB</text>'
-    + '<text x="270" y="220" text-anchor="middle" font-size="11" fill="#534AB7" font-weight="600">Neuroblast</text>'
+    + '<text x="270" y="249" text-anchor="middle" font-size="11" fill="#f5f1e8" font-weight="600">NB</text>'
+    + '<text x="270" y="219" text-anchor="middle" font-size="12" fill="#534AB7" font-weight="600">Neuroblast</text>'
 
     + '<circle id="fig1-m-a" cx="142" cy="432" r="20" fill="#AF3A3A" style="' + med + '"/>'
-    + '<text x="142" y="428" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">A</text>'
-    + '<text id="fig1-c-a" x="142" y="444" text-anchor="middle" font-size="11" fill="#FFFFFF" opacity="0.92"></text>'
-    + '<text x="142" y="480" text-anchor="middle" font-size="13.5" fill="#AF3A3A" font-weight="600">Inhibitory motor neurons</text>'
-    + '<text x="142" y="496" text-anchor="middle" font-size="11" fill="#888780">ETV1⁺ · IPAN / interneurons · A1–A4</text>'
+    + '<text x="142" y="427" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">A</text>'
+    + '<text id="fig1-c-a" x="142" y="444" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.92"></text>'
+    + '<text x="142" y="481" text-anchor="middle" font-size="15" fill="#AF3A3A" font-weight="600">Inhibitory motor neurons</text>'
+    + '<text x="142" y="498" text-anchor="middle" font-size="12" fill="#888780">ETV1⁺ · IPAN / interneurons · A1–A4</text>'
 
     + '<circle id="fig1-m-b" cx="347" cy="432" r="20" fill="#C2510A" style="' + med + '"/>'
-    + '<text x="347" y="428" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">B</text>'
-    + '<text id="fig1-c-b" x="347" y="444" text-anchor="middle" font-size="11" fill="#FFFFFF" opacity="0.92"></text>'
-    + '<text x="347" y="480" text-anchor="middle" font-size="13.5" fill="#C2510A" font-weight="600">Excitatory motor neurons</text>'
-    + '<text x="347" y="496" text-anchor="middle" font-size="11" fill="#888780">BNC2⁺ · + late IPAN · B1–B3</text>'
+    + '<text x="347" y="427" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">B</text>'
+    + '<text id="fig1-c-b" x="347" y="444" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.92"></text>'
+    + '<text x="347" y="481" text-anchor="middle" font-size="15" fill="#C2510A" font-weight="600">Excitatory motor neurons</text>'
+    + '<text x="347" y="498" text-anchor="middle" font-size="12" fill="#888780">BNC2⁺ · + late IPAN · B1–B3</text>'
 
     + '<circle id="fig1-m-g" cx="549" cy="432" r="20" fill="#3DAEA3" style="' + med + '"/>'
-    + '<text x="549" y="428" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">G</text>'
-    + '<text id="fig1-c-g" x="549" y="444" text-anchor="middle" font-size="11" fill="#FFFFFF" opacity="0.92"></text>'
-    + '<text x="549" y="480" text-anchor="middle" font-size="13.5" fill="#2C8C82" font-weight="600">Glial support &amp; niche</text>'
-    + '<text x="549" y="496" text-anchor="middle" font-size="11" fill="#888780">DHH⁺ · ELN⁺ · BCAN⁺</text>'
+    + '<text x="549" y="427" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">G</text>'
+    + '<text id="fig1-c-g" x="549" y="444" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.92"></text>'
+    + '<text x="549" y="481" text-anchor="middle" font-size="15" fill="#2C8C82" font-weight="600">Glial support &amp; niche</text>'
+    + '<text x="549" y="498" text-anchor="middle" font-size="12" fill="#888780">DHH⁺ · ELN⁺ · BCAN⁺</text>'
 
     + '</svg>';
   }
@@ -153,7 +154,7 @@ let fig1Stage = 'all';
     ['all','W6-11','W12-17'].forEach(function(s){
       const b = document.getElementById('fig1-btn-' + s);
       if(!b) return;
-      if(s === st){ b.style.background = '#3a3028'; b.style.color = '#FAF7F1'; }
+      if(s === st){ b.style.background = '#3a3028'; b.style.color = '#f5f1e8'; }
       else { b.style.background = 'transparent'; b.style.color = '#3a3028'; }
     });
     if(fig1Data) updateRiver();

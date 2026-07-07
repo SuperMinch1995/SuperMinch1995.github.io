@@ -18,10 +18,10 @@
 <div id="fig1b-bp-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
 
 <div style="margin-bottom:0.35rem;">
-  <span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 1</span>
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 1</span>
 </div>
-<h4 style="font-size:1.4rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">Shifting cell composition over development</h4>
-<p style="font-size:15px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">
+<h4 style="font-size:1.5rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">Shifting cell composition over development</h4>
+<p style="font-size:16px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">
   Each ribbon represents a cell lineage; thickness indicates its proportion (%).
 </p>
 
@@ -56,7 +56,7 @@
 
 <div style="margin-top:2rem;">
   <p style="font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:#888780;margin:0 0 0.4rem 0;">Personal notes</p>
-  <p style="font-size:15px;color:#4A3F2F;line-height:1.56;margin:0 0 0.8rem 0;">The proportions shown here and in Figure 1b (see <a href="https://doi.org/10.1038/s41586-021-03852-1" style="color:#3f4a5a;">doi:10.1038/s41586-021-03852-1</a>) should not be interpreted as the intestine&rsquo;s exact cellular composition.</p>
+  <p style="font-size:16px;color:#4A3F2F;line-height:1.56;margin:0 0 0.8rem 0;">The proportions shown here and in Figure 1b (see <a href="https://doi.org/10.1038/s41586-021-03852-1" style="color:#3f4a5a;">doi:10.1038/s41586-021-03852-1</a>) should not be interpreted as the intestine&rsquo;s exact cellular composition.</p>
 
   <details style="border:1px solid #ddd6cc;border-radius:6px;margin-bottom:0.45rem;background:#EEE8E0;">
     <summary style="font-size:13px;font-weight:400;color:#3a3028;padding:0.6rem 0.85rem;cursor:pointer;list-style:none;display:flex;align-items:center;gap:0.5rem;">
@@ -260,13 +260,12 @@ function renderBP(data){
       // left cap and never collides with the lineage label in the gutter.
       let vx=xs[i], anchor='middle';
       if(i===0){ vx=xs[0]+(inside2? (thick/2+2) : 6); anchor='start'; }
-      s+=`<text x="${f(vx)}" y="${f(ay)}" font-size="12" text-anchor="${anchor}"
+      s+=`<text x="${f(vx)}" y="${f(ay)}" font-size="13" text-anchor="${anchor}"
             fill="${fc2}" pointer-events="none"
             font-family="'DM Sans',system-ui,sans-serif">${pct(v)}</text>`;
     });
   });
 /* discreet authorship mark: faint vertical signature on right margin */
-  s+=`<text x="${W-6}" y="${firstY+nL*laneH/2}" font-size="8" fill="#c4bdb0" text-anchor="middle" transform="rotate(90 ${W-6} ${firstY+nL*laneH/2})" font-family="'DM Sans',system-ui,sans-serif" letter-spacing="0.5">\u00a9 Minh Chau Thom</text>`;
   s+='</svg>';
   document.getElementById('fig1b-bp-content').innerHTML=s;
 }

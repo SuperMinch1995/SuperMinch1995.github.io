@@ -1,18 +1,19 @@
 <!--
-  Figure 2 — HSCR gene spotlight (bipartite arcs)
+  Figure 6 — HSCR gene spotlight (bipartite arcs)
+  © Minh Chau Thom — original representation
   Data: assets/figures/elmentaite-2021/fig2_hscr_expression.json
-  Replaces: widget_fig2_hscr_heatmap.html
 -->
-<div id="fig2-hscr-widget" style="background:#FAF7F1;border:1px solid #ece6da;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
-<div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
-<span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 2 · Interactive</span>
+<div id="fig2-hscr-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+
+<div style="margin-bottom:0.35rem;">
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 6</span>
 </div>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Two signatures, two territories — Hirschsprung genes</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Arcs link each HSCR-associated gene to the cell groups where it is expressed; thickness tracks mean expression. <em>RET</em> lights up branch A neurons, while <em>ZEB2</em> and <em>EDNRB</em> light up colonic glia. Hover any gene or cell group to spotlight its connections.</p>
+<h4 style="font-size:1.5rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">Two signatures, two territories — Hirschsprung genes</h4>
+<p style="font-size:16px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">Arcs link each HSCR-associated gene to the cell groups where it is expressed; thickness tracks mean expression. <em>RET</em> lights up branch A neurons, while <em>ZEB2</em> and <em>EDNRB</em> light up colonic glia. Hover any gene or cell group to spotlight its connections.</p>
 
 <div id="fig2-content" style="min-height:380px;overflow-x:auto;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
 
-<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.4;">Arc width ∝ mean log-normalised expression, n-cell weighted across stages. Colonic and small-intestinal glia are shown separately to expose the regional contrast. Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
+<p style="font-size:13px;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.6;border-top:1px solid #ddd6cc;padding-top:0.75rem;margin-bottom:0.6rem;">Arc width &prop; mean log-normalised expression, n-cell weighted across stages; colonic and small-intestinal glia are shown separately. Data: Elmentaite <em>et al.</em>, <em>Nature</em> 597, 250–255 (2021), used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
 </div>
 
 <script>
@@ -97,7 +98,7 @@ let fig2Data = null;
     });
 
     const aStyle = 'transition:stroke-width .25s ease, opacity .25s ease;';
-    let s = '<svg width="100%" viewBox="0 0 680 470" role="img" style="max-width:640px;min-width:560px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">'
+    let s = '<svg width="100%" viewBox="0 0 680 470" role="img" style="max-width:640px;min-width:560px;display:block;margin:0 auto;overflow:visible;" xmlns="http://www.w3.org/2000/svg">'
       + '<title>Hirschsprung-associated genes connected to enteric neural cell groups</title>'
       + '<desc>RET connects strongly to branch A neurons; ZEB2 and EDNRB connect strongly to colonic glia; other connections are faint until hovered.</desc>';
 
@@ -108,22 +109,22 @@ let fig2Data = null;
         + ',332" fill="none" stroke-linecap="round" style="' + aStyle + '"></path>';
     });
 
-    s += '<text x="70" y="250" font-size="12" font-weight="600" fill="#AF3A3A">RET ↑↑</text>'
-      + '<text x="70" y="265" font-size="11" fill="#AF3A3A">branch A neurons</text>'
-      + '<text x="612" y="250" text-anchor="end" font-size="12" font-weight="600" fill="#2C8C82">ZEB2 · EDNRB ↑↑</text>'
-      + '<text x="612" y="265" text-anchor="end" font-size="11" fill="#2C8C82">colonic glia</text>';
+    s += '<text x="70" y="249" font-size="13" font-weight="600" fill="#AF3A3A">RET ↑↑</text>'
+      + '<text x="70" y="265" font-size="12" fill="#AF3A3A">branch A neurons</text>'
+      + '<text x="612" y="249" text-anchor="end" font-size="13" font-weight="600" fill="#2C8C82">ZEB2 · EDNRB ↑↑</text>'
+      + '<text x="612" y="265" text-anchor="end" font-size="12" fill="#2C8C82">colonic glia</text>';
 
     genes.forEach(function(g, i){
       const x = gx(i), ly = (i % 2 === 0) ? 96 : 110;
       s += '<g class="fig2-gene" data-gene="' + g + '" style="cursor:pointer;">'
-        + '<text x="' + x.toFixed(1) + '" y="' + ly + '" text-anchor="middle" font-size="11.5" font-style="italic" font-weight="600" fill="#3a3028">' + g + '</text>'
+        + '<text x="' + x.toFixed(1) + '" y="' + ly + '" text-anchor="middle" font-size="12" font-style="italic" font-weight="600" fill="#3a3028">' + g + '</text>'
         + '<circle cx="' + x.toFixed(1) + '" cy="120" r="3.4" fill="#3a3028"/></g>';
     });
 
     NODES.forEach(function(n){
       s += '<g class="fig2-node" data-node="' + n.id + '" style="cursor:pointer;">'
         + '<rect x="' + (n.x - 49) + '" y="334" width="98" height="32" rx="16" fill="#FFFFFF" stroke="' + n.hue + '"/>'
-        + '<text x="' + n.x + '" y="354" text-anchor="middle" font-size="11" font-weight="600" fill="' + n.hue + '">' + n.label + '</text></g>';
+        + '<text x="' + n.x + '" y="354" text-anchor="middle" font-size="12" font-weight="600" fill="' + n.hue + '">' + n.label + '</text></g>';
     });
 
     s += '</svg>';

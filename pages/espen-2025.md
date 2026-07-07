@@ -155,11 +155,7 @@ permalink: /conferences/espen-2025/
     </p>
 
     <p>
-      After the session, we spoke briefly, and he handed me a small pin bearing the Rod of Asclepius — a quiet reminder that resilience, humility, and long-term dedication remain at the heart of medicine.
-    </p>
-
-    <p>
-    It was a moment I will remember for a long time.
+      After the session, we spoke briefly, and he handed me his small pin bearing the Rod of Asclepius - a quiet reminder that resilience, humility, and long-term dedication remain at the heart of medicine.
     </p>
 
   </div>

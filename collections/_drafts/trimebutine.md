@@ -3,6 +3,7 @@ layout: post
 title: "A drug prescribed to millions — and why it's invisible in America"
 subtitle: "Trimebutine, chronic intestinal pseudo-obstruction, and what the FDA–EMA divide looks like from inside a rare-disease cohort."
 date: 2026-06-06
+image: "/assets/images/trimebutine-hero.webp"
 ---
 
 ### Opening

@@ -8,6 +8,7 @@ categories: [literature, single-cell, neurogastroenterology]
 tags: [gut-cell-atlas, single-cell-RNA-seq, enteric-nervous-system, IBD]
 description: "A cell-by-cell journey through space and time in the developing intestine."
 image: "/assets/images/elmentaite-2021/Gut_space_time_hero.webp"
+related_posts: true
 ---
 
 {% comment %}
@@ -277,7 +278,11 @@ In 2021, Elmentaite and colleagues at the Wellcome Sanger Institute published a 
 
 ## From structure to immunity
 
-The study sampled up to 5 gut regions in fetal samples and 11 in pediatric and adult donors. The authors identified 133 cell types and states across 6 cell lineages: epithelial, mesenchymal, endothelial, neural, immune, and erythroid.
+Previous studies profiled fetal, adult, and diseased intestines separately, but no comprehensive atlas existed across space and lifespan.
+
+The authors generated a single-cell atlas of ~428,000 cells from the small intestine, colon, and mesenteric lymph nodes, spanning fetal development to adulthood.
+
+133 cell types and states were identified, revealing dynamic changes in intestinal cellular composition over development.
 
 <div class="stat-row">
   <div class="stat-item">
@@ -301,9 +306,9 @@ The study sampled up to 5 gut regions in fetal samples and 11 in pediatric and a
 
 During development, early fetal gut is enriched in **mesenchymal** and **neural** cells, while **immune** cells progressively accumulate from the second trimester onward.
 
-{% comment %} ── INTERACTIVE FIGURE 1 — blueprint ribbon (replaces former Fig 3 widget) ── {% endcomment %}
+{% comment %} ── FIGURE 1 — blueprint ribbon ── {% endcomment %}
 <iframe id="fig1b-blueprint-frame"
-        src="{{ site.baseurl }}/assets/figures/elmentaite-2021/widget_fig1b_blueprint.html"
+        src="{{ site.baseurl }}/assets/figures/elmentaite-2021/widget_fig1_blueprint.html"
         title="Figure 1 — Shifting cell composition over development"
         loading="lazy" scrolling="no"
         style="width:100%;border:0;display:block;margin:2rem 0;min-height:560px;"></iframe>
@@ -323,8 +328,8 @@ During development, early fetal gut is enriched in **mesenchymal** and **neural*
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
   </div>
   <div>
-    <p style="font-size:0.95rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:#1B7092;margin:0 0 0.4rem 0;">A question</p>
-    <p style="font-size:19px;color:#3a3028;line-height:1.6;margin:0;">If we want to engineer functional intestinal tissue from stem cells, do we need to know which cell types arise, in what sequence, and in which anatomical segment of the gut?</p>
+    <p style="font-size:0.95rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:#1B7092;margin:0 0 0.4rem 0;">Question</p>
+    <p style="font-size:19px;color:#3a3028;line-height:1.6;margin:0;">Which intestinal cell populations emerge, expand, or disappear during human development?</p>
   </div>
 </div>
 
@@ -332,13 +337,16 @@ During development, early fetal gut is enriched in **mesenchymal** and **neural*
 
 <div class="act-divider"><span class="act-divider-label">Finding #2</span></div>
 
-## One cell type, two intestines: BEST4 enterocytes
+## BEST4 epithelial cells exhibit region-specific functions
 
 BEST4 enterocytes are a small, recently identified epithelial population found across the entire intestinal tract. The authors showed that these cells are not the same everywhere: BEST4 cells in the small intestine and BEST4 cells in the colon express very different genes.
 
-In the small intestine, BEST4 cells strongly express *CFTR* — the chloride channel mutated in cystic fibrosis — along with genes involved in lipid metabolism and digestion. In the colon, the same cell type instead expresses carbonic anhydrases (*CA1*, *CA4*, *CA7*) and aquaporins, pointing to a role in ion and water transport.
+In the small intestine, BEST4 cells strongly express *CFTR*, the chloride channel mutated in cystic fibrosis. They also express genes involved in lipid metabolism and digestion. Their close proximity to goblet cells suggests a role in mucus production.
 
-{% comment %} ── INTERACTIVE FIGURE 2 — BEST4 side-by-side ── {% endcomment %}
+In the colon, the same cell type expresses carbonic anhydrases (*CA1*, *CA4*, *CA7*) and aquaporins, pointing to a role in ion and water transport.
+
+
+{% comment %} ── FIGURE 2 — BEST4 regional signature ── {% endcomment %}
 <!--
   Figure 2 — BEST4 regional signature comparator
   Data     : assets/figures/elmentaite-2021/fig4_best4_marker_expression.json
@@ -380,10 +388,10 @@ In the small intestine, BEST4 cells strongly express *CFTR* — the chloride cha
 
 <div id="fig4-best4-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
 <div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
-<span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 2</span>
+<span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 2</span>
 </div>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">BEST4 enterocytes — small intestine vs colon</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Each dot's <strong>size</strong> shows the % of cells expressing the gene; its <strong>opacity</strong> shows mean expression.</p>
+<h4 style="font-size:1.3rem;font-weight:500;margin:0 0 0.3rem 0;">BEST4 enterocytes — small intestine vs colon</h4>
+<p style="font-size:1rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Each dot's <strong>size</strong> shows the % of cells expressing the gene; its <strong>opacity</strong> shows mean expression.</p>
 <div id="fig4-content" style="min-height:400px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
 <p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.5rem;line-height:1.4;">Computed from the epithelium lineage object (4,555 BEST4+ cells: 1,176 small intestine, 3,379 large intestine). Data: Elmentaite et al., <em>Nature</em> 2021, used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
 </div>
@@ -450,10 +458,10 @@ function render(data){
   svg+=`<defs><filter id="g4halo" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5"/></filter></defs>`;
   svg+=`<rect x="${padding.left}" y="${padding.top}" width="${colW}" height="${headerH-10}" rx="6" fill="${SMALL_COLOR}" opacity="0.1"/>`;
   svg+=`<rect x="${padding.left+colW}" y="${padding.top}" width="${colW}" height="${headerH-10}" rx="6" fill="${LARGE_COLOR}" opacity="0.1"/>`;
-  svg+=`<text x="${padding.left+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="12" font-weight="600" fill="${SMALL_COLOR}">Small intestine</text>`;
-  svg+=`<text x="${padding.left+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="10" fill="${SMALL_COLOR}" opacity="0.8">n = ${genes[0].small.n_cells} cells</text>`;
-  svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="12" font-weight="600" fill="${LARGE_COLOR}">Large intestine</text>`;
-  svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="10" fill="${LARGE_COLOR}" opacity="0.8">n = ${genes[0].large.n_cells} cells</text>`;
+  svg+=`<text x="${padding.left+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="13" font-weight="600" fill="${SMALL_COLOR}">Small intestine</text>`;
+  svg+=`<text x="${padding.left+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="11" fill="${SMALL_COLOR}" opacity="0.8">n = ${genes[0].small.n_cells} cells</text>`;
+  svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="13" font-weight="600" fill="${LARGE_COLOR}">Large intestine</text>`;
+  svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="11" fill="${LARGE_COLOR}" opacity="0.8">n = ${genes[0].large.n_cells} cells</text>`;
 
   let _mctx=null;
   try{ _mctx=document.createElement('canvas').getContext('2d'); if(_mctx) _mctx.font="italic 12px 'DM Sans', system-ui, sans-serif"; }catch(e){ _mctx=null; }
@@ -477,12 +485,12 @@ function render(data){
     }
     const _hlH=20,_padX=8,_hlW=_tw+2*_padX,_hlR=(padding.left-8)-_hlW;
     svg+=`<rect class="gene-hl" x="${_hlR.toFixed(1)}" y="${(y-_hlH/2).toFixed(1)}" width="${_hlW.toFixed(1)}" height="${_hlH}" rx="5"/>`;
-    svg+=`<text class="gene-label" x="${padding.left-12}" y="${y+4}" text-anchor="end" font-size="12" font-style="italic" fill="#3a3028">${g.name}</text>`;
+    svg+=`<text class="gene-label" x="${padding.left-12}" y="${y+4}" text-anchor="end" font-size="13" font-style="italic" fill="#3a3028">${g.name}</text>`;
     svg+=`</g>`;
 
     const arrow=g.logRatio>1?'\u25C0':g.logRatio<-1?'\u25B6':'\u2022';
     const arrowColor=side==='small'?SMALL_COLOR:side==='large'?LARGE_COLOR:'#cccccc';
-    svg+=`<text x="${padding.left+colW}" y="${y+4}" text-anchor="middle" font-size="9" fill="${arrowColor}" opacity="0.5">${arrow}</text>`;
+    svg+=`<text x="${padding.left+colW}" y="${y+4}" text-anchor="middle" font-size="10" fill="${arrowColor}" opacity="0.5">${arrow}</text>`;
 
     const sX=padding.left+colW/2;
     const sR=3+g.small.fraction_expressing*10;
@@ -497,7 +505,7 @@ function render(data){
 
   const topSmall=genes.slice(0,3).map(g=>g.name).join(', ');
   const topLarge=genes.slice(-3).reverse().map(g=>g.name).join(', ');
-  const summary=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;padding:0.8rem 1rem;background:${NEUTRAL_BG};border-radius:6px;font-size:12px;"><div><div style="color:${SMALL_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in small intestine</div><div><em>${topSmall}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:12px;">Lipid metabolism, digestion, chloride transport (CFTR)</div></div><div><div style="color:${LARGE_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in large intestine</div><div><em>${topLarge}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:12px;">Carbonic anhydrases, ion / water transport</div></div></div>`;
+  const summary=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;padding:0.8rem 1rem;background:${NEUTRAL_BG};border-radius:6px;font-size:13px;"><div><div style="color:${SMALL_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in small intestine</div><div><em>${topSmall}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:13px;">Lipid metabolism, digestion, chloride transport (CFTR)</div></div><div><div style="color:${LARGE_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in large intestine</div><div><em>${topLarge}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:13px;">Carbonic anhydrases, ion / water transport</div></div></div>`;
 
   content.innerHTML=svg+summary;
   content.querySelectorAll('.gene-row').forEach(row=>{
@@ -663,123 +671,54 @@ function link(label, href, accent){
 
 <div class="act-divider"><span class="act-divider-label">Finding #3</span></div>
 
-## Tuft cells learn to sense antibodies
+## Tuft cells may be able to sense IgG
 
-Tuft cells are a rare epithelial population usually associated with parasite sensing. One of the surprising findings of this atlas is that human tuft cells express *PLCG2*, a phospholipase normally found in immune cells.
+Tuft cells are a rare epithelial population usually associated with parasite sensing. One of the surprising findings is that tuft cells express *PLCG2*, a phospholipase normally found in immune cells.
 
-Looking upstream, the authors found that about 2.75% of tuft cells express *FCGR2A*, a receptor that binds the Fc fragment of IgG antibodies. They confirmed in mice that around 5% of small-intestinal tuft cells carry the equivalent receptor (FCGR3) on their surface. Downstream of PLCG2, tuft cells also express the signalling molecules needed to convert that signal into a calcium response and an ionic current: *ITPR2*, *PRKCA*, and *TRPM5*.
+Looking upstream, the authors found that about 3% of tuft cells express *FCGR2A*, a receptor that binds the Fc fragment of IgG antibodies. They confirmed in mice that around 5% of small-intestinal tuft cells carry the equivalent receptor (FCGR3) on their surface. 
 
-This suggests that tuft cells may be able to directly sense circulating IgG — a role that has not previously been attributed to intestinal epithelium. The authors also note that two missense variants of *PLCG2* have been linked to early-onset inflammatory bowel disease, hinting at a possible clinical relevance.
+Downstream of PLCG2, tuft cells express the signalling molecules needed to convert that signal into a calcium response and an ionic current: *ITPR2*, *PRKCA*, and *TRPM5*.
 
-{% comment %} ── INTERACTIVE FIGURE 3 — tuft cell pathway (cascade) ── {% endcomment %}
-<!--
-  Figure 3 — Tuft cell FCGR2A/PLCG2 signalling pathway (signaling cascade layout)
-  Data: assets/figures/elmentaite-2021/fig5_tuft_pathway_expression.json
--->
-<div id="fig5-tuft-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
-<div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
-<span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 3</span>
-</div>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Tuft cells express the full IgG-sensing pathway</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">The signalling cascade flows top to bottom, from <em>FCGR2A</em> at the membrane down to <em>TRPM5</em> ion channels. Node size shows the % of tuft cells expressing each gene; the teal dots compare the other epithelial populations.</p>
+This potential PLCG2 signaling cascade suggests tuft cells may be functionally equipped for IgG sensing - a role that has not previously been attributed to intestinal epithelium. 
 
-<div id="fig5-content" style="min-height:500px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+Two missense variants of *PLCG2* have been linked to early-onset inflammatory bowel disease, hinting at a possible clinical relevance.
 
-<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.5rem;line-height:1.4;">Computed from the epithelium lineage object (737 tuft cells, 101,617 absorptive cells, 11,904 secretory cells). Data: Elmentaite et al., <em>Nature</em> 2021, used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
-</div>
-
+{% comment %} ── FIGURE 3 — what tuft cells sense (sensory fan) ── {% endcomment %}
+<iframe id="tuft-fan-frame"
+        src="{{ site.baseurl }}/assets/figures/elmentaite-2021/widget_fig3_tuft_sensory_fan.html"
+        title="What a tuft cell listens for"
+        loading="lazy" scrolling="no"
+        style="width:100%;border:0;display:block;margin:2rem 0;min-height:460px;"></iframe>
 <script>
 (function(){
-const DATA_URL = '{{ site.baseurl }}/assets/figures/elmentaite-2021/fig5_tuft_pathway_expression.json';
-fetch(DATA_URL).then(r=>{if(!r.ok)throw new Error('JSON not found');return r.json();}).then(render).catch(err=>{
-  document.getElementById('fig5-content').innerHTML='<p style="text-align:center;color:#A83D3A;padding:2rem;">Could not load: '+err.message+'</p>';
-});
-
-function render(data){
-  const TUFT='#A83D3A', ABS='#3796AC', SEC='#1B7092', SPINE='#A8C5CE';
-
-  const PATHWAY_ORDER = [
-    {gene:'FCGR2A', layer:'Receptor (membrane)', desc:'IgG Fc receptor'},
-    {gene:'FCGR2B', layer:'Receptor (membrane)', desc:'IgG Fc inhibitory receptor'},
-    {gene:'CD300LF', layer:'Co-receptor', desc:'Co-receptor'},
-    {gene:'SYK', layer:'Kinase', desc:'Activates PLCG2'},
-    {gene:'PLCG2', layer:'Phospholipase', desc:'Generates IP\u2083 + DAG'},
-    {gene:'RAC2', layer:'GTPase', desc:'Cytoskeletal remodelling'},
-    {gene:'ITPR2', layer:'Ca\u00B2\u207A channel (ER)', desc:'Releases intracellular Ca\u00B2\u207A'},
-    {gene:'PRKCA', layer:'Kinase (PKC)', desc:'Activated by DAG'},
-    {gene:'TRPM5', layer:'Ion channel', desc:'Na\u207A influx \u2192 response'}
-  ];
-
-  let maxMean=0;
-  PATHWAY_ORDER.forEach(p=>{ if(!data[p.gene])return; ['tuft','absorptive','secretory'].forEach(grp=>{ const e=data[p.gene][grp]; if(e&&e.mean_expression>maxMean)maxMean=e.mean_expression; }); });
-  if(maxMean<=0)maxMean=1;
-
-  const n=PATHWAY_ORDER.length;
-  const rowH=46, padding={top:58,left:140,right:20,bottom:60};
-  const cx=168, xAbs=258, xSec=320;
-  const totalH=padding.top+n*rowH+padding.bottom;
-  const totalW=360;
-
-  let svg=`<svg viewBox="0 0 ${totalW} ${totalH}" style="width:100%;max-width:560px;display:block;margin:0 auto;" role="img">`;
-  svg+=`<style>.path-row .row-hl{fill:transparent;transition:fill .12s;}.path-row:hover .row-hl{fill:rgba(58,48,40,0.05);}</style>`;
-
-  // column headers
-  svg+=`<text x="${cx}" y="${padding.top-30}" text-anchor="middle" font-size="12" font-weight="600" fill="${TUFT}">Tuft cells</text>`;
-  svg+=`<text x="${cx}" y="${padding.top-17}" text-anchor="middle" font-size="9" fill="${TUFT}" opacity="0.75">n = 737</text>`;
-  svg+=`<text x="${xAbs}" y="${padding.top-30}" text-anchor="middle" font-size="11" font-weight="600" fill="${ABS}">Absorptive</text>`;
-  svg+=`<text x="${xAbs}" y="${padding.top-17}" text-anchor="middle" font-size="9" fill="${ABS}" opacity="0.75">n = 101,617</text>`;
-  svg+=`<text x="${xSec}" y="${padding.top-30}" text-anchor="middle" font-size="11" font-weight="600" fill="${SEC}">Secretory</text>`;
-  svg+=`<text x="${xSec}" y="${padding.top-17}" text-anchor="middle" font-size="9" fill="${SEC}" opacity="0.75">n = 11,904</text>`;
-
-  // apical membrane band + pathway spine
-  svg+=`<rect x="${cx-42}" y="${padding.top-4}" width="84" height="7" rx="3.5" fill="${SPINE}" opacity="0.6"/>`;
-  svg+=`<text x="${cx+50}" y="${padding.top+2}" font-size="8" fill="#888780">apical membrane</text>`;
-  const yFirst=padding.top+rowH/2, yLast=padding.top+(n-1)*rowH+rowH/2;
-  svg+=`<line x1="${cx}" y1="${yFirst}" x2="${yLast?yLast:yLast}" y2="${yLast}" stroke="${SPINE}" stroke-width="0" opacity="0"/>`;
-  svg+=`<line x1="${cx}" y1="${yFirst}" x2="${cx}" y2="${yLast}" stroke="${SPINE}" stroke-width="2" opacity="0.45"/>`;
-
-  PATHWAY_ORDER.forEach((p,i)=>{
-    const y=padding.top+i*rowH+rowH/2;
-    const t=data[p.gene]&&data[p.gene].tuft, ab=data[p.gene]&&data[p.gene].absorptive, se=data[p.gene]&&data[p.gene].secretory;
-
-    svg+=`<g class="path-row">`;
-    svg+=`<rect class="row-hl" x="0" y="${y-rowH/2}" width="${totalW}" height="${rowH}"><title>${p.gene} — ${p.desc}</title></rect>`;
-
-    // gene name + layer (left)
-    svg+=`<text x="${padding.left-14}" y="${y-2}" text-anchor="end" font-size="12" font-style="italic" font-weight="500" fill="#3a3028">${p.gene}</text>`;
-    svg+=`<text x="${padding.left-14}" y="${y+11}" text-anchor="end" font-size="9" fill="#888780">${p.layer}</text>`;
-
-    // flow arrow on the spine to the next node
-    if(i<n-1){ const ny=padding.top+(i+1)*rowH+rowH/2; const my=(y+ny)/2;
-      svg+=`<polygon points="${cx-3.5},${my-3} ${cx+3.5},${my-3} ${cx},${my+3.5}" fill="${SPINE}" opacity="0.8"/>`;
+  window.addEventListener('message', function(e){
+    if (e.data && e.data.type === 'tuft-fan-height') {
+      var f = document.getElementById('tuft-fan-frame');
+      if (f) f.style.height = e.data.height + 'px';
     }
-
-    // tuft node
-    if(t){ const r=4+t.fraction_expressing*14; const op=(0.25+(t.mean_expression/maxMean)*0.75).toFixed(2);
-      svg+=`<circle cx="${cx}" cy="${y}" r="${r.toFixed(1)}" fill="${TUFT}" opacity="${op}"><title>${p.gene} — Tuft cells: mean ${t.mean_expression.toFixed(2)}, ${(t.fraction_expressing*100).toFixed(1)}% of cells</title></circle>`;
-    } else { svg+=`<text x="${cx}" y="${y+3}" text-anchor="middle" font-size="9" fill="#cccccc">—</text>`; }
-
-    // comparators (absorptive, secretory)
-    [[xAbs,ab,ABS,'Absorptive'],[xSec,se,SEC,'Secretory']].forEach(function(arr){
-      const xx=arr[0], e=arr[1], col=arr[2], lbl=arr[3];
-      if(e){ const r=2.5+e.fraction_expressing*9; const op=(0.2+(e.mean_expression/maxMean)*0.8).toFixed(2);
-        svg+=`<circle cx="${xx}" cy="${y}" r="${r.toFixed(1)}" fill="${col}" opacity="${op}"><title>${p.gene} — ${lbl}: mean ${e.mean_expression.toFixed(2)}, ${(e.fraction_expressing*100).toFixed(1)}% of cells</title></circle>`;
-      } else { svg+=`<text x="${xx}" y="${y+3}" text-anchor="middle" font-size="9" fill="#cccccc">—</text>`; }
-    });
-
-    svg+=`</g>`;
   });
-
-  // legend
-  const legY=totalH-32;
-  svg+=`<text x="20" y="${legY}" font-size="10" fill="#888780">Node size: % cells expressing &middot; opacity: mean expression</text>`;
-  svg+=`<text x="${totalW/2}" y="${legY+16}" text-anchor="middle" font-size="10" font-style="italic" fill="#888780">Pathway flow: receptor \u2192 kinase \u2192 second messenger \u2192 effector</text>`;
-
-  svg+=`</svg>`;
-  document.getElementById('fig5-content').innerHTML=svg;
-}
 })();
 </script>
+
+The Fc receptors are only the newest input. Placed beside the tuft cell's established chemosensory wiring, the proposed IgG route feeds the *same* downstream machinery — receptor to phospholipase to a shared calcium/TRPM5 hub — rather than a parallel one. Whether the Fc signal genuinely drives *PLCG2* remains open: the canonical taste cascade runs through PLCβ2, and receptor tyrosine kinases usually couple to PLCG1.
+
+{% comment %} ── FIGURE 4 — converging pathways (established vs proposed) ── {% endcomment %}
+<iframe id="tuft-converge-frame"
+        src="{{ site.baseurl }}/assets/figures/elmentaite-2021/widget_fig4_tuft_pathways.html"
+        title="A new wire in a known circuit — converging tuft-cell pathways"
+        loading="lazy" scrolling="no"
+        style="width:100%;border:0;display:block;margin:2rem 0;min-height:500px;"></iframe>
+<script>
+(function(){
+  window.addEventListener('message', function(e){
+    if (e.data && e.data.type === 'tuft-converge-height') {
+      var f = document.getElementById('tuft-converge-frame');
+      if (f) f.style.height = e.data.height + 'px';
+    }
+  });
+})();
+</script>
+
 <p class="figure-gallery-label">Original figures from the article</p>
 <div class="figure-gallery">
 
@@ -820,26 +759,30 @@ The enteric nervous system develops from enteric neural crest cells (ENCC), whic
 
 Branch A gives rise to inhibitory motor neurons and a subset of intrinsic primary afferent neurons / interneurons. Branch B gives rise to excitatory motor neurons and a second IPAN subtype. Both branches mature over the second trimester, while glial cells become more abundant later in development.
 
-{% comment %} ── INTERACTIVE FIGURE 1 — ENS lineage river (landing medallions) ── {% endcomment %}
+{% comment %} ── FIGURE 5 — ENS lineage river ── {% endcomment %}
 <!--
-  Figure 1 — ENS lineage river (landing medallions)
+  Figure 5 — ENS lineage river (landing medallions)
+  © Minh Chau Thom — original representation
   Data: assets/figures/elmentaite-2021/fig1_ens_cell_counts.json
 -->
 <div id="fig1-ens-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
-<span style="display:inline-block;background:#AF3A3A;color:#FFFFFF;padding:0.2rem 0.6rem;border-radius:3px;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:500;margin-bottom:0.75rem;">Figure 1 · Interactive</span>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">One origin, two fates — the enteric nervous system</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">A single ENCC progenitor flows into inhibitory (branch A) and excitatory (branch B) neurons, plus the glial lineage. Ribbon width tracks cell count — switch developmental stage to watch the river re-flow as glia become enriched.</p>
+
+<div style="margin-bottom:0.35rem;">
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 5</span>
+</div>
+<h4 style="font-size:1.5rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">One origin, two fates — the enteric nervous system</h4>
+<p style="font-size:16px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">A single ENCC progenitor flows into inhibitory (branch A) and excitatory (branch B) neurons, plus the glial lineage. Ribbon width tracks cell count — switch developmental stage to watch the river re-flow as glia become enriched.</p>
 
 <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
-<button onclick="fig1Filter('all')" id="fig1-btn-all" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:#3a3028;color:#faf9f7;font-size:12px;cursor:pointer;font-family:inherit;">All stages</button>
-<button onclick="fig1Filter('W6-11')" id="fig1-btn-W6-11" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">6–11 PCW</button>
-<button onclick="fig1Filter('W12-17')" id="fig1-btn-W12-17" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">12–17 PCW</button>
+<button onclick="fig1Filter('all')" id="fig1-btn-all" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:#3a3028;color:#f5f1e8;font-size:13px;cursor:pointer;font-family:inherit;">All stages</button>
+<button onclick="fig1Filter('W6-11')" id="fig1-btn-W6-11" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:13px;cursor:pointer;font-family:inherit;">6–11 PCW</button>
+<button onclick="fig1Filter('W12-17')" id="fig1-btn-W12-17" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:13px;cursor:pointer;font-family:inherit;">12–17 PCW</button>
 </div>
 
 <div id="fig1-content" style="min-height:420px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
-<p id="fig1-caption" style="font-size:0.78rem;color:#5F5E5A;text-align:center;margin:0.4rem 0 0 0;">&nbsp;</p>
+<p id="fig1-caption" style="font-size:14px;color:#5F5E5A;text-align:center;line-height:1.55;margin:0.4rem 0 0 0;">&nbsp;</p>
 
-<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.4;">Ribbon width and medallion size ∝ cell count. Computed from the ENS lineage object (16,870 fetal enteric neural cells, 6–17 PCW). Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
+<p style="font-size:13px;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.6;border-top:1px solid #ddd6cc;padding-top:0.75rem;margin-bottom:0.6rem;">Ribbon width and medallion size &prop; cell count. Computed from the ENS lineage object (16,870 fetal enteric neural cells, 6–17 PCW). Data: Elmentaite <em>et al.</em>, <em>Nature</em> 597, 250–255 (2021), used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
 </div>
 
 <script>
@@ -900,7 +843,7 @@ let fig1Stage = 'all';
     const rib = 'fill:none;stroke-linecap:round;transition:stroke-width .55s cubic-bezier(.4,0,.2,1);';
     const med = 'transition:r .55s cubic-bezier(.4,0,.2,1);';
     return ''
-    + '<svg width="100%" viewBox="0 0 680 510" role="img" style="max-width:640px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">'
+    + '<svg width="100%" viewBox="0 0 680 510" role="img" style="max-width:640px;display:block;margin:0 auto;overflow:visible;" xmlns="http://www.w3.org/2000/svg">'
     + '<title>Enteric nervous system differentiation as a lineage river</title>'
     + '<desc>A single ENCC progenitor splits into branch A inhibitory neurons, branch B excitatory neurons, and glia. Ribbon width and medallion size are proportional to cell count.</desc>'
 
@@ -910,31 +853,31 @@ let fig1Stage = 'all';
     + '<path id="fig1-r-b"     d="M270,248 C300,330 332,390 347,428" style="' + rib + '" stroke="#C2510A" stroke-width="2" opacity="0.82"><title id="fig1-tt-b"></title></path>'
 
     + '<circle cx="340" cy="118" r="22" fill="#3a3028"/>'
-    + '<text x="340" y="122" text-anchor="middle" font-size="11" fill="#FAF7F1" font-weight="600">ENCC</text>'
-    + '<text x="370" y="114" font-size="12.5" fill="#3a3028" font-weight="600">ENCC / glia progenitor</text>'
-    + '<text x="370" y="130" font-size="11" fill="#888780">proliferates · keeps reserve</text>'
+    + '<text x="340" y="122" text-anchor="middle" font-size="11" fill="#f5f1e8" font-weight="600">ENCC</text>'
+    + '<text x="370" y="114" font-size="13" fill="#3a3028" font-weight="600">ENCC / glia progenitor</text>'
+    + '<text x="370" y="131" font-size="12" fill="#888780">proliferates · keeps reserve</text>'
 
     + '<circle cx="270" cy="245" r="16" fill="#534AB7"/>'
-    + '<text x="270" y="249" text-anchor="middle" font-size="11" fill="#FAF7F1" font-weight="600">NB</text>'
-    + '<text x="270" y="220" text-anchor="middle" font-size="11" fill="#534AB7" font-weight="600">Neuroblast</text>'
+    + '<text x="270" y="249" text-anchor="middle" font-size="11" fill="#f5f1e8" font-weight="600">NB</text>'
+    + '<text x="270" y="219" text-anchor="middle" font-size="12" fill="#534AB7" font-weight="600">Neuroblast</text>'
 
     + '<circle id="fig1-m-a" cx="142" cy="432" r="20" fill="#AF3A3A" style="' + med + '"/>'
-    + '<text x="142" y="428" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">A</text>'
-    + '<text id="fig1-c-a" x="142" y="444" text-anchor="middle" font-size="11" fill="#FFFFFF" opacity="0.92"></text>'
-    + '<text x="142" y="480" text-anchor="middle" font-size="13.5" fill="#AF3A3A" font-weight="600">Inhibitory motor neurons</text>'
-    + '<text x="142" y="496" text-anchor="middle" font-size="11" fill="#888780">ETV1⁺ · IPAN / interneurons · A1–A4</text>'
+    + '<text x="142" y="427" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">A</text>'
+    + '<text id="fig1-c-a" x="142" y="444" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.92"></text>'
+    + '<text x="142" y="481" text-anchor="middle" font-size="15" fill="#AF3A3A" font-weight="600">Inhibitory motor neurons</text>'
+    + '<text x="142" y="498" text-anchor="middle" font-size="12" fill="#888780">ETV1⁺ · IPAN / interneurons · A1–A4</text>'
 
     + '<circle id="fig1-m-b" cx="347" cy="432" r="20" fill="#C2510A" style="' + med + '"/>'
-    + '<text x="347" y="428" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">B</text>'
-    + '<text id="fig1-c-b" x="347" y="444" text-anchor="middle" font-size="11" fill="#FFFFFF" opacity="0.92"></text>'
-    + '<text x="347" y="480" text-anchor="middle" font-size="13.5" fill="#C2510A" font-weight="600">Excitatory motor neurons</text>'
-    + '<text x="347" y="496" text-anchor="middle" font-size="11" fill="#888780">BNC2⁺ · + late IPAN · B1–B3</text>'
+    + '<text x="347" y="427" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">B</text>'
+    + '<text id="fig1-c-b" x="347" y="444" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.92"></text>'
+    + '<text x="347" y="481" text-anchor="middle" font-size="15" fill="#C2510A" font-weight="600">Excitatory motor neurons</text>'
+    + '<text x="347" y="498" text-anchor="middle" font-size="12" fill="#888780">BNC2⁺ · + late IPAN · B1–B3</text>'
 
     + '<circle id="fig1-m-g" cx="549" cy="432" r="20" fill="#3DAEA3" style="' + med + '"/>'
-    + '<text x="549" y="428" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">G</text>'
-    + '<text id="fig1-c-g" x="549" y="444" text-anchor="middle" font-size="11" fill="#FFFFFF" opacity="0.92"></text>'
-    + '<text x="549" y="480" text-anchor="middle" font-size="13.5" fill="#2C8C82" font-weight="600">Glial support &amp; niche</text>'
-    + '<text x="549" y="496" text-anchor="middle" font-size="11" fill="#888780">DHH⁺ · ELN⁺ · BCAN⁺</text>'
+    + '<text x="549" y="427" text-anchor="middle" font-size="15" fill="#FFFFFF" font-weight="600">G</text>'
+    + '<text id="fig1-c-g" x="549" y="444" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.92"></text>'
+    + '<text x="549" y="481" text-anchor="middle" font-size="15" fill="#2C8C82" font-weight="600">Glial support &amp; niche</text>'
+    + '<text x="549" y="498" text-anchor="middle" font-size="12" fill="#888780">DHH⁺ · ELN⁺ · BCAN⁺</text>'
 
     + '</svg>';
   }
@@ -973,7 +916,7 @@ let fig1Stage = 'all';
     ['all','W6-11','W12-17'].forEach(function(s){
       const b = document.getElementById('fig1-btn-' + s);
       if(!b) return;
-      if(s === st){ b.style.background = '#3a3028'; b.style.color = '#FAF7F1'; }
+      if(s === st){ b.style.background = '#3a3028'; b.style.color = '#f5f1e8'; }
       else { b.style.background = 'transparent'; b.style.color = '#3a3028'; }
     });
     if(fig1Data) updateRiver();
@@ -995,19 +938,23 @@ let fig1Stage = 'all';
 </script>
 The same dataset makes it possible to ask which cell types express genes linked to Hirschsprung disease, a congenital disorder where enteric neurons fail to colonise part of the bowel. The authors found that HSCR-associated genes are expressed across many cell types, but with clear differences. *RET*, for example, is strongly expressed by branch A neurons but not branch B. *ZEB2* and *EDNRB* are higher in colonic glia and neuroblasts than in their small-intestinal counterparts.
 
-{% comment %} ── INTERACTIVE FIGURE 2 — HSCR gene spotlight (bipartite arcs) ── {% endcomment %}
+{% comment %} ── FIGURE 6 — HSCR gene spotlight ── {% endcomment %}
 <!--
-  Figure 2 — HSCR gene spotlight (bipartite arcs)
+  Figure 6 — HSCR gene spotlight (bipartite arcs)
+  © Minh Chau Thom — original representation
   Data: assets/figures/elmentaite-2021/fig2_hscr_expression.json
 -->
 <div id="fig2-hscr-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
-<span style="display:inline-block;background:#AF3A3A;color:#FFFFFF;padding:0.2rem 0.6rem;border-radius:3px;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:500;margin-bottom:0.75rem;">Figure 2 · Interactive</span>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Two signatures, two territories — Hirschsprung genes</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Arcs link each HSCR-associated gene to the cell groups where it is expressed; thickness tracks mean expression. <em>RET</em> lights up branch A neurons, while <em>ZEB2</em> and <em>EDNRB</em> light up colonic glia. Hover any gene or cell group to spotlight its connections.</p>
+
+<div style="margin-bottom:0.35rem;">
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 6</span>
+</div>
+<h4 style="font-size:1.5rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">Two signatures, two territories — Hirschsprung genes</h4>
+<p style="font-size:16px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">Arcs link each HSCR-associated gene to the cell groups where it is expressed; thickness tracks mean expression. <em>RET</em> lights up branch A neurons, while <em>ZEB2</em> and <em>EDNRB</em> light up colonic glia. Hover any gene or cell group to spotlight its connections.</p>
 
 <div id="fig2-content" style="min-height:380px;overflow-x:auto;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
 
-<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.4;">Arc width ∝ mean log-normalised expression, n-cell weighted across stages. Colonic and small-intestinal glia are shown separately to expose the regional contrast. Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
+<p style="font-size:13px;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.6;border-top:1px solid #ddd6cc;padding-top:0.75rem;margin-bottom:0.6rem;">Arc width &prop; mean log-normalised expression, n-cell weighted across stages; colonic and small-intestinal glia are shown separately. Data: Elmentaite <em>et al.</em>, <em>Nature</em> 597, 250–255 (2021), used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
 </div>
 
 <script>
@@ -1092,7 +1039,7 @@ let fig2Data = null;
     });
 
     const aStyle = 'transition:stroke-width .25s ease, opacity .25s ease;';
-    let s = '<svg width="100%" viewBox="0 0 680 470" role="img" style="max-width:640px;min-width:560px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">'
+    let s = '<svg width="100%" viewBox="0 0 680 470" role="img" style="max-width:640px;min-width:560px;display:block;margin:0 auto;overflow:visible;" xmlns="http://www.w3.org/2000/svg">'
       + '<title>Hirschsprung-associated genes connected to enteric neural cell groups</title>'
       + '<desc>RET connects strongly to branch A neurons; ZEB2 and EDNRB connect strongly to colonic glia; other connections are faint until hovered.</desc>';
 
@@ -1103,22 +1050,22 @@ let fig2Data = null;
         + ',332" fill="none" stroke-linecap="round" style="' + aStyle + '"></path>';
     });
 
-    s += '<text x="70" y="250" font-size="12" font-weight="600" fill="#AF3A3A">RET ↑↑</text>'
-      + '<text x="70" y="265" font-size="11" fill="#AF3A3A">branch A neurons</text>'
-      + '<text x="612" y="250" text-anchor="end" font-size="12" font-weight="600" fill="#2C8C82">ZEB2 · EDNRB ↑↑</text>'
-      + '<text x="612" y="265" text-anchor="end" font-size="11" fill="#2C8C82">colonic glia</text>';
+    s += '<text x="70" y="249" font-size="13" font-weight="600" fill="#AF3A3A">RET ↑↑</text>'
+      + '<text x="70" y="265" font-size="12" fill="#AF3A3A">branch A neurons</text>'
+      + '<text x="612" y="249" text-anchor="end" font-size="13" font-weight="600" fill="#2C8C82">ZEB2 · EDNRB ↑↑</text>'
+      + '<text x="612" y="265" text-anchor="end" font-size="12" fill="#2C8C82">colonic glia</text>';
 
     genes.forEach(function(g, i){
       const x = gx(i), ly = (i % 2 === 0) ? 96 : 110;
       s += '<g class="fig2-gene" data-gene="' + g + '" style="cursor:pointer;">'
-        + '<text x="' + x.toFixed(1) + '" y="' + ly + '" text-anchor="middle" font-size="11.5" font-style="italic" font-weight="600" fill="#3a3028">' + g + '</text>'
+        + '<text x="' + x.toFixed(1) + '" y="' + ly + '" text-anchor="middle" font-size="12" font-style="italic" font-weight="600" fill="#3a3028">' + g + '</text>'
         + '<circle cx="' + x.toFixed(1) + '" cy="120" r="3.4" fill="#3a3028"/></g>';
     });
 
     NODES.forEach(function(n){
       s += '<g class="fig2-node" data-node="' + n.id + '" style="cursor:pointer;">'
         + '<rect x="' + (n.x - 49) + '" y="334" width="98" height="32" rx="16" fill="#FFFFFF" stroke="' + n.hue + '"/>'
-        + '<text x="' + n.x + '" y="354" text-anchor="middle" font-size="11" font-weight="600" fill="' + n.hue + '">' + n.label + '</text></g>';
+        + '<text x="' + n.x + '" y="354" text-anchor="middle" font-size="12" font-weight="600" fill="' + n.hue + '">' + n.label + '</text></g>';
     });
 
     s += '</svg>';
@@ -1205,20 +1152,24 @@ Mesenteric lymph nodes start to appear around 12 post-conception weeks in this d
 
 The authors found that innate lymphoid cell progenitors (ILCPs) are the earliest LTi-like cells in the developing gut, and that they give rise to NCR+ and NCR− ILC3 subsets. The mLTo cells they identified express the chemokines *CCL19*, *CCL21* and *CXCL13* — the same signals known to attract naive lymphocytes into developing lymph nodes.
 
-{% comment %} ── INTERACTIVE FIGURE 6 — lymphoid organogenesis stream (ThemeRiver) ── {% endcomment %}
+{% comment %} ── FIGURE 7 — lymphoid composition stream ── {% endcomment %}
 <!--
-  Figure 6 — Lymphoid organogenesis stream (centered ThemeRiver)
+  Figure 7 — Lymphoid organogenesis composition stream (normalised to 100% per stage)
+  © Minh Chau Thom — original representation
   Data: assets/figures/elmentaite-2021/fig6_lymphoid_timeline.json
 -->
 <div id="fig6-lymphoid-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
-<span style="display:inline-block;background:#AF3A3A;color:#FFFFFF;padding:0.2rem 0.6rem;border-radius:3px;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:500;margin-bottom:0.75rem;">Figure 6 · Interactive</span>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Building a lymphoid organ — from innate pioneers to T cells</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Innate lineages (ILCP, LTi-like ILC3s) lead the way early; the adaptive wave of T cells swells toward adulthood, and the LTi-like programs re-surge in inflammatory bowel disease. Hover a lineage to read its count at each stage.</p>
 
-<div id="fig6-content" style="min-height:400px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
-<p id="fig6-caption" style="font-size:0.78rem;color:#5F5E5A;text-align:center;margin:0.4rem 0 0 0;">Innate pioneers lead early; adaptive T cells accumulate by adulthood.</p>
+<div style="margin-bottom:0.35rem;">
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 7</span>
+</div>
+<h4 style="font-size:1.5rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">Building a lymphoid organ — composition over time</h4>
+<p style="font-size:16px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">Composition of the gut T / innate lymphoid compartment across development, normalised so each stage sums to 100%. The innate LTi-like pioneers (magenta + red) appear only in the fetus — seeding lymphoid tissue before disappearing — while the adaptive T compartment (teal) comes to dominate. Hover a lineage for its share and count at each stage.</p>
 
-<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.4;">Band thickness ∝ cell count. Computed from the T/innate lineage object (38,633 cells, fetal to adult); fetal cells are predominantly second trimester. Data: Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
+<div id="fig6-content" style="min-height:360px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+<p id="fig6-caption" style="font-size:14px;color:#5F5E5A;text-align:center;line-height:1.55;margin:0.4rem 0 0 0;">Innate pioneers (ILCP, LTi-like ILC3) seed lymphoid tissue in the fetus, then vanish; the adaptive T compartment dominates from childhood on.</p>
+
+<p style="font-size:13px;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.6;border-top:1px solid #ddd6cc;padding-top:0.75rem;margin-bottom:0.6rem;">Bands show composition (% of cells per stage), normalised so every stage totals 100% — removing the fetal over-sampling that skews raw counts. Computed from the T/innate lineage object (38,633 cells, fetal to adult). Data: Elmentaite <em>et al.</em>, <em>Nature</em> 597, 250–255 (2021), used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
 </div>
 
 <script>
@@ -1242,8 +1193,8 @@ let fig6Data = null;
   ];
   const X  = [85, 270, 455, 610];
   const MX = [177.5, 362.5, 532.5];
-  const CY = 235, TARGET = 250;
-  const DEFAULT_CAP = 'Innate pioneers lead early; adaptive T cells accumulate by adulthood.';
+  const Y_TOP = 30, H = 246;
+  const DEFAULT_CAP = 'Innate pioneers (ILCP, LTi-like ILC3) seed lymphoid tissue in the fetus, then vanish; the adaptive T compartment dominates from childhood on.';
 
   function count(band, sKey){
     let t = 0;
@@ -1271,23 +1222,21 @@ let fig6Data = null;
   function build(){
     const counts = BANDS.map(function(b){ return STAGES.map(function(s){ return count(b, s.key); }); });
     const totals = STAGES.map(function(s, si){ return BANDS.reduce(function(a, _, bi){ return a + counts[bi][si]; }, 0); });
-    const maxTotal = Math.max.apply(null, totals.concat([1]));
-    const scale = TARGET / maxTotal;
+    const frac = BANDS.map(function(b, bi){ return STAGES.map(function(s, si){ return totals[si] > 0 ? counts[bi][si] / totals[si] : 0; }); });
 
     const edges = BANDS.map(function(){ return { top:[], bot:[] }; });
     STAGES.forEach(function(s, si){
-      let cum = -totals[si] / 2;
+      let cum = 0;
       BANDS.forEach(function(b, bi){
-        const c = counts[bi][si];
-        edges[bi].top[si] = cum;
-        edges[bi].bot[si] = cum + c;
-        cum += c;
+        const f = frac[bi][si];
+        edges[bi].top[si] = Y_TOP + cum * H;
+        edges[bi].bot[si] = Y_TOP + (cum + f) * H;
+        cum += f;
       });
     });
-    const yPix = function(v){ return CY + v * scale; };
 
     function bandPath(bi){
-      const t = edges[bi].top.map(yPix), b = edges[bi].bot.map(yPix);
+      const t = edges[bi].top, b = edges[bi].bot;
       return 'M' + r1(X[0]) + ',' + r1(t[0])
         + ' C' + r1(MX[0]) + ',' + r1(t[0]) + ' ' + r1(MX[0]) + ',' + r1(t[1]) + ' ' + r1(X[1]) + ',' + r1(t[1])
         + ' C' + r1(MX[1]) + ',' + r1(t[1]) + ' ' + r1(MX[1]) + ',' + r1(t[2]) + ' ' + r1(X[2]) + ',' + r1(t[2])
@@ -1298,38 +1247,37 @@ let fig6Data = null;
         + ' C' + r1(MX[0]) + ',' + r1(b[1]) + ' ' + r1(MX[0]) + ',' + r1(b[0]) + ' ' + r1(X[0]) + ',' + r1(b[0]) + ' Z';
     }
 
-    const ilcpTopY = yPix(edges[0].top[0]);
-    const tBi = BANDS.length - 1;
-    const tMidY = (yPix(edges[tBi].top[3]) + yPix(edges[tBi].bot[3])) / 2;
-    const ltiMidY = (yPix(edges[1].top[2]) + yPix(edges[1].bot[2])) / 2;
-    const ltiThick = yPix(edges[1].bot[2]) - yPix(edges[1].top[2]);
+    const ltiMid0 = (edges[1].top[0] + edges[1].bot[0]) / 2;
+    const tMid3   = (edges[4].top[3] + edges[4].bot[3]) / 2;
 
-    let s = '<svg width="100%" viewBox="0 0 680 480" role="img" style="max-width:680px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">'
-      + '<title>Lymphoid organogenesis as a centered stream from second trimester to adult</title>'
-      + '<desc>Innate ILCP and ILC3 lineages dominate early; T cells accumulate into a wide band by adulthood; LTi-like ILC3s re-surge in IBD.</desc>';
+    let s = '<svg width="100%" viewBox="0 0 680 352" role="img" style="max-width:680px;display:block;margin:0 auto;overflow:visible;" xmlns="http://www.w3.org/2000/svg">'
+      + '<title>Composition of the gut T and innate lymphoid compartment from fetus to adult</title>'
+      + '<desc>Each stage is normalised to 100 percent. Innate LTi-like pioneers occupy about a fifth of the fetal compartment then disappear; the adaptive T compartment rises to around 90 percent.</desc>';
+
+    s += '<line x1="' + r1(X[0]) + '" y1="' + r1(Y_TOP) + '" x2="' + r1(X[3]) + '" y2="' + r1(Y_TOP) + '" stroke="#e8e4d8" stroke-width="1"/>';
+    s += '<line x1="' + r1(X[0]) + '" y1="' + r1(Y_TOP + H) + '" x2="' + r1(X[3]) + '" y2="' + r1(Y_TOP + H) + '" stroke="#e8e4d8" stroke-width="1"/>';
 
     BANDS.forEach(function(b, bi){
       s += '<path class="fig6-band" data-bi="' + bi + '" d="' + bandPath(bi) + '" fill="' + b.color
         + '" opacity="0.9" style="cursor:pointer;transition:opacity .25s ease;"><title>' + b.label + '</title></path>';
     });
 
-    s += '<text x="' + r1(X[0] + 4) + '" y="' + r1(ilcpTopY - 7) + '" font-size="11.5" font-weight="600" fill="#A02E78">ILCP — innate pioneers</text>';
-    s += '<text x="468" y="' + r1(tMidY - 3) + '" font-size="13" font-weight="600" fill="#FFFFFF">Lymphocytes T</text>';
-    s += '<text x="468" y="' + r1(tMidY + 13) + '" font-size="11" fill="#FFFFFF">the adaptive wave</text>';
-    if(ltiThick > 16){
-      s += '<text x="' + r1(X[2]) + '" y="' + r1(ltiMidY + 3) + '" text-anchor="middle" font-size="11" font-weight="600" fill="#FFFFFF">↑ re-engaged in IBD</text>';
-    }
+    s += '<text x="92" y="' + r1(ltiMid0 - 3) + '" font-size="14" font-weight="600" fill="#FFFFFF">Innate pioneers</text>';
+    s += '<text x="92" y="' + r1(ltiMid0 + 13) + '" font-size="12" fill="#FFFFFF">fetal-only wave</text>';
+    s += '<text x="452" y="' + r1(tMid3 - 4) + '" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Adaptive T compartment</text>';
+    s += '<text x="452" y="' + r1(tMid3 + 13) + '" text-anchor="middle" font-size="12" fill="#FFFFFF">dominant from birth on</text>';
 
     STAGES.forEach(function(st, si){
-      s += '<text x="' + r1(X[si]) + '" y="392" text-anchor="middle" font-size="12" font-weight="600" fill="#3a3028">' + st.label + '</text>';
+      s += '<text x="' + r1(X[si]) + '" y="' + r1(Y_TOP + H + 24) + '" text-anchor="middle" font-size="15" fill="#3a3028">' + st.label + '</text>';
     });
+    s += '<text x="' + r1(X[2]) + '" y="' + r1(Y_TOP + H + 40) + '" text-anchor="middle" font-size="12" font-style="italic" fill="#888780">T &amp; Treg counts \u22482\u00d7 age-matched</text>';
 
     let lx = 70;
     BANDS.forEach(function(b, bi){
       s += '<g class="fig6-leg" data-bi="' + bi + '" style="cursor:pointer;">'
-        + '<circle cx="' + lx + '" cy="430" r="5" fill="' + b.color + '"/>'
-        + '<text x="' + (lx + 9) + '" y="434" font-size="11" fill="#5F5E5A">' + b.label + '</text></g>';
-      lx += 14 + b.label.length * 6.6 + 18;
+        + '<circle cx="' + lx + '" cy="' + r1(Y_TOP + H + 60) + '" r="5" fill="' + b.color + '"/>'
+        + '<text x="' + (lx + 9) + '" y="' + r1(Y_TOP + H + 64) + '" font-size="12" fill="#5F5E5A">' + b.label + '</text></g>';
+      lx += 14 + b.label.length * 7 + 20;
     });
 
     s += '</svg>';
@@ -1341,9 +1289,8 @@ let fig6Data = null;
     const caption = document.getElementById('fig6-caption');
     function hover(bi){
       setBands(bi);
-      const c = counts[bi];
-      caption.textContent = BANDS[bi].label + ' — '
-        + STAGES.map(function(st, si){ return st.label + ' ' + fmt(c[si]); }).join(' · ') + ' cells';
+      caption.textContent = BANDS[bi].label + ' \u2014 '
+        + STAGES.map(function(st, si){ return st.label + ' ' + (frac[bi][si] * 100).toFixed(1) + '% (' + fmt(counts[bi][si]) + ')'; }).join(' \u00b7 ');
     }
     function leave(){ setBands(null); caption.textContent = DEFAULT_CAP; }
 
@@ -1368,74 +1315,6 @@ let fig6Data = null;
 </script>
 Using spatial transcriptomics (10x Genomics Visium) on fetal ileum sections, the authors mapped these cell types onto tissue and showed that mLTo, LTi-like ILC3, and LEC2 cells co-localise in the same tissue zones, surrounded by naive T and B cells. These zones are the architectural precursors of secondary lymphoid organs.
 
-{% comment %} ── INTERACTIVE FIGURE 7 — Visium spatial mapping ── {% endcomment %}
-<!--
-  Figure 7 — Visium spatial mapping in 17 PCW fetal ileum
-  Source: vitkl/fetal_gut_mapping repo, cell2location output
-         (3 samples × 5 cell types = 15 PNG panels)
-  Path on Jekyll: assets/figures/elmentaite-2021/visium/{cell}_F{sample}.png
--->
-<div style="background:#f5f1e8;border:1px dashed #AF3A3A;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
-<span style="display:inline-block;background:#AF3A3A;color:#FFFFFF;padding:0.2rem 0.6rem;border-radius:3px;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:500;margin-bottom:0.75rem;">Figure 7 · Interactive</span>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">Spatial mapping in 17 PCW fetal ileum (10x Visium + cell2location)</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Each map shows the estimated abundance of one cell type per Visium spot, on a histological section of the same fetal ileum. Switch cell types to see how <em>mLTo</em>, <em>LTi-like ILC3</em> and <em>LEC2</em> co-localise in the same tissue zones — the architectural precursors of secondary lymphoid organs.</p>
-
-<div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap;align-items:center;">
-<span style="font-size:12px;color:#888780;margin-right:6px;">Cell type:</span>
-<button onclick="fig7SetCell('mLTo')" id="fig7-btn-mLTo" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:#3a3028;color:#faf9f7;font-size:12px;cursor:pointer;font-family:inherit;">mLTo</button>
-<button onclick="fig7SetCell('LTi_like_ILC3')" id="fig7-btn-LTi_like_ILC3" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">LTi-like ILC3</button>
-<button onclick="fig7SetCell('LEC2')" id="fig7-btn-LEC2" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">LEC2 (MADCAM1+)</button>
-<button onclick="fig7SetCell('Microfold')" id="fig7-btn-Microfold" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">Microfold</button>
-<button onclick="fig7SetCell('Enterocyte')" id="fig7-btn-Enterocyte" style="padding:5px 12px;border-radius:4px;border:1px solid #e8e4d8;background:transparent;color:#3a3028;font-size:12px;cursor:pointer;font-family:inherit;">Enterocyte</button>
-</div>
-
-<div id="fig7-image-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;background:#FFFFFF;padding:0.8rem;border-radius:6px;">
-<div style="text-align:center;">
-<div style="font-size:11px;color:#888780;margin-bottom:4px;font-weight:500;">Sample 1 (F78)</div>
-<img id="fig7-img-9479159" src="" alt="Spatial cell abundance, sample F78 first section" style="width:100%;border-radius:3px;display:block;">
-</div>
-<div style="text-align:center;">
-<div style="font-size:11px;color:#888780;margin-bottom:4px;font-weight:500;">Sample 2 (F78)</div>
-<img id="fig7-img-9479160" src="" alt="Spatial cell abundance, sample F78 second section" style="width:100%;border-radius:3px;display:block;">
-</div>
-<div style="text-align:center;">
-<div style="font-size:11px;color:#888780;margin-bottom:4px;font-weight:500;">Sample 3 (F63)</div>
-<img id="fig7-img-9479163" src="" alt="Spatial cell abundance, sample F63" style="width:100%;border-radius:3px;display:block;">
-</div>
-</div>
-
-<p id="fig7-context" style="font-size:0.78rem;color:#5F5E5A;margin-top:0.9rem;line-height:1.45;"></p>
-
-<p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.4;">Cell abundance estimates by cell2location (Bayesian deconvolution). Each dot is one Visium spot, colour scale auto-adjusted per panel. Maps reproduced with permission from <a href="https://github.com/vitkl/fetal_gut_mapping" style="color:#AF3A3A;">vitkl/fetal_gut_mapping</a>, accompanying Elmentaite et al., <em>Nature</em> 2021, used under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:#AF3A3A;">CC BY 4.0</a>.</p>
-</div>
-
-<script>
-const FIG7_BASE = '{{ site.baseurl }}/assets/figures/elmentaite-2021/visium/';
-const FIG7_SAMPLES = ['9479159', '9479160', '9479163'];
-const FIG7_CELLS = ['mLTo', 'LTi_like_ILC3', 'LEC2', 'Microfold', 'Enterocyte'];
-
-const FIG7_CONTEXT = {
-  'mLTo': 'Mesenchymal lymphoid tissue organisers express CCL19, CCL21, CXCL13 and form sharp hotspots that nucleate developing secondary lymphoid organs.',
-  'LTi_like_ILC3': 'Lymphoid tissue inducer-like NCR+ ILC3 cells co-localise with mLTo and provide LTα/LTβ signals that drive lymphoid organogenesis.',
-  'LEC2': 'MADCAM1+ lymphatic endothelial cells form HEV-like vessels that recruit naive lymphocytes into emerging lymph nodes.',
-  'Microfold': 'M cells appear in zones adjacent to forming lymphoid tissue, where they sample luminal antigens and pass them to immune cells.',
-  'Enterocyte': 'Mature absorptive enterocytes dominate the villus epithelium, providing context for where lymphoid zones are forming.'
-};
-
-function fig7SetCell(cell) {
-  FIG7_CELLS.forEach(c => {
-    const btn = document.getElementById('fig7-btn-' + c);
-    if (c === cell) { btn.style.background = '#3a3028'; btn.style.color = '#faf9f7'; }
-    else { btn.style.background = 'transparent'; btn.style.color = '#3a3028'; }
-  });
-  FIG7_SAMPLES.forEach(s => {
-    document.getElementById('fig7-img-' + s).src = FIG7_BASE + cell + '_F' + s + '.png';
-  });
-  document.getElementById('fig7-context').textContent = FIG7_CONTEXT[cell] || '';
-}
-
-fig7SetCell('mLTo');
-</script>
 
 Crucially, the authors then compared this fetal programme to tissue from paediatric Crohn's disease. They found that ILC3s, T reticular cells, and stromal subsets from Crohn's biopsies transcriptionally resemble their fetal counterparts. In other words, the same developmental programme that builds lymph nodes during pregnancy appears to be reactivated to form ectopic lymphoid structures at sites of intestinal inflammation.
 

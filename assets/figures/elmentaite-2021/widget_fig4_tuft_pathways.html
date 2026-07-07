@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+  Figure 4 — A new wire in a known circuit (converging pathways)
+  The established taste-transduction arm (solid) and the proposed IgG-sensing arm
+  (dashed) converge on one shared Ca2+/TRPM5 hub. Click any node for detail + sources.
+  Expression data: assets/figures/elmentaite-2021/fig5_tuft_pathway_expression.json
+-->
+<style>html,body{margin:0;padding:0;background:transparent;}</style>
+<div id="tuft-converge" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 4</span>
+  <h4 style="font-size:1.3rem;font-weight:500;margin:0.25rem 0 0.3rem 0;">A new wire in a known circuit</h4>
+  <p style="font-size:1rem;color:#5F5E5A;line-height:1.5;margin:0 0 0.4rem 0;">Intestinal tuft cells already run a chemosensory cascade that turns luminal cues into type&nbsp;2 immunity. Elmentaite et al. propose a second input — IgG detected by Fc receptors — that would feed the <em>same</em> downstream machinery. The two arms converge on a shared calcium/TRPM5 hub. <strong style="font-weight:600;color:#A83D3A;">Click any node</strong> to read its role, evidence and single-cell expression.</p>
+  <div style="font-size:0.85rem;color:#888780;margin-bottom:0.6rem;">
+    <span style="display:inline-block;margin-right:14px;"><svg width="26" height="8" style="vertical-align:middle;"><line x1="0" y1="4" x2="26" y2="4" stroke="#1B7092" stroke-width="2"/></svg> established</span>
+    <span><svg width="26" height="8" style="vertical-align:middle;"><line x1="0" y1="4" x2="26" y2="4" stroke="#A83D3A" stroke-width="2" stroke-dasharray="4 3"/></svg> proposed by this paper</span>
+  </div>
+
+  <div id="tc-svg" style="min-height:420px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+  <div id="tc-detail" style="margin-top:1rem;"></div>
+
+  <p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.4rem;line-height:1.4;">Dashed links and the “?” mark the step the authors flag as unresolved (receptor tyrosine kinases typically couple to PLCG1, and the canonical cascade uses PLCβ2). Data &amp; schematic: Elmentaite et al., <em>Nature</em> 2021 (Fig.&nbsp;2h), CC&nbsp;BY&nbsp;4.0. Figure © Minh Chau Thom.</p>
+  <div id="tc-refs" style="margin-top:0.8rem;border-top:1px solid #e8e4d8;padding-top:0.8rem;"></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var TUFT='#A83D3A', ABS='#3796AC', SEC='#1B7092', SPINE='#A8C5CE', INK='#3a3028', MUTE='#888780';
+var TIER={
+  established:{c:'#2E7D6B',label:'Established in tuft cells'},
+  paper:{c:'#A83D3A',label:'Shown in this paper'},
+  inferred:{c:'#C08A3E',label:'Inferred from other cell types'},
+  hypothetical:{c:'#9A938A',label:'Hypothetical / untested'}
+};
+var EXPR={
+  FCGR2A:{tuft:{m:0.0413,f:0.0244},absorptive:{m:0.0009,f:0.0017},secretory:{m:0.0035,f:0.0039}},
+  FCGR2B:{tuft:{m:0.0772,f:0.0421},absorptive:{m:0.0006,f:0.0013},secretory:{m:0.0007,f:0.0008}},
+  SYK:{tuft:{m:0.0947,f:0.0828},absorptive:{m:0.0916,f:0.1181},secretory:{m:0.1157,f:0.1465}},
+  CD300LF:{tuft:{m:0.4892,f:0.2646},absorptive:{m:0.0003,f:0.0005},secretory:{m:0.0014,f:0.0010}},
+  PLCG2:{tuft:{m:2.9438,f:0.8887},absorptive:{m:0.0990,f:0.0858},secretory:{m:0.1575,f:0.1182}},
+  RAC2:{tuft:{m:0.2450,f:0.1574},absorptive:{m:0.0215,f:0.0358},secretory:{m:0.0373,f:0.0617}},
+  ITPR2:{tuft:{m:1.4555,f:0.6377},absorptive:{m:0.0696,f:0.0764},secretory:{m:0.1343,f:0.1369}},
+  PRKCA:{tuft:{m:0.2736,f:0.1723},absorptive:{m:0.1108,f:0.1291},secretory:{m:0.1741,f:0.1787}},
+  TRPM5:{tuft:{m:1.7959,f:0.7626},absorptive:{m:0.0037,f:0.0047},secretory:{m:0.0088,f:0.0095}}
+};
+var REFERENCES=[
+  {n:1,cite:"Elmentaite R, et al. Cells of the human intestinal tract mapped across space and time. Nature 597, 250–255 (2021).",url:"https://www.nature.com/articles/s41586-021-03852-1"},
+  {n:2,cite:"Howitt MR, et al. Tuft cells, taste-chemosensory cells, orchestrate parasite type 2 immunity in the gut. Science 351, 1329–1333 (2016).",url:"https://www.science.org/doi/10.1126/science.aaf1648"},
+  {n:3,cite:"von Moltke J, et al. Tuft-cell-derived IL-25 regulates an intestinal ILC2–epithelial response circuit. Nature 529, 221–225 (2016).",url:"https://www.nature.com/articles/nature16161"},
+  {n:5,cite:"Nadjsombati MS, et al. Detection of succinate by intestinal tuft cells triggers a type 2 innate immune circuit. Immunity 49, 33–41 (2018).",url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC6084797/"},
+  {n:6,cite:"Schneider C, et al. A metabolite-triggered tuft cell–ILC2 circuit drives small intestinal remodeling. Cell 174, 271–284 (2018).",url:"https://pubmed.ncbi.nlm.nih.gov/?term=metabolite-triggered+tuft+cell+ILC2+circuit+small+intestinal+remodeling"},
+  {n:8,cite:"Tuft cells in the intestine, immunity and beyond (review). Nat Rev Gastroenterol Hepatol (2024): GNAT3–PLCβ2–IP3R2–Ca²⁺–TRPM5 links succinate–SUCNR1 to IL-25.",url:"https://www.nature.com/articles/s41575-024-00978-1"},
+  {n:9,cite:"Protein function annotations: UniProtKB and GeneCards.",url:"https://www.uniprot.org/"}
+];
+var REFMAP={}; REFERENCES.forEach(function(r){REFMAP[r.n]=r;});
+var SHORT={1:"Elmentaite 2021",2:"Howitt 2016",3:"von Moltke 2016",4:"Gerbe 2016",5:"Nadjsombati 2018",6:"Schneider 2018",7:"Fallon 2006",8:"Nat Rev Gastro 2024",9:"UniProt / GeneCards"};
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function srcLink(nr){var r=REFMAP[nr];if(!r)return'';return '<a href="'+r.url+'" target="_blank" rel="noopener" style="color:'+SEC+';text-decoration:none;border-bottom:1px solid #cddfe3;white-space:nowrap;">'+esc(SHORT[nr]||('ref '+nr))+' \u2192</a>';}
+function srcLine(refs){var l=(refs||[]).map(srcLink).filter(Boolean).join(' &nbsp;·&nbsp; ');return '<div style="margin-top:0.9rem;border-top:1px solid #ece7d9;padding-top:0.55rem;font-size:0.72rem;color:'+MUTE+';line-height:1.9;"><span style="text-transform:uppercase;letter-spacing:0.09em;">Sources</span> &nbsp; '+l+'</div>';}
+function exprLeader(gene){var e=EXPR[gene];if(!e)return'';function row(l,c,o,b){return '<div style="display:flex;align-items:flex-end;font-size:0.78rem;padding:2px 0;"><span style="color:'+(b?c:'#5F5E5A')+';'+(b?'font-weight:600;':'')+'">'+l+'</span><span style="flex:1;border-bottom:1px dotted #cbc3b4;margin:0 7px 4px 7px;"></span><span>mean '+o[0].toFixed(3)+' &middot; '+(o[1]*100).toFixed(1)+'%</span></div>';}return '<p style="font-size:9.5px;text-transform:uppercase;letter-spacing:0.09em;color:'+MUTE+';margin:0.85rem 0 0.1rem 0;">Single-cell expression</p>'+row('Tuft · n=737',TUFT,[e.tuft.m,e.tuft.f],true)+row('Absorptive',ABS,[e.absorptive.m,e.absorptive.f],false)+row('Secretory',SEC,[e.secretory.m,e.secretory.f],false);}
+function chips(refs){return (refs||[]).map(function(nr){var r=REFMAP[nr];if(!r)return'';return '<a href="'+r.url+'" target="_blank" rel="noopener" title="'+esc(r.cite).replace(/"/g,'&quot;')+'" style="display:inline-block;font-size:0.7rem;color:'+SEC+';background:#eef4f5;border:1px solid #d8e5e8;border-radius:10px;padding:1px 8px;margin:2px 4px 2px 0;text-decoration:none;">['+nr+'] source \u2197</a>';}).join('');}
+function tierBadge(t){if(!t||!TIER[t])return'';var x=TIER[t];return '<span style="display:inline-block;font-size:0.68rem;padding:1px 8px;border-radius:10px;background:'+x.c+'22;color:'+x.c+';border:1px solid '+x.c+'55;">'+x.label+'</span>';}
+function exprLine(gene){var e=EXPR[gene];if(!e)return'';function row(l,c,o,b){return '<div style="display:flex;justify-content:space-between;gap:1rem;padding:1px 0;'+(b?'font-weight:600;':'')+'"><span style="color:'+c+';">'+l+'</span><span>mean '+o[0].toFixed(3)+' &middot; '+(o[1]*100).toFixed(1)+'%</span></div>';}return '<div style="margin-top:0.6rem;font-size:0.78rem;"><div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:'+MUTE+';margin-bottom:2px;">Single-cell expression</div>'+row('Tuft (n=737)',TUFT,[e.tuft.m,e.tuft.f],true)+row('Absorptive',ABS,[e.absorptive.m,e.absorptive.f])+row('Secretory',SEC,[e.secretory.m,e.secretory.f])+'</div>';}
+function showDetail(info){
+  var host=document.getElementById('tc-detail');
+  host.innerHTML='<div style="background:#fbfaf7;border:1px solid #ece7d9;border-radius:2px;padding:1.1rem 1.2rem;">'+
+    '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:0.5rem;">'+
+      '<p style="font-size:10.5px;text-transform:uppercase;letter-spacing:0.13em;font-weight:600;color:'+MUTE+';margin:0;line-height:1.4;">'+(info.subtitle?esc(info.subtitle)+' &nbsp;·&nbsp; ':'')+'<span style="color:'+TIER[info.tier].c+';">'+TIER[info.tier].label+'</span></p>'+
+      '<button aria-label="Close" id="tc-close" style="border:none;background:transparent;color:'+MUTE+';font-size:1.1rem;cursor:pointer;line-height:1;margin-top:-3px;">\u00D7</button>'+
+    '</div>'+
+    '<h4 style="font-size:1.14rem;font-weight:500;margin:0.32rem 0 0 0;">'+info.title+'</h4>'+
+    '<p style="font-size:0.86rem;line-height:1.6;margin:0.5rem 0 0 0;">'+info.desc+'</p>'+
+    (info.gene?exprLeader(info.gene):'')+
+    srcLine(info.refs)+
+  '</div>';
+  var cb=document.getElementById('tc-close'); if(cb) cb.addEventListener('click',function(){host.innerHTML='';clearSel();notifyResize();});
+  notifyResize();
+}
+function clearSel(){Array.prototype.forEach.call(document.querySelectorAll('#tc-svg [data-sel]'),function(el){el.setAttribute('data-active','0');});}
+function markSel(id){var el=document.querySelector('#tc-svg [data-sel="'+id+'"]'); if(el) el.setAttribute('data-active','1');}
+
+var INFO={
+  succ:{title:'Succinate / taste GPCRs',subtitle:'established input',tier:'established',desc:'Succinate (from Tritrichomonas protists or bacteria) via SUCNR1, and bitter/sweet/umami tastants via T2R/T1R receptors, are the best-characterised tuft-cell stimuli driving anti-parasite immunity.',refs:[2,5,6]},
+  sucnr1:{title:'SUCNR1 / TAS2R',subtitle:'receptor',tier:'established',desc:'The succinate receptor SUCNR1 (GPR91) and bitter taste receptors (TAS2R) sit at the apical surface and initiate the chemosensory cascade.',refs:[2,5]},
+  gnat3:{title:'GNAT3 (α-gustducin)',subtitle:'G protein',tier:'established',desc:'The taste-specific G protein α-gustducin couples GPCR engagement to the phospholipase step.',refs:[2,8]},
+  plcb2:{title:'PLCβ2',subtitle:'phospholipase — canonical',tier:'established',desc:'Phospholipase C β2 is the phospholipase of the canonical tuft-cell taste-transduction cascade, generating IP₃ and DAG.',refs:[2,8]},
+  igg:{title:'Luminal IgG',subtitle:'proposed input',tier:'paper',desc:'Elmentaite et al. propose IgG (or immune complexes) in the gut lumen as a tuft-cell stimulus — a route that would link adaptive antibody responses to the tuft cell’s chemosensory output. Maternal IgG crossing the placenta could even provide a fetal route.',refs:[1]},
+  fcr:{title:'FCGR2A / FCGR2B',subtitle:'Fc receptors',tier:'paper',gene:'FCGR2A',desc:'FCGR2A (activating) was expressed by ~2.75% of tuft cells; the inhibitory FCGR2B rose in tuft cells during mouse colitis. The protein orthologue FCGR3 was seen on ~5% of mouse small-intestinal tuft cells.',refs:[1,9]},
+  syk:{title:'SYK / CD300LF',subtitle:'proximal signalling',tier:'inferred',gene:'SYK',desc:'In immune cells, SYK docks on receptor ITAMs and activates PLCγ2; CD300LF is a lipid-sensing co-receptor. Their role in tuft cells is inferred from haematopoietic biology, not shown directly.',refs:[1,9]},
+  plcg2:{title:'PLCG2 (PLCγ2)  ?',subtitle:'phospholipase — proposed',tier:'hypothetical',gene:'PLCG2',desc:'PLCG2 is one of the top tuft-cell marker genes here. But whether the Fc/SYK input truly drives it is unresolved: receptor tyrosine kinases usually couple to PLCG1, while the canonical cascade uses PLCβ2. This is the pivot the finding hinges on.',refs:[1]},
+  ip3:{title:'IP₃ + DAG',subtitle:'second messengers',tier:'established',desc:'Whichever phospholipase acts, it hydrolyses PIP₂ into IP₃ (releases ER calcium) and DAG (activates protein kinase C).',refs:[1,8]},
+  itpr2:{title:'ITPR2 (IP₃R2) · Ca²⁺ release',subtitle:'ER channel',tier:'established',gene:'ITPR2',desc:'The IP₃-gated ER calcium-release channel of the canonical tuft cascade; IP₃ binding floods the cytosol with Ca²⁺.',refs:[8,9]},
+  trpm5:{title:'TRPM5',subtitle:'effector channel',tier:'established',gene:'TRPM5',desc:'A calcium-activated cation channel and defining tuft-cell marker; Ca²⁺ opens it, Na⁺ enters, the membrane depolarises.',refs:[8,9]},
+  il25:{title:'IL-25 · leukotrienes · ACh',subtitle:'output',tier:'established',desc:'The canonical output that launches type 2 immunity. Whether an IgG input produces this same output has not been demonstrated — that link remains open.',refs:[3,8]}
+};
+
+function render(){
+  var W=600,H=470, xL=150,xR=450,cx=300;
+  var s='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:700px;display:block;margin:0 auto;" role="img" aria-label="Two converging tuft-cell pathways">';
+  s+='<style>#tc-svg .nd{cursor:pointer;} #tc-svg .nd rect{transition:filter .12s;} #tc-svg .nd:hover rect,#tc-svg .nd:focus rect{filter:brightness(0.97);} #tc-svg .nd:focus{outline:none;} #tc-svg .nd[data-active="1"] rect{stroke-width:2.6;}</style>';
+  s+='<text x="'+xL+'" y="24" text-anchor="middle" font-size="12" font-weight="600" fill="'+SEC+'">Established taste cascade</text>';
+  s+='<text x="'+xR+'" y="24" text-anchor="middle" font-size="12" font-weight="600" fill="'+TUFT+'">Proposed IgG sensing</text>';
+  function node(id,x,y,w,label,sub,col,dashed){var st=dashed?'stroke-dasharray="4 3"':'';return '<g class="nd" data-sel="'+id+'" data-active="0" tabindex="0" role="button" aria-label="'+label+'" transform="translate('+(x-w/2)+','+(y-16)+')"><rect width="'+w+'" height="32" rx="6" fill="#faf7ef" stroke="'+col+'" stroke-width="1.4" '+st+'></rect><text x="'+(w/2)+'" y="14" text-anchor="middle" font-size="11.5" font-weight="600" fill="'+INK+'">'+label+'</text><text x="'+(w/2)+'" y="26" text-anchor="middle" font-size="8.5" fill="'+MUTE+'">'+sub+'</text></g>';}
+  function vlink(x,y1,y2,col,dashed){return '<line x1="'+x+'" y1="'+y1+'" x2="'+x+'" y2="'+y2+'" stroke="'+col+'" stroke-width="1.6" opacity="0.75" '+(dashed?'stroke-dasharray="4 3"':'')+'/><polygon points="'+(x-3.5)+','+(y2-6)+' '+(x+3.5)+','+(y2-6)+' '+x+','+y2+'" fill="'+col+'" opacity="0.85"/>';}
+  var ys=[56,114,172,230];
+  s+=vlink(xL,ys[0]+16,ys[1]-16,SEC)+vlink(xL,ys[1]+16,ys[2]-16,SEC)+vlink(xL,ys[2]+16,ys[3]-16,SEC);
+  s+=node('succ',xL,ys[0],150,'Succinate / GPCRs','luminal input',SEC,false);
+  s+=node('sucnr1',xL,ys[1],150,'SUCNR1 / TAS2R','receptor',SEC,false);
+  s+=node('gnat3',xL,ys[2],150,'GNAT3 (gustducin)','G protein',SEC,false);
+  s+=node('plcb2',xL,ys[3],150,'PLCβ2','phospholipase',SEC,false);
+  s+=vlink(xR,ys[0]+16,ys[1]-16,TUFT,true)+vlink(xR,ys[1]+16,ys[2]-16,TUFT,true)+vlink(xR,ys[2]+16,ys[3]-16,TUFT,true);
+  s+=node('igg',xR,ys[0],150,'Luminal IgG','proposed input',TUFT,true);
+  s+=node('fcr',xR,ys[1],150,'FCGR2A / FCGR2B','Fc receptors',TUFT,true);
+  s+=node('syk',xR,ys[2],150,'SYK / CD300LF','proximal signalling',TUFT,true);
+  s+=node('plcg2',xR,ys[3],150,'PLCG2','phospholipase',TUFT,true);
+  s+='<circle cx="'+(xR+60)+'" cy="'+ys[3]+'" r="9" fill="#fff" stroke="'+TUFT+'" stroke-width="1.4"/><text x="'+(xR+60)+'" y="'+(ys[3]+4)+'" text-anchor="middle" font-size="12" font-weight="700" fill="'+TUFT+'">?</text>';
+  // convergence
+  var yIP3=298;
+  s+='<path d="M '+xL+' '+(ys[3]+16)+' C '+xL+' 278, '+cx+' 278, '+cx+' '+(yIP3-16)+'" fill="none" stroke="'+SEC+'" stroke-width="1.6" opacity="0.75"/>';
+  s+='<path d="M '+xR+' '+(ys[3]+16)+' C '+xR+' 278, '+cx+' 278, '+cx+' '+(yIP3-16)+'" fill="none" stroke="'+TUFT+'" stroke-width="1.6" opacity="0.75" stroke-dasharray="4 3"/>';
+  s+='<polygon points="'+(cx-3.5)+','+(yIP3-16-4)+' '+(cx+3.5)+','+(yIP3-16-4)+' '+cx+','+(yIP3-16+1)+'" fill="'+SPINE+'"/>';
+  var yt=[yIP3,yIP3+44,yIP3+88,yIP3+132];
+  s+=vlink(cx,yt[0]+16,yt[1]-16,SPINE)+vlink(cx,yt[1]+16,yt[2]-16,SPINE)+vlink(cx,yt[2]+16,yt[3]-16,SPINE);
+  s+=node('ip3',cx,yt[0],170,'IP₃ + DAG','second messengers','#7FA9B0',false);
+  s+=node('itpr2',cx,yt[1],190,'ITPR2 · Ca²⁺ release','ER channel',SEC,false);
+  s+=node('trpm5',cx,yt[2],190,'TRPM5','effector channel',SEC,false);
+  s+=node('il25',cx,yt[3],210,'IL-25 · leukotrienes · ACh','output',SEC,false);
+  s+='</svg>';
+  document.getElementById('tc-svg').innerHTML=s;
+  Array.prototype.forEach.call(document.querySelectorAll('#tc-svg [data-sel]'),function(el){
+    var id=el.getAttribute('data-sel');
+    function open(){clearSel();markSel(id);var i=INFO[id];showDetail(Object.assign({accent:TIER[i.tier].c},i));}
+    el.addEventListener('click',open);
+    el.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();open();}});
+  });
+  renderRefs(); notifyResize();
+}
+function renderRefs(){var items=REFERENCES.map(function(r){return '<li style="margin:0.3rem 0;line-height:1.5;"><a href="'+r.url+'" target="_blank" rel="noopener" class="tc-ref">'+esc(r.cite)+'</a></li>';}).join('');document.getElementById('tc-refs').innerHTML='<style>#tc-refs .tc-ref{color:#5F5E5A;text-decoration:none;border-bottom:1px solid transparent;transition:color .12s,border-color .12s;} #tc-refs .tc-ref:hover,#tc-refs .tc-ref:focus{color:'+SEC+';border-bottom-color:#cddfe3;}</style><details><summary style="cursor:pointer;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:'+MUTE+';">References &amp; data sources ('+REFERENCES.length+')</summary><ol style="font-size:0.72rem;color:#5F5E5A;margin:0.6rem 0 0 0;padding-left:1.3rem;">'+items+'</ol></details>';}
+var __lastH=0;
+function __measure(){var el=document.getElementById('tuft-converge');return el?Math.ceil(el.getBoundingClientRect().height):0;}
+function postHeight(){try{var h=__measure();if(h>0&&Math.abs(h-__lastH)>1){__lastH=h;if(window.parent&&window.parent!==window)window.parent.postMessage({type:'tuft-converge-height',height:h},'*');}}catch(e){}}
+function notifyResize(){try{window.dispatchEvent(new Event('resize'));}catch(e){}postHeight();}
+try{if(window.ResizeObserver){var __t=document.getElementById('tuft-converge');if(__t)new ResizeObserver(function(){postHeight();}).observe(__t);}}catch(e){}
+try{window.addEventListener('load',postHeight);}catch(e){}
+
+var DATA_URL='fig5_tuft_pathway_expression.json';
+try{fetch(DATA_URL).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){Object.keys(EXPR).forEach(function(g){if(d[g])['tuft','absorptive','secretory'].forEach(function(gr){if(d[g][gr])EXPR[g][gr]={m:d[g][gr].mean_expression,f:d[g][gr].fraction_expressing};});});render();}).catch(function(){render();});}catch(e){render();}
+})();
+</script>

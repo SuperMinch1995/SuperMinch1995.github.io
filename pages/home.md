@@ -6,16 +6,6 @@ description: ""
 meta_description: "Minh C. Thom, MD — Physician-researcher at the interface of pathology, internal medicine, gastroenterology, oncology and dermatology."
 meta_title: "Minh-Chau Thom, MD"
 subscribe: false
-
-
-posts:
- heading: "Blog"
- sub_heading: ""
- limit: 3
- sort: date
- view_more_button_text: "Read more"
- view_more_button_link: "/blog"
- columns: 3
 ---
 
 
@@ -407,6 +397,160 @@ posts:
 }
 .modal-status.success { color: #C2510A; }
 .modal-status.error   { color: #b00020; }
+
+
+/* ── Blog section ── */
+.blog-section {
+ max-width: 836px;
+ margin: 64px auto 0;
+ padding: 48px 24px;
+ background: #f2ede4;
+ border-radius: 10px;
+}
+.blog-eyebrow {
+ font-size: 0.72em;
+ font-weight: 600;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ color: #C2510A;
+ margin: 0 0 0.9rem;
+}
+.blog-heading-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ margin-bottom: 1.8rem;
+}
+.blog-heading-row h2 {
+ margin: 0;
+ font-size: 1.3em;
+ color: var(--color-base-text);
+}
+.blog-view-all {
+ font-size: 0.85em;
+ font-weight: 600;
+ color: #C2510A;
+ text-decoration: none;
+ white-space: nowrap;
+}
+.blog-view-all:hover { text-decoration: underline; }
+.blog-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1rem;
+}
+.blog-carousel-wrap {
+ position: relative;
+ padding: 0 6px;
+}
+.blog-grid--scroll {
+ display: flex;
+ overflow-x: auto;
+ scroll-snap-type: x mandatory;
+ gap: 1.8rem;
+ padding-bottom: 4px;
+ scrollbar-width: none;
+ -ms-overflow-style: none;
+}
+.blog-grid--scroll::-webkit-scrollbar { display: none; }
+.blog-grid--scroll .blog-card {
+ flex: 0 0 260px;
+ scroll-snap-align: start;
+}
+.blog-arrow {
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ width: 38px;
+ height: 38px;
+ border-radius: 50%;
+ border: 1px solid #ead9bf;
+ background: #faf9f7;
+ color: #C2510A;
+ font-size: 1.1em;
+ line-height: 1;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ transition: opacity 0.15s, box-shadow 0.15s;
+ box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+ z-index: 2;
+ padding: 0;
+}
+.blog-arrow:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+.blog-arrow:disabled { opacity: 0.3; cursor: default; box-shadow: none; }
+.blog-arrow-left { left: -19px; }
+.blog-arrow-right { right: -19px; }
+@media (max-width: 720px) {
+ .blog-arrow-left { left: -8px; }
+ .blog-arrow-right { right: -8px; }
+ .blog-grid--scroll .blog-card { flex-basis: 220px; }
+}
+.blog-card {
+ display: flex;
+ flex-direction: column;
+ text-decoration: none;
+ color: inherit;
+ background: #faf9f7;
+ border: 1px solid #ead9bf;
+ border-radius: 12px;
+ overflow: hidden;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blog-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.blog-card,
+.blog-card *,
+.blog-card:hover,
+.blog-card:hover * {
+ text-decoration: none !important;
+}
+.blog-card-image-wrap {
+ width: 100%;
+ aspect-ratio: 16 / 10;
+ overflow: hidden;
+ background: #e7e1d4;
+ margin: 0;
+}
+.blog-card-image-wrap img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ margin: 0 !important;
+}
+.blog-card-body {
+ padding: 1.1rem 1.2rem 1.2rem;
+}
+.blog-card-date {
+ font-size: 0.7em;
+ font-weight: 500;
+ letter-spacing: 0.06em;
+ text-transform: uppercase;
+ color: var(--color-base-text);
+ opacity: 0.45;
+ margin: 0 0 0.35rem;
+}
+.blog-card-title {
+ font-size: 1.02em;
+ font-weight: 600;
+ line-height: 1.35;
+ color: var(--color-base-text);
+ margin: 0 0 0.4rem;
+}
+.blog-card-desc {
+ font-size: 0.88em;
+ line-height: 1.5;
+ color: var(--color-base-text);
+ opacity: 0.7;
+ margin: 0;
+}
+@media (max-width: 720px) {
+ .blog-grid { grid-template-columns: 1fr !important; }
+}
 </style>
 
 
@@ -508,6 +652,84 @@ posts:
    <a href="/projects/cipo/" class="pub-card-cta">Explore it in 3D &rarr;</a>
  </div>
 </div>
+
+
+<!-- Blog section: pulls published posts (_posts) and, when the site is
+     served with `--drafts`, draft posts too (collections/_drafts).
+     Each card reads its hero image straight from the post's front matter
+     "image" field, so any post with an `image:` set will automatically
+     get a thumbnail — no manual wiring needed per article.
+     When there are more than 3 posts, the grid switches to a horizontal
+     scroll-snap carousel with prev/next arrows instead of wrapping. -->
+{% if site.drafts %}
+  {% assign blog_posts = site.posts | concat: site.drafts %}
+{% else %}
+  {% assign blog_posts = site.posts %}
+{% endif %}
+{% assign blog_posts = blog_posts | sort: "date" | reverse %}
+{% assign blog_many = false %}
+{% if blog_posts.size > 3 %}{% assign blog_many = true %}{% endif %}
+{% if blog_posts.size > 0 %}
+<div class="blog-section">
+ <p class="blog-eyebrow">Blog</p>
+ <div class="blog-heading-row">
+   <h2>Latest writing</h2>
+   <a href="/blog" class="blog-view-all">View all posts &rarr;</a>
+ </div>
+ <div class="blog-carousel-wrap">
+   {% if blog_many %}
+   <button class="blog-arrow blog-arrow-left" id="blogPrev" aria-label="Previous articles" type="button">&larr;</button>
+   {% endif %}
+   <div class="blog-grid{% if blog_many %} blog-grid--scroll{% endif %}" id="blogGrid">
+     {% for post in blog_posts limit: 12 %}
+     <a class="blog-card" href="{{ post.url | relative_url }}">
+       {% if post.image %}
+       <div class="blog-card-image-wrap">
+         <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
+       </div>
+       {% endif %}
+       <div class="blog-card-body">
+         <span class="blog-card-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+         <p class="blog-card-title">{{ post.title }}</p>
+         {% if post.description %}
+         <p class="blog-card-desc">{{ post.description }}</p>
+         {% endif %}
+       </div>
+     </a>
+     {% endfor %}
+   </div>
+   {% if blog_many %}
+   <button class="blog-arrow blog-arrow-right" id="blogNext" aria-label="Next articles" type="button">&rarr;</button>
+   {% endif %}
+ </div>
+</div>
+{% if blog_many %}
+<script>
+(function () {
+  var grid = document.getElementById('blogGrid');
+  var prev = document.getElementById('blogPrev');
+  var next = document.getElementById('blogNext');
+  if (!grid || !prev || !next) return;
+
+  function step() {
+    var card = grid.querySelector('.blog-card');
+    var gap = parseFloat(getComputedStyle(grid).columnGap || getComputedStyle(grid).gap || 0);
+    return card ? card.offsetWidth + gap : 280;
+  }
+  function refresh() {
+    var maxScroll = grid.scrollWidth - grid.clientWidth - 2;
+    prev.disabled = grid.scrollLeft <= 0;
+    next.disabled = grid.scrollLeft >= maxScroll;
+  }
+  prev.addEventListener('click', function () { grid.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { grid.scrollBy({ left: step(), behavior: 'smooth' }); });
+  grid.addEventListener('scroll', refresh);
+  window.addEventListener('resize', refresh);
+  refresh();
+})();
+</script>
+{% endif %}
+{% endif %}
 
 
 <!-- Modal -->

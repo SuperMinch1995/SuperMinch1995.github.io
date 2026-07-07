@@ -1,0 +1,160 @@
+<!--
+  Figure 7 — Lymphoid organogenesis composition stream (normalised to 100% per stage)
+  © Minh Chau Thom — original representation
+  Data: assets/figures/elmentaite-2021/fig6_lymphoid_timeline.json
+-->
+<div id="fig6-lymphoid-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+
+<div style="margin-bottom:0.35rem;">
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 7</span>
+</div>
+<h4 style="font-size:1.5rem;font-weight:600;margin:0 0 0.35rem 0;color:#3a3028;">Building a lymphoid organ — composition over time</h4>
+<p style="font-size:16px;color:#5F5E5A;line-height:1.55;margin:0 0 1rem 0;">Composition of the gut T / innate lymphoid compartment across development, normalised so each stage sums to 100%. The innate LTi-like pioneers (magenta + red) appear only in the fetus — seeding lymphoid tissue before disappearing — while the adaptive T compartment (teal) comes to dominate. Hover a lineage for its share and count at each stage.</p>
+
+<div id="fig6-content" style="min-height:360px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+<p id="fig6-caption" style="font-size:14px;color:#5F5E5A;text-align:center;line-height:1.55;margin:0.4rem 0 0 0;">Innate pioneers (ILCP, LTi-like ILC3) seed lymphoid tissue in the fetus, then vanish; the adaptive T compartment dominates from childhood on.</p>
+
+<p style="font-size:13px;color:#888780;font-style:italic;margin-top:1.2rem;line-height:1.6;border-top:1px solid #ddd6cc;padding-top:0.75rem;margin-bottom:0.6rem;">Bands show composition (% of cells per stage), normalised so every stage totals 100% — removing the fetal over-sampling that skews raw counts. Computed from the T/innate lineage object (38,633 cells, fetal to adult). Data: Elmentaite <em>et al.</em>, <em>Nature</em> 597, 250–255 (2021), used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
+</div>
+
+<script>
+let fig6Data = null;
+
+(function(){
+  const DATA_URL = '{{ site.baseurl }}/assets/figures/elmentaite-2021/fig6_lymphoid_timeline.json';
+
+  const STAGES = [
+    { key:'Second trim',   label:'2nd trim.' },
+    { key:'Pediatric',     label:'Paediatric' },
+    { key:'Pediatric_IBD', label:'Paed. IBD' },
+    { key:'Adult',         label:'Adult' }
+  ];
+  const BANDS = [
+    { id:'ILCP', label:'ILCP',          color:'#D449AA', cells:['ILCP'] },
+    { id:'LTI',  label:'LTi-like ILC3', color:'#AF3A3A', cells:['LTi-like NCR+ ILC3','LTi-like NCR- ILC3'] },
+    { id:'ILC3', label:'ILC3',          color:'#C2510A', cells:['ILC3'] },
+    { id:'NK',   label:'NK',            color:'#534AB7', cells:['NK cell'] },
+    { id:'T',    label:'Lymphocytes T', color:'#3DAEA3', cells:['SELL+ CD4 T','SELL+ CD8 T','Treg','fetal T cell'] }
+  ];
+  const X  = [85, 270, 455, 610];
+  const MX = [177.5, 362.5, 532.5];
+  const Y_TOP = 30, H = 246;
+  const DEFAULT_CAP = 'Innate pioneers (ILCP, LTi-like ILC3) seed lymphoid tissue in the fetus, then vanish; the adaptive T compartment dominates from childhood on.';
+
+  function count(band, sKey){
+    let t = 0;
+    band.cells.forEach(function(c){
+      const node = fig6Data[c];
+      if(!node || !node[sKey]) return;
+      for(const r in node[sKey]) t += node[sKey][r];
+    });
+    return t;
+  }
+  function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+  function r1(n){ return n.toFixed(1); }
+
+  let bandEls = null;
+
+  function setBands(activeBi){
+    if(!bandEls) return;
+    bandEls.forEach(function(el){
+      const bi = parseInt(el.dataset.bi, 10);
+      if(activeBi === null) el.setAttribute('opacity', '0.9');
+      else el.setAttribute('opacity', bi === activeBi ? '0.98' : '0.28');
+    });
+  }
+
+  function build(){
+    const counts = BANDS.map(function(b){ return STAGES.map(function(s){ return count(b, s.key); }); });
+    const totals = STAGES.map(function(s, si){ return BANDS.reduce(function(a, _, bi){ return a + counts[bi][si]; }, 0); });
+    const frac = BANDS.map(function(b, bi){ return STAGES.map(function(s, si){ return totals[si] > 0 ? counts[bi][si] / totals[si] : 0; }); });
+
+    const edges = BANDS.map(function(){ return { top:[], bot:[] }; });
+    STAGES.forEach(function(s, si){
+      let cum = 0;
+      BANDS.forEach(function(b, bi){
+        const f = frac[bi][si];
+        edges[bi].top[si] = Y_TOP + cum * H;
+        edges[bi].bot[si] = Y_TOP + (cum + f) * H;
+        cum += f;
+      });
+    });
+
+    function bandPath(bi){
+      const t = edges[bi].top, b = edges[bi].bot;
+      return 'M' + r1(X[0]) + ',' + r1(t[0])
+        + ' C' + r1(MX[0]) + ',' + r1(t[0]) + ' ' + r1(MX[0]) + ',' + r1(t[1]) + ' ' + r1(X[1]) + ',' + r1(t[1])
+        + ' C' + r1(MX[1]) + ',' + r1(t[1]) + ' ' + r1(MX[1]) + ',' + r1(t[2]) + ' ' + r1(X[2]) + ',' + r1(t[2])
+        + ' C' + r1(MX[2]) + ',' + r1(t[2]) + ' ' + r1(MX[2]) + ',' + r1(t[3]) + ' ' + r1(X[3]) + ',' + r1(t[3])
+        + ' L' + r1(X[3]) + ',' + r1(b[3])
+        + ' C' + r1(MX[2]) + ',' + r1(b[3]) + ' ' + r1(MX[2]) + ',' + r1(b[2]) + ' ' + r1(X[2]) + ',' + r1(b[2])
+        + ' C' + r1(MX[1]) + ',' + r1(b[2]) + ' ' + r1(MX[1]) + ',' + r1(b[1]) + ' ' + r1(X[1]) + ',' + r1(b[1])
+        + ' C' + r1(MX[0]) + ',' + r1(b[1]) + ' ' + r1(MX[0]) + ',' + r1(b[0]) + ' ' + r1(X[0]) + ',' + r1(b[0]) + ' Z';
+    }
+
+    const ltiMid0 = (edges[1].top[0] + edges[1].bot[0]) / 2;
+    const tMid3   = (edges[4].top[3] + edges[4].bot[3]) / 2;
+
+    let s = '<svg width="100%" viewBox="0 0 680 352" role="img" style="max-width:680px;display:block;margin:0 auto;overflow:visible;" xmlns="http://www.w3.org/2000/svg">'
+      + '<title>Composition of the gut T and innate lymphoid compartment from fetus to adult</title>'
+      + '<desc>Each stage is normalised to 100 percent. Innate LTi-like pioneers occupy about a fifth of the fetal compartment then disappear; the adaptive T compartment rises to around 90 percent.</desc>';
+
+    s += '<line x1="' + r1(X[0]) + '" y1="' + r1(Y_TOP) + '" x2="' + r1(X[3]) + '" y2="' + r1(Y_TOP) + '" stroke="#e8e4d8" stroke-width="1"/>';
+    s += '<line x1="' + r1(X[0]) + '" y1="' + r1(Y_TOP + H) + '" x2="' + r1(X[3]) + '" y2="' + r1(Y_TOP + H) + '" stroke="#e8e4d8" stroke-width="1"/>';
+
+    BANDS.forEach(function(b, bi){
+      s += '<path class="fig6-band" data-bi="' + bi + '" d="' + bandPath(bi) + '" fill="' + b.color
+        + '" opacity="0.9" style="cursor:pointer;transition:opacity .25s ease;"><title>' + b.label + '</title></path>';
+    });
+
+    s += '<text x="92" y="' + r1(ltiMid0 - 3) + '" font-size="14" font-weight="600" fill="#FFFFFF">Innate pioneers</text>';
+    s += '<text x="92" y="' + r1(ltiMid0 + 13) + '" font-size="12" fill="#FFFFFF">fetal-only wave</text>';
+    s += '<text x="452" y="' + r1(tMid3 - 4) + '" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Adaptive T compartment</text>';
+    s += '<text x="452" y="' + r1(tMid3 + 13) + '" text-anchor="middle" font-size="12" fill="#FFFFFF">dominant from birth on</text>';
+
+    STAGES.forEach(function(st, si){
+      s += '<text x="' + r1(X[si]) + '" y="' + r1(Y_TOP + H + 24) + '" text-anchor="middle" font-size="15" fill="#3a3028">' + st.label + '</text>';
+    });
+    s += '<text x="' + r1(X[2]) + '" y="' + r1(Y_TOP + H + 40) + '" text-anchor="middle" font-size="12" font-style="italic" fill="#888780">T &amp; Treg counts \u22482\u00d7 age-matched</text>';
+
+    let lx = 70;
+    BANDS.forEach(function(b, bi){
+      s += '<g class="fig6-leg" data-bi="' + bi + '" style="cursor:pointer;">'
+        + '<circle cx="' + lx + '" cy="' + r1(Y_TOP + H + 60) + '" r="5" fill="' + b.color + '"/>'
+        + '<text x="' + (lx + 9) + '" y="' + r1(Y_TOP + H + 64) + '" font-size="12" fill="#5F5E5A">' + b.label + '</text></g>';
+      lx += 14 + b.label.length * 7 + 20;
+    });
+
+    s += '</svg>';
+
+    const container = document.getElementById('fig6-content');
+    container.innerHTML = s;
+    bandEls = container.querySelectorAll('.fig6-band');
+
+    const caption = document.getElementById('fig6-caption');
+    function hover(bi){
+      setBands(bi);
+      caption.textContent = BANDS[bi].label + ' \u2014 '
+        + STAGES.map(function(st, si){ return st.label + ' ' + (frac[bi][si] * 100).toFixed(1) + '% (' + fmt(counts[bi][si]) + ')'; }).join(' \u00b7 ');
+    }
+    function leave(){ setBands(null); caption.textContent = DEFAULT_CAP; }
+
+    container.querySelectorAll('.fig6-band').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ hover(parseInt(el.dataset.bi, 10)); });
+      el.addEventListener('mouseleave', leave);
+    });
+    container.querySelectorAll('.fig6-leg').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ hover(parseInt(el.dataset.bi, 10)); });
+      el.addEventListener('mouseleave', leave);
+    });
+  }
+
+  fetch(DATA_URL)
+    .then(function(r){ if(!r.ok) throw new Error('JSON not found'); return r.json(); })
+    .then(function(d){ fig6Data = d; build(); })
+    .catch(function(e){
+      document.getElementById('fig6-content').innerHTML =
+        '<p style="text-align:center;color:#AF3A3A;padding:2rem;">Could not load: ' + e.message + '</p>';
+    });
+})();
+</script>

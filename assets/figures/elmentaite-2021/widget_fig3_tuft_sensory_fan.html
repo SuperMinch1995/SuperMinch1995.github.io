@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--
+  Figure 3 — What a tuft cell listens for (sensory fan)
+  Radial channels documented in the tuft-cell literature, plus IgG/Fc as a new input.
+  Clicking the IgG / Fc channel expands the full evidence panel (scRNA-seq dot plot
+  <-> mouse protein flow cytometry). Other channels show a text detail card.
+  Expression data: assets/figures/elmentaite-2021/fig5_tuft_pathway_expression.json
+-->
+<style>html,body{margin:0;padding:0;background:transparent;}</style>
+<div id="tuft-fan" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
+  <span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 3</span>
+  <h4 style="font-size:1.3rem;font-weight:500;margin:0.25rem 0 0.3rem 0;">What a tuft cell listens for</h4>
+  <p style="font-size:1rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">A decade of work casts the intestinal tuft cell as an innate sensor with several input channels feeding one output — IL-25 and friends. Elmentaite et al. add a channel of a different register: <strong style="font-weight:600;color:#A83D3A;">IgG detected by Fc receptors</strong>. Click any channel; click the IgG / Fc channel to open the underlying data.</p>
+
+  <div id="sf-svg" style="min-height:380px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
+  <div id="sf-detail" style="margin-top:1rem;"></div>
+
+  <p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.4rem;line-height:1.4;">Input channels compiled from the tuft-cell literature; the IgG / Fc channel and its data are from Elmentaite et al., <em>Nature</em> 2021 (CC&nbsp;BY&nbsp;4.0). Figure © Minh Chau Thom.</p>
+  <div id="sf-refs" style="margin-top:0.8rem;border-top:1px solid #e8e4d8;padding-top:0.8rem;"></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var TUFT='#A83D3A', ABS='#3796AC', SEC='#1B7092', SPINE='#A8C5CE', INK='#3a3028', MUTE='#888780';
+var TIER={
+  established:{c:'#2E7D6B',label:'Established in tuft cells'},
+  paper:{c:'#A83D3A',label:'Shown in this paper'},
+  inferred:{c:'#C08A3E',label:'Inferred from other cell types'},
+  hypothetical:{c:'#9A938A',label:'Hypothetical / untested'}
+};
+var EXPR={
+  FCGR2A:{tuft:{m:0.0413,f:0.0244},absorptive:{m:0.0009,f:0.0017},secretory:{m:0.0035,f:0.0039}},
+  FCGR2B:{tuft:{m:0.0772,f:0.0421},absorptive:{m:0.0006,f:0.0013},secretory:{m:0.0007,f:0.0008}},
+  CD300LF:{tuft:{m:0.4892,f:0.2646},absorptive:{m:0.0003,f:0.0005},secretory:{m:0.0014,f:0.0010}},
+  SYK:{tuft:{m:0.0947,f:0.0828},absorptive:{m:0.0916,f:0.1181},secretory:{m:0.1157,f:0.1465}},
+  PLCG2:{tuft:{m:2.9438,f:0.8887},absorptive:{m:0.0990,f:0.0858},secretory:{m:0.1575,f:0.1182}},
+  RAC2:{tuft:{m:0.2450,f:0.1574},absorptive:{m:0.0215,f:0.0358},secretory:{m:0.0373,f:0.0617}},
+  ITPR2:{tuft:{m:1.4555,f:0.6377},absorptive:{m:0.0696,f:0.0764},secretory:{m:0.1343,f:0.1369}},
+  PRKCA:{tuft:{m:0.2736,f:0.1723},absorptive:{m:0.1108,f:0.1291},secretory:{m:0.1741,f:0.1787}},
+  TRPM5:{tuft:{m:1.7959,f:0.7626},absorptive:{m:0.0037,f:0.0047},secretory:{m:0.0088,f:0.0095}}
+};
+var REFERENCES=[
+  {n:1,cite:"Elmentaite R, et al. Cells of the human intestinal tract mapped across space and time. Nature 597, 250–255 (2021).",url:"https://www.nature.com/articles/s41586-021-03852-1"},
+  {n:2,cite:"Howitt MR, et al. Tuft cells, taste-chemosensory cells, orchestrate parasite type 2 immunity in the gut. Science 351, 1329–1333 (2016).",url:"https://www.science.org/doi/10.1126/science.aaf1648"},
+  {n:3,cite:"von Moltke J, et al. Tuft-cell-derived IL-25 regulates an intestinal ILC2–epithelial response circuit. Nature 529, 221–225 (2016).",url:"https://www.nature.com/articles/nature16161"},
+  {n:4,cite:"Gerbe F, et al. Intestinal epithelial tuft cells initiate type 2 mucosal immunity to helminth parasites. Nature 529, 226–230 (2016).",url:"https://www.nature.com/articles/nature16527"},
+  {n:5,cite:"Nadjsombati MS, et al. Detection of succinate by intestinal tuft cells triggers a type 2 innate immune circuit. Immunity 49, 33–41 (2018).",url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC6084797/"},
+  {n:6,cite:"Schneider C, et al. A metabolite-triggered tuft cell–ILC2 circuit drives small intestinal remodeling. Cell 174, 271–284 (2018).",url:"https://pubmed.ncbi.nlm.nih.gov/?term=metabolite-triggered+tuft+cell+ILC2+circuit+small+intestinal+remodeling"},
+  {n:7,cite:"Fallon PG, et al. An IL-25–dependent cell population providing IL-4, IL-5 and IL-13 at the onset of helminth expulsion. J Exp Med 203, 1105–1116 (2006).",url:"https://pubmed.ncbi.nlm.nih.gov/?term=IL-25-dependent+cell+population+IL-4+IL-5+IL-13+helminth+expulsion+Fallon"},
+  {n:8,cite:"Tuft cells in the intestine, immunity and beyond (review). Nat Rev Gastroenterol Hepatol (2024).",url:"https://www.nature.com/articles/s41575-024-00978-1"}
+];
+var REFMAP={}; REFERENCES.forEach(function(r){REFMAP[r.n]=r;});
+var SHORT={1:"Elmentaite 2021",2:"Howitt 2016",3:"von Moltke 2016",4:"Gerbe 2016",5:"Nadjsombati 2018",6:"Schneider 2018",7:"Fallon 2006",8:"Nat Rev Gastro 2024",9:"UniProt / GeneCards"};
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function srcLink(nr){var r=REFMAP[nr];if(!r)return'';return '<a href="'+r.url+'" target="_blank" rel="noopener" style="color:'+SEC+';text-decoration:none;border-bottom:1px solid #cddfe3;white-space:nowrap;">'+esc(SHORT[nr]||('ref '+nr))+' \u2192</a>';}
+function srcLine(refs){var l=(refs||[]).map(srcLink).filter(Boolean).join(' &nbsp;·&nbsp; ');return '<div style="margin-top:0.9rem;border-top:1px solid #ece7d9;padding-top:0.55rem;font-size:0.72rem;color:'+MUTE+';line-height:1.9;"><span style="text-transform:uppercase;letter-spacing:0.09em;">Sources</span> &nbsp; '+l+'</div>';}
+function chips(refs){return (refs||[]).map(function(nr){var r=REFMAP[nr];if(!r)return'';return '<a href="'+r.url+'" target="_blank" rel="noopener" title="'+esc(r.cite).replace(/"/g,'&quot;')+'" style="display:inline-block;font-size:0.7rem;color:'+SEC+';background:#eef4f5;border:1px solid #d8e5e8;border-radius:10px;padding:1px 8px;margin:2px 4px 2px 0;text-decoration:none;">['+nr+'] source \u2197</a>';}).join('');}
+function tierBadge(t){if(!t||!TIER[t])return'';var x=TIER[t];return '<span style="display:inline-block;font-size:0.68rem;padding:1px 8px;border-radius:10px;background:'+x.c+'22;color:'+x.c+';border:1px solid '+x.c+'55;">'+x.label+'</span>';}
+
+var INFO={
+  helm:{title:'Helminths',subtitle:'input channel',tier:'established',desc:'Parasitic worms trigger the tuft-cell type 2 response; tuft-cell-derived IL-25 is required to expel them. This is the founding tuft-cell function.',refs:[3,4,2,7]},
+  prot:{title:'Protists (Tritrichomonas)',subtitle:'input channel',tier:'established',desc:'Commensal protists release succinate, sensed via SUCNR1, activating the same circuit even in the absence of infection.',refs:[5,6]},
+  bact:{title:'Bacterial metabolites',subtitle:'input channel',tier:'established',desc:'Bitter taste receptors (TAS2R) and other GPCRs let tuft cells respond to bacterial products and quorum-sensing molecules.',refs:[2,8]},
+  bile:{title:'Other GPCR ligands',subtitle:'input channel',tier:'inferred',desc:'Additional taste-family and metabolite GPCRs broaden the tuft cell’s chemosensory range; several ligands remain to be mapped.',refs:[8]},
+  out:{title:'Tuft-cell outputs',subtitle:'IL-25 · leukotrienes · ACh',tier:'established',desc:'However the input arrives, the shared TRPM5 machinery drives release of IL-25, cysteinyl leukotrienes and acetylcholine — igniting type 2 immunity and neural/secretory responses. IL-25 activates ILC2s, which feed back to expand the epithelium.',refs:[3,8]}
+};
+
+function showTextDetail(info){
+  var host=document.getElementById('sf-detail');
+  host.innerHTML='<div style="background:#fbfaf7;border:1px solid #ece7d9;border-radius:2px;padding:1.1rem 1.2rem;">'+
+    '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:0.5rem;">'+
+      '<p style="font-size:10.5px;text-transform:uppercase;letter-spacing:0.13em;font-weight:600;color:'+MUTE+';margin:0;line-height:1.4;">'+(info.subtitle?esc(info.subtitle)+' &nbsp;·&nbsp; ':'')+'<span style="color:'+TIER[info.tier].c+';">'+TIER[info.tier].label+'</span></p>'+
+      '<button aria-label="Close" id="sf-close" style="border:none;background:transparent;color:'+MUTE+';font-size:1.1rem;cursor:pointer;line-height:1;margin-top:-3px;">\u00D7</button>'+
+    '</div>'+
+    '<h4 style="font-size:1.14rem;font-weight:500;margin:0.32rem 0 0 0;">'+info.title+'</h4>'+
+    '<p style="font-size:0.86rem;line-height:1.6;margin:0.5rem 0 0 0;">'+info.desc+'</p>'+
+    srcLine(info.refs)+
+  '</div>';
+  var cb=document.getElementById('sf-close'); if(cb) cb.addEventListener('click',close);
+  notifyResize();
+}
+function close(){document.getElementById('sf-detail').innerHTML='';clearSel();notifyResize();}
+function clearSel(){Array.prototype.forEach.call(document.querySelectorAll('#sf-svg [data-sel]'),function(el){el.setAttribute('data-active','0');});}
+function markSel(id){var el=document.querySelector('#sf-svg [data-sel="'+id+'"]'); if(el) el.setAttribute('data-active','1');}
+
+// ---------- embedded evidence panel (opens on IgG / Fc) ----------
+function showEvidence(){
+  var host=document.getElementById('sf-detail');
+  host.innerHTML='<div style="background:#fbfaf7;border:1px solid #ece7d9;border-radius:2px;padding:1.1rem 1.2rem;">'+
+    '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:0.5rem;">'+
+      '<p style="font-size:10.5px;text-transform:uppercase;letter-spacing:0.13em;font-weight:600;color:'+MUTE+';margin:0;line-height:1.4;">What was measured &nbsp;·&nbsp; <span style="color:'+TUFT+';">Shown in this paper</span></p>'+
+      '<button aria-label="Close" id="sf-close" style="border:none;background:transparent;color:'+MUTE+';font-size:1.1rem;cursor:pointer;line-height:1;margin-top:-3px;">\u00D7</button>'+
+    '</div>'+
+    '<h4 style="font-size:1.14rem;font-weight:500;margin:0.32rem 0 0.55rem 0;">IgG / Fc sensing — the evidence</h4>'+
+    '<p style="font-size:0.83rem;line-height:1.5;margin:0 0 0.7rem 0;">FCGR2A and downstream mediators appear in a tuft-cell subset by scRNA-seq; the receptors were then confirmed at the protein level in mouse tuft cells — the stronger evidence. Toggle between the two.</p>'+
+    '<div style="margin:0 0 0.8rem 0;"><button class="sf-tg on" id="sf-btn-rna">scRNA-seq · human</button><button class="sf-tg" id="sf-btn-prot">Protein · flow cytometry · mouse</button></div>'+
+    '<div id="sf-ev-view"></div>'+
+    '<p id="sf-ev-foot" style="font-size:0.74rem;color:'+MUTE+';font-style:italic;margin-top:0.7rem;line-height:1.45;"></p>'+
+    srcLine([1])+
+    '<style>#sf-detail .sf-tg{border:1px solid #d9d3c4;background:#fff;color:#5F5E5A;font-family:inherit;font-size:0.78rem;padding:5px 11px;border-radius:20px;cursor:pointer;margin-right:6px;} #sf-detail .sf-tg.on{background:'+TUFT+';border-color:'+TUFT+';color:#fff;}</style>'+
+    '</div>';
+  document.getElementById('sf-close').addEventListener('click',close);
+  var br=document.getElementById('sf-btn-rna'), bp=document.getElementById('sf-btn-prot');
+  br.addEventListener('click',function(){br.classList.add('on');bp.classList.remove('on');evRNA();});
+  bp.addEventListener('click',function(){bp.classList.add('on');br.classList.remove('on');evProt();});
+  evRNA();
+}
+var EV_GENES=['FCGR2A','FCGR2B','CD300LF','SYK','PLCG2','RAC2','ITPR2','PRKCA','TRPM5'];
+function evRNA(){
+  var genes=EV_GENES, groups=[['tuft','Tuft',TUFT],['absorptive','Absorptive',ABS],['secretory','Secretory',SEC]];
+  var maxM=0; genes.forEach(function(g){groups.forEach(function(gr){maxM=Math.max(maxM,EXPR[g][gr[0]].m);});});
+  var padL=92,padT=42,colW=140,rowH=32,W=padL+colW*3+16,H=padT+genes.length*rowH+28;
+  var s='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:700px;display:block;margin:0 auto;" role="img" aria-label="scRNA-seq dot plot">';
+  groups.forEach(function(gr,ci){var x=padL+colW*ci+colW/2;s+='<text x="'+x+'" y="'+(padT-14)+'" text-anchor="middle" font-size="11" font-weight="600" fill="'+gr[2]+'">'+gr[1]+'</text>';});
+  genes.forEach(function(g,ri){var y=padT+ri*rowH+rowH/2;s+='<text x="'+(padL-12)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" font-style="italic" fill="'+INK+'">'+g+'</text>';groups.forEach(function(gr,ci){var e=EXPR[g][gr[0]],x=padL+colW*ci+colW/2,r=3+e.f*15,op=(0.2+(e.m/maxM)*0.8).toFixed(2);s+='<circle cx="'+x+'" cy="'+y+'" r="'+r.toFixed(1)+'" fill="'+gr[2]+'" opacity="'+op+'"><title>'+g+' — '+gr[1]+': mean '+e.m.toFixed(3)+', '+(e.f*100).toFixed(1)+'% of cells</title></circle>';});});
+  s+='<text x="'+padL+'" y="'+(H-8)+'" font-size="9" fill="'+MUTE+'">Dot size: % cells expressing · opacity: mean expression</text></svg>';
+  document.getElementById('sf-ev-view').innerHTML=s;
+  document.getElementById('sf-ev-foot').innerHTML='Human scRNA-seq, epithelium object (737 tuft / 101,617 absorptive / 11,904 secretory cells). FCGR2A marks a small tuft subset (~2–3%); PLCG2, ITPR2 and TRPM5 dominate. Elmentaite et al. 2021, Fig. 2f.';
+  notifyResize();
+}
+function evProt(){
+  var rows=[
+    {label:'FcγRI',note:'tested — no significant difference reported',md:null},
+    {label:'FcγRIIB',md:2.80,lo:1.80,hi:3.81,p:'P<0.0001'},
+    {label:'FcγRIIB/III',md:4.88,lo:3.88,hi:5.89,p:'P<0.0001'},
+    {label:'FcγRIV',note:'tested — no significant difference reported',md:null}
+  ];
+  var padL2=104,padT=48,rowH=40,W=560,H=padT+rows.length*rowH+38, x0=padL2,x1=W-34,xmax=6;
+  function xof(v){return x0+(v/xmax)*(x1-x0);}
+  var s='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:700px;display:block;margin:0 auto;" role="img" aria-label="Flow cytometry mean differences">';
+  s+='<text x="'+((x0+x1)/2)+'" y="22" text-anchor="middle" font-size="11" font-weight="600" fill="'+INK+'">Tuft − non-tuft epithelial cells (mouse)</text>';
+  s+='<text x="'+((x0+x1)/2)+'" y="36" text-anchor="middle" font-size="9" fill="'+MUTE+'">mean difference in % expression, 95% CI</text>';
+  for(var v=0;v<=xmax;v++){var x=xof(v);s+='<line x1="'+x+'" y1="'+padT+'" x2="'+x+'" y2="'+(H-30)+'" stroke="#e8e4d8" stroke-width="1"/><text x="'+x+'" y="'+(H-16)+'" text-anchor="middle" font-size="8.5" fill="'+MUTE+'">'+v+'</text>';}
+  s+='<line x1="'+xof(0)+'" y1="'+padT+'" x2="'+xof(0)+'" y2="'+(H-30)+'" stroke="'+MUTE+'" stroke-width="1.4"/>';
+  rows.forEach(function(r,i){var y=padT+i*rowH+rowH/2;s+='<text x="'+(padL2-12)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" fill="'+INK+'">'+r.label+'</text>';if(r.md==null){s+='<text x="'+xof(0.15)+'" y="'+(y+4)+'" font-size="9.5" font-style="italic" fill="'+MUTE+'">'+r.note+'</text>';}else{s+='<line x1="'+xof(r.lo)+'" y1="'+y+'" x2="'+xof(r.hi)+'" y2="'+y+'" stroke="'+TUFT+'" stroke-width="2"/><line x1="'+xof(r.lo)+'" y1="'+(y-5)+'" x2="'+xof(r.lo)+'" y2="'+(y+5)+'" stroke="'+TUFT+'" stroke-width="2"/><line x1="'+xof(r.hi)+'" y1="'+(y-5)+'" x2="'+xof(r.hi)+'" y2="'+(y+5)+'" stroke="'+TUFT+'" stroke-width="2"/><circle cx="'+xof(r.md)+'" cy="'+y+'" r="5" fill="'+TUFT+'"><title>'+r.label+': +'+r.md.toFixed(2)+' [95% CI '+r.lo.toFixed(2)+', '+r.hi.toFixed(2)+'], '+r.p+'</title></circle><text x="'+(xof(r.hi)+8)+'" y="'+(y+4)+'" font-size="9.5" fill="'+INK+'">+'+r.md.toFixed(2)+' ['+r.lo.toFixed(2)+', '+r.hi.toFixed(2)+']</text>';}});
+  s+='</svg>';
+  document.getElementById('sf-ev-view').innerHTML=s;
+  document.getElementById('sf-ev-foot').innerHTML='Flow cytometry, SiglecF⁺EpCAM⁺ tuft vs non-tuft epithelial cells. Two-way ANOVA F(3,39)=42.29, P=3.05×10⁻¹¹; FcγRIIB and FcγRIIB/III significantly higher on tuft cells (both P<0.0001). FcγRIIB also rose under DSS colitis (P<0.01). Protein-level evidence is stronger than RNA. Elmentaite et al. 2021, Fig. 2g & ED Fig. 7f.';
+  notifyResize();
+}
+
+function render(){
+  var W=600,H=430,cx=300,cy=210,R=150;
+  var s='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:700px;display:block;margin:0 auto;" role="img" aria-label="Tuft cell sensory channels">';
+  s+='<style>#sf-svg .spoke{cursor:pointer;} #sf-svg .spoke:hover .chip,#sf-svg .spoke:focus .chip{filter:brightness(0.97);} #sf-svg .spoke:focus{outline:none;} #sf-svg .spoke[data-active="1"] .chip{stroke-width:2.6;} @media (prefers-reduced-motion:no-preference){#sf-svg .pulse{animation:sfp 2.2s ease-out infinite;transform-origin:center;}} @keyframes sfp{0%{opacity:0.55;r:26;}70%{opacity:0;r:40;}100%{opacity:0;r:40;}}</style>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="none" stroke="'+SPINE+'" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>';
+  var items=[
+    {id:'helm',label:'Helminths',col:SEC},
+    {id:'prot',label:'Protists',col:SEC},
+    {id:'bact',label:'Bacterial metabolites',col:SEC},
+    {id:'bile',label:'Other GPCR ligands',col:'#C08A3E'},
+    {id:'igg',label:'IgG / Fc',col:TUFT}
+  ];
+  var N=items.length;
+  for(var i=0;i<N;i++){
+    var ang=(-90+i*(360/N))*Math.PI/180;
+    var ex=cx+Math.cos(ang)*R, ey=cy+Math.sin(ang)*R;
+    var mx=cx+Math.cos(ang)*48, my=cy+Math.sin(ang)*48;
+    var it=items[i], hot=(it.id==='igg');
+    s+='<line x1="'+mx.toFixed(1)+'" y1="'+my.toFixed(1)+'" x2="'+ex.toFixed(1)+'" y2="'+ey.toFixed(1)+'" stroke="'+it.col+'" stroke-width="'+(hot?2.2:1.4)+'" opacity="'+(hot?0.9:0.6)+'"/>';
+    var ax=cx+Math.cos(ang)*56, ay=cy+Math.sin(ang)*56;
+    s+='<circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="2.4" fill="'+it.col+'"/>';
+    var cw=Math.max(66,it.label.length*6.6);
+    s+='<g class="spoke" data-sel="'+it.id+'" data-active="0" tabindex="0" role="button" aria-label="'+it.label+'">';
+    if(hot) s+='<circle class="pulse" cx="'+ex.toFixed(1)+'" cy="'+ey.toFixed(1)+'" r="26" fill="none" stroke="'+TUFT+'" stroke-width="1.4"/>';
+    s+='<rect class="chip" x="'+(ex-cw/2).toFixed(1)+'" y="'+(ey-13).toFixed(1)+'" width="'+cw+'" height="26" rx="13" fill="'+(hot?'#f7e8e7':'#faf7ef')+'" stroke="'+it.col+'" stroke-width="1.4"/>';
+    s+='<text x="'+ex.toFixed(1)+'" y="'+(ey+4).toFixed(1)+'" text-anchor="middle" font-size="10.5" font-weight="'+(hot?700:600)+'" fill="'+INK+'">'+it.label+'</text>';
+    if(hot) s+='<text x="'+ex.toFixed(1)+'" y="'+(ey-19).toFixed(1)+'" text-anchor="middle" font-size="8" font-weight="700" fill="'+TUFT+'">NEW · click for data</text>';
+    s+='</g>';
+  }
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="44" fill="#fbeceb" stroke="'+TUFT+'" stroke-width="1.6"/>';
+  s+='<g class="spoke" data-sel="out" data-active="0" tabindex="0" role="button" aria-label="Tuft cell outputs">';
+  s+='<circle class="chip" cx="'+cx+'" cy="'+cy+'" r="31" fill="'+TUFT+'" opacity="0.92"/>';
+  s+='<text x="'+cx+'" y="'+(cy-3)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Tuft</text>';
+  s+='<text x="'+cx+'" y="'+(cy+10)+'" text-anchor="middle" font-size="7.5" fill="#fff">IL-25 · LTs · ACh</text>';
+  s+='</g>';
+  s+='</svg>';
+  document.getElementById('sf-svg').innerHTML=s;
+  Array.prototype.forEach.call(document.querySelectorAll('#sf-svg [data-sel]'),function(el){
+    var id=el.getAttribute('data-sel');
+    function open(){clearSel();markSel(id); if(id==='igg'){showEvidence();} else {showTextDetail(INFO[id]);}}
+    el.addEventListener('click',open);
+    el.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();open();}});
+  });
+  renderRefs(); notifyResize();
+}
+function renderRefs(){var items=REFERENCES.map(function(r){return '<li style="margin:0.3rem 0;line-height:1.5;"><a href="'+r.url+'" target="_blank" rel="noopener" class="sf-ref">'+esc(r.cite)+'</a></li>';}).join('');document.getElementById('sf-refs').innerHTML='<style>#sf-refs .sf-ref{color:#5F5E5A;text-decoration:none;border-bottom:1px solid transparent;transition:color .12s,border-color .12s;} #sf-refs .sf-ref:hover,#sf-refs .sf-ref:focus{color:'+SEC+';border-bottom-color:#cddfe3;}</style><details><summary style="cursor:pointer;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:'+MUTE+';">References &amp; data sources ('+REFERENCES.length+')</summary><ol style="font-size:0.72rem;color:#5F5E5A;margin:0.6rem 0 0 0;padding-left:1.3rem;">'+items+'</ol></details>';}
+var __lastH=0;
+function __measure(){var el=document.getElementById('tuft-fan');return el?Math.ceil(el.getBoundingClientRect().height):0;}
+function postHeight(){try{var h=__measure();if(h>0&&Math.abs(h-__lastH)>1){__lastH=h;if(window.parent&&window.parent!==window)window.parent.postMessage({type:'tuft-fan-height',height:h},'*');}}catch(e){}}
+function notifyResize(){try{window.dispatchEvent(new Event('resize'));}catch(e){}postHeight();}
+try{if(window.ResizeObserver){var __t=document.getElementById('tuft-fan');if(__t)new ResizeObserver(function(){postHeight();}).observe(__t);}}catch(e){}
+try{window.addEventListener('load',postHeight);}catch(e){}
+
+var DATA_URL='fig5_tuft_pathway_expression.json';
+try{fetch(DATA_URL).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){Object.keys(EXPR).forEach(function(g){if(d[g])['tuft','absorptive','secretory'].forEach(function(gr){if(d[g][gr])EXPR[g][gr]={m:d[g][gr].mean_expression,f:d[g][gr].fraction_expressing};});});render();}).catch(function(){render();});}catch(e){render();}
+})();
+</script>

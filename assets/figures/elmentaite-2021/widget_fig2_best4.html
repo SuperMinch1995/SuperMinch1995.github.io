@@ -39,10 +39,10 @@
 
 <div id="fig4-best4-widget" style="background:#f5f1e8;border:1px solid #e8e4d8;border-radius:8px;padding:1.5rem;margin:2rem 0;font-family:'DM Sans',system-ui,sans-serif;color:#3a3028;">
 <div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.4rem;">
-<span style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">Figure 2</span>
+<span style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#888780;">FIGURE 2</span>
 </div>
-<h4 style="font-size:1.05rem;font-weight:500;margin:0 0 0.3rem 0;">BEST4 enterocytes — small intestine vs colon</h4>
-<p style="font-size:0.85rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Each dot's <strong>size</strong> shows the % of cells expressing the gene; its <strong>opacity</strong> shows mean expression.</p>
+<h4 style="font-size:1.3rem;font-weight:500;margin:0 0 0.3rem 0;">BEST4 enterocytes — small intestine vs colon</h4>
+<p style="font-size:1rem;color:#5F5E5A;line-height:1.5;margin:0 0 1rem 0;">Each dot's <strong>size</strong> shows the % of cells expressing the gene; its <strong>opacity</strong> shows mean expression.</p>
 <div id="fig4-content" style="min-height:400px;"><p style="text-align:center;color:#888780;padding:3rem 0;">Loading…</p></div>
 <p style="font-size:0.72rem;color:#888780;font-style:italic;margin-top:1.5rem;line-height:1.4;">Computed from the epithelium lineage object (4,555 BEST4+ cells: 1,176 small intestine, 3,379 large intestine). Data: Elmentaite et al., <em>Nature</em> 2021, used under CC BY 4.0. Figure &copy; Minh Chau Thom.</p>
 </div>
@@ -109,10 +109,10 @@ function render(data){
   svg+=`<defs><filter id="g4halo" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5"/></filter></defs>`;
   svg+=`<rect x="${padding.left}" y="${padding.top}" width="${colW}" height="${headerH-10}" rx="6" fill="${SMALL_COLOR}" opacity="0.1"/>`;
   svg+=`<rect x="${padding.left+colW}" y="${padding.top}" width="${colW}" height="${headerH-10}" rx="6" fill="${LARGE_COLOR}" opacity="0.1"/>`;
-  svg+=`<text x="${padding.left+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="12" font-weight="600" fill="${SMALL_COLOR}">Small intestine</text>`;
-  svg+=`<text x="${padding.left+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="10" fill="${SMALL_COLOR}" opacity="0.8">n = ${genes[0].small.n_cells} cells</text>`;
-  svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="12" font-weight="600" fill="${LARGE_COLOR}">Large intestine</text>`;
-  svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="10" fill="${LARGE_COLOR}" opacity="0.8">n = ${genes[0].large.n_cells} cells</text>`;
+  svg+=`<text x="${padding.left+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="13" font-weight="600" fill="${SMALL_COLOR}">Small intestine</text>`;
+  svg+=`<text x="${padding.left+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="11" fill="${SMALL_COLOR}" opacity="0.8">n = ${genes[0].small.n_cells} cells</text>`;
+  svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+18}" text-anchor="middle" font-size="13" font-weight="600" fill="${LARGE_COLOR}">Large intestine</text>`;
+  svg+=`<text x="${padding.left+colW+colW/2}" y="${padding.top+33}" text-anchor="middle" font-size="11" fill="${LARGE_COLOR}" opacity="0.8">n = ${genes[0].large.n_cells} cells</text>`;
 
   let _mctx=null;
   try{ _mctx=document.createElement('canvas').getContext('2d'); if(_mctx) _mctx.font="italic 12px 'DM Sans', system-ui, sans-serif"; }catch(e){ _mctx=null; }
@@ -136,12 +136,12 @@ function render(data){
     }
     const _hlH=20,_padX=8,_hlW=_tw+2*_padX,_hlR=(padding.left-8)-_hlW;
     svg+=`<rect class="gene-hl" x="${_hlR.toFixed(1)}" y="${(y-_hlH/2).toFixed(1)}" width="${_hlW.toFixed(1)}" height="${_hlH}" rx="5"/>`;
-    svg+=`<text class="gene-label" x="${padding.left-12}" y="${y+4}" text-anchor="end" font-size="12" font-style="italic" fill="#3a3028">${g.name}</text>`;
+    svg+=`<text class="gene-label" x="${padding.left-12}" y="${y+4}" text-anchor="end" font-size="13" font-style="italic" fill="#3a3028">${g.name}</text>`;
     svg+=`</g>`;
 
     const arrow=g.logRatio>1?'\u25C0':g.logRatio<-1?'\u25B6':'\u2022';
     const arrowColor=side==='small'?SMALL_COLOR:side==='large'?LARGE_COLOR:'#cccccc';
-    svg+=`<text x="${padding.left+colW}" y="${y+4}" text-anchor="middle" font-size="9" fill="${arrowColor}" opacity="0.5">${arrow}</text>`;
+    svg+=`<text x="${padding.left+colW}" y="${y+4}" text-anchor="middle" font-size="10" fill="${arrowColor}" opacity="0.5">${arrow}</text>`;
 
     const sX=padding.left+colW/2;
     const sR=3+g.small.fraction_expressing*10;
@@ -156,7 +156,7 @@ function render(data){
 
   const topSmall=genes.slice(0,3).map(g=>g.name).join(', ');
   const topLarge=genes.slice(-3).reverse().map(g=>g.name).join(', ');
-  const summary=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;padding:0.8rem 1rem;background:${NEUTRAL_BG};border-radius:6px;font-size:12px;"><div><div style="color:${SMALL_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in small intestine</div><div><em>${topSmall}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:12px;">Lipid metabolism, digestion, chloride transport (CFTR)</div></div><div><div style="color:${LARGE_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in large intestine</div><div><em>${topLarge}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:12px;">Carbonic anhydrases, ion / water transport</div></div></div>`;
+  const summary=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;padding:0.8rem 1rem;background:${NEUTRAL_BG};border-radius:6px;font-size:13px;"><div><div style="color:${SMALL_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in small intestine</div><div><em>${topSmall}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:13px;">Lipid metabolism, digestion, chloride transport (CFTR)</div></div><div><div style="color:${LARGE_COLOR};font-weight:600;margin-bottom:0.2rem;">Most enriched in large intestine</div><div><em>${topLarge}</em></div><div style="color:#888780;margin-top:0.3rem;font-size:13px;">Carbonic anhydrases, ion / water transport</div></div></div>`;
 
   content.innerHTML=svg+summary;
   content.querySelectorAll('.gene-row').forEach(row=>{
